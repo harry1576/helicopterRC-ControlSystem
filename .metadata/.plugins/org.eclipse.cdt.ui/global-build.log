@@ -3941,3 +3941,1211 @@ Finished building target: "milestone2.out"
  
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 clean -O 
+ 
+rm -rf  "milestone2.hex"  "milestone2.out" 
+rm -rf "buttons4.obj" "circBufT.obj" "helicopterAltitude.obj" "helicopterMasterController.obj" "tm4c123gh6pm_startup_ccs.obj" "userDisplay.obj" "ustdlib.obj" "OrbitOLED/OrbitOLEDInterface.obj" "OrbitOLED/lib_OrbitOled/ChrFont0.obj" "OrbitOLED/lib_OrbitOled/FillPat.obj" "OrbitOLED/lib_OrbitOled/OrbitOled.obj" "OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "OrbitOLED/lib_OrbitOled/delay.obj" "Tiva/driverlib/adc.obj" "Tiva/driverlib/aes.obj" "Tiva/driverlib/can.obj" "Tiva/driverlib/comp.obj" "Tiva/driverlib/cpu.obj" "Tiva/driverlib/crc.obj" "Tiva/driverlib/des.obj" "Tiva/driverlib/eeprom.obj" "Tiva/driverlib/emac.obj" "Tiva/driverlib/epi.obj" "Tiva/driverlib/epi_workaround_ccs.obj" "Tiva/driverlib/flash.obj" "Tiva/driverlib/fpu.obj" "Tiva/driverlib/gpio.obj" "Tiva/driverlib/hibernate.obj" "Tiva/driverlib/i2c.obj" "Tiva/driverlib/interrupt.obj" "Tiva/driverlib/lcd.obj" "Tiva/driverlib/mpu.obj" "Tiva/driverlib/onewire.obj" "Tiva/driverlib/pwm.obj" "Tiva/driverlib/qei.obj" 
+rm -rf "Tiva/driverlib/shamd5.obj" "Tiva/driverlib/ssi.obj" "Tiva/driverlib/sw_crc.obj" "Tiva/driverlib/sysctl.obj" "Tiva/driverlib/sysexc.obj" "Tiva/driverlib/systick.obj" "Tiva/driverlib/timer.obj" "Tiva/driverlib/uart.obj" "Tiva/driverlib/udma.obj" "Tiva/driverlib/usb.obj" "Tiva/driverlib/watchdog.obj" 
+rm -rf "buttons4.d" "circBufT.d" "helicopterAltitude.d" "helicopterMasterController.d" "tm4c123gh6pm_startup_ccs.d" "userDisplay.d" "ustdlib.d" "OrbitOLED/OrbitOLEDInterface.d" "OrbitOLED/lib_OrbitOled/ChrFont0.d" "OrbitOLED/lib_OrbitOled/FillPat.d" "OrbitOLED/lib_OrbitOled/OrbitOled.d" "OrbitOLED/lib_OrbitOled/OrbitOledChar.d" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.d" "OrbitOLED/lib_OrbitOled/delay.d" "Tiva/driverlib/adc.d" "Tiva/driverlib/aes.d" "Tiva/driverlib/can.d" "Tiva/driverlib/comp.d" "Tiva/driverlib/cpu.d" "Tiva/driverlib/crc.d" "Tiva/driverlib/des.d" "Tiva/driverlib/eeprom.d" "Tiva/driverlib/emac.d" "Tiva/driverlib/epi.d" "Tiva/driverlib/flash.d" "Tiva/driverlib/fpu.d" "Tiva/driverlib/gpio.d" "Tiva/driverlib/hibernate.d" "Tiva/driverlib/i2c.d" "Tiva/driverlib/interrupt.d" "Tiva/driverlib/lcd.d" "Tiva/driverlib/mpu.d" "Tiva/driverlib/onewire.d" "Tiva/driverlib/pwm.d" "Tiva/driverlib/qei.d" "Tiva/driverlib/shamd5.d" "Tiva/driverlib/ssi.d" "Tiva/driverlib/sw_crc.d" "Tiva/driverlib/sysctl.d" 
+rm -rf "Tiva/driverlib/sysexc.d" "Tiva/driverlib/systick.d" "Tiva/driverlib/timer.d" "Tiva/driverlib/uart.d" "Tiva/driverlib/udma.d" "Tiva/driverlib/usb.d" "Tiva/driverlib/watchdog.d" 
+rm -rf "Tiva/driverlib/epi_workaround_ccs.d" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../circBufT.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="circBufT.d_raw"  "../circBufT.c"
+Finished building: "../circBufT.c"
+ 
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+Finished building: "../buttons4.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+
+>> Compilation failure
+subdir_rules.mk:56: recipe for target 'yawFiniteStateMachine.obj' failed
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+"../yawFiniteStateMachine.c", line 39: error #66: expected a ";"
+1 error detected in the compilation of "../yawFiniteStateMachine.c".
+gmake: *** [yawFiniteStateMachine.obj] Error 1
+Finished building: "../userDisplay.c"
+ 
+Building file: "../OrbitOLED/OrbitOLEDInterface.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/OrbitOLEDInterface.d_raw" --obj_directory="OrbitOLED"  "../OrbitOLED/OrbitOLEDInterface.c"
+Finished building: "../OrbitOLED/OrbitOLEDInterface.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/FillPat.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/FillPat.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/FillPat.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/FillPat.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/ChrFont0.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/ChrFont0.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/ChrFont0.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/ChrFont0.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/OrbitOled.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/OrbitOled.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/OrbitOled.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/OrbitOled.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/OrbitOledChar.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/OrbitOledChar.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/OrbitOledChar.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/OrbitOledChar.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/delay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/delay.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/delay.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/delay.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/OrbitOledGrph.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c"
+ 
+Building file: "../ustdlib.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="ustdlib.d_raw"  "../ustdlib.c"
+"../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c", line 615: warning #552-D: variable "bTmp" was set but never used
+"../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c", line 818: warning #552-D: variable "pbBmp" was set but never used
+Finished building: "../ustdlib.c"
+ 
+Building file: "../Tiva/driverlib/aes.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/aes.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/aes.c"
+Finished building: "../Tiva/driverlib/aes.c"
+ 
+Building file: "../Tiva/driverlib/comp.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/comp.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/comp.c"
+Finished building: "../Tiva/driverlib/comp.c"
+ 
+Building file: "../Tiva/driverlib/adc.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/adc.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/adc.c"
+Finished building: "../Tiva/driverlib/adc.c"
+ 
+Building file: "../Tiva/driverlib/cpu.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/cpu.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/cpu.c"
+Finished building: "../Tiva/driverlib/cpu.c"
+ 
+Building file: "../Tiva/driverlib/can.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/can.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/can.c"
+Finished building: "../Tiva/driverlib/can.c"
+ 
+Building file: "../Tiva/driverlib/crc.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/crc.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/crc.c"
+Finished building: "../Tiva/driverlib/crc.c"
+ 
+Building file: "../Tiva/driverlib/des.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/des.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/des.c"
+Finished building: "../Tiva/driverlib/des.c"
+ 
+Building file: "../Tiva/driverlib/epi_workaround_ccs.s"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/epi_workaround_ccs.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/epi_workaround_ccs.s"
+Finished building: "../Tiva/driverlib/epi_workaround_ccs.s"
+ 
+Building file: "../Tiva/driverlib/eeprom.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/eeprom.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/eeprom.c"
+Finished building: "../Tiva/driverlib/eeprom.c"
+ 
+Building file: "../Tiva/driverlib/fpu.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/fpu.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/fpu.c"
+Finished building: "../Tiva/driverlib/fpu.c"
+ 
+Building file: "../Tiva/driverlib/flash.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/flash.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/flash.c"
+Finished building: "../Tiva/driverlib/flash.c"
+ 
+Building file: "../Tiva/driverlib/epi.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/epi.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/epi.c"
+Finished building: "../Tiva/driverlib/epi.c"
+ 
+Building file: "../Tiva/driverlib/hibernate.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/hibernate.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/hibernate.c"
+Finished building: "../Tiva/driverlib/hibernate.c"
+ 
+Building file: "../Tiva/driverlib/emac.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/emac.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/emac.c"
+Finished building: "../Tiva/driverlib/emac.c"
+ 
+Building file: "../Tiva/driverlib/i2c.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/i2c.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/i2c.c"
+Finished building: "../Tiva/driverlib/i2c.c"
+ 
+Building file: "../Tiva/driverlib/gpio.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/gpio.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/gpio.c"
+Finished building: "../Tiva/driverlib/gpio.c"
+ 
+Building file: "../Tiva/driverlib/interrupt.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/interrupt.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/interrupt.c"
+Finished building: "../Tiva/driverlib/interrupt.c"
+ 
+Building file: "../Tiva/driverlib/mpu.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/mpu.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/mpu.c"
+Finished building: "../Tiva/driverlib/mpu.c"
+ 
+Building file: "../Tiva/driverlib/onewire.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/onewire.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/onewire.c"
+Finished building: "../Tiva/driverlib/onewire.c"
+ 
+Building file: "../Tiva/driverlib/lcd.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/lcd.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/lcd.c"
+Finished building: "../Tiva/driverlib/lcd.c"
+ 
+Building file: "../Tiva/driverlib/qei.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/qei.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/qei.c"
+Finished building: "../Tiva/driverlib/qei.c"
+ 
+Building file: "../Tiva/driverlib/ssi.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/ssi.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/ssi.c"
+Finished building: "../Tiva/driverlib/ssi.c"
+ 
+Building file: "../Tiva/driverlib/shamd5.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/shamd5.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/shamd5.c"
+Finished building: "../Tiva/driverlib/shamd5.c"
+ 
+Building file: "../Tiva/driverlib/pwm.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/pwm.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/pwm.c"
+Finished building: "../Tiva/driverlib/pwm.c"
+ 
+Building file: "../Tiva/driverlib/sysexc.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/sysexc.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/sysexc.c"
+Finished building: "../Tiva/driverlib/sysexc.c"
+ 
+Building file: "../Tiva/driverlib/systick.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/systick.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/systick.c"
+Finished building: "../Tiva/driverlib/systick.c"
+ 
+Building file: "../Tiva/driverlib/sw_crc.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/sw_crc.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/sw_crc.c"
+Finished building: "../Tiva/driverlib/sw_crc.c"
+ 
+Building file: "../Tiva/driverlib/udma.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/udma.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/udma.c"
+Finished building: "../Tiva/driverlib/udma.c"
+ 
+Building file: "../Tiva/driverlib/timer.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/timer.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/timer.c"
+Finished building: "../Tiva/driverlib/timer.c"
+ 
+Building file: "../Tiva/driverlib/sysctl.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/sysctl.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/sysctl.c"
+Finished building: "../Tiva/driverlib/sysctl.c"
+ 
+Building file: "../Tiva/driverlib/watchdog.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/watchdog.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/watchdog.c"
+Finished building: "../Tiva/driverlib/watchdog.c"
+ 
+Building file: "../Tiva/driverlib/uart.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/uart.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/uart.c"
+Finished building: "../Tiva/driverlib/uart.c"
+ 
+Building file: "../Tiva/driverlib/usb.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Tiva/driverlib/usb.d_raw" --obj_directory="Tiva/driverlib"  "../Tiva/driverlib/usb.c"
+Finished building: "../Tiva/driverlib/usb.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+
+>> Compilation failure
+subdir_rules.mk:56: recipe for target 'yawFiniteStateMachine.obj' failed
+"../yawFiniteStateMachine.c", line 28: error #20: identifier "unit8_t" is undefined
+"../yawFiniteStateMachine.c", line 29: error #20: identifier "unit8_t" is undefined
+"../yawFiniteStateMachine.c", line 30: error #20: identifier "unit32_t" is undefined
+"../yawFiniteStateMachine.c", line 38: error #20: identifier "yawFSM" is undefined
+4 errors detected in the compilation of "../yawFiniteStateMachine.c".
+gmake: *** [yawFiniteStateMachine.obj] Error 1
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+
+>> Compilation failure
+subdir_rules.mk:56: recipe for target 'yawFiniteStateMachine.obj' failed
+"../yawFiniteStateMachine.c", line 38: error #20: identifier "yawFSM" is undefined
+"../yawFiniteStateMachine.c", line 97: warning #189-D: use of "=" where "==" may have been intended
+"../yawFiniteStateMachine.c", line 107: warning #189-D: use of "=" where "==" may have been intended
+"../yawFiniteStateMachine.c", line 117: warning #189-D: use of "=" where "==" may have been intended
+"../yawFiniteStateMachine.c", line 127: warning #189-D: use of "=" where "==" may have been intended
+1 error detected in the compilation of "../yawFiniteStateMachine.c".
+gmake: *** [yawFiniteStateMachine.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+"../yawFiniteStateMachine.c", line 60: warning #189-D: use of "=" where "==" may have been intended
+"../yawFiniteStateMachine.c", line 70: warning #189-D: use of "=" where "==" may have been intended
+"../yawFiniteStateMachine.c", line 80: warning #189-D: use of "=" where "==" may have been intended
+"../yawFiniteStateMachine.c", line 90: warning #189-D: use of "=" where "==" may have been intended
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+"../helicopterMasterController.c", line 95: warning #552-D: variable "heightAboveGround" was set but never used
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 95: warning #552-D: variable "heightAboveGround" was set but never used
+"../helicopterMasterController.c", line 98: warning #552-D: variable "displayNumber" was set but never used
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 108: error #20: identifier "displayNumber" is undefined
+"../helicopterMasterController.c", line 129: error #20: identifier "heightAboveGround" is undefined
+"../helicopterMasterController.c", line 133: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 133: error #141: too many arguments in function call
+4 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+Finished building: "../userDisplay.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 128: error #20: identifier "heightAboveGround" is undefined
+"../helicopterMasterController.c", line 132: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 132: error #141: too many arguments in function call
+3 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+Finished building: "../userDisplay.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+"../helicopterMasterController.c", line 131: error #141: too many arguments in function call
+2 errors detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+1 error detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+Finished building: "../userDisplay.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+1 error detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+1 error detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+1 error detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+1 error detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+1 error detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngle" is undefined
+1 error detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 131: error #20: identifier "currentAngjle" is undefined
+1 error detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+
+>> Compilation failure
+subdir_rules.mk:42: recipe for target 'userDisplay.obj' failed
+"../userDisplay.c", line 113: error #20: identifier "string" is undefined
+"../userDisplay.c", line 104: warning #179-D: variable "stringrow1" was declared but never referenced
+"../userDisplay.c", line 105: warning #179-D: variable "stringrow3" was declared but never referenced
+1 error detected in the compilation of "../userDisplay.c".
+gmake: *** [userDisplay.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+
+>> Compilation failure
+subdir_rules.mk:42: recipe for target 'userDisplay.obj' failed
+"../userDisplay.c", line 112: error #20: identifier "string1" is undefined
+"../userDisplay.c", line 119: error #20: identifier "string2" is undefined
+2 errors detected in the compilation of "../userDisplay.c".
+gmake: *** [userDisplay.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+
+>> Compilation failure
+subdir_rules.mk:42: recipe for target 'userDisplay.obj' failed
+"../userDisplay.c", line 112: error #20: identifier "string" is undefined
+1 error detected in the compilation of "../userDisplay.c".
+gmake: *** [userDisplay.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+Finished building: "../userDisplay.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+Finished building: "../userDisplay.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+Finished building: "../userDisplay.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
+
+**** Build Finished ****

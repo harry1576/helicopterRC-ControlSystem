@@ -1,0 +1,14 @@
+#ifndef HELICOPTER_ALTITUDE_H_
+#define HELICOPTER_ALTITUDE_H_
+
+extern int currentAngle;  /* Declaration of the variable */
+
+
+
+void yawFSM(void);
+
+void yawFSMInit(void);
+
+
+#endif /*USERDISPLAY_H_*/
+

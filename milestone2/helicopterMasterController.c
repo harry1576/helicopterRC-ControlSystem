@@ -1,12 +1,13 @@
 //*****************************************************************************
 //
-// helicopterMasterController.c - program that controls the main aspects of
+// helicopterMasterController.c - The program that controls the main aspects of
 // the helicopter by including other relevant code.
 //
 // Author:  Harry Dobbs, Sam Purdy, Sam Dunshea
 // Last modified:   25.4.2019
 //
 //*****************************************************************************
+
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -25,7 +26,7 @@
 #include "buttons4.h"
 #include "helicopterAltitude.h"
 #include "userDisplay.h"
-
+#include "yawFiniteStateMachine.h"
 
 
 //*****************************************************************************
@@ -39,12 +40,9 @@
 // The interrupt handler for the for SysTick interrupt.
 //
 //*****************************************************************************
-void
-SysTickIntHandler(void)
+void SysTickIntHandler(void)
 {
-    //
     // Initiate a conversion
-    //
     ADCProcessorTrigger(ADC0_BASE, 3);
     g_ulSampCnt++;
 }
@@ -52,12 +50,10 @@ SysTickIntHandler(void)
 //*****************************************************************************
 // Initialisation functions for the clock (incl. SysTick), ADC, display
 //*****************************************************************************
-void
-initClock (void)
+void initClock (void)
 {
     // Set the clock rate to 20 MHz
-    SysCtlClockSet (SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
-                   SYSCTL_XTAL_16MHZ);
+    SysCtlClockSet (SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
     //
     // Set up the period for the SysTick timer.  The SysTick timer period is
     // set as a function of the system clock.
@@ -71,29 +67,33 @@ initClock (void)
     SysTickEnable();
 }
 
-
-
-
-
-
-// Function to calculate height as a percentage given the minimum height , maximum height and current height.
+//*****************************************************************************
+// Function used to calculate the height as a percentage.
+//*****************************************************************************
 int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
 {
-    return -(current *100  - min *100)/(min-max);
+    int16_t percentage;
+    percentage = (current *100  - min *100)/(max-min);
+    if(percentage < 0)
+    {
+        percentage = 0;
+    }
+    else if (percentage > 100)
+    {
+        percentage = 100;
+    }
+    return percentage;
+
 }
 
-int
-main(void)
+int main(void)
 {
     uint16_t i;
     int16_t currentHeight;
     int16_t groundReference;
     int16_t maxHeight;
-    int16_t heightAboveGround;
     int32_t sum;
     uint8_t butState;
-    uint8_t displayNumber;
-
     initClock ();
     initCircBuf (&g_inBuffer, BUF_SIZE);
     initADC ();
@@ -105,7 +105,6 @@ main(void)
     IntMasterEnable();
 
     groundReference = 0;
-    displayNumber = 0;
 
     while (1)
     {
@@ -120,35 +119,18 @@ main(void)
 
         updateButtons ();
         butState = checkButton (LEFT);
-        if (groundReference == 0 || butState == PUSHED )
+        if (groundReference == 0 || butState == PUSHED || currentHeight > groundReference)
         {
            groundReference = currentHeight;
            maxHeight = groundReference - (4905*(0.8/3));
         }
-        butState = checkButton (UP);
-        if (butState == PUSHED )
+
+
+        if (g_ulSampCnt % 10 == 0) // update display roughly every 66ms
         {
-            clearOLED();
-            displayNumber ++;
-            if (displayNumber == 3)
-            {
-                displayNumber = 0;
-            }
+            displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitiude as percent
         }
 
-        heightAboveGround = groundReference - currentHeight;
-
-        if (displayNumber == 0)
-        {
-           displayAltitudePercent(heightAsPercentage(maxHeight,currentHeight,groundReference)); // displays altitiude as percent
-        }
-        if (displayNumber == 1)
-        {
-            displayAltitude12Bit(heightAboveGround); // displays height at 12bit number
-        }
-
-        SysCtlDelay (SysCtlClockGet() / 150);  // Update display at ~ 2 Hz
 
     }
 }
-

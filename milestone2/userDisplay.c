@@ -99,28 +99,31 @@ displayAltitude12Bit(uint16_t meanVal)
 //
 //*****************************************************************************
 void
-displayAltitudePercent(uint16_t meanVal)
+displayAltitudePercentAndYaw(uint16_t meanVal, uint32_t Angle)
 {
     char string[17];  // 16 characters across the display
 
-    OLEDStringDraw ("   Helicopter", 0, 0);
-    OLEDStringDraw ("  Altitude (%)", 0, 1);
-
+    OLEDStringDraw ("  Altitude  (%) ", 0, 0);
     // Form a new string for the line.  The maximum width specified for the
     //  number field ensures it is displayed right justified.
     usnprintf (string, sizeof(string), "        %2d       ", meanVal);
     // Update line on display.
-    OLEDStringDraw (string, 0, 2);
+    OLEDStringDraw (string, 0, 1);
 
-    if (meanVal == 0)
-    {
-        OLEDStringDraw ("     Landed", 0, 3);
-    }
-    else
-    {
-        OLEDStringDraw ("     Flying", 0, 3);
-    }
+    OLEDStringDraw ("   Angle (deg)  ", 0, 2);
+    // Form a new string for the line.  The maximum width specified for the
+    //  number field ensures it is displayed right justified.
+    usnprintf (string, sizeof(string), "        %2d       ", Angle);
+    // Update line on display.
+    OLEDStringDraw (string, 0, 3);
+
+
+
 
 }
+
+
+
+
 
 

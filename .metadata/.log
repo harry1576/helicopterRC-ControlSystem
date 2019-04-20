@@ -887,3 +887,15 @@ Binding(ALT+E,
 !ENTRY com.ti.ccstudio.debug 1 0 2019-04-20 18:01:56.066
 !MESSAGE DS_ERROR: CORTEX_M4_0: GEL: Encountered a problem loading file: /home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2/Debug/milestone2.out Could not open file
 
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-20 18:30:17.049
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error: Connection with the target was unexpectedly lost.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-20 18:30:17.056
+!MESSAGE DS_ERROR: CORTEX_M4_0: Failed to remove the debug state from the target before disconnecting.  There may still be breakpoint op-codes embedded in program memory.  It is recommended that you reset the emulator before you connect and reload your program before you continue debugging
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-20 22:53:26.046
+!MESSAGE DS_ERROR: CORTEX_M4_0: GEL: Encountered a problem loading file: /home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2/Debug/milestone2.out Could not open file
+

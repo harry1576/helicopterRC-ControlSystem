@@ -22,6 +22,7 @@ helicopterMasterController.obj: ../OrbitOLED/OrbitOLEDInterface.h
 helicopterMasterController.obj: ../buttons4.h
 helicopterMasterController.obj: ../helicopterAltitude.h
 helicopterMasterController.obj: ../userDisplay.h
+helicopterMasterController.obj: ../yawFiniteStateMachine.h
 
 ../helicopterMasterController.c: 
 /home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h: 
@@ -45,3 +46,4 @@ helicopterMasterController.obj: ../userDisplay.h
 ../buttons4.h: 
 ../helicopterAltitude.h: 
 ../userDisplay.h: 
+../yawFiniteStateMachine.h: 
