@@ -1,0 +1,51 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../tm4c123gh6pm.cmd 
+
+C_SRCS += \
+../buttons4.c \
+../circBufT.c \
+../tm4c123gh6pm_startup_ccs.c \
+../uartDemo.c \
+../ustdlib.c 
+
+C_DEPS += \
+./buttons4.d \
+./circBufT.d \
+./tm4c123gh6pm_startup_ccs.d \
+./uartDemo.d \
+./ustdlib.d 
+
+OBJS += \
+./buttons4.obj \
+./circBufT.obj \
+./tm4c123gh6pm_startup_ccs.obj \
+./uartDemo.obj \
+./ustdlib.obj 
+
+OBJS__QUOTED += \
+"buttons4.obj" \
+"circBufT.obj" \
+"tm4c123gh6pm_startup_ccs.obj" \
+"uartDemo.obj" \
+"ustdlib.obj" 
+
+C_DEPS__QUOTED += \
+"buttons4.d" \
+"circBufT.d" \
+"tm4c123gh6pm_startup_ccs.d" \
+"uartDemo.d" \
+"ustdlib.d" 
+
+C_SRCS__QUOTED += \
+"../buttons4.c" \
+"../circBufT.c" \
+"../tm4c123gh6pm_startup_ccs.c" \
+"../uartDemo.c" \
+"../ustdlib.c" 
+
+

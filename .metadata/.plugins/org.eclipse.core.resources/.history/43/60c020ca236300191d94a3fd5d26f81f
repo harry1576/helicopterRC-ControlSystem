@@ -1,0 +1,8 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+USER_OBJS :=
+
+LIBS := -llibc.a -l"/home/harry/Documents/University\ 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2/Tiva/driverlib/ccs/Debug/driverlib.lib"
+

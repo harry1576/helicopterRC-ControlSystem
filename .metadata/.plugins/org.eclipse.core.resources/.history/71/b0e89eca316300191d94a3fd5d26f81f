@@ -1,0 +1,10 @@
+#ifndef USERDISPLAY_H_
+#define USERDISPLAY_H_
+
+
+void initDisplay (void);
+
+void clearOLED(void);
+
+
+#endif /*USERDISPLAY_H_*/
