@@ -1,7 +1,7 @@
 // *******************************************************
 // Thurs PM Group 23
 //
-// userDisplay.c - This file includes all the neccessary
+// userDisplay.c - This file includes all the necessary
 // functions required to use the OLED display on the TIVA
 // board.
 //
@@ -26,49 +26,54 @@
 #include "OrbitOLED/OrbitOLEDInterface.h"
 
 
-
+//*****************************************************************************
+//
+// Initialises the Orbit OLED display
+//
+//*****************************************************************************
 void initDisplay (void)
 {
-    OLEDInitialise ();  // intialise the Orbit OLED display
+
+    OLEDInitialise ();  // Initialise the Orbit OLED display
+
 }
 
+//*****************************************************************************
+//
+// Clears the Orbit OLED display by clearing all the characters.
+//
+//*****************************************************************************
 void clearOLED(void)
 {
-    OLEDStringDraw ("                ", 0, 0);
-    OLEDStringDraw ("                ", 0, 1);
-    OLEDStringDraw ("                ", 0, 2);
-    OLEDStringDraw ("                ", 0, 3);
+    OLEDStringDraw ("                ", 0, 0);// clear top row
+    OLEDStringDraw ("                ", 0, 1);// clear second row
+    OLEDStringDraw ("                ", 0, 2);// clear third row
+    OLEDStringDraw ("                ", 0, 3);// clear bottom row
 }
 
 
-
-
 //*****************************************************************************
 //
-// Function to display the height as percentage (10-bit value, note).
+// Function to display the height as percentage and angle of helicopter in
+// degrees.
 //
 //*****************************************************************************
-void
-displayAltitudePercentAndYaw(uint16_t meanVal, uint32_t Angle)
+void displayAltitudePercentAndYaw(uint16_t meanVal, uint32_t Angle)
 {
     char string[17];  // 16 characters across the display
 
     OLEDStringDraw ("  Altitude  (%) ", 0, 0);
-    // Form a new string for the line.  The maximum width specified for the
+
+    usnprintf (string, sizeof(string), "        %2d       ", meanVal); // Form a
+    //new string for the line.  The maximum width specified for the
     //  number field ensures it is displayed right justified.
-    usnprintf (string, sizeof(string), "        %2d       ", meanVal);
-    // Update line on display.
-    OLEDStringDraw (string, 0, 1);
+    OLEDStringDraw (string, 0, 1);    // Update line on display.
+
 
     OLEDStringDraw ("   Angle (deg)  ", 0, 2);
-    // Form a new string for the line.  The maximum width specified for the
-    //  number field ensures it is displayed right justified.
-    usnprintf (string, sizeof(string), "        %2d       ", Angle);
-    // Update line on display.
+
+    usnprintf (string, sizeof(string), "        %2d       ", Angle);   // Update line on display.
     OLEDStringDraw (string, 0, 3);
-
-
-
 
 }
 

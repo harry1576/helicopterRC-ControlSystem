@@ -2,7 +2,7 @@
 // Thurs PM Group 23
 
 // yawFiniteStateMachine.c - Program that utilises a FSM to calculate the yaw
-// angle of the helicopter.
+// angle of the helicopter. It uses quadrature decoding.
 //
 // Author:  Harry Dobbs, Sam Purdy, Sam Dunshea
 // Last modified:   25.4.2019
@@ -25,18 +25,29 @@
 #include "OrbitOLED/OrbitOLEDInterface.h"
 #include "buttons4.h"
 
+// Variables used to hold the current and previous states. This is required for
+// the FSM to function correctly.
 
-uint8_t currentState = 1;
-uint8_t previousState = 0;
-extern volatile int32_t currentAngle = 0;
+uint8_t currentState;
+uint8_t previousState;
+
+// Variable that is used to hold the current angle of the helicopter.
+volatile int32_t currentAngle = 0;
 
 
-
+//*****************************************************************************
+//
+// The yaw FSM is able to work out which direction the helicopter is rotating
+// in. By using this info it can update the current angle of the helicopter.
+//
+//*****************************************************************************
 void yawFSM(void)
 {
 
     uint32_t ChannelA = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
     uint32_t ChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
+
+    // Works out the current state of the helicopter
 
     if (ChannelA == 0 && ChannelB == 0)
     {
@@ -55,6 +66,8 @@ void yawFSM(void)
         currentState = 3;
     }
 
+    // works out which way the disc is rotating in order
+    // to know which way the helicopter is rotating.
     switch(previousState) {
 
           case 0 :
@@ -106,7 +119,12 @@ void yawFSM(void)
 }
 
 
-
+//*****************************************************************************
+//
+// Initialises the yaw FSM. An interrupt is setup to be triggered when either
+// GPIO input has a rising or falling edge.
+//
+//*****************************************************************************
 void yawFSMInit(void)
 {
 
@@ -121,10 +139,11 @@ void yawFSMInit(void)
 
     GPIOIntEnable (GPIO_PORTB_BASE, GPIO_INT_PIN_0 | GPIO_INT_PIN_1);
 
-
     uint32_t InitChannelA = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
     uint32_t InitChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
 
+
+    // Calculate the initial state of the machine
     if (InitChannelA == 0 && InitChannelB == 0)
     {
         previousState = 0;

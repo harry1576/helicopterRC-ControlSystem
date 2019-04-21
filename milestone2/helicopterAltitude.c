@@ -1,10 +1,14 @@
 //*****************************************************************************
 // Thurs PM Group 23
 //
-// helicopterAltitude.c - Program that utilises a FSM to calculate the yaw
-// angle of the helicopter.
+// helicopterAltitude.c - File that includes the functions to set up an
+// interrupt that receives analogue values based on helicopter altitude.
+// The interrupt stores the values inside a circular buffer. This code is
+// based on code supplied in the UC ENCE361 Lab4. The code inside Lab4
+// was written by P.J. Bones. This code has minor changes from P.J. Bones
+// code such as receiving the data from GPIO rather than the TIVA potentiometer.
 //
-// Author:  Harry Dobbs, Sam Purdy, Sam Dunshea
+// Authors:  Harry Dobbs, Sam Purdy, Sam Dunshea
 // Last modified:   25.4.2019
 //
 //*****************************************************************************
@@ -28,13 +32,14 @@
 //*****************************************************************************
 // Global variables
 //*****************************************************************************
-circBuf_t g_inBuffer;        // Buffer of size BUF_SIZE integers (sample values)
-uint32_t g_ulSampCnt;    // Counter for the interrupts
-
-
+circBuf_t g_inBuffer; // Buffer of size BUF_SIZE integers (sample values)
+uint32_t g_ulSampCnt; // Counter for the interrupts
 
 //*****************************************************************************
-// Initialisation functions for the clock (incl. SysTick), ADC, display
+//
+// The handler for the ADC conversion interrupt.
+// Writes to the circular buffer.
+//
 //*****************************************************************************
 void ADCIntHandler(void)
 {
@@ -45,23 +50,20 @@ void ADCIntHandler(void)
     ADCIntClear(ADC0_BASE, 3); // Cleanup - clear the interrupt
 }
 
-
-
-
 //*****************************************************************************
-// Initialisation functions for the clock (incl. SysTick), ADC, display
+//
+// Initialisation of the ADC interrupt
+//
 //*****************************************************************************
 void initADC (void)
 {
-    //
-    // The ADC0 peripheral must be enabled for configuration and use.
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);     // The ADC0 peripheral must be enabled for configuration and use.
 
     // Enable sample sequence 3 with a processor signal trigger.  Sequence 3
     // will do a single sample when the processor sends a signal to start the
-    // conversion.
+    // conversion. The trigger is configured in "helicopterMasterController"
+    // and is generated using the system tick.
     ADCSequenceConfigure(ADC0_BASE, 3, ADC_TRIGGER_PROCESSOR, 0);
-
     //
     // Configure step 0 on sequence 3.  Sample channel 0 (ADC_CTL_CH0) in
     // single-ended mode (default) and configure the interrupt flag
@@ -73,18 +75,9 @@ void initADC (void)
     // on the ADC sequences and steps, refer to the LM3S1968 datasheet.
     ADCSequenceStepConfigure(ADC0_BASE, 3, 0, ADC_CTL_CH9 | ADC_CTL_IE | ADC_CTL_END);
 
-    //
-    // Since sample sequence 3 is now configured, it must be enabled.
-    ADCSequenceEnable(ADC0_BASE, 3);
+    ADCSequenceEnable(ADC0_BASE, 3); // Since sample sequence 3 is now configured, it must be enabled.
 
-    //
-    // Register the interrupt handler
-    ADCIntRegister (ADC0_BASE, 3, ADCIntHandler);
+    ADCIntRegister (ADC0_BASE, 3, ADCIntHandler); // Register the interrupt handler
 
-    //
-    // Enable interrupts for ADC0 sequence 3 (clears any outstanding interrupts)
-    ADCIntEnable(ADC0_BASE, 3);
+    ADCIntEnable(ADC0_BASE, 3); // Enable interrupts for ADC0 sequence 3 (clears any outstanding interrupts)
 }
-
-
-

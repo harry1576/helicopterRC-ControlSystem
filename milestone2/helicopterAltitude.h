@@ -1,33 +1,49 @@
 #ifndef HELICOPTER_ALTITUDE_H_
 #define HELICOPTER_ALTITUDE_H_
 
-
 // *******************************************************
-// 
-// circBufT.h
+// Thurs PM Group 23
 //
-// Support for a circular buffer of uint32_t values on the 
-//  Tiva processor.
-// P.J. Bones UCECE
-// Last modified:  7.3.2017
+// helicopterAltitude.h
+//
+// Used to store values from the altitude sensor inside a
+// circular buffer. An interrupt is responsible for writing
+// these values to the buffer. This file includes the
+// functions to setup the interrupt and the interrupt
+// functionality. This code is based on code supplied in
+// the UC ENCE361 Lab4. The code inside Lab4 was written
+// by P.J. Bones.
+//
+//  Authors:  Harry Dobbs, Sam Purdy, Sam Dunshea
+//  Last modified: 25.4.2019
 // 
 // *******************************************************
 
-extern circBuf_t g_inBuffer;
-extern uint32_t g_ulSampCnt;
+// *******************************************************
+// Variables that can be accessed by other files.
+// *******************************************************
 
+extern circBuf_t g_inBuffer; // Buffer of size BUF_SIZE integers (sample values)
+extern uint32_t g_ulSampCnt; // Counter for the interrupts
 
+//*****************************************************************************
+//
+// @Description The handler for the ADC conversion interrupt. Gathers value
+// from ADC and writes it to the circular buffer.
+// @Param void
+// @Return nothing
+//
+//*****************************************************************************
 void ADCIntHandler(void);
 
 //*****************************************************************************
-// Initialisation functions for the clock (incl. SysTick), ADC, display
+//
+// @Description The initialiser for the ADC conversion interrupt. Sets up
+// the interrupt to be called from the processor trigger.
+// @Param void
+// @Return nothing
+//
 //*****************************************************************************
-
-
 void initADC (void);
-
-
-
-
 
 #endif /* HELICOPTER_ALTITUDE_H_ */
