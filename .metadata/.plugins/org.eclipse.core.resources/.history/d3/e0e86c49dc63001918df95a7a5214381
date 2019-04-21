@@ -1,0 +1,45 @@
+#ifndef HELICOPTER_ALTITUDE_H_
+#define HELICOPTER_ALTITUDE_H_
+
+// *******************************************************
+// Thurs PM Group 23
+//
+// helicopterAltitude.h
+//
+// Used to store values from the altitude sensor inside a
+// circular buffer. An interrupt is responsible for writing
+// these values to the buffer. This file includes the
+// functions to setup the interrupt and the interrupt
+// functionality. This code is based on code supplied in
+// the UC ENCE361 Lab4. The code inside Lab4 was written
+// by P.J. Bones.
+//
+//  Authors:  Harry Dobbs, Sam Purdy, Sam Dunshea
+//  Last modified: 25.4.2019
+// 
+// *******************************************************
+
+// *******************************************************
+// Variables that can be accessed by other files.
+// *******************************************************
+extern circBuf_t g_inBuffer; // Buffer of size BUF_SIZE integers (sample values)
+extern uint32_t g_ulSampCnt; // Counter for the interrupts
+
+
+//*****************************************************************************
+//
+// The handler for the ADC conversion interrupt. Gathers value from inside
+// ADC and writes to circular buffer.
+//
+//*****************************************************************************
+void ADCIntHandler(void);
+
+//*****************************************************************************
+//
+// The initialiser for the ADC conversion interrupt. Sets up the interrupt
+// to be called from the processor trigger.
+//
+//*****************************************************************************
+void initADC (void);
+
+#endif /* HELICOPTER_ALTITUDE_H_ */

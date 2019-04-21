@@ -8,11 +8,14 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./ADCdemo1.obj" \
 "./buttons4.obj" \
 "./circBufT.obj" \
+"./helicopterAltitude.obj" \
+"./helicopterMasterController.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
+"./userDisplay.obj" \
 "./ustdlib.obj" \
+"./yawFiniteStateMachine.obj" \
 "./OrbitOLED/OrbitOLEDInterface.obj" \
 "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" \
 "./OrbitOLED/lib_OrbitOled/FillPat.obj" \
@@ -20,10 +23,45 @@ ORDERED_OBJS += \
 "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" \
 "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" \
 "./OrbitOLED/lib_OrbitOled/delay.obj" \
+"./Tiva/driverlib/adc.obj" \
+"./Tiva/driverlib/aes.obj" \
+"./Tiva/driverlib/can.obj" \
+"./Tiva/driverlib/comp.obj" \
+"./Tiva/driverlib/cpu.obj" \
+"./Tiva/driverlib/crc.obj" \
+"./Tiva/driverlib/des.obj" \
+"./Tiva/driverlib/eeprom.obj" \
+"./Tiva/driverlib/emac.obj" \
+"./Tiva/driverlib/epi.obj" \
+"./Tiva/driverlib/epi_workaround_ccs.obj" \
+"./Tiva/driverlib/flash.obj" \
+"./Tiva/driverlib/fpu.obj" \
+"./Tiva/driverlib/gpio.obj" \
+"./Tiva/driverlib/hibernate.obj" \
+"./Tiva/driverlib/i2c.obj" \
+"./Tiva/driverlib/interrupt.obj" \
+"./Tiva/driverlib/lcd.obj" \
+"./Tiva/driverlib/mpu.obj" \
+"./Tiva/driverlib/onewire.obj" \
+"./Tiva/driverlib/pwm.obj" \
+"./Tiva/driverlib/qei.obj" \
+"./Tiva/driverlib/shamd5.obj" \
+"./Tiva/driverlib/ssi.obj" \
+"./Tiva/driverlib/sw_crc.obj" \
+"./Tiva/driverlib/sysctl.obj" \
+"./Tiva/driverlib/sysexc.obj" \
+"./Tiva/driverlib/systick.obj" \
+"./Tiva/driverlib/timer.obj" \
+"./Tiva/driverlib/uart.obj" \
+"./Tiva/driverlib/udma.obj" \
+"./Tiva/driverlib/usb.obj" \
+"./Tiva/driverlib/watchdog.obj" \
 "../tm4c123gh6pm.cmd" \
+"../Tiva/driverlib/ccs/Debug/driverlib.lib" \
+"../Tiva/driverlib/rvmdk/driverlib.lib" \
 $(GEN_CMDS__FLAG) \
--llibc.a \
 -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" \
+-llibc.a \
 
 -include ../makefile.init
 
@@ -35,9 +73,19 @@ RMDIR := rm -rf
 -include subdir_vars.mk
 -include OrbitOLED/subdir_vars.mk
 -include OrbitOLED/lib_OrbitOled/subdir_vars.mk
+-include Tiva/driverlib/subdir_vars.mk
+-include Tiva/driverlib/ccs/Debug/subdir_vars.mk
+-include Tiva/driverlib/ewarm/Exe/subdir_vars.mk
+-include Tiva/driverlib/gcc/subdir_vars.mk
+-include Tiva/driverlib/rvmdk/subdir_vars.mk
 -include subdir_rules.mk
 -include OrbitOLED/subdir_rules.mk
 -include OrbitOLED/lib_OrbitOled/subdir_rules.mk
+-include Tiva/driverlib/subdir_rules.mk
+-include Tiva/driverlib/ccs/Debug/subdir_rules.mk
+-include Tiva/driverlib/ewarm/Exe/subdir_rules.mk
+-include Tiva/driverlib/gcc/subdir_rules.mk
+-include Tiva/driverlib/rvmdk/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -134,42 +182,45 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-firstmilestonev1.out \
+milestone2.out \
 
 EXE_OUTPUTS__QUOTED += \
-"firstmilestonev1.out" \
+"milestone2.out" \
 
 BIN_OUTPUTS += \
-firstmilestonev1.hex \
+milestone2.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"firstmilestonev1.hex" \
+"milestone2.hex" \
 
 
 # All Target
-all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "firstmilestonev1.out"
+all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS)
+	@$(MAKE) --no-print-directory -Onone "milestone2.out"
 
 # Tool invocations
-firstmilestonev1.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+milestone2.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"firstmilestonev1.map" --heap_size=512 --stack_size=512 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="firstmilestonev1_linkInfo.xml" --rom_model -o "firstmilestonev1.out" $(ORDERED_OBJS)
+	"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" $(ORDERED_OBJS) $(A_SRCS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-firstmilestonev1.hex: $(EXE_OUTPUTS)
+milestone2.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: ARM Hex Utility'
-	"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armhex"  -o "firstmilestonev1.hex" $(EXE_OUTPUTS__QUOTED)
+	"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armhex"  -o "milestone2.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "ADCdemo1.obj" "buttons4.obj" "circBufT.obj" "tm4c123gh6pm_startup_ccs.obj" "ustdlib.obj" "OrbitOLED/OrbitOLEDInterface.obj" "OrbitOLED/lib_OrbitOled/ChrFont0.obj" "OrbitOLED/lib_OrbitOled/FillPat.obj" "OrbitOLED/lib_OrbitOled/OrbitOled.obj" "OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "OrbitOLED/lib_OrbitOled/delay.obj" 
-	-$(RM) "ADCdemo1.d" "buttons4.d" "circBufT.d" "tm4c123gh6pm_startup_ccs.d" "ustdlib.d" "OrbitOLED/OrbitOLEDInterface.d" "OrbitOLED/lib_OrbitOled/ChrFont0.d" "OrbitOLED/lib_OrbitOled/FillPat.d" "OrbitOLED/lib_OrbitOled/OrbitOled.d" "OrbitOLED/lib_OrbitOled/OrbitOledChar.d" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.d" "OrbitOLED/lib_OrbitOled/delay.d" 
+	-$(RM) "buttons4.obj" "circBufT.obj" "helicopterAltitude.obj" "helicopterMasterController.obj" "tm4c123gh6pm_startup_ccs.obj" "userDisplay.obj" "ustdlib.obj" "yawFiniteStateMachine.obj" "OrbitOLED/OrbitOLEDInterface.obj" "OrbitOLED/lib_OrbitOled/ChrFont0.obj" "OrbitOLED/lib_OrbitOled/FillPat.obj" "OrbitOLED/lib_OrbitOled/OrbitOled.obj" "OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "OrbitOLED/lib_OrbitOled/delay.obj" "Tiva/driverlib/adc.obj" "Tiva/driverlib/aes.obj" "Tiva/driverlib/can.obj" "Tiva/driverlib/comp.obj" "Tiva/driverlib/cpu.obj" "Tiva/driverlib/crc.obj" "Tiva/driverlib/des.obj" "Tiva/driverlib/eeprom.obj" "Tiva/driverlib/emac.obj" "Tiva/driverlib/epi.obj" "Tiva/driverlib/epi_workaround_ccs.obj" "Tiva/driverlib/flash.obj" "Tiva/driverlib/fpu.obj" "Tiva/driverlib/gpio.obj" "Tiva/driverlib/hibernate.obj" "Tiva/driverlib/i2c.obj" "Tiva/driverlib/interrupt.obj" "Tiva/driverlib/lcd.obj" "Tiva/driverlib/mpu.obj" "Tiva/driverlib/onewire.obj" "Tiva/driverlib/pwm.obj" 
+	-$(RM) "Tiva/driverlib/qei.obj" "Tiva/driverlib/shamd5.obj" "Tiva/driverlib/ssi.obj" "Tiva/driverlib/sw_crc.obj" "Tiva/driverlib/sysctl.obj" "Tiva/driverlib/sysexc.obj" "Tiva/driverlib/systick.obj" "Tiva/driverlib/timer.obj" "Tiva/driverlib/uart.obj" "Tiva/driverlib/udma.obj" "Tiva/driverlib/usb.obj" "Tiva/driverlib/watchdog.obj" 
+	-$(RM) "buttons4.d" "circBufT.d" "helicopterAltitude.d" "helicopterMasterController.d" "tm4c123gh6pm_startup_ccs.d" "userDisplay.d" "ustdlib.d" "yawFiniteStateMachine.d" "OrbitOLED/OrbitOLEDInterface.d" "OrbitOLED/lib_OrbitOled/ChrFont0.d" "OrbitOLED/lib_OrbitOled/FillPat.d" "OrbitOLED/lib_OrbitOled/OrbitOled.d" "OrbitOLED/lib_OrbitOled/OrbitOledChar.d" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.d" "OrbitOLED/lib_OrbitOled/delay.d" "Tiva/driverlib/adc.d" "Tiva/driverlib/aes.d" "Tiva/driverlib/can.d" "Tiva/driverlib/comp.d" "Tiva/driverlib/cpu.d" "Tiva/driverlib/crc.d" "Tiva/driverlib/des.d" "Tiva/driverlib/eeprom.d" "Tiva/driverlib/emac.d" "Tiva/driverlib/epi.d" "Tiva/driverlib/flash.d" "Tiva/driverlib/fpu.d" "Tiva/driverlib/gpio.d" "Tiva/driverlib/hibernate.d" "Tiva/driverlib/i2c.d" "Tiva/driverlib/interrupt.d" "Tiva/driverlib/lcd.d" "Tiva/driverlib/mpu.d" "Tiva/driverlib/onewire.d" "Tiva/driverlib/pwm.d" "Tiva/driverlib/qei.d" "Tiva/driverlib/shamd5.d" "Tiva/driverlib/ssi.d" "Tiva/driverlib/sw_crc.d" 
+	-$(RM) "Tiva/driverlib/sysctl.d" "Tiva/driverlib/sysexc.d" "Tiva/driverlib/systick.d" "Tiva/driverlib/timer.d" "Tiva/driverlib/uart.d" "Tiva/driverlib/udma.d" "Tiva/driverlib/usb.d" "Tiva/driverlib/watchdog.d" 
+	-$(RM) "Tiva/driverlib/epi_workaround_ccs.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

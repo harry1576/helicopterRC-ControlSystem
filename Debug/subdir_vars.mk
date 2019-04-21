@@ -7,45 +7,63 @@ CMD_SRCS += \
 ../tm4c123gh6pm.cmd 
 
 C_SRCS += \
-../ADCdemo1.c \
 ../buttons4.c \
 ../circBufT.c \
+../helicopterAltitude.c \
+../helicopterMasterController.c \
 ../tm4c123gh6pm_startup_ccs.c \
-../ustdlib.c 
+../userDisplay.c \
+../ustdlib.c \
+../yawFiniteStateMachine.c 
 
 C_DEPS += \
-./ADCdemo1.d \
 ./buttons4.d \
 ./circBufT.d \
+./helicopterAltitude.d \
+./helicopterMasterController.d \
 ./tm4c123gh6pm_startup_ccs.d \
-./ustdlib.d 
+./userDisplay.d \
+./ustdlib.d \
+./yawFiniteStateMachine.d 
 
 OBJS += \
-./ADCdemo1.obj \
 ./buttons4.obj \
 ./circBufT.obj \
+./helicopterAltitude.obj \
+./helicopterMasterController.obj \
 ./tm4c123gh6pm_startup_ccs.obj \
-./ustdlib.obj 
+./userDisplay.obj \
+./ustdlib.obj \
+./yawFiniteStateMachine.obj 
 
 OBJS__QUOTED += \
-"ADCdemo1.obj" \
 "buttons4.obj" \
 "circBufT.obj" \
+"helicopterAltitude.obj" \
+"helicopterMasterController.obj" \
 "tm4c123gh6pm_startup_ccs.obj" \
-"ustdlib.obj" 
+"userDisplay.obj" \
+"ustdlib.obj" \
+"yawFiniteStateMachine.obj" 
 
 C_DEPS__QUOTED += \
-"ADCdemo1.d" \
 "buttons4.d" \
 "circBufT.d" \
+"helicopterAltitude.d" \
+"helicopterMasterController.d" \
 "tm4c123gh6pm_startup_ccs.d" \
-"ustdlib.d" 
+"userDisplay.d" \
+"ustdlib.d" \
+"yawFiniteStateMachine.d" 
 
 C_SRCS__QUOTED += \
-"../ADCdemo1.c" \
 "../buttons4.c" \
 "../circBufT.c" \
+"../helicopterAltitude.c" \
+"../helicopterMasterController.c" \
 "../tm4c123gh6pm_startup_ccs.c" \
-"../ustdlib.c" 
+"../userDisplay.c" \
+"../ustdlib.c" \
+"../yawFiniteStateMachine.c" 
 
 

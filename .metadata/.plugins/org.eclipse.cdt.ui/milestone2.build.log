@@ -3,6 +3,26 @@
 
 /home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
  
-gmake[1]: 'milestone2.out' is up to date.
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+Finished building: "../userDisplay.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone2" --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone2_linkInfo.xml" --rom_model -o "milestone2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "./Tiva/driverlib/adc.obj" "./Tiva/driverlib/aes.obj" "./Tiva/driverlib/can.obj" "./Tiva/driverlib/comp.obj" "./Tiva/driverlib/cpu.obj" "./Tiva/driverlib/crc.obj" "./Tiva/driverlib/des.obj" "./Tiva/driverlib/eeprom.obj" "./Tiva/driverlib/emac.obj" "./Tiva/driverlib/epi.obj" "./Tiva/driverlib/epi_workaround_ccs.obj" "./Tiva/driverlib/flash.obj" "./Tiva/driverlib/fpu.obj" "./Tiva/driverlib/gpio.obj" "./Tiva/driverlib/hibernate.obj" "./Tiva/driverlib/i2c.obj" "./Tiva/driverlib/interrupt.obj" "./Tiva/driverlib/lcd.obj" "./Tiva/driverlib/mpu.obj" "./Tiva/driverlib/onewire.obj" "./Tiva/driverlib/pwm.obj" "./Tiva/driverlib/qei.obj" "./Tiva/driverlib/shamd5.obj" "./Tiva/driverlib/ssi.obj" "./Tiva/driverlib/sw_crc.obj" "./Tiva/driverlib/sysctl.obj" "./Tiva/driverlib/sysexc.obj" "./Tiva/driverlib/systick.obj" "./Tiva/driverlib/timer.obj" "./Tiva/driverlib/uart.obj" "./Tiva/driverlib/udma.obj" "./Tiva/driverlib/usb.obj" "./Tiva/driverlib/watchdog.obj" "../tm4c123gh6pm.cmd" "../Tiva/driverlib/ccs/Debug/driverlib.lib" "../Tiva/driverlib/rvmdk/driverlib.lib"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -llibc.a   ../Tiva/driverlib/ewarm/Exe/driverlib.a  ../Tiva/driverlib/gcc/libdriver.a 
+<Linking>
+Finished building target: "milestone2.out"
+ 
 
 **** Build Finished ****

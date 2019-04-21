@@ -114,4 +114,9 @@ SUBDIRS := \
 . \
 OrbitOLED \
 OrbitOLED/lib_OrbitOled \
+Tiva/driverlib \
+Tiva/driverlib/ccs/Debug \
+Tiva/driverlib/ewarm/Exe \
+Tiva/driverlib/gcc \
+Tiva/driverlib/rvmdk \
 
