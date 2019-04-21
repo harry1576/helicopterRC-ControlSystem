@@ -17,8 +17,7 @@ extern circBuf_t g_inBuffer;
 extern uint32_t g_ulSampCnt;
 
 
-void
-ADCIntHandler(void);
+void ADCIntHandler(void);
 
 //*****************************************************************************
 // Initialisation functions for the clock (incl. SysTick), ADC, display

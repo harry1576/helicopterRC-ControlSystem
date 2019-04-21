@@ -1,5 +1,6 @@
 //*****************************************************************************
-//
+// Thurs PM Group 23
+
 // yawFiniteStateMachine.c - Program that utilises a FSM to calculate the yaw
 // angle of the helicopter.
 //
@@ -27,7 +28,7 @@
 
 uint8_t currentState = 1;
 uint8_t previousState = 0;
-extern volatile uint32_t currentAngle = 0;
+extern volatile int32_t currentAngle = 0;
 
 
 
@@ -59,45 +60,46 @@ void yawFSM(void)
           case 0 :
              if(currentState == 1)
              {
-                 currentAngle --;
+                 currentAngle -= 360/448;
              }
              else
              {
-                 currentAngle ++;
+                 currentAngle += 360/448 ;
              }
              break;
           case 1 :
               if(currentState == 2)
               {
-                  currentAngle --;
+                  currentAngle -=  360/448;
               }
               else
               {
-                  currentAngle ++;
+                  currentAngle +=  360/448;
               }
               break;
           case 2 :
               if(currentState == 3)
               {
-                  currentAngle --;
+                  currentAngle -=  360/448;
               }
               else
               {
-                  currentAngle ++;
+                  currentAngle += 360/448;
               }
               break;
           case 3 :
               if(currentState == 0)
               {
-                  currentAngle --;
+                  currentAngle -=  360/448;
               }
               else
               {
-                  currentAngle ++;
+                  currentAngle +=  360/448;
               }
               break;
 
     }
+    previousState = currentState;
 
     GPIOIntClear(GPIO_PORTB_BASE, (GPIO_PIN_0 | GPIO_PIN_1));
 

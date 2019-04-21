@@ -1,6 +1,7 @@
 //*****************************************************************************
+// Thurs PM Group 23
 //
-// yawFiniteStateMachine.c - Program that utilises a FSM to calculate the yaw
+// helicopterAltitude.c - Program that utilises a FSM to calculate the yaw
 // angle of the helicopter.
 //
 // Author:  Harry Dobbs, Sam Purdy, Sam Dunshea
@@ -32,31 +33,25 @@ uint32_t g_ulSampCnt;    // Counter for the interrupts
 
 
 
-
-void
-ADCIntHandler(void)
+//*****************************************************************************
+// Initialisation functions for the clock (incl. SysTick), ADC, display
+//*****************************************************************************
+void ADCIntHandler(void)
 {
     uint32_t ulValue;
 
-    //
-    // Get the single sample from ADC0.  ADC_BASE is defined in
-    // inc/hw_memmap.h
-    ADCSequenceDataGet(ADC0_BASE, 3, &ulValue);
-    //
-    // Place it in the circular buffer (advancing write index)
-    writeCircBuf (&g_inBuffer, ulValue);
-    //
-    // Clean up, clearing the interrupt
-    ADCIntClear(ADC0_BASE, 3);
+    ADCSequenceDataGet(ADC0_BASE, 3, &ulValue); // Get sample from ADC0
+    writeCircBuf (&g_inBuffer, ulValue); // Write the sample to circular buffer
+    ADCIntClear(ADC0_BASE, 3); // Cleanup - clear the interrupt
 }
+
+
+
 
 //*****************************************************************************
 // Initialisation functions for the clock (incl. SysTick), ADC, display
 //*****************************************************************************
-
-
-void
-initADC (void)
+void initADC (void)
 {
     //
     // The ADC0 peripheral must be enabled for configuration and use.
@@ -76,8 +71,7 @@ initADC (void)
     // sequence 0 has 8 programmable steps.  Since we are only doing a single
     // conversion using sequence 3 we will only configure step 0.  For more
     // on the ADC sequences and steps, refer to the LM3S1968 datasheet.
-    ADCSequenceStepConfigure(ADC0_BASE, 3, 0, ADC_CTL_CH9 | ADC_CTL_IE |
-                             ADC_CTL_END);
+    ADCSequenceStepConfigure(ADC0_BASE, 3, 0, ADC_CTL_CH9 | ADC_CTL_IE | ADC_CTL_END);
 
     //
     // Since sample sequence 3 is now configured, it must be enabled.

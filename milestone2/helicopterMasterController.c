@@ -1,9 +1,13 @@
 //*****************************************************************************
-//
+// Thurs PM Group 23
+
 // helicopterMasterController.c - The program that controls the main aspects of
-// the helicopter by including other relevant code.
+// the helicopter. It utilizes various different files and gives an overview
+// of the general functioning. Some of the various files have been authored
+// by P.J. Bones  UCECE. Theses files include acknowledgement that he is
+// the creator.
 //
-// Author:  Harry Dobbs, Sam Purdy, Sam Dunshea
+// Authors:  Harry Dobbs, Sam Purdy, Sam Dunshea
 // Last modified:   25.4.2019
 //
 //*****************************************************************************
@@ -42,8 +46,7 @@
 //*****************************************************************************
 void SysTickIntHandler(void)
 {
-    // Initiate a conversion
-    ADCProcessorTrigger(ADC0_BASE, 3);
+    ADCProcessorTrigger(ADC0_BASE, 3);   // Initiate a conversion
     g_ulSampCnt++;
 }
 
@@ -88,23 +91,24 @@ int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
 
 int main(void)
 {
-    uint16_t i;
-    int16_t currentHeight;
-    int16_t groundReference;
-    int16_t maxHeight;
-    int32_t sum;
+    uint8_t i; // Variable used in for loop to cycle through buffer
+
+    int16_t groundReference = 0; // Initalises the ground reference at the maximum height. Guaranteeing the first ground reading will be below this point.
+    int16_t currentHeight; // variable to store the current helicopter height.
+    int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
+
+    int32_t sum; // The summation of the data read from the buffer
+
     uint8_t butState;
+
     initClock ();
     initCircBuf (&g_inBuffer, BUF_SIZE);
     initADC ();
     initDisplay ();
     initButtons();
+    yawFSMInit();
 
-
-    // Enable interrupts to the processor.
-    IntMasterEnable();
-
-    groundReference = 0;
+    IntMasterEnable();     // Enable interrupts to the processor.
 
     while (1)
     {
@@ -126,7 +130,7 @@ int main(void)
         }
 
 
-        if (g_ulSampCnt % 10 == 0) // update display roughly every 66ms
+        if (g_ulSampCnt % 32 == 0) // update display every 20ms
         {
             displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitiude as percent
         }
