@@ -131,10 +131,10 @@ checkButton (uint8_t butName)
 	{
 		but_flag[butName] = false;
 		if (but_state[butName] == but_normal[butName])
-			return RELEASED;
+			return 0;
 		else
-			return PUSHED;
+			return 1;
 	}
-	return NO_CHANGE;
+	return 2;
 }
 
