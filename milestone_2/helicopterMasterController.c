@@ -93,7 +93,7 @@ void initClock (void)
 int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
 {
     int16_t percentage;
-    percentage = (current *100  - min *100)/(max-min);
+    percentage = ((current - min) *100 + ((max-min)/2))/(max-min);
     if(percentage < 0)
     {
         percentage = 0;
@@ -153,7 +153,7 @@ int main(void)
         if (groundReference == 0 || butState == PUSHED) // set ground reference on first loop or when button is pushed
         {
            groundReference = currentHeight;
-           maxHeight = groundReference - (4905*(0.8/3)); // Calculate maximum height as we know maximum height is 0.8V less than ground.
+           maxHeight = groundReference - (4905*(0.8/3)) + 0.5; // Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
 
