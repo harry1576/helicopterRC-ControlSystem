@@ -45,7 +45,7 @@ void yawFSM(void)
 {
 
     uint32_t ChannelA = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
-    uint32_t ChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
+    uint32_t ChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_1);
 
     // Works out the current state of the helicopter
 
@@ -140,7 +140,7 @@ void yawFSMInit(void)
     GPIOIntEnable (GPIO_PORTB_BASE, GPIO_INT_PIN_0 | GPIO_INT_PIN_1);
 
     uint32_t InitChannelA = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
-    uint32_t InitChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
+    uint32_t InitChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_1);
 
 
     // Calculate the initial state of the machine
