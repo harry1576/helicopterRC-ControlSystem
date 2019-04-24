@@ -71,6 +71,9 @@ void initClock (void)
     // set as a function of the system clock.
     SysTickPeriodSet(SysCtlClockGet() / SAMPLE_RATE_HZ);
 
+    // SYSCTL_USE_PPL -> OSCILLATOR??
+
+
     SysTickIntRegister(SysTickIntHandler); // Register the interrupt handler
 
     // Enable interrupt and device
