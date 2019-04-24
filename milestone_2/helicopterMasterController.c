@@ -9,8 +9,8 @@
 // this file as it is the main file. Therefore additional commenting has been
 // added that would usually be found in the header file.
 //
-// Authors:  Harry Dobbs, Sam Purdy, Sam Dunshea
-// Last modified:   25.4.2019
+// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea
+// Last modified: 25.4.2019
 //
 //*****************************************************************************
 

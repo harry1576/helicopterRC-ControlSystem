@@ -5,8 +5,8 @@
 // functions required to use the OLED display on the TIVA
 // board.
 //
-// Authors:  Harry Dobbs, Sam Purdy, Sam Dunshea
-// Last modified:   25.4.2019
+// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea
+// Last modified: 25.4.2019
 // 
 // *******************************************************
 

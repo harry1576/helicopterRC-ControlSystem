@@ -14,7 +14,7 @@
 // the UC ENCE361 Lab4. The code inside Lab4 was written
 // by P.J. Bones.
 //
-//  Authors:  Harry Dobbs, Sam Purdy, Sam Dunshea
+//  Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea
 //  Last modified: 25.4.2019
 // 
 // *******************************************************

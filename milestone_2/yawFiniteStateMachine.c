@@ -4,8 +4,8 @@
 // yawFiniteStateMachine.c - Program that utilises a FSM to calculate the yaw
 // angle of the helicopter. It uses quadrature decoding.
 //
-// Author:  Harry Dobbs, Sam Purdy, Sam Dunshea
-// Last modified:   25.4.2019
+// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea
+// Last modified: 25.4.2019
 //
 //*****************************************************************************
 
@@ -31,6 +31,11 @@
 uint8_t currentState;
 uint8_t previousState;
 
+// Variables to hold the values of the two digital sensors, focused on the
+// rotor disc
+uint32_t ChannelA;
+uint32_t ChannelB;
+
 // Variable that is used to hold the current angle of the helicopter.
 volatile int32_t currentAngle = 0;
 
@@ -44,8 +49,8 @@ volatile int32_t currentAngle = 0;
 void yawFSM(void)
 {
 
-    uint32_t ChannelA = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
-    uint32_t ChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_1);
+    ChannelA = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
+    ChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_1);
 
     // Works out the current state of the helicopter
 
