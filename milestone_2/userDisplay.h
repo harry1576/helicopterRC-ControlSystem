@@ -8,7 +8,7 @@
 // includes functions to clear the display aswell as to
 // display the yaw angle and altitude.
 //
-// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea
+// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
 // Last modified: 25.4.2019
 //
 // *******************************************************

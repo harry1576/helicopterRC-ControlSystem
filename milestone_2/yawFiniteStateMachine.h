@@ -8,7 +8,7 @@
 // yaw angle of the helicopter by using quadrapture
 // decoding and the inputs from two GPIOs.
 //
-// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea
+// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
 // Last modified: 25.4.2019
 //
 // *******************************************************

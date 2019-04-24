@@ -4,7 +4,7 @@
 // yawFiniteStateMachine.c - Program that utilises a FSM to calculate the yaw
 // angle of the helicopter. It uses quadrature decoding.
 //
-// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea
+// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
 // Last modified: 25.4.2019
 //
 //*****************************************************************************

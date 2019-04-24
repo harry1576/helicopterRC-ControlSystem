@@ -8,7 +8,7 @@
 // was written by P.J. Bones. This code has minor changes from P.J. Bones
 // code such as receiving the data from GPIO rather than the TIVA potentiometer.
 //
-// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea
+// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
 // Last modified: 25.4.2019
 //
 //*****************************************************************************
