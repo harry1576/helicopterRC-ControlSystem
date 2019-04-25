@@ -159,7 +159,6 @@ int main(void)
            maxHeight = groundReference - (4905*(0.8/3)) + 0.5; // Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
-
         if (g_ulSampCnt % 32 == 0) // update display every 20ms, allows program to run without delay function.
         {
             displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
