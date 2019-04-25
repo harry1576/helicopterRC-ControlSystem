@@ -156,7 +156,7 @@ int main(void)
         if (groundReference == 0 || butState == PUSHED) // set ground reference on first loop or when button is pushed
         {
            groundReference = currentHeight;
-           maxHeight = groundReference - (4905*(0.8/3)) + 0.5; // Calculate maximum height as we know maximum height is 0.8V less than ground.
+           maxHeight = groundReference - 992; //(4095*(0.8)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
         if (g_ulSampCnt % 32 == 0) // update display every 20ms, allows program to run without delay function.

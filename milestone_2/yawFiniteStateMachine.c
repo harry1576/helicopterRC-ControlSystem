@@ -120,7 +120,7 @@ void yawFSM(void)
               break;
 
     }
-    currentAngle = ((slotCount * 360) /448) % 360;
+    currentAngle = ((slotCount * 360) /448);
     previousState = currentState;
     GPIOIntClear(GPIO_PORTB_BASE, (GPIO_PIN_0 | GPIO_PIN_1));
 }
