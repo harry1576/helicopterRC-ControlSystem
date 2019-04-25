@@ -17,7 +17,7 @@
 // *******************************************************
 // Variables that can be accessed by other files.
 // *******************************************************
-extern volatile uint32_t currentAngle; // Angle of the helicopter
+extern volatile int32_t currentAngle; // Angle of the helicopter
 
 //*****************************************************************************
 //

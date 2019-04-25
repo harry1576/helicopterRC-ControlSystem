@@ -38,7 +38,8 @@ uint32_t ChannelB;
 
 // Variable that is used to hold the current angle of the helicopter.
 volatile int32_t currentAngle = 0;
-
+int32_t slotCount; // variable that holds the amount of steps the tranducer has
+//read
 
 //*****************************************************************************
 //
@@ -49,6 +50,7 @@ volatile int32_t currentAngle = 0;
 void yawFSM(void)
 {
 
+
     ChannelA = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
     ChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_1);
 
@@ -56,13 +58,9 @@ void yawFSM(void)
 
     if (ChannelA == 0 && ChannelB == 0)
     {
-        currentState = 0;
-    }
-    else if(ChannelA == 0 && ChannelB != 0)
-    {
         currentState = 1;
     }
-    else if(ChannelA != 0 && ChannelB == 0)
+    else if(ChannelA == 0 && ChannelB != 0)
     {
         currentState = 2;
     }
@@ -70,57 +68,61 @@ void yawFSM(void)
     {
         currentState = 3;
     }
+    else if(ChannelA != 0 && ChannelB == 0)
+    {
+        currentState = 4;
+    }
+
 
     // works out which way the disc is rotating in order
     // to know which way the helicopter is rotating.
     switch(previousState) {
 
-          case 0 :
-             if(currentState == 1)
+          case 1 :
+             if(currentState == 2)
              {
-                 currentAngle -= 360/448;
+                 slotCount += 1;
              }
              else
              {
-                 currentAngle += 360/448 ;
+                 slotCount -= 1 ;
              }
              break;
-          case 1 :
-              if(currentState == 2)
-              {
-                  currentAngle -=  360/448;
-              }
-              else
-              {
-                  currentAngle +=  360/448;
-              }
-              break;
           case 2 :
               if(currentState == 3)
               {
-                  currentAngle -=  360/448;
+                  slotCount +=  1;
               }
               else
               {
-                  currentAngle += 360/448;
+                  slotCount -=  1;
               }
               break;
           case 3 :
-              if(currentState == 0)
+              if(currentState == 4)
               {
-                  currentAngle -=  360/448;
+                  slotCount +=  1;
               }
               else
               {
-                  currentAngle +=  360/448;
+                  slotCount -= 1;
+              }
+              break;
+          case 4 :
+              if(currentState == 1)
+              {
+                  slotCount +=  1;
+              }
+              else
+              {
+                  slotCount -=  1;
               }
               break;
 
     }
+    currentAngle = (slotCount * 360) /448;
     previousState = currentState;
-
     GPIOIntClear(GPIO_PORTB_BASE, (GPIO_PIN_0 | GPIO_PIN_1));
-
 }
 
 
@@ -147,7 +149,6 @@ void yawFSMInit(void)
     uint32_t InitChannelA = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_0);
     uint32_t InitChannelB = GPIOPinRead(GPIO_PORTB_BASE,GPIO_PIN_1);
 
-
     // Calculate the initial state of the machine
     if (InitChannelA == 0 && InitChannelB == 0)
     {
@@ -165,6 +166,4 @@ void yawFSMInit(void)
     {
         previousState = 3;
     }
-
-
 }
