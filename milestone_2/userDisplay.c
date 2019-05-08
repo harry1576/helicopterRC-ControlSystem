@@ -65,27 +65,21 @@ int32_t findDisplayAngle (int32_t Angle)
     int32_t displayAngle;
 
     // Finding the angle in a the display format
-    if (Angle >= 0)
+    if (Angle % 360 > 180 && Angle > 0)
     {
-        if ((Angle / 180) % 2 == 0)
-        {
-            displayAngle = Angle % 180;
-        }
-        else
-        {
-            displayAngle = -180 + Angle % 180;
-        }
+        displayAngle = -180 - (Angle % 360));
+    }
+    else if (Angle % 360 < 180 && Angle > 0)
+    {
+        displayAngle = (Angle % 180);
+    }
+    else if (Angle % 360 > 180 && Angle < 0)
+    {
+        displayAngle = 180 - (-Angle % 360);
     }
     else
     {
-        if ((Angle / 180) % 2 == 0)
-        {
-            displayAngle = (Angle % 180);
-        }
-        else
-        {
-            displayAngle = 180 + Angle % 180;
-        }
+        displayAngle = -(-Angle % 360);
     }
     return displayAngle;
 }

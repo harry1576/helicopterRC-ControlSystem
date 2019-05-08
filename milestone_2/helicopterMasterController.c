@@ -37,7 +37,7 @@
 //*****************************************************************************
 // Constants
 //*****************************************************************************
-#define BUF_SIZE 10
+#define BUF_SIZE 16
 #define SAMPLE_RATE_HZ 150
 
 
@@ -69,6 +69,7 @@ void initClock (void)
     SysCtlClockSet (SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ); // Set the clock rate to 20 MHz
     // Set up the period for the SysTick timer.  The SysTick timer period is
     // set as a function of the system clock.
+
     SysTickPeriodSet(SysCtlClockGet() / SAMPLE_RATE_HZ);
 
     // SYSCTL_USE_PPL -> OSCILLATOR??
@@ -155,7 +156,7 @@ int main(void)
         butState = checkButton (LEFT);
         if (groundReference == 0 || butState == PUSHED) // set ground reference on first loop or when button is pushed
         {
-           groundReference = currentHeight;
+           groundReference = currentHeight ;
            maxHeight = groundReference - 992; //(4095*(0.8)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
