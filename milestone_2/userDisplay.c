@@ -67,7 +67,7 @@ int32_t findDisplayAngle (int32_t Angle)
     // Checking the sign of the total angle
     if (Angle >= 0)
     {
-        if ((Angle / 180) % 2 == 0)         // Uses the mod to determine which half of the rotation it lays in
+        if ((Angle % 360) < 180)         // Uses the mod to determine which half of the rotation it lays in
         {
             displayAngle = Angle % 180;
         }
