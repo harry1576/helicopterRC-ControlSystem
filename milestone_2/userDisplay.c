@@ -63,12 +63,10 @@ void clearOLED(void)
 int32_t findDisplayAngle (int32_t Angle)
 {
     int32_t displayAngle;   
-
-<<<<<<< HEAD
     // Finding the angle in a the display format
     if (Angle % 360 > 180 && Angle > 0)
     {
-        displayAngle = -180 - (Angle % 360));
+        displayAngle = -180 - (Angle % 360);
     }
     else if (Angle % 360 < 180 && Angle > 0)
     {
@@ -77,7 +75,7 @@ int32_t findDisplayAngle (int32_t Angle)
     else if (Angle % 360 > 180 && Angle < 0)
     {
         displayAngle = 180 - (-Angle % 360);
-=======
+    }
     // Checking the sign of the total angle
     if (Angle >= 0)
     {
@@ -89,7 +87,6 @@ int32_t findDisplayAngle (int32_t Angle)
         {
             displayAngle = -180 + Angle % 180;
         }
->>>>>>> a9edc3f426e79159637bd709678b8d7754406d26
     }
     
     // same process for when angle is negative, using mod as well in the later if statements

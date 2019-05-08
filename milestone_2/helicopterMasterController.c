@@ -67,10 +67,7 @@ void initClock (void)
 {
 
     SysCtlClockSet (SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ); // Set the clock rate to 20 MHz
-<<<<<<< HEAD
-    // Set up the period for the SysTick timer.  The SysTick timer period is
-    // set as a function of the system clock.
-=======
+
 
 }
 
@@ -84,7 +81,6 @@ void initClock (void)
 //*****************************************************************************
 void initTimer (void)
 {
->>>>>>> a9edc3f426e79159637bd709678b8d7754406d26
 
     SysTickPeriodSet(SysCtlClockGet() / SAMPLE_RATE_HZ);
 
