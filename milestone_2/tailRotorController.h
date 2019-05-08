@@ -1,5 +1,5 @@
-#ifndef MAIN_ROTOR_CONTROLLER_H_
-#define MAIN_ROTOR_CONTROLLER_H_
+#ifndef TAIL_ROTOR_CONTROLLER_H_
+#define TAIL_ROTOR_CONTROLLER_H_
 
 // *******************************************************
 // Thurs PM Group 23
@@ -13,8 +13,9 @@
 //
 // *******************************************************
 
-void initialiseMainRotorPWM (void);
-void setPWM (uint32_t ui32Freq, uint32_t ui32Duty);
+void setTailPWM (uint32_t ui32Freq, uint32_t ui32Duty);
+
+void initialiseTailRotorPWM (void);
 
 
 #endif /* MAIN_ROTOR_CONTROLLER_H_ */

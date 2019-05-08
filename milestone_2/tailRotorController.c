@@ -59,7 +59,7 @@ void setTailPWM (uint32_t ui32Freq, uint32_t ui32Duty)
 }
 
 
-void initialisePWM_tail (void){
+void initialiseTailRotorPWM (void){
 
     SysCtlPeripheralReset (PWM_TAIL_PERIPH_GPIO);
     SysCtlPeripheralReset (PWM_TAIL_PERIPH_PWM);
@@ -75,7 +75,6 @@ void initialisePWM_tail (void){
     PWMGenConfigure(PWM_TAIL_BASE, PWM_TAIL_GEN, PWM_GEN_MODE_UP_DOWN | PWM_GEN_MODE_NO_SYNC);
     // Set the initial PWM parameters
     setTailPWM(PWM_START_RATE_HZ, PWM_FIXED_DUTY);
-
 
     PWMGenEnable(PWM_TAIL_BASE, PWM_TAIL_GEN);
 

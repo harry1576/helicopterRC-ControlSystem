@@ -33,6 +33,7 @@
 #include "userDisplay.h"
 #include "yawFiniteStateMachine.h"
 #include "mainRotorController.h"
+#include "tailRotorController.h"
 
 
 //*****************************************************************************
@@ -149,6 +150,8 @@ int main(void)
     initDisplay ();
     initButtons();
     yawFSMInit();
+
+    initialiseTailRotorPWM();
 
     initialiseMainRotorPWM();
 

@@ -14,7 +14,7 @@
 // *******************************************************
 
 void initialiseMainRotorPWM (void);
-void setPWM (uint32_t ui32Freq, uint32_t ui32Duty);
+void setMainPWM (uint32_t ui32Freq, uint32_t ui32Duty);
 
 
 #endif /* MAIN_ROTOR_CONTROLLER_H_ */
