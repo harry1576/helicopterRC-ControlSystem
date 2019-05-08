@@ -57,7 +57,7 @@ void SysTickIntHandler(void)
 
 //*****************************************************************************
 //
-// @Description Initialisation function for the clock (incl. SysTick),
+// @Description Initialisation function for the clock.
 // ADC, display.
 // @Param void
 // @Return nothing
@@ -74,14 +74,19 @@ void initClock (void)
 
 }
 
+//*****************************************************************************
+//
+// @Description Initialisation function for the timer (SysTick). Which is used
+// by display and ADC.
+// @Param void
+// @Return nothing
+//
+//*****************************************************************************
 void initTimer (void)
 {
 >>>>>>> a9edc3f426e79159637bd709678b8d7754406d26
 
     SysTickPeriodSet(SysCtlClockGet() / SAMPLE_RATE_HZ);
-
-    // SYSCTL_USE_PPL -> OSCILLATOR??
-
 
     SysTickIntRegister(SysTickIntHandler); // Register the interrupt handler
 
