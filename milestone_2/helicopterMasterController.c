@@ -183,7 +183,6 @@ int main(void)
             displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
         }
 
-
         mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference),g_ulSampCnt);
 
 
