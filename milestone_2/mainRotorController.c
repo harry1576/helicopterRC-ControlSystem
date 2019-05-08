@@ -48,6 +48,13 @@
 #define PWM_MAIN_GPIO_PIN    GPIO_PIN_5
 
 
+#define OUTPUT_MAX 95
+#define OUTPUT_MIN 5
+
+int16_t errorSignal;
+int16_t errorSignalPrevious = 0;
+int16_t startTime;
+
 
 /********************************************************
  * Function to set the freq, duty cycle of M0PWM7
@@ -88,4 +95,41 @@ void initialiseMainRotorPWM (void)
 }
 
 
+void mainRotorControlLoop(uint16_t currentHeightPercentage, uint32_t currentTime)
+{
+    float mainRotorKp = 0.65;
+    float mainRotorKi = 0.024;
+    float mainRotorKd = 0.38;
 
+    int16_t desiredHeightPercentage = 50;
+
+    errorSignal = desiredHeightPercentage - currentHeightPercentage;
+
+
+    if (errorSignal >= 10)// resets the time
+    {
+        startTime = currentTime;
+    }
+
+    double deltaT = startTime - currentTime;
+    deltaT = (1/deltaT) * 0.0066;  // converts it into units where each unit is equal to 6.6ms
+
+    double errorDerivative = (errorSignal - errorSignalPrevious) / deltaT;
+    double errorIntegral = errorSignal * deltaT;
+
+    double dutyCycle = errorSignal * mainRotorKp
+            + errorIntegral * mainRotorKi
+            + errorDerivative * mainRotorKd;
+
+    // output error signal within the parameters
+    if (dutyCycle > OUTPUT_MAX){
+        dutyCycle = OUTPUT_MAX;
+    }
+
+    if (dutyCycle < OUTPUT_MIN){
+        dutyCycle = OUTPUT_MIN;
+    }
+
+    errorSignalPrevious = errorSignal;
+    setMainPWM(PWM_START_RATE_HZ,dutyCycle);
+}
