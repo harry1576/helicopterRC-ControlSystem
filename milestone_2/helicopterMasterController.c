@@ -32,6 +32,7 @@
 #include "helicopterAltitude.h"
 #include "userDisplay.h"
 #include "yawFiniteStateMachine.h"
+#include "mainRotorController.h"
 
 
 //*****************************************************************************
@@ -148,6 +149,9 @@ int main(void)
     initDisplay ();
     initButtons();
     yawFSMInit();
+
+    initialiseMainRotorPWM();
+
 
     IntMasterEnable();     // Enable interrupts to the processor.
 

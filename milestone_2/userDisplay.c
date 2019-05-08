@@ -80,7 +80,7 @@ int32_t findDisplayAngle (int32_t Angle)
     // same process for when angle is negative, using mod as well in the later if statements
     else
     {
-        if ((Angle / 180) % 2 == 0)
+        if ((Angle % 360) < 180)
         {
             displayAngle = (Angle % 180);
         }
