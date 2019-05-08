@@ -67,10 +67,7 @@ void SysTickIntHandler(void)
 //*****************************************************************************
 void initClock (void)
 {
-
     SysCtlClockSet (SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ); // Set the clock rate to 20 MHz
-
-
 }
 
 //*****************************************************************************
@@ -151,12 +148,14 @@ int main(void)
     initButtons();
     yawFSMInit();
 
-
+    // initalise the PWM for the motors
     initialiseMainRotorPWM();
-
     initialiseTailRotorPWM();
 
+    // set output states of rotors to true
     PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true);
+    PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, true);
+
 
     IntMasterEnable();     // Enable interrupts to the processor.
 
