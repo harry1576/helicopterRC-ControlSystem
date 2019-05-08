@@ -151,10 +151,12 @@ int main(void)
     initButtons();
     yawFSMInit();
 
-    initialiseTailRotorPWM();
 
     initialiseMainRotorPWM();
 
+    initialiseTailRotorPWM();
+
+    PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true);
 
     IntMasterEnable();     // Enable interrupts to the processor.
 

@@ -15,6 +15,7 @@
 
 void initialiseMainRotorPWM (void);
 void setMainPWM (uint32_t ui32Freq, uint32_t ui32Duty);
-
+#define PWM_MAIN_BASE        PWM0_BASE
+#define PWM_MAIN_OUTBIT      PWM_OUT_7_BIT
 
 #endif /* MAIN_ROTOR_CONTROLLER_H_ */
