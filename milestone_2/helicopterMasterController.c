@@ -43,7 +43,7 @@
 // Constants
 //*****************************************************************************
 #define BUF_SIZE 16
-#define SAMPLE_RATE_HZ 150
+#define SAMPLE_RATE_HZ 100
 
 
 //*****************************************************************************
@@ -183,7 +183,7 @@ int main(void)
            maxHeight = groundReference - 992; //(4095*(0.8)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
-        if (g_ulSampCnt % 32 == 0) // update display every 20ms, allows program to run without delay function.
+        if (g_ulSampCnt % 10 == 0) // update display every 20ms, allows program to run without delay function.
         {
 
 
@@ -195,10 +195,14 @@ int main(void)
         }
 
 
+       // tailRotorControlLoop(currentAngle);
+       setTailPWM (200, 20);
+
+        mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference));
 
 
-        mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference),g_ulSampCnt);
-        tailRotorControlLoop(currentAngle,g_ulSampCnt);
+
+
 
     }
 }
