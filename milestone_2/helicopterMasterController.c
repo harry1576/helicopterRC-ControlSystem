@@ -196,6 +196,7 @@ int main(void)
 
 
         mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference),g_ulSampCnt);
+        tailRotorControlLoop(currentAngle,g_ulSampCnt);
 
     }
 }
