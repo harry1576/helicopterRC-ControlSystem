@@ -71,4 +71,8 @@ updateButtons (void);
 enum butStates
 checkButton (uint8_t butName);
 
+
+void initSwitch(void)
+
+
 #endif /*BUTTONS_H_*/

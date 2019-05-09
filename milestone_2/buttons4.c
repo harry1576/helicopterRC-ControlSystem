@@ -34,6 +34,11 @@ static uint8_t but_count[NUM_BUTS];
 static bool but_flag[NUM_BUTS];
 static bool but_normal[NUM_BUTS];   // Corresponds to the electrical state
 
+
+uint32_t switchChannel;     //Variable to hold the current value of switch position
+
+
+
 // *******************************************************
 // initButtons: Initialise the variables associated with the set of buttons
 // defined by the constants in the buttons2.h header file.
@@ -137,4 +142,46 @@ enum butStates checkButton (uint8_t butName)
 	}
 	return NO_CHANGE;
 }
+
+
+
+/*
+void switchMode (void)      // to check the position ofthe switch and chang variabels as so
+{
+    switchChannel = GPIOPinRead(GPIO_PORTA_BASE,GPIO_PIN_7);
+
+    if (switchChannel == 0) // switch is in land position
+    {
+
+
+
+    } else if (switchChannel != 0) // switch is in take off position
+    {
+
+
+
+    }
+
+}
+*/
+
+
+
+
+void initSwitch(void)
+{
+    SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOB);
+
+    GPIOIntRegister(GPIO_PORTA_BASE, switchMode);
+
+    GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_7);
+
+    GPIOIntTypeSet (GPIO_PORTA_BASE, GPIO_PIN_7, GPIO_BOTH_EDGES);
+
+    GPIOIntEnable (GPIO_PORTA_BASE, GPIO_INT_PIN_7);
+
+
+}
+
+
 
