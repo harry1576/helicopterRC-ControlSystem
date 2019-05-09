@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib"
+LIBS := -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" -l"/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib"
 

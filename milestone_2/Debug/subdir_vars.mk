@@ -11,7 +11,10 @@ C_SRCS += \
 ../circBufT.c \
 ../helicopterAltitude.c \
 ../helicopterMasterController.c \
+../mainRotorController.c \
+../tailRotorController.c \
 ../tm4c123gh6pm_startup_ccs.c \
+../uartCommunication.c \
 ../userDisplay.c \
 ../ustdlib.c \
 ../yawFiniteStateMachine.c 
@@ -21,7 +24,10 @@ C_DEPS += \
 ./circBufT.d \
 ./helicopterAltitude.d \
 ./helicopterMasterController.d \
+./mainRotorController.d \
+./tailRotorController.d \
 ./tm4c123gh6pm_startup_ccs.d \
+./uartCommunication.d \
 ./userDisplay.d \
 ./ustdlib.d \
 ./yawFiniteStateMachine.d 
@@ -31,7 +37,10 @@ OBJS += \
 ./circBufT.obj \
 ./helicopterAltitude.obj \
 ./helicopterMasterController.obj \
+./mainRotorController.obj \
+./tailRotorController.obj \
 ./tm4c123gh6pm_startup_ccs.obj \
+./uartCommunication.obj \
 ./userDisplay.obj \
 ./ustdlib.obj \
 ./yawFiniteStateMachine.obj 
@@ -41,7 +50,10 @@ OBJS__QUOTED += \
 "circBufT.obj" \
 "helicopterAltitude.obj" \
 "helicopterMasterController.obj" \
+"mainRotorController.obj" \
+"tailRotorController.obj" \
 "tm4c123gh6pm_startup_ccs.obj" \
+"uartCommunication.obj" \
 "userDisplay.obj" \
 "ustdlib.obj" \
 "yawFiniteStateMachine.obj" 
@@ -51,7 +63,10 @@ C_DEPS__QUOTED += \
 "circBufT.d" \
 "helicopterAltitude.d" \
 "helicopterMasterController.d" \
+"mainRotorController.d" \
+"tailRotorController.d" \
 "tm4c123gh6pm_startup_ccs.d" \
+"uartCommunication.d" \
 "userDisplay.d" \
 "ustdlib.d" \
 "yawFiniteStateMachine.d" 
@@ -61,7 +76,10 @@ C_SRCS__QUOTED += \
 "../circBufT.c" \
 "../helicopterAltitude.c" \
 "../helicopterMasterController.c" \
+"../mainRotorController.c" \
+"../tailRotorController.c" \
 "../tm4c123gh6pm_startup_ccs.c" \
+"../uartCommunication.c" \
 "../userDisplay.c" \
 "../ustdlib.c" \
 "../yawFiniteStateMachine.c" 

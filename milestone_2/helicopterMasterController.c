@@ -188,7 +188,7 @@ int main(void)
 
 
             displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
-            usprintf (statusStr, "Current Height %2d \n", heightAsPercentage(maxHeight,currentHeight,groundReference)); // * usprintf
+            usprintf (statusStr, "Current Height %2d \n Current Angle %2d \n", heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // * usprintf
             UARTSend (statusStr);
         }
 
