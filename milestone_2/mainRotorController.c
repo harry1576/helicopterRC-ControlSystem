@@ -54,6 +54,7 @@
 int16_t errorSignal;
 int16_t errorSignalPrevious = 0;
 int16_t startTime;
+double errorIntegral;
 
 
 /********************************************************
@@ -99,27 +100,15 @@ void mainRotorControlLoop(uint16_t currentHeightPercentage, uint32_t currentTime
 {
     float mainRotorKp = 0.65;
     float mainRotorKi = 0.024;
-    float mainRotorKd = 0.38;
 
     int16_t desiredHeightPercentage = 50;
 
     errorSignal = desiredHeightPercentage - currentHeightPercentage;
 
 
-    if (errorSignal >= 10)// resets the time
-    {
-        startTime = currentTime;
-    }
+    errorIntegral += errorSignal;
 
-    double deltaT = startTime - currentTime;
-    deltaT = (1/deltaT) * 0.0066;  // converts it into units where each unit is equal to 6.6ms
-
-    double errorDerivative = (errorSignal - errorSignalPrevious) / deltaT;
-    double errorIntegral = errorSignal * deltaT;
-
-    double dutyCycle = errorSignal * mainRotorKp
-            + errorIntegral * mainRotorKi
-            + errorDerivative * mainRotorKd;
+    double dutyCycle = errorSignal * mainRotorKp + errorIntegral * mainRotorKi;
 
     // output error signal within the parameters
     if (dutyCycle > OUTPUT_MAX){
