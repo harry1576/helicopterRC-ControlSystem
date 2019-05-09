@@ -34,6 +34,9 @@
 #include "yawFiniteStateMachine.h"
 #include "mainRotorController.h"
 #include "tailRotorController.h"
+#include "uartCommunication.h"
+#include "driverlib/uart.h"
+
 
 
 //*****************************************************************************
@@ -134,6 +137,7 @@ int main(void)
     int16_t groundReference = 0; // Initialise the ground reference at the maximum height. Guaranteeing the first ground reading will be below this point.
     int16_t currentHeight; // variable to store the current helicopter height.
     int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
+    int8_t displayheight;
 
     int32_t sum; // The summation of the data read from the buffer
 
@@ -147,6 +151,7 @@ int main(void)
     initDisplay ();
     initButtons();
     yawFSMInit();
+    initialiseUSB_UART();
 
     // initalise the PWM for the motors
     initialiseMainRotorPWM();
@@ -180,11 +185,17 @@ int main(void)
 
         if (g_ulSampCnt % 32 == 0) // update display every 20ms, allows program to run without delay function.
         {
+
+
             displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
+            usprintf (statusStr, "Current Height %2d \n", heightAsPercentage(maxHeight,currentHeight,groundReference)); // * usprintf
+            UARTSend (statusStr);
         }
 
-        mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference),g_ulSampCnt);
 
+
+
+        mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference),g_ulSampCnt);
 
     }
 }
