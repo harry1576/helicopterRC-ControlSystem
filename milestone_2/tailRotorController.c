@@ -31,7 +31,7 @@
 #define PWM_RATE_STEP_HZ   50
 #define PWM_RATE_MIN_HZ    50
 #define PWM_RATE_MAX_HZ    400
-#define PWM_FIXED_DUTY     10
+#define PWM_FIXED_DUTY     0
 #define PWM_DIVIDER_CODE   SYSCTL_PWMDIV_4
 #define PWM_DIVIDER        4
 
@@ -46,6 +46,14 @@
 #define PWM_TAIL_GPIO_CONFIG GPIO_PF1_M1PWM5
 #define PWM_TAIL_GPIO_PIN    GPIO_PIN_1
 
+#define TAIL_OUTPUT_MAX 95
+#define TAIL_OUTPUT_MIN 5
+
+
+int16_t tailErrorSignal;
+int16_t tailErrorSignalPrevious = 0;
+int16_t tailStartTime;
+
 
 /********************************************************
  * Function to set the freq, duty cycle of M0PWM7
@@ -55,7 +63,7 @@ void setTailPWM (uint32_t ui32Freq, uint32_t ui32Duty)
     // Calculate the PWM period corresponding to the freq.
     uint32_t ui32Period = SysCtlClockGet() / PWM_DIVIDER / ui32Freq;
     PWMGenPeriodSet(PWM_TAIL_BASE, PWM_TAIL_GEN, ui32Period);
-    PWMPulseWidthSet(PWM_TAIL_BASE, PWM_TAIL_GEN,ui32Period * ui32Duty / 100);
+    PWMPulseWidthSet(PWM_TAIL_BASE, PWM_TAIL_OUTNUM,ui32Period * ui32Duty / 100);
 }
 
 
@@ -83,6 +91,45 @@ void initialiseTailRotorPWM (void){
 }
 
 
+
+void tailRotorControlLoop(uint16_t currentAngle, uint32_t currentTime)
+{
+    float tailRotorKp = 0.65;
+    float tailRotorKi = 0.024;
+    float tailRotorKd = 0.38;
+
+    int16_t desiredAngle = 50;
+
+    tailErrorSignal = desiredAngle - currentAngle;
+
+
+    if (tailErrorSignal >= 10)// resets the time
+    {
+        tailStartTime = currentTime;
+    }
+
+    double deltaT = tailStartTime - currentTime;
+    deltaT = (1/deltaT) * 0.0066;  // converts it into units where each unit is equal to 6.6ms
+
+    double errorDerivative = (tailErrorSignal - tailErrorSignalPrevious) / deltaT;
+    double errorIntegral = tailErrorSignal * deltaT;
+
+    double dutyCycle = tailErrorSignal * tailRotorKp
+            + errorIntegral * tailRotorKi
+            + errorDerivative * tailRotorKd;
+
+    // output error signal within the parameters
+    if (dutyCycle > TAIL_OUTPUT_MAX){
+        dutyCycle = TAIL_OUTPUT_MAX;
+    }
+
+    if (dutyCycle < TAIL_OUTPUT_MIN){
+        dutyCycle = TAIL_OUTPUT_MIN;
+    }
+
+    tailErrorSignalPrevious = tailErrorSignal;
+    setTailPWM(PWM_START_RATE_HZ,dutyCycle);
+}
 
 
 
