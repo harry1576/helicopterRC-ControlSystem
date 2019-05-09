@@ -42,5 +42,17 @@ void yawFSM(void);
 void yawFSMInit(void);
 
 
+
+//*****************************************************************************
+//
+// @Description Takes the currently angle value which is a continuously summing
+// value and converts it to a value between -179 to 180.
+// @Param int32_t
+// @Return int32_t
+//
+//*****************************************************************************
+int32_t findDisplayAngle (int32_t Angle);
+
+
 #endif /*YAW_FINITE_H_*/
 

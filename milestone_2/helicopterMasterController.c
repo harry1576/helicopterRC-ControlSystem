@@ -43,7 +43,7 @@
 // Constants
 //*****************************************************************************
 #define BUF_SIZE 16
-#define SAMPLE_RATE_HZ 100
+#define SAMPLE_RATE_HZ 150
 
 
 //*****************************************************************************
@@ -138,6 +138,7 @@ int main(void)
     int16_t currentHeight; // variable to store the current helicopter height.
     int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
     int8_t displayheight;
+    int32_t displayAngle;
 
     int32_t sum; // The summation of the data read from the buffer
 
@@ -183,26 +184,24 @@ int main(void)
            maxHeight = groundReference - 992; //(4095*(0.8)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
-        if (g_ulSampCnt % 10 == 0) // update display every 20ms, allows program to run without delay function.
+        displayAngle = findDisplayAngle(currentAngle);
+
+        if (g_ulSampCnt % 32 == 0) // update display every 20ms, allows program to run without delay function.
         {
 
 
-            displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
-            usprintf (statusStr, "Current Angle %2d \n",currentAngle); // * usprintf
+            displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),displayAngle); // displays altitude as percent
+            usprintf (statusStr, "Current Angle %2d \n",displayAngle); // * usprintf
             UARTSend (statusStr);
             usprintf (statusStr, "Current Height %2d \n", heightAsPercentage(maxHeight,currentHeight,groundReference)); // * usprintf
             UARTSend (statusStr);
         }
 
 
-       // tailRotorControlLoop(currentAngle);
-       setTailPWM (200, 20);
+
 
         mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference));
-
-
-
-
+        tailRotorControlLoop(currentAngle);
 
     }
 }
