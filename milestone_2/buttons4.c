@@ -13,7 +13,7 @@
 // P.J. Bones UCECE
 // Last modified:  7.2.2018
 // 
-// *******************************************************
+// ********************************************************
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -37,6 +37,7 @@ static bool but_normal[NUM_BUTS];   // Corresponds to the electrical state
 // *******************************************************
 // initButtons: Initialise the variables associated with the set of buttons
 // defined by the constants in the buttons2.h header file.
+
 void
 initButtons (void)
 {
