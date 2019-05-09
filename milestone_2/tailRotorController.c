@@ -104,8 +104,8 @@ void tailRotorControlLoop(uint16_t currentAngle, uint32_t currentTime)
 
     errorIntegral += tailErrorSignal;
 
-    double dutyCycle = tailErrorSignal * tailRotorKp
-            + errorIntegral * tailRotorKi;
+    double dutyCycle = (tailErrorSignal * tailRotorKp)
+            + (errorIntegral * tailRotorKi);
 
     // output error signal within the parameters
     if (dutyCycle > TAIL_OUTPUT_MAX){
