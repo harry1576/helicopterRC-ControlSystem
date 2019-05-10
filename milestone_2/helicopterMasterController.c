@@ -195,10 +195,10 @@ int main(void)
         }
 
 
-       // tailRotorControlLoop(currentAngle);
-       setTailPWM (200, 20);
+       tailRotorControlLoop(currentAngle);
 
-        mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference));
+
+       mainRotorControlLoop(currentHeight);
 
 
 

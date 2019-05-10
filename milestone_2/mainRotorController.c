@@ -94,27 +94,19 @@ void initialiseMainRotorPWM (void)
 
 }
 
-
-void mainRotorControlLoop(uint16_t currentHeightPercentage)
+void mainRotorControlLoop(int16_t currentHeightHeli)
 {
-    float mainRotorKp = 0.6;
-    float mainRotorKi = 0.0;
-    float mainRotorKd = 0.0;
+    int32_t mainRotorKp = 8300000; //6000 best so far //8300 heli 4
+    int16_t mainRotorKi = 0; // 1
+    int32_t divisor = 100000000;
 
 
-    int16_t desiredHeightPercentage = 10;
+    int16_t desiredHeightPercentage = 1600;
 
-    errorSignal = desiredHeightPercentage - currentHeightPercentage;
+    errorSignal = currentHeightHeli - desiredHeightPercentage;
     errorIntegral += errorSignal;
-    double errorDerivative = (errorSignal - errorSignalPrevious);
 
-    if(abs(errorSignal) < 2)
-    {
-        errorIntegral = 0;
-    }
-
-    double dutyCycle = (errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi)
-            + (errorDerivative * mainRotorKd) ;
+    double dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi))/ divisor;
 
     // output error signal within the parameters
     if (dutyCycle > OUTPUT_MAX){
@@ -124,6 +116,6 @@ void mainRotorControlLoop(uint16_t currentHeightPercentage)
     if (dutyCycle < OUTPUT_MIN){
         dutyCycle = OUTPUT_MIN;
     }
-    errorSignalPrevious = errorSignal;
     setMainPWM(PWM_START_RATE_HZ,dutyCycle);
+
 }
