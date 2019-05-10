@@ -43,7 +43,10 @@
 // Constants
 //*****************************************************************************
 #define BUF_SIZE 16
-#define SAMPLE_RATE_HZ 100
+#define SAMPLE_RATE_HZ 160
+
+
+int8_t PIDFlag = 0;
 
 
 //*****************************************************************************
@@ -57,6 +60,7 @@ void SysTickIntHandler(void)
 {
     ADCProcessorTrigger(ADC0_BASE, 3);   // Triggers the ADC to do a conversion
     g_ulSampCnt++;
+    PIDFlag = 1;
 }
 
 
@@ -187,7 +191,7 @@ int main(void)
         {
 
 
-            displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
+            //displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
             usprintf (statusStr, "Current Angle %2d \n",currentAngle); // * usprintf
             UARTSend (statusStr);
             usprintf (statusStr, "Current Height %2d \n", currentHeight); // * usprintf
@@ -198,8 +202,10 @@ int main(void)
 
 
        tailRotorControlLoop(currentAngle);
-
+       if (PIDFlag)
+       {
        mainRotorControlLoop(currentHeight);
-
+       PIDFlag = 0;
+       }
     }
 }

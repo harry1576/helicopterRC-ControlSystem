@@ -25,9 +25,17 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/interrupt.h"
 #include "buttons4.h"
+#include "uartCommunication.h"
+#include "driverlib/uart.h"
+
+#include "stdlib.h"
+#include "inc/hw_memmap.h"
+#include "utils/ustdlib.h"
+#include "OrbitOLED/OrbitOLEDInterface.h"
+
 
 // PWM configuration
-#define PWM_START_RATE_HZ  250
+#define PWM_START_RATE_HZ  200
 #define PWM_RATE_STEP_HZ   50
 #define PWM_RATE_MIN_HZ    50
 #define PWM_RATE_MAX_HZ    400
@@ -48,8 +56,8 @@
 #define PWM_MAIN_GPIO_PIN    GPIO_PIN_5
 
 
-#define OUTPUT_MAX 90
-#define OUTPUT_MIN 5
+#define OUTPUT_MAX 65
+#define OUTPUT_MIN 30
 
 int16_t errorSignal;
 int16_t errorSignalPrevious = 0;
@@ -97,21 +105,30 @@ void initialiseMainRotorPWM (void)
 
 void mainRotorControlLoop(int16_t currentHeightHeli)
 {
-    int32_t mainRotorKp = 8000000;//6000 best so far //8300 heli 4
-    int16_t mainRotorKi = 0; // 1
-    int32_t mainRotorKd = 0;
-    int32_t divisor = 100000000;
+    float mainRotorKp = 1.0;
+    float mainRotorKi = 0.00000005; // 1
+    float mainRotorKd = 0;
 
     int16_t desiredHeightPercentage = 1900;
 
     errorSignal = currentHeightHeli - desiredHeightPercentage;
-    errorIntegral += errorSignal;
     int32_t errorDerivative = errorSignal - errorSignalPrevious;
 
-    dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi) + (errorDerivative * mainRotorKd))/ divisor;
-    dutyCycle = 40;
-    // output error signal within the parameters
 
+    dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi) + (errorDerivative * mainRotorKd));
+
+    // output error signal within the parameters
+    if (dutyCycle > OUTPUT_MAX){
+        dutyCycle = OUTPUT_MAX;
+    }
+    else
+    {
+        errorIntegral += errorSignal * 0.00000000625;
+    }
+
+     if (dutyCycle < OUTPUT_MIN){
+        dutyCycle = OUTPUT_MIN;
+    }
     errorSignalPrevious = errorSignal;
     setMainPWM(PWM_START_RATE_HZ,dutyCycle);
 }
