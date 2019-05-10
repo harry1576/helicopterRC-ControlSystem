@@ -55,13 +55,12 @@ void clearOLED(void)
 
 
 
-
 //*****************************************************************************
 //
 // Function to display the height as percentage and angle of helicopter in
 // degrees.
 //
-//*****************************************************************************
+//**************************************************************************
 void displayAltitudePercentAndYaw(uint16_t meanVal, int32_t Angle)
 {
     char string[17];  // 16 characters across the display
