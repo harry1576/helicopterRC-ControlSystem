@@ -56,7 +56,7 @@
 #define PWM_MAIN_GPIO_PIN    GPIO_PIN_5
 
 
-#define OUTPUT_MAX 65
+#define OUTPUT_MAX 58
 #define OUTPUT_MIN 30
 
 int16_t errorSignal;
@@ -105,8 +105,8 @@ void initialiseMainRotorPWM (void)
 
 void mainRotorControlLoop(int16_t currentHeightHeli)
 {
-    float mainRotorKp = 1.0;
-    float mainRotorKi = 0.00000005; // 1
+    float mainRotorKp = .46;
+    float mainRotorKi = 0.000000028; // 1
     float mainRotorKd = 0;
 
     int16_t desiredHeightPercentage = 1900;
