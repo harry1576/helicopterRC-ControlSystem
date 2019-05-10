@@ -85,7 +85,12 @@ void
 initSwitch(void);
 
 
-//void initReset(void);
+void
+resetCheck (void);
+
+
+void
+initReset(void);
 
 
 

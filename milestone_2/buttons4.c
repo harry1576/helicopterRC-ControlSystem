@@ -202,7 +202,6 @@ void altAndYawValue(void)
 
 
 
-
 void switchMode (void)      // to check the position ofthe switch and chang variabels as so
 {
     switchChannel = GPIOPinRead(GPIO_PORTA_BASE,GPIO_PIN_7);
@@ -223,8 +222,6 @@ void switchMode (void)      // to check the position ofthe switch and chang vari
 
 
 
-
-
 void initSwitch(void)
 {
     SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOA);
@@ -240,13 +237,19 @@ void initSwitch(void)
 
 }
 
+void resetCheck (void)
+{
+    // add in the reset operations
 
-/*
+}
+
+
+
 void initReset(void)
 {
     SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOA);
 
-    GPIOIntRegister(GPIO_PORTA_BASE, ________);     //check out what to do with this
+    GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);     //check out what to do with this
 
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
 
@@ -255,6 +258,6 @@ void initReset(void)
     GPIOIntEnable (GPIO_PORTA_BASE, GPIO_INT_PIN_6);
 
 }
-*/
+
 
 
