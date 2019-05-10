@@ -144,8 +144,65 @@ enum butStates checkButton (uint8_t butName)
 }
 
 
+// *******************************************************
+// altAndYawValue: Function that checks the buttons and alters
+// the desired height and yaw accordingly
+void altAndYawValue(void)
+{
+    //change these values to the correct place and format, and init them
+    int16_t desiredHeight = 0;
+    int16_t desiredAngle = 0;
 
-/*
+    while(1)
+    {
+        uint8_t butState;
+
+        updateButtons();
+        butState = checkButton (UP);
+        if (butState == PUSHED)
+        {
+            desiredHeight += 10;
+            while (butState == RELEASED)
+            {
+            }
+        }
+
+        updateButtons();
+        butState = checkButton (DOWN);
+        if (butState == PUSHED)
+        {
+            desiredHeight -= 10;
+            while (butState == RELEASED)
+            {
+            }
+        }
+
+        updateButtons();
+        butState = checkButton (RIGHT);
+        if (butState == PUSHED)
+        {
+            desiredHeight += 15;
+            while (butState == RELEASED)
+            {
+            }
+        }
+
+        updateButtons();
+        butState = checkButton (LEFT);
+        if (butState == PUSHED)
+        {
+            desiredHeight -= 15;
+            while (butState == RELEASED)
+            {
+            }
+        }
+    }
+}
+
+
+
+
+
 void switchMode (void)      // to check the position ofthe switch and chang variabels as so
 {
     switchChannel = GPIOPinRead(GPIO_PORTA_BASE,GPIO_PIN_7);
@@ -163,14 +220,14 @@ void switchMode (void)      // to check the position ofthe switch and chang vari
     }
 
 }
-*/
+
 
 
 
 
 void initSwitch(void)
 {
-    SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOB);
+    SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOA);
 
     GPIOIntRegister(GPIO_PORTA_BASE, switchMode);
 
@@ -183,5 +240,21 @@ void initSwitch(void)
 
 }
 
+
+/*
+void initReset(void)
+{
+    SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOA);
+
+    GPIOIntRegister(GPIO_PORTA_BASE, ________);     //check out what to do with this
+
+    GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
+
+    GPIOIntTypeSet (GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_BOTH_EDGES);
+
+    GPIOIntEnable (GPIO_PORTA_BASE, GPIO_INT_PIN_6);
+
+}
+*/
 
 

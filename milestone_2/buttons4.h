@@ -71,8 +71,22 @@ updateButtons (void);
 enum butStates
 checkButton (uint8_t butName);
 
+// *******************************************************
+// altAndYawValue: Function that checks the buttons and alters
+// the desired height and yaw accordingly
+void altAndYawValue(void);
 
-void initSwitch(void)
+
+void
+switchMode (void);
+
+
+void
+initSwitch(void);
+
+
+//void initReset(void);
+
 
 
 #endif /*BUTTONS_H_*/
