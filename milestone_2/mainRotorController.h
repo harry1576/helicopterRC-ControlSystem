@@ -17,6 +17,7 @@ void initialiseMainRotorPWM (void);
 void setMainPWM (uint32_t ui32Freq, uint32_t ui32Duty);
 void mainRotorControlLoop(uint16_t currentHeightPercentage );
 
+extern int32_t dutyCycle;
 
 #define PWM_MAIN_BASE        PWM0_BASE
 #define PWM_MAIN_OUTBIT      PWM_OUT_7_BIT

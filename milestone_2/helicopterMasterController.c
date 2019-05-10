@@ -183,26 +183,23 @@ int main(void)
            maxHeight = groundReference - 992; //(4095*(0.8)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
-        if (g_ulSampCnt % 10 == 0) // update display every 20ms, allows program to run without delay function.
+        if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
 
 
             displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
             usprintf (statusStr, "Current Angle %2d \n",currentAngle); // * usprintf
             UARTSend (statusStr);
-            usprintf (statusStr, "Current Height %2d \n", heightAsPercentage(maxHeight,currentHeight,groundReference)); // * usprintf
+            usprintf (statusStr, "Current Height %2d \n", currentHeight); // * usprintf
+            UARTSend (statusStr);
+            usprintf (statusStr, "Duty Cycle %2d \n", dutyCycle); // * usprintf
             UARTSend (statusStr);
         }
 
 
        tailRotorControlLoop(currentAngle);
 
-
        mainRotorControlLoop(currentHeight);
-
-
-
-
 
     }
 }

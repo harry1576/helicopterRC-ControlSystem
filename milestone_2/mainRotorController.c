@@ -49,12 +49,13 @@
 
 
 #define OUTPUT_MAX 90
-#define OUTPUT_MIN 10
+#define OUTPUT_MIN 5
 
 int16_t errorSignal;
 int16_t errorSignalPrevious = 0;
 int16_t startTime;
 double errorIntegral;
+int32_t dutyCycle;
 
 /********************************************************
  * Function to set the freq, duty cycle of M0PWM7
@@ -96,26 +97,21 @@ void initialiseMainRotorPWM (void)
 
 void mainRotorControlLoop(int16_t currentHeightHeli)
 {
-    int32_t mainRotorKp = 8300000; //6000 best so far //8300 heli 4
+    int32_t mainRotorKp = 8000000;//6000 best so far //8300 heli 4
     int16_t mainRotorKi = 0; // 1
+    int32_t mainRotorKd = 0;
     int32_t divisor = 100000000;
 
-
-    int16_t desiredHeightPercentage = 1600;
+    int16_t desiredHeightPercentage = 1900;
 
     errorSignal = currentHeightHeli - desiredHeightPercentage;
     errorIntegral += errorSignal;
+    int32_t errorDerivative = errorSignal - errorSignalPrevious;
 
-    double dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi))/ divisor;
-
+    dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi) + (errorDerivative * mainRotorKd))/ divisor;
+    dutyCycle = 40;
     // output error signal within the parameters
-    if (dutyCycle > OUTPUT_MAX){
-        dutyCycle = OUTPUT_MAX;
-    }
 
-    if (dutyCycle < OUTPUT_MIN){
-        dutyCycle = OUTPUT_MIN;
-    }
+    errorSignalPrevious = errorSignal;
     setMainPWM(PWM_START_RATE_HZ,dutyCycle);
-
 }

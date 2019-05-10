@@ -95,10 +95,10 @@ void initialiseTailRotorPWM (void){
 
 void tailRotorControlLoop(uint16_t currentAngle)
 {
-    float tailRotorKp = 0.3;
-    float tailRotorKi = 0.004;
+    float tailRotorKp = 0.03;
+    float tailRotorKi = 0.00;
 
-    int16_t desiredAngle = 50;
+    int16_t desiredAngle = 0;
 
     tailErrorSignal = desiredAngle - currentAngle;
 
