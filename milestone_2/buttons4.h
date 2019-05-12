@@ -82,7 +82,9 @@ checkButton (uint8_t butName);
 // *******************************************************
 // altAndYawValue: Function that checks the buttons and alters
 // the desired height and yaw accordingly
+
 void updateDesiredAltAndYawValue(void);
+
 
 
 void

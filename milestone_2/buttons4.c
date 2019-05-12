@@ -36,6 +36,7 @@ static bool but_normal[NUM_BUTS];   // Corresponds to the electrical state
 
 
 uint32_t switchChannel;     //Variable to hold the current value of switch position
+
 int16_t desiredHeight = 0;
 int16_t desiredAngle = 0;
 uint32_t variableTest = 1;
@@ -242,4 +243,6 @@ void initReset(void)
     GPIOIntEnable (GPIO_PORTA_BASE, GPIO_INT_PIN_6);
 
 }
+
+
 

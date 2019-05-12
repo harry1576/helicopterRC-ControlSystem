@@ -43,10 +43,12 @@
 // Constants
 //*****************************************************************************
 #define BUF_SIZE 16
+
 #define SAMPLE_RATE_HZ 160
 
 
 int8_t PIDFlag = 0;
+
 
 
 //*****************************************************************************
@@ -142,6 +144,10 @@ int main(void)
     int16_t currentHeight; // variable to store the current helicopter height.
     int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
     int8_t displayheight;
+
+
+    int32_t displayAngle;
+
     int32_t sum; // The summation of the data read from the buffer
 
     // Initialise required systems
@@ -186,6 +192,8 @@ int main(void)
 
 
 
+        displayAngle = findDisplayAngle(currentAngle);
+
         if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
             //displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
@@ -193,6 +201,7 @@ int main(void)
 
             usprintf (statusStr, "Current Angle %2d \n",variableTest); // * usprintf
             UARTSend (statusStr);
+
 
         }
 
@@ -202,6 +211,10 @@ int main(void)
            tailRotorControlLoop(currentAngle);
            PIDFlag = 0;
        }
+
+        mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference));
+        tailRotorControlLoop(currentAngle);
+
 
     }
 }

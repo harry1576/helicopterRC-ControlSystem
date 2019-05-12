@@ -54,55 +54,13 @@ void clearOLED(void)
 
 
 
-//*****************************************************************************
-//
-// Takes the currently angle value which is a continuously summing
-// value and converts it to a value between -179 to 180.
-//
-//*****************************************************************************
-int32_t findDisplayAngle (int32_t Angle)
-{
-    int32_t displayAngle;   
-
-    // Checking the sign of the total angle
-    if (Angle >= 0)
-    {
-        if ((Angle % 360) < 180)         // Uses the mod to determine which half of the rotation it lays in
-        {
-            displayAngle = Angle % 180;
-        }
-        else
-        {
-            displayAngle = -180 + Angle % 180;
-        }
-    }
-    
-    // same process for when angle is negative, using mod as well in the later if statements
-    else
-    {
-        if ((Angle % 360) < 180)
-        {
-            displayAngle = (Angle % 180);
-        }
-        else
-        {
-            displayAngle = 180 + Angle % 180;
-        }
-    }
-    if (displayAngle == 180)
-        {
-            displayAngle = -180;
-        }
-    return displayAngle;
-}
-
 
 //*****************************************************************************
 //
 // Function to display the height as percentage and angle of helicopter in
 // degrees.
 //
-//*****************************************************************************
+//****************************************************************************
 void displayAltitudePercentAndYaw(uint16_t meanVal, int32_t Angle)
 {
     char string[17];  // 16 characters across the display
@@ -117,7 +75,7 @@ void displayAltitudePercentAndYaw(uint16_t meanVal, int32_t Angle)
 
     OLEDStringDraw ("Angle", 0, 1);
 
-    usnprintf (string, sizeof(string), "%4d", findDisplayAngle(Angle));   // Update line on display.
+    usnprintf (string, sizeof(string), "%4d", Angle);   // Update line on display.
     OLEDStringDraw (string, 6, 1);
     OLEDStringDraw ("(deg)", 11, 1);
 
