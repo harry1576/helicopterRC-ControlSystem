@@ -43,11 +43,19 @@ enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
 #define RIGHT_BUT_PIN  GPIO_PIN_0
 #define RIGHT_BUT_NORMAL  true
 
+#define FLYING 1
+#define LANDED 0
+
 #define NUM_BUT_POLLS 3
 // Debounce algorithm: A state machine is associated with each button.
 // A state change occurs only after NUM_BUT_POLLS consecutive polls have
 // read the pin in the opposite condition, before the state changes and
 // a flag is set.  Set NUM_BUT_POLLS according to the polling rate.
+
+extern int16_t desiredHeight;
+extern int16_t desiredAngle;
+extern uint32_t variableTest;
+
 
 // *******************************************************
 // initButtons: Initialise the variables associated with the set of buttons
@@ -71,4 +79,28 @@ updateButtons (void);
 enum butStates
 checkButton (uint8_t butName);
 
+// *******************************************************
+// altAndYawValue: Function that checks the buttons and alters
+// the desired height and yaw accordingly
+void updateDesiredAltAndYawValue(void);
+
+
+void
+switchMode (void);
+
+
+void
+initSwitch(void);
+
+
+void
+resetCheck (void);
+
+
+void
+initReset(void);
+
+
+
 #endif /*BUTTONS_H_*/
+

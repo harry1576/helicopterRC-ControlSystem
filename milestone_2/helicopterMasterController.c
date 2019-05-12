@@ -142,10 +142,7 @@ int main(void)
     int16_t currentHeight; // variable to store the current helicopter height.
     int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
     int8_t displayheight;
-
     int32_t sum; // The summation of the data read from the buffer
-
-    uint8_t butState; // variable used to hold the current button state.
 
     // Initialise required systems
     initClock ();
@@ -156,6 +153,7 @@ int main(void)
     initButtons();
     yawFSMInit();
     initialiseUSB_UART();
+    initSwitch();
 
     // initalise the PWM for the motors
     initialiseMainRotorPWM();
@@ -170,42 +168,40 @@ int main(void)
 
     while (1)
     {
-
         // Background task: calculate the (approximate) mean of the values in the
         // circular buffer and display it, together with the sample number.
         sum = 0;
         for (i = 0; i < BUF_SIZE; i++)
-            sum = sum + readCircBuf (&g_inBuffer);
-        // Calculate and display the rounded mean of the buffer contents
+            sum = sum + readCircBuf (&g_inBuffer); // Calculate and display the rounded mean of the buffer contents
         currentHeight = (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
 
-        updateButtons ();
-        butState = checkButton (LEFT);
-        if (groundReference == 0 || butState == PUSHED) // set ground reference on first loop or when button is pushed
+        if (groundReference == 0) // set ground reference on first loop or when button is pushed
         {
            groundReference = currentHeight ;
            maxHeight = groundReference - 992; //(4095*(0.8)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
+
+
+
+
+
         if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
-
-
             //displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
-            usprintf (statusStr, "Current Angle %2d \n",currentAngle); // * usprintf
+
+
+            usprintf (statusStr, "Current Angle %2d \n",variableTest); // * usprintf
             UARTSend (statusStr);
-            usprintf (statusStr, "Current Height %2d \n", currentHeight); // * usprintf
-            UARTSend (statusStr);
-            usprintf (statusStr, "Duty Cycle %2d \n", dutyCycle); // * usprintf
-            UARTSend (statusStr);
+
         }
 
-
-       tailRotorControlLoop(currentAngle);
        if (PIDFlag)
        {
-       mainRotorControlLoop(currentHeight);
-       PIDFlag = 0;
+           mainRotorControlLoop(currentHeight);
+           tailRotorControlLoop(currentAngle);
+           PIDFlag = 0;
        }
+
     }
 }

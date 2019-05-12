@@ -29,10 +29,20 @@
 // *******************************************************
 // Globals to module
 // *******************************************************
-static bool but_state[NUM_BUTS];	// Corresponds to the electrical state
+static bool but_state[NUM_BUTS];    // Corresponds to the electrical state
 static uint8_t but_count[NUM_BUTS];
 static bool but_flag[NUM_BUTS];
 static bool but_normal[NUM_BUTS];   // Corresponds to the electrical state
+
+
+uint32_t switchChannel;     //Variable to hold the current value of switch position
+int16_t desiredHeight = 0;
+int16_t desiredAngle = 0;
+uint32_t variableTest = 1;
+int8_t flightMode;
+
+
+
 
 // *******************************************************
 // initButtons: Initialise the variables associated with the set of buttons
@@ -41,15 +51,15 @@ static bool but_normal[NUM_BUTS];   // Corresponds to the electrical state
 void
 initButtons (void)
 {
-	int i;
+    int i;
 
-	// UP button (active HIGH)
+    // UP button (active HIGH)
     SysCtlPeripheralEnable (UP_BUT_PERIPH);
     GPIOPinTypeGPIOInput (UP_BUT_PORT_BASE, UP_BUT_PIN);
     GPIOPadConfigSet (UP_BUT_PORT_BASE, UP_BUT_PIN, GPIO_STRENGTH_2MA,
        GPIO_PIN_TYPE_STD_WPD);
     but_normal[UP] = UP_BUT_NORMAL;
-	// DOWN button (active HIGH)
+    // DOWN button (active HIGH)
     SysCtlPeripheralEnable (DOWN_BUT_PERIPH);
     GPIOPinTypeGPIOInput (DOWN_BUT_PORT_BASE, DOWN_BUT_PIN);
     GPIOPadConfigSet (DOWN_BUT_PORT_BASE, DOWN_BUT_PIN, GPIO_STRENGTH_2MA,
@@ -75,12 +85,12 @@ initButtons (void)
        GPIO_PIN_TYPE_STD_WPU);
     but_normal[RIGHT] = RIGHT_BUT_NORMAL;
 
-	for (i = 0; i < NUM_BUTS; i++)
-	{
-		but_state[i] = but_normal[i];
-		but_count[i] = 0;
-		but_flag[i] = false;
-	}
+    for (i = 0; i < NUM_BUTS; i++)
+    {
+        but_state[i] = but_normal[i];
+        but_count[i] = 0;
+        but_flag[i] = false;
+    }
 }
 
 // *******************************************************
@@ -95,30 +105,30 @@ initButtons (void)
 void
 updateButtons (void)
 {
-	bool but_value[NUM_BUTS];
-	int i;
-	
-	// Read the pins; true means HIGH, false means LOW
-	but_value[UP] = (GPIOPinRead (UP_BUT_PORT_BASE, UP_BUT_PIN) == UP_BUT_PIN);
-	but_value[DOWN] = (GPIOPinRead (DOWN_BUT_PORT_BASE, DOWN_BUT_PIN) == DOWN_BUT_PIN);
+    bool but_value[NUM_BUTS];
+    int i;
+
+    // Read the pins; true means HIGH, false means LOW
+    but_value[UP] = (GPIOPinRead (UP_BUT_PORT_BASE, UP_BUT_PIN) == UP_BUT_PIN);
+    but_value[DOWN] = (GPIOPinRead (DOWN_BUT_PORT_BASE, DOWN_BUT_PIN) == DOWN_BUT_PIN);
     but_value[LEFT] = (GPIOPinRead (LEFT_BUT_PORT_BASE, LEFT_BUT_PIN) == LEFT_BUT_PIN);
     but_value[RIGHT] = (GPIOPinRead (RIGHT_BUT_PORT_BASE, RIGHT_BUT_PIN) == RIGHT_BUT_PIN);
-	// Iterate through the buttons, updating button variables as required
-	for (i = 0; i < NUM_BUTS; i++)
-	{
+    // Iterate through the buttons, updating button variables as required
+    for (i = 0; i < NUM_BUTS; i++)
+    {
         if (but_value[i] != but_state[i])
         {
-        	but_count[i]++;
-        	if (but_count[i] >= NUM_BUT_POLLS)
-        	{
-        		but_state[i] = but_value[i];
-        		but_flag[i] = true;	   // Reset by call to checkButton()
-        		but_count[i] = 0;
-        	}
+            but_count[i]++;
+            if (but_count[i] >= NUM_BUT_POLLS)
+            {
+                but_state[i] = but_value[i];
+                but_flag[i] = true;    // Reset by call to checkButton()
+                but_count[i] = 0;
+            }
         }
         else
-        	but_count[i] = 0;
-	}
+            but_count[i] = 0;
+    }
 }
 
 // *******************************************************
@@ -127,14 +137,109 @@ updateButtons (void)
 // otherwise returns NO_CHANGE.
 enum butStates checkButton (uint8_t butName)
 {
-	if (but_flag[butName])
-	{
-		but_flag[butName] = false;
-		if (but_state[butName] == but_normal[butName])
-			return RELEASED;
-		else
-			return PUSHED;
-	}
-	return NO_CHANGE;
+    if (but_flag[butName])
+    {
+        but_flag[butName] = false;
+        if (but_state[butName] == but_normal[butName])
+            return RELEASED;
+        else
+            return PUSHED;
+    }
+    return NO_CHANGE;
+}
+
+
+// *******************************************************
+// altAndYawValue: Function that checks the buttons and alters
+// the desired height and yaw accordingly
+void updateDesiredAltAndYawValue(void)
+{
+    //change these values to the correct place and format, and init them
+        uint8_t butState;
+        updateButtons ();
+
+        butState = checkButton (UP);
+        if (butState == PUSHED)
+        {
+            desiredHeight += 10;
+        }
+
+        butState = checkButton (DOWN);
+        if (butState == PUSHED)
+        {
+            desiredHeight -= 10;
+        }
+
+        butState = checkButton (RIGHT);
+        if (butState == PUSHED)
+        {
+            desiredAngle += 15;
+        }
+
+        butState = checkButton (LEFT);
+        if (butState == PUSHED)
+        {
+            desiredAngle -= 15;
+        }
+}
+
+
+
+
+
+void switchMode (void)      // to check the position ofthe switch and chang variabels as so
+{
+    switchChannel = GPIOPinRead(GPIO_PORTA_BASE,GPIO_PIN_7);
+
+    if (switchChannel == 0) // switch is in land position
+    {
+        flightMode = LANDED;
+
+    } else if (switchChannel != 0) // switch is in take off position
+    {
+
+        flightMode = FLYING;
+
+    }
+    GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_7);
+}
+
+
+
+void initSwitch(void)
+{
+    SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOA);
+
+    GPIOIntRegister(GPIO_PORTA_BASE, switchMode);
+
+    GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_7);
+
+    GPIOIntTypeSet (GPIO_PORTA_BASE, GPIO_PIN_7, GPIO_BOTH_EDGES);
+
+    GPIOIntEnable (GPIO_PORTA_BASE, GPIO_INT_PIN_7);
+
+
+}
+
+void resetCheck (void)
+{
+    // add in the reset operations
+
+}
+
+
+
+void initReset(void)
+{
+    SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOA);
+
+    GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);     //check out what to do with this
+
+    GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
+
+    GPIOIntTypeSet (GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_BOTH_EDGES);
+
+    GPIOIntEnable (GPIO_PORTA_BASE, GPIO_INT_PIN_6);
+
 }
 

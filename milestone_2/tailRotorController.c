@@ -102,7 +102,6 @@ void tailRotorControlLoop(uint16_t currentAngle)
 
     tailErrorSignal = desiredAngle - currentAngle;
 
-    errorIntegral += tailErrorSignal;
 
     double dutyCycle = (tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi);
 
@@ -110,12 +109,19 @@ void tailRotorControlLoop(uint16_t currentAngle)
     if (dutyCycle > TAIL_OUTPUT_MAX){
         dutyCycle = TAIL_OUTPUT_MAX;
     }
+    else
+    {
+       errorIntegral += tailErrorSignal * 0.00000000625;;
+
+    }
 
     if (dutyCycle < TAIL_OUTPUT_MIN){
         dutyCycle = TAIL_OUTPUT_MIN;
     }
     setTailPWM(PWM_START_RATE_HZ,dutyCycle);
 }
+
+
 
 
 
