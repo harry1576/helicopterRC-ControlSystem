@@ -43,11 +43,13 @@
 // Constants
 //*****************************************************************************
 #define BUF_SIZE 16
-
 #define SAMPLE_RATE_HZ 160
 
 
 int8_t PIDFlag = 0;
+int16_t currentHeight; // variable to store the current helicopter height.
+int16_t referenceAngle;
+
 
 
 
@@ -127,6 +129,18 @@ int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
 }
 
 
+void updateCurrentHeight()
+{
+    // Background task: calculate the (approximate) mean of the values in the
+    // circular buffer and display it, together with the sample number.
+    uint8_t i; // Variable used in for loop to cycle through buffer
+
+    int32_t sum; // The summation of the data read from the buffer
+    sum = 0;
+    for (i = 0; i < BUF_SIZE; i++)
+        sum = sum + readCircBuf (&g_inBuffer); // Calculate and display the rounded mean of the buffer contents
+    currentHeight = (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
+}
 //*****************************************************************************
 //
 // @Description The main function used to  initialise the required componentry
@@ -138,17 +152,17 @@ int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
 //*****************************************************************************
 int main(void)
 {
-    uint8_t i; // Variable used in for loop to cycle through buffer
+
 
     int16_t groundReference = 0; // Initialise the ground reference at the maximum height. Guaranteeing the first ground reading will be below this point.
-    int16_t currentHeight; // variable to store the current helicopter height.
     int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
     int8_t displayheight;
 
 
     int32_t displayAngle;
 
-    int32_t sum; // The summation of the data read from the buffer
+
+
 
     // Initialise required systems
     initClock ();
@@ -174,12 +188,8 @@ int main(void)
 
     while (1)
     {
-        // Background task: calculate the (approximate) mean of the values in the
-        // circular buffer and display it, together with the sample number.
-        sum = 0;
-        for (i = 0; i < BUF_SIZE; i++)
-            sum = sum + readCircBuf (&g_inBuffer); // Calculate and display the rounded mean of the buffer contents
-        currentHeight = (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
+
+        updateCurrentHeight();
 
         if (groundReference == 0) // set ground reference on first loop or when button is pushed
         {
@@ -189,15 +199,11 @@ int main(void)
 
 
 
-
-
-
         displayAngle = findDisplayAngle(currentAngle);
 
         if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
             //displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
-
 
             usprintf (statusStr, "Current Angle %2d \n",variableTest); // * usprintf
             UARTSend (statusStr);
@@ -205,16 +211,28 @@ int main(void)
 
         }
 
-       if (PIDFlag)
+
+        if (PIDFlag == 1 && flightMode == 0)
+        {
+            while(currentHeight < groundReference || ((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)))
+            {
+                updateCurrentHeight();
+                tailRotorControlLoop(currentAngle,referenceAngle);
+                if((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)) // ensures main rotor still has power when getting to reference angle
+                {
+                    mainRotorControlLoop(currentHeight,groundReference);
+                }
+            }
+        }
+
+
+       if (PIDFlag == 1 && flightMode == 1)
        {
-           mainRotorControlLoop(currentHeight);
-           tailRotorControlLoop(currentAngle);
+
+           mainRotorControlLoop(currentHeight,desiredHeight);
+           tailRotorControlLoop(referenceAngle,desiredAngle);
            PIDFlag = 0;
        }
-
-        mainRotorControlLoop(heightAsPercentage(maxHeight,currentHeight,groundReference));
-        tailRotorControlLoop(currentAngle);
-
 
     }
 }

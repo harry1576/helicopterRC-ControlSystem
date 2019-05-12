@@ -15,7 +15,7 @@
 
 void initialiseMainRotorPWM (void);
 void setMainPWM (uint32_t ui32Freq, uint32_t ui32Duty);
-void mainRotorControlLoop(uint16_t currentHeightPercentage );
+void mainRotorControlLoop(int16_t currentHeliHeight,int16_t desiredHeliHeight);
 
 extern int32_t dutyCycle;
 

@@ -103,15 +103,14 @@ void initialiseMainRotorPWM (void)
 
 }
 
-void mainRotorControlLoop(int16_t currentHeightHeli)
+void mainRotorControlLoop(int16_t currentHeliHeight,int16_t desiredHeliHeight)
 {
     float mainRotorKp = .46;
     float mainRotorKi = 0.000000028; // 1
     float mainRotorKd = 0;
 
-    int16_t desiredHeightPercentage = 1900;
 
-    errorSignal = currentHeightHeli - desiredHeightPercentage;
+    errorSignal = currentHeliHeight - desiredHeliHeight;
     int32_t errorDerivative = errorSignal - errorSignalPrevious;
 
 

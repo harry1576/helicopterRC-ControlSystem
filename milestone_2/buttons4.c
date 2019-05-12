@@ -198,10 +198,9 @@ void switchMode (void)      // to check the position ofthe switch and chang vari
 
     } else if (switchChannel != 0) // switch is in take off position
     {
-
         flightMode = FLYING;
-
     }
+
     GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_7);
 }
 

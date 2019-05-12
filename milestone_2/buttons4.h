@@ -55,6 +55,8 @@ enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
 extern int16_t desiredHeight;
 extern int16_t desiredAngle;
 extern uint32_t variableTest;
+extern int8_t flightMode;
+
 
 
 // *******************************************************
