@@ -7666,3 +7666,1601 @@ gmake[1]: 'milestone_2.out' is up to date.
 gmake[1]: 'milestone_2.out' is up to date.
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'buttons4.obj' failed
+"../buttons4.c", line 20: fatal error #1965: cannot open source file "inc/hw_memmap.h"
+1 catastrophic error detected in the compilation of "../buttons4.c".
+Compilation terminated.
+gmake: *** [buttons4.obj] Error 1
+"../helicopterAltitude.c", line 18: fatal error #1965: cannot open source file "inc/hw_memmap.h"
+1 catastrophic error detected in the compilation of "../helicopterAltitude.c".
+Compilation terminated.
+gmake: *** [helicopterAltitude.obj] Error 1
+"../helicopterMasterController.c", line 19: fatal error #1965: cannot open source file "inc/hw_memmap.h"
+1 catastrophic error detected in the compilation of "../helicopterMasterController.c".
+Compilation terminated.
+gmake: *** [helicopterMasterController.obj] Error 1
+"../mainRotorController.c", line 18: fatal error #1965: cannot open source file "inc/hw_memmap.h"
+1 catastrophic error detected in the compilation of "../mainRotorController.c".
+Compilation terminated.
+gmake: *** [mainRotorController.obj] Error 1
+"../tailRotorController.c", line 18: fatal error #1965: cannot open source file "inc/hw_memmap.h"
+1 catastrophic error detected in the compilation of "../tailRotorController.c".
+Compilation terminated.
+gmake: *** [tailRotorController.obj] Error 1
+"../uartCommunication.c", line 13: fatal error #1965: cannot open source file "inc/hw_memmap.h"
+1 catastrophic error detected in the compilation of "../uartCommunication.c".
+Compilation terminated.
+gmake: *** [uartCommunication.obj] Error 1
+"../userDisplay.c", line 18: fatal error #1965: cannot open source file "inc/hw_memmap.h"
+1 catastrophic error detected in the compilation of "../userDisplay.c".
+Compilation terminated.
+gmake: *** [userDisplay.obj] Error 1
+"../ustdlib.c", line 26: fatal error #1965: cannot open source file "driverlib/debug.h"
+1 catastrophic error detected in the compilation of "../ustdlib.c".
+Compilation terminated.
+gmake: *** [ustdlib.obj] Error 1
+"../yawFiniteStateMachine.c", line 14: fatal error #1965: cannot open source file "inc/hw_memmap.h"
+1 catastrophic error detected in the compilation of "../yawFiniteStateMachine.c".
+Compilation terminated.
+gmake: *** [yawFiniteStateMachine.obj] Error 1
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+
+>> Compilation failure
+subdir_rules.mk:21: recipe for target 'helicopterAltitude.obj' failed
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'mainRotorController.obj' failed
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+
+>> Compilation failure
+subdir_rules.mk:42: recipe for target 'tailRotorController.obj' failed
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+
+>> Compilation failure
+subdir_rules.mk:56: recipe for target 'uartCommunication.obj' failed
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+
+>> Compilation failure
+subdir_rules.mk:63: recipe for target 'userDisplay.obj' failed
+Building file: "../ustdlib.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="ustdlib.d_raw"  "../ustdlib.c"
+
+>> Compilation failure
+subdir_rules.mk:70: recipe for target 'ustdlib.obj' failed
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+
+>> Compilation failure
+subdir_rules.mk:77: recipe for target 'yawFiniteStateMachine.obj' failed
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../circBufT.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="circBufT.d_raw"  "../circBufT.c"
+Finished building: "../circBufT.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../circBufT.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="circBufT.d_raw"  "../circBufT.c"
+Finished building: "../circBufT.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+Finished building: "../buttons4.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../userDisplay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="userDisplay.d_raw"  "../userDisplay.c"
+Finished building: "../userDisplay.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/FillPat.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/FillPat.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/FillPat.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/FillPat.c"
+ 
+Building file: "../OrbitOLED/OrbitOLEDInterface.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/OrbitOLEDInterface.d_raw" --obj_directory="OrbitOLED"  "../OrbitOLED/OrbitOLEDInterface.c"
+Finished building: "../OrbitOLED/OrbitOLEDInterface.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/ChrFont0.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/ChrFont0.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/ChrFont0.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/ChrFont0.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/OrbitOledChar.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/OrbitOledChar.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/OrbitOledChar.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/OrbitOledChar.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/OrbitOled.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/OrbitOled.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/OrbitOled.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/OrbitOled.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/delay.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/delay.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/delay.c"
+Finished building: "../OrbitOLED/lib_OrbitOled/delay.c"
+ 
+Building file: "../ustdlib.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="ustdlib.d_raw"  "../ustdlib.c"
+Finished building: "../ustdlib.c"
+ 
+Building file: "../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="OrbitOLED/lib_OrbitOled/OrbitOledGrph.d_raw" --obj_directory="OrbitOLED/lib_OrbitOled"  "../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c"
+"../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c", line 615: warning #552-D: variable "bTmp" was set but never used
+"../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c", line 818: warning #552-D: variable "pbBmp" was set but never used
+Finished building: "../OrbitOLED/lib_OrbitOled/OrbitOledGrph.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 144: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 145: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'buttons4.obj' failed
+"../buttons4.c", line 162: error #128: expected a statement
+"../buttons4.c", line 167: warning #12-D: parsing restarts here after previous syntax error
+"../buttons4.c", line 168: error #128: expected a statement
+"../buttons4.c", line 173: warning #12-D: parsing restarts here after previous syntax error
+"../buttons4.c", line 174: error #128: expected a statement
+"../buttons4.c", line 178: warning #12-D: parsing restarts here after previous syntax error
+"../buttons4.c", line 179: warning #994-D: missing return statement at end of non-void function "altAndYawValue"
+3 errors detected in the compilation of "../buttons4.c".
+gmake: *** [buttons4.obj] Error 1
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 63: warning #225-D: function "updatebuttons" declared implicitly
+"../helicopterMasterController.c", line 144: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 145: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+Finished building: "../buttons4.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined     first referenced                
+  symbol           in file                     
+ ---------     ----------------                
+ updatebuttons ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+makefile:156: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined     first referenced                
+  symbol           in file                     
+ ---------     ----------------                
+ updatebuttons ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+makefile:156: recipe for target 'all' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined     first referenced                
+  symbol           in file                     
+ ---------     ----------------                
+ updatebuttons ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+makefile:156: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 63: warning #225-D: function "updatebuttons" declared implicitly
+"../helicopterMasterController.c", line 144: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 145: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+Finished building: "../buttons4.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined     first referenced                
+  symbol           in file                     
+ ---------     ----------------                
+ updatebuttons ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+makefile:156: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 180: warning #225-D: function "updatebuttons" declared implicitly
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined     first referenced                
+  symbol           in file                     
+ ---------     ----------------                
+ updatebuttons ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+makefile:156: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined     first referenced                
+  symbol           in file                     
+ ---------     ----------------                
+ updatebuttons ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+makefile:156: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined     first referenced                
+  symbol           in file                     
+ ---------     ----------------                
+ updatebuttons ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+makefile:156: recipe for target 'all' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined     first referenced                
+  symbol           in file                     
+ ---------     ----------------                
+ updatebuttons ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+makefile:156: recipe for target 'all' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'helicopterMasterController.obj' failed
+"../helicopterMasterController.c", line 195: error #18: expected a ")"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+1 error detected in the compilation of "../helicopterMasterController.c".
+gmake: *** [helicopterMasterController.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+Finished building: "../buttons4.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'buttons4.obj' failed
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../buttons4.c", line 39: error #150: variable "desiredHeight" has already been initialized
+"../buttons4.c", line 40: error #150: variable "desiredAngle" has already been initialized
+2 errors detected in the compilation of "../buttons4.c".
+gmake: *** [buttons4.obj] Error 1
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../helicopterMasterController.c", line 191: warning #225-D: function "altAndYawValue" declared implicitly
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+"../helicopterMasterController.c", line 148: warning #179-D: variable "butState" was declared but never referenced
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../yawFiniteStateMachine.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../helicopterMasterController.c", line 191: warning #225-D: function "altAndYawValue" declared implicitly
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+"../helicopterMasterController.c", line 148: warning #179-D: variable "butState" was declared but never referenced
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../buttons4.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined      first referenced                
+  symbol            in file                     
+ ---------      ----------------                
+ altAndYawValue ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+makefile:156: recipe for target 'all' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../helicopterMasterController.c", line 191: warning #225-D: function "dersiredAltAndYawValue" declared implicitly
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+"../helicopterMasterController.c", line 148: warning #179-D: variable "butState" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined              first referenced                
+  symbol                    in file                     
+ ---------              ----------------                
+ dersiredAltAndYawValue ./helicopterMasterController.obj
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+makefile:156: recipe for target 'all' failed
+gmake[1]: *** [milestone_2.out] Error 1
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+"../helicopterMasterController.c", line 148: warning #179-D: variable "butState" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+"../helicopterMasterController.c", line 148: warning #179-D: variable "butState" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../buttons4.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+
+>> Compilation failure
+subdir_rules.mk:42: recipe for target 'tailRotorController.obj' failed
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../tailRotorController.c", line 121: error #20: identifier "errorSignalPrevious" is undefined
+"../tailRotorController.c", line 121: error #20: identifier "errorSignal" is undefined
+2 errors detected in the compilation of "../tailRotorController.c".
+gmake: *** [tailRotorController.obj] Error 1
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../buttons4.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+"../buttons4.h", line 81: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../tailRotorController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+"../buttons4.h", line 82: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+"../buttons4.h", line 82: warning #78-D: this declaration has no storage class or type specifier
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+"../buttons4.h", line 82: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+"../buttons4.h", line 82: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../buttons4.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+"../buttons4.h", line 82: warning #78-D: this declaration has no storage class or type specifier
+"../buttons4.h", line 82: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+"../buttons4.h", line 82: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+"../buttons4.h", line 82: warning #78-D: this declaration has no storage class or type specifier
+Finished building: "../buttons4.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'buttons4.obj' failed
+"../buttons4.c", line 153: error #148: declaration is incompatible with "void updateDesiredAltAndYawValue(void)" (declared at line 82 of "../buttons4.h")
+1 error detected in the compilation of "../buttons4.c".
+gmake: *** [buttons4.obj] Error 1
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+Finished building: "../buttons4.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+Finished building: "../buttons4.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+gmake[1]: 'milestone_2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'buttons4.obj' failed
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+"../buttons4.c", line 195: error #20: identifier "flightMode" is undefined
+"../buttons4.c", line 200: error #20: identifier "flightMode" is undefined
+2 errors detected in the compilation of "../buttons4.c".
+gmake: *** [buttons4.obj] Error 1
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+Finished building: "../yawFiniteStateMachine.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'buttons4.obj' failed
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+"../buttons4.c", line 195: error #20: identifier "flightMode" is undefined
+"../buttons4.c", line 200: error #20: identifier "flightMode" is undefined
+2 errors detected in the compilation of "../buttons4.c".
+gmake: *** [buttons4.obj] Error 1
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+"../buttons4.h", line 52: warning #1054-D: a storage class may not be specified here
+Finished building: "../yawFiniteStateMachine.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+"../buttons4.h", line 52: warning #262-D: explicit type is missing ("int" assumed)
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../buttons4.h", line 52: warning #262-D: explicit type is missing ("int" assumed)
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+"../buttons4.h", line 52: warning #262-D: explicit type is missing ("int" assumed)
+"../buttons4.h", line 52: warning #262-D: explicit type is missing ("int" assumed)
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+Finished building: "../buttons4.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+"../buttons4.h", line 52: warning #262-D: explicit type is missing ("int" assumed)
+"../buttons4.h", line 52: warning #262-D: explicit type is missing ("int" assumed)
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+"../buttons4.h", line 52: warning #262-D: explicit type is missing ("int" assumed)
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+
+ undefined  first referenced
+  symbol        in file     
+ ---------  ----------------
+ flightMode ./buttons4.obj  
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "milestone_2.out" not built
+
+gmake[1]: *** [milestone_2.out] Error 1
+>> Compilation failure
+makefile:160: recipe for target 'milestone_2.out' failed
+gmake: *** [all] Error 2
+makefile:156: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'buttons4.obj' failed
+"../buttons4.c", line 195: error #20: identifier "flightMode" is undefined
+"../buttons4.c", line 195: error #20: identifier "FLYING" is undefined
+"../buttons4.c", line 200: error #20: identifier "flightMode" is undefined
+"../buttons4.c", line 200: error #20: identifier "LANDED" is undefined
+4 errors detected in the compilation of "../buttons4.c".
+gmake: *** [buttons4.obj] Error 1
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterAltitude.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterAltitude.d_raw"  "../helicopterAltitude.c"
+Finished building: "../helicopterAltitude.c"
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building file: "../mainRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="mainRotorController.d_raw"  "../mainRotorController.c"
+Finished building: "../mainRotorController.c"
+ 
+Building file: "../buttons4.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons4.d_raw"  "../buttons4.c"
+Finished building: "../buttons4.c"
+ 
+Building file: "../tailRotorController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tailRotorController.d_raw"  "../tailRotorController.c"
+Finished building: "../tailRotorController.c"
+ 
+Building file: "../uartCommunication.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uartCommunication.d_raw"  "../uartCommunication.c"
+Finished building: "../uartCommunication.c"
+ 
+Building file: "../yawFiniteStateMachine.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="yawFiniteStateMachine.d_raw"  "../yawFiniteStateMachine.c"
+Finished building: "../yawFiniteStateMachine.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project milestone_2 ****
+
+/home/harry/ti/ccsv7/utils/bin/gmake -k -j 4 all -O 
+ 
+Building file: "../helicopterMasterController.c"
+Invoking: ARM Compiler
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/harry/ti/TivaWare" --include_path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2" --include_path="/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="helicopterMasterController.d_raw"  "../helicopterMasterController.c"
+"../helicopterMasterController.c", line 143: warning #552-D: variable "maxHeight" was set but never used
+"../helicopterMasterController.c", line 144: warning #179-D: variable "displayheight" was declared but never referenced
+Finished building: "../helicopterMasterController.c"
+ 
+Building target: "milestone_2.out"
+Invoking: ARM Linker
+"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"milestone_2.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="milestone_2_linkInfo.xml" --rom_model -o "milestone_2.out" "./buttons4.obj" "./circBufT.obj" "./helicopterAltitude.obj" "./helicopterMasterController.obj" "./mainRotorController.obj" "./tailRotorController.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartCommunication.obj" "./userDisplay.obj" "./ustdlib.obj" "./yawFiniteStateMachine.obj" "./OrbitOLED/OrbitOLEDInterface.obj" "./OrbitOLED/lib_OrbitOled/ChrFont0.obj" "./OrbitOLED/lib_OrbitOled/FillPat.obj" "./OrbitOLED/lib_OrbitOled/OrbitOled.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "./OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "./OrbitOLED/lib_OrbitOled/delay.obj" "../tm4c123gh6pm.cmd"  -l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "milestone_2.out"
+ 
+
+**** Build Finished ****

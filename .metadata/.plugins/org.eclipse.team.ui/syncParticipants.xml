@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syncparticipants>
+<participant displayName="Git (milestone_2/t...StateMachine.c)" id="org.eclipse.egit.ui.modelCompareParticipant" secondary_id="1557657202844">
+<data forceFetch="false" root="false">
+<org.eclipse.team.ui.MODEL_PARTICIPANT_SETTINGS org.eclipse.team.ui.MODEL_PARTICIPANT_DESCRIPTION="milestone_2/t...StateMachine.c" startupAction="none">
+<org.eclipse.team.ui.MODEL_PARTICIPANT_REFRESH_SCHEDULE org.eclipse.team.ui.CTX_REFRESHSCHEDULE_ENABLED="false" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_INTERVAL="3600" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_RUNONCE="false"/>
+<org.eclipse.team.ui.MODEL_PARTICIPANT_MAPPINGS modelProviderId="org.eclipse.core.resources.modelProvider">
+<mappings>
+<resources resourcePath="/milestone_2/tm4c123gh6pm.cmd" resourceType="1"/>
+<resources resourcePath="/milestone_2/helicopterAltitude.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/mainRotorController.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/tailRotorController.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/tm4c123gh6pm_startup_ccs.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/buttons4.h" resourceType="1"/>
+<resources resourcePath="/milestone_2/userDisplay.h" resourceType="1"/>
+<resources resourcePath="/milestone_2/circBufT.h" resourceType="1"/>
+<resources resourcePath="/milestone_2/uartCommunication.h" resourceType="1"/>
+<resources resourcePath="/milestone_2/yawFiniteStateMachine.h" resourceType="1"/>
+<resources resourcePath="/milestone_2/helicopterAltitude.h" resourceType="1"/>
+<resources resourcePath="/milestone_2/mainRotorController.h" resourceType="1"/>
+<resources resourcePath="/milestone_2/tailRotorController.h" resourceType="1"/>
+<resources resourcePath="/milestone_2/buttons4.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/userDisplay.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/circBufT.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/ustdlib.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/uartCommunication.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/helicopterMasterController.c" resourceType="1"/>
+<resources resourcePath="/milestone_2/yawFiniteStateMachine.c" resourceType="1"/>
+</mappings>
+</org.eclipse.team.ui.MODEL_PARTICIPANT_MAPPINGS>
+</org.eclipse.team.ui.MODEL_PARTICIPANT_SETTINGS>
+<gitSynchronizeData container="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/RemoteSystemsTempFiles" dstRev="refs/remotes/origin/harry" inludeLocal="true" srcRev="HEAD">
+<includedPaths>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/tm4c123gh6pm.cmd"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/helicopterAltitude.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/mainRotorController.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/tailRotorController.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/tm4c123gh6pm_startup_ccs.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/buttons4.h"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/userDisplay.h"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/circBufT.h"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/uartCommunication.h"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/yawFiniteStateMachine.h"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/helicopterAltitude.h"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/mainRotorController.h"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/tailRotorController.h"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/buttons4.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/userDisplay.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/circBufT.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/ustdlib.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/uartCommunication.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/helicopterMasterController.c"/>
+<path path="/home/harry/Documents/University 2019/ENCE361/Project/Milestone2/thu_pm_group-23/milestone_2/yawFiniteStateMachine.c"/>
+</includedPaths>
+</gitSynchronizeData>
+</data>
+</participant>
+</syncparticipants>
