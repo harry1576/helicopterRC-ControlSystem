@@ -204,11 +204,8 @@ int main(void)
         if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
             //displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
-
             usprintf (statusStr, "Current Angle %2d \n",variableTest); // * usprintf
             UARTSend (statusStr);
-
-
         }
 
 
