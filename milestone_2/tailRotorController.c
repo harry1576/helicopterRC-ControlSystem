@@ -95,8 +95,8 @@ void initialiseTailRotorPWM (void){
 
 void tailRotorControlLoop(uint16_t refAngle,uint16_t desiredAngle)
 {
-    float tailRotorKp = 0.03;
-    float tailRotorKi = 0.00;
+    float tailRotorKp = 0.3;
+    float tailRotorKi = 0.3;
 
 
     tailErrorSignal = desiredAngle - refAngle;
@@ -110,7 +110,7 @@ void tailRotorControlLoop(uint16_t refAngle,uint16_t desiredAngle)
     }
     else
     {
-       errorIntegral += tailErrorSignal * 0.00000000625;;
+       errorIntegral += tailErrorSignal * 0.00625;
 
     }
 

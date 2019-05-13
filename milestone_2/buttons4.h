@@ -52,7 +52,7 @@ enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
 // read the pin in the opposite condition, before the state changes and
 // a flag is set.  Set NUM_BUT_POLLS according to the polling rate.
 
-extern int16_t desiredHeight;
+extern int16_t desiredHeightPercentage;
 extern int16_t desiredAngle;
 extern uint32_t variableTest;
 extern int8_t flightMode;

@@ -153,16 +153,10 @@ void updateCurrentHeight()
 int main(void)
 {
 
-
     int16_t groundReference = 0; // Initialise the ground reference at the maximum height. Guaranteeing the first ground reading will be below this point.
     int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
     int8_t displayheight;
-
-
     int32_t displayAngle;
-
-
-
 
     // Initialise required systems
     initClock ();
@@ -188,23 +182,23 @@ int main(void)
 
     while (1)
     {
-
         updateCurrentHeight();
 
         if (groundReference == 0) // set ground reference on first loop or when button is pushed
         {
            groundReference = currentHeight ;
-           maxHeight = groundReference - 992; //(4095*(0.8)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
+           maxHeight = groundReference - 1240; //(4095*(1)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
-
-
         displayAngle = findDisplayAngle(currentAngle);
+        updateDesiredAltAndYawValue();
 
         if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
             //displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
-            usprintf (statusStr, "Current Angle %2d \n",variableTest); // * usprintf
+            usprintf (statusStr, "Desired %3d \n",desiredHeightPercentage); // * usprintf
+            UARTSend (statusStr);
+            usprintf (statusStr, "Current %3d \n",heightAsPercentage(maxHeight,currentHeight,groundReference)); // * usprintf
             UARTSend (statusStr);
         }
 
@@ -217,19 +211,17 @@ int main(void)
                 tailRotorControlLoop(currentAngle,referenceAngle);
                 if((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)) // ensures main rotor still has power when getting to reference angle
                 {
-                    mainRotorControlLoop(currentHeight,groundReference);
+                  //  mainRotorControlLoop(currentHeight,groundReference,maxHeight);
                 }
             }
         }
 
-
        if (PIDFlag == 1 && flightMode == 1)
        {
 
-           mainRotorControlLoop(currentHeight,desiredHeight);
+           mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
            tailRotorControlLoop(referenceAngle,desiredAngle);
            PIDFlag = 0;
        }
-
     }
 }

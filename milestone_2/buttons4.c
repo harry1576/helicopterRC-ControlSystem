@@ -37,10 +37,10 @@ static bool but_normal[NUM_BUTS];   // Corresponds to the electrical state
 
 uint32_t switchChannel;     //Variable to hold the current value of switch position
 
-int16_t desiredHeight = 0;
+int16_t desiredHeightPercentage = 0;
 int16_t desiredAngle = 0;
 uint32_t variableTest = 1;
-int8_t flightMode;
+int8_t flightMode = 1;
 
 
 
@@ -162,13 +162,13 @@ void updateDesiredAltAndYawValue(void)
         butState = checkButton (UP);
         if (butState == PUSHED)
         {
-            desiredHeight += 10;
+            desiredHeightPercentage += 10;
         }
 
         butState = checkButton (DOWN);
         if (butState == PUSHED)
         {
-            desiredHeight -= 10;
+            desiredHeightPercentage -= 10;
         }
 
         butState = checkButton (RIGHT);
