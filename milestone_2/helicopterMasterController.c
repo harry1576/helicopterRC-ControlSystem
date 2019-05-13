@@ -47,10 +47,7 @@
 
 
 int8_t PIDFlag = 0;
-int16_t currentHeight; // variable to store the current helicopter height.
-int16_t referenceAngle;
-
-
+volatile int16_t currentHeight; // variable to store the current helicopter height.
 
 
 //*****************************************************************************
@@ -158,6 +155,8 @@ int main(void)
     int8_t displayheight;
     int32_t displayAngle;
 
+    int32_t tempAngle = 0;
+
     // Initialise required systems
     initClock ();
     initTimer ();
@@ -176,7 +175,6 @@ int main(void)
     // set output states of rotors to true
     PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true);
     PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, true);
-
 
     IntMasterEnable();     // Enable interrupts to the processor.
 
@@ -203,7 +201,7 @@ int main(void)
         }
 
 
-        if (PIDFlag == 1 && flightMode == 0)
+        if (PIDFlag == 1 && flightMode == 0)// landing
         {
             while(currentHeight < groundReference || ((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)))
             {
@@ -211,13 +209,23 @@ int main(void)
                 tailRotorControlLoop(currentAngle,referenceAngle);
                 if((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)) // ensures main rotor still has power when getting to reference angle
                 {
-                  //  mainRotorControlLoop(currentHeight,groundReference,maxHeight);
+                   mainRotorControlLoop(currentHeight,groundReference,maxHeight);
                 }
             }
         }
 
-       if (PIDFlag == 1 && flightMode == 1)
+       if (PIDFlag == 1 && flightMode == 1)//take off /flying
        {
+           while(referenceAngleSet == 0)
+           {
+               desiredHeightPercentage = 10;
+               mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
+               tailRotorControlLoop(0,tempAngle);
+               tempAngle ++;
+           }
+
+
+
 
            mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
            tailRotorControlLoop(referenceAngle,desiredAngle);

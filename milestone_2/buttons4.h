@@ -56,6 +56,10 @@ extern int16_t desiredHeightPercentage;
 extern int16_t desiredAngle;
 extern uint32_t variableTest;
 extern int8_t flightMode;
+extern int8_t referenceAngleSet;
+extern volatile int16_t referenceAngle;
+
+
 
 
 
@@ -104,6 +108,8 @@ resetCheck (void);
 void
 initReset(void);
 
+void
+initReferencePoint(void);
 
 
 #endif /*BUTTONS_H_*/

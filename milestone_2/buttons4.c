@@ -24,6 +24,7 @@
 #include "driverlib/debug.h"
 #include "inc/tm4c123gh6pm.h"  // Board specific defines (for PF0)
 #include "buttons4.h"
+#include "yawFiniteStateMachine.h"
 
 
 // *******************************************************
@@ -40,8 +41,9 @@ uint32_t switchChannel;     //Variable to hold the current value of switch posit
 int16_t desiredHeightPercentage = 0;
 int16_t desiredAngle = 0;
 uint32_t variableTest = 1;
-int8_t flightMode = 1;
-
+int8_t flightMode = LANDED;
+int8_t referenceAngleSet = 0;
+volatile int16_t referenceAngle = 0;
 
 
 
@@ -209,13 +211,9 @@ void switchMode (void)      // to check the position ofthe switch and chang vari
 void initSwitch(void)
 {
     SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOA);
-
     GPIOIntRegister(GPIO_PORTA_BASE, switchMode);
-
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_7);
-
     GPIOIntTypeSet (GPIO_PORTA_BASE, GPIO_PIN_7, GPIO_BOTH_EDGES);
-
     GPIOIntEnable (GPIO_PORTA_BASE, GPIO_INT_PIN_7);
 
 
@@ -223,8 +221,8 @@ void initSwitch(void)
 
 void resetCheck (void)
 {
-    // add in the reset operations
-
+    SysCtlReset();
+    GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
 }
 
 
@@ -232,15 +230,30 @@ void resetCheck (void)
 void initReset(void)
 {
     SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOA);
-
-    GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);     //check out what to do with this
-
+    GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
-
     GPIOIntTypeSet (GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_BOTH_EDGES);
-
     GPIOIntEnable (GPIO_PORTA_BASE, GPIO_INT_PIN_6);
+}
 
+
+void referenceTriggerHandler(void)
+{
+    referenceAngle = currentAngle;
+    referenceAngleSet = 1;
+    GPIOIntClear(GPIO_PORTC_BASE, GPIO_INT_PIN_4 );
+
+
+}
+
+void initReferenceTrigger(void)
+{
+
+   SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOC);
+   GPIOIntRegister(GPIO_PORTC_BASE, referenceTriggerHandler);
+   GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_4);
+   GPIOIntTypeSet (GPIO_PORTC_BASE, GPIO_PIN_4, GPIO_LOW_LEVEL);
+   GPIOIntEnable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
 }
 
 
