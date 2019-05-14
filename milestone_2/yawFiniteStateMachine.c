@@ -36,6 +36,8 @@ uint8_t previousState;
 uint32_t ChannelA;
 uint32_t ChannelB;
 
+uint8_t angleReferenced = 0;
+
 // Variable that is used to hold the current angle of the helicopter.
 volatile int32_t currentAngle = 0;
 int32_t slotCount; // variable that holds the amount of steps the tranducer has
@@ -120,8 +122,16 @@ void yawFSM(void)
               break;
 
     }
+    uint32_t referenceSensor = GPIOPinRead(GPIO_PORTC_BASE,GPIO_PIN_4);
+
     currentAngle = ((slotCount * 360) /448);
     previousState = currentState;
+    if(referenceSensor == 0)
+    { currentAngle = 0;
+      slotCount  = 0;
+      angleReferenced = 1;
+    }
+
     GPIOIntClear(GPIO_PORTB_BASE, (GPIO_PIN_0 | GPIO_PIN_1));
 }
 
@@ -134,6 +144,10 @@ void yawFSM(void)
 //*****************************************************************************
 void yawFSMInit(void)
 {
+
+    SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOC);
+
+    GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_4);
 
 
     SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOB);

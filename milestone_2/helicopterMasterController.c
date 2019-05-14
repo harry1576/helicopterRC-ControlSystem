@@ -191,45 +191,29 @@ int main(void)
         displayAngle = findDisplayAngle(currentAngle);
         updateDesiredAltAndYawValue();
 
-        if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
+        if (g_ulSampCnt % 300 == 0) // update display every 20ms, allows program to run without delay function.
         {
             //displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
-            usprintf (statusStr, "Desired %3d \n",desiredHeightPercentage); // * usprintf
+          //  /usprintf (statusStr, "Desired %3d \n",desiredHeightPercentage); // * usprintf
+            //UARTSend (statusStr);
+            usprintf (statusStr,"Current %3d \n",heightAsPercentage(maxHeight,currentHeight,groundReference)); // * usprintf
             UARTSend (statusStr);
-            usprintf (statusStr, "Current %3d \n",heightAsPercentage(maxHeight,currentHeight,groundReference)); // * usprintf
+            usprintf (statusStr, "Angle %3d \n",currentAngle); // * usprintf
             UARTSend (statusStr);
         }
 
-
-        if (PIDFlag == 1 && flightMode == 0)// landing
-        {
-            while(currentHeight < groundReference || ((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)))
-            {
-                updateCurrentHeight();
-                tailRotorControlLoop(currentAngle,referenceAngle);
-                if((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)) // ensures main rotor still has power when getting to reference angle
-                {
-                   mainRotorControlLoop(currentHeight,groundReference,maxHeight);
-                }
-            }
-        }
 
        if (PIDFlag == 1 && flightMode == 1)//take off /flying
        {
-           while(referenceAngleSet == 0)
-           {
+
                desiredHeightPercentage = 10;
                mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-               tailRotorControlLoop(0,tempAngle);
-               tempAngle ++;
-           }
+               tailRotorControlLoop(currentAngle,0);
 
-
-
-
-           mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-           tailRotorControlLoop(referenceAngle,desiredAngle);
-           PIDFlag = 0;
+               //tempAngle ++;
+               //mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
+               //tailRotorControlLoop(referenceAngle,desiredAngle);
+               PIDFlag = 0;
        }
     }
 }
