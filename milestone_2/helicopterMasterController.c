@@ -162,16 +162,20 @@ int main(void)
     initClock ();
     initTimer ();
     initCircBuf (&g_inBuffer, BUF_SIZE);
+
+    initSwitch();
     initADC ();
     initDisplay ();
+
     initButtons();
+
     yawFSMInit();
     initialiseUSB_UART();
-    initSwitch();
 
     // initalise the PWM for the motors
     initialiseMainRotorPWM();
     initialiseTailRotorPWM();
+
 
     // set output states of rotors to true
     PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true);
@@ -214,25 +218,28 @@ int main(void)
             }
         }
         */
-       if (PIDFlag == 1 && flightMode == 1)//take off /flying
+       if (PIDFlag == 1)
        {
-           if(referenceAngleSet == 0)
+           if(flightMode == 1;)// take off/ taking off
            {
-               desiredHeightPercentage = 10;
-               mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-               tailRotorControlLoop(0,tempAngle);
-               tempAngle ++;
-           }
-           if(currentAngle < 5 && currentAngle > -5 && referenceAngleSet == 1)
-           {
-              helicopterTakenOff = 1;
-           }
+               if(referenceAngleSet == 0)// find reference angle
+               {
+                   desiredHeightPercentage = 10;
+                   mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
+                   tailRotorControlLoop(0,tempAngle);
+                   tempAngle ++;
+               }
+               if(currentAngle < 5 && currentAngle > -5 && referenceAngleSet > 4)// an interrupt will trigger when at reference angle. when it is close it will enable other buttons for cotnrol.
+               {
+                  helicopterTakenOff = 1;
+               }
 
-           if(helicopterTakenOff == 1)
-           {
-               updateDesiredAltAndYawValue();
-               mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-               tailRotorControlLoop(referenceAngle,desiredAngle);
+               if(helicopterTakenOff == 1)
+               {
+                   updateDesiredAltAndYawValue(); // get data from buttons once taken
+                   mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
+                   tailRotorControlLoop(referenceAngle,desiredAngle);
+               }
            }
            PIDFlag = 0;
 

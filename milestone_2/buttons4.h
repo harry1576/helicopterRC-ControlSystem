@@ -58,6 +58,7 @@ extern uint32_t variableTest;
 extern int8_t flightMode;
 //extern int8_t referenceAngleSet;
 extern volatile int16_t referenceAngle;
+extern int8_t testVariable;
 
 
 

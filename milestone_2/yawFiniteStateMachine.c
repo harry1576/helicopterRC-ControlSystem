@@ -23,7 +23,7 @@
 #include "utils/ustdlib.h"
 #include "circBufT.h"
 #include "OrbitOLED/OrbitOLEDInterface.h"
-#include "buttons4.h"
+
 
 // Variables used to hold the current and previous states. This is required for
 // the FSM to function correctly.
@@ -133,7 +133,7 @@ void yawFSM(void)
     {
         currentAngle = 0;
         slotCount = 0;
-        referenceAngleSet = 1;
+        referenceAngleSet ++;
 
     }
 

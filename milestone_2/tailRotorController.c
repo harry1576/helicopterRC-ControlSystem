@@ -24,7 +24,7 @@
 #include "driverlib/systick.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/interrupt.h"
-#include "buttons4.h"
+
 
 // PWM configuration
 #define PWM_START_RATE_HZ  250
@@ -70,8 +70,6 @@ void setTailPWM (uint32_t ui32Freq, uint32_t ui32Duty)
 
 void initialiseTailRotorPWM (void){
 
-    SysCtlPeripheralReset (PWM_TAIL_PERIPH_GPIO);
-    SysCtlPeripheralReset (PWM_TAIL_PERIPH_PWM);
 
     SysCtlPeripheralEnable(PWM_TAIL_PERIPH_GPIO);
     SysCtlPeripheralEnable(PWM_TAIL_PERIPH_PWM);

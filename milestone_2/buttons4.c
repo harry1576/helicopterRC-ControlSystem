@@ -44,6 +44,7 @@ uint32_t variableTest = 1;
 int8_t flightMode = LANDED;
 //int8_t referenceAngleSet = 0;
 volatile int16_t referenceAngle = 0;
+int8_t testVariable = 0;
 
 
 
@@ -159,7 +160,7 @@ void updateDesiredAltAndYawValue(void)
 {
     //change these values to the correct place and format, and init them
         uint8_t butState;
-        updateButtons ();
+       // updateButtons ();
 
         butState = checkButton (UP);
         if (butState == PUSHED)
@@ -177,12 +178,14 @@ void updateDesiredAltAndYawValue(void)
         if (butState == PUSHED)
         {
             desiredAngle += 15;
+
         }
 
         butState = checkButton (LEFT);
         if (butState == PUSHED)
         {
             desiredAngle -= 15;
+
         }
 }
 

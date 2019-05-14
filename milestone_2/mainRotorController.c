@@ -24,7 +24,7 @@
 #include "driverlib/systick.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/interrupt.h"
-#include "buttons4.h"
+
 #include "uartCommunication.h"
 #include "driverlib/uart.h"
 
