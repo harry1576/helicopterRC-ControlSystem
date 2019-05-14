@@ -93,13 +93,14 @@ void initialiseTailRotorPWM (void){
 
 
 
-void tailRotorControlLoop(uint16_t refAngle,uint16_t desiredAngle)
+void tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
 {
-    float tailRotorKp = 0.2;
+    float tailRotorKp = 0.25;
     float tailRotorKi = 0.01;
 
 
-    tailErrorSignal = desiredAngle - refAngle;
+
+    tailErrorSignal = desiredAngle - currentHelicopterAngle;
 
 
     double dutyCycle = (tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi);

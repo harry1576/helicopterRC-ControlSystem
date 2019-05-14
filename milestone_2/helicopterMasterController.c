@@ -193,6 +193,7 @@ int main(void)
         displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
         //updateDesiredAltAndYawValue();
 
+
         if (g_ulSampCnt % 200 == 0) // update display every 20ms, allows program to run without delay function.
         {
             char string[128];
@@ -234,6 +235,7 @@ int main(void)
                tailRotorControlLoop(referenceAngle,desiredAngle);
            }
            PIDFlag = 0;
+
        }
     }
 }
