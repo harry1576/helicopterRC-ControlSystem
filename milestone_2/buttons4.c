@@ -160,7 +160,10 @@ void updateDesiredAltAndYawValue(void)
 {
     //change these values to the correct place and format, and init them
         uint8_t butState;
-       // updateButtons ();
+
+
+        updateButtons ();
+
 
         butState = checkButton (UP);
         if (butState == PUSHED)
@@ -240,7 +243,7 @@ void initReset(void)
 }
 
 
-void referenceTriggerHandler(void)
+/*void referenceTriggerHandler(void)
 {
     referenceAngle = currentAngle;
    // referenceAngleSet = 1;
@@ -257,7 +260,7 @@ void initReferenceTrigger(void)
    GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_4);
    GPIOIntTypeSet (GPIO_PORTC_BASE, GPIO_PIN_4, GPIO_LOW_LEVEL);
    GPIOIntEnable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
-}
+}*/
 
 
 
