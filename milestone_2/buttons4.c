@@ -42,7 +42,7 @@ int16_t desiredHeightPercentage = 0;
 int16_t desiredAngle = 0;
 uint32_t variableTest = 1;
 int8_t flightMode = LANDED;
-int8_t referenceAngleSet = 0;
+//int8_t referenceAngleSet = 0;
 volatile int16_t referenceAngle = 0;
 
 
@@ -240,7 +240,7 @@ void initReset(void)
 void referenceTriggerHandler(void)
 {
     referenceAngle = currentAngle;
-    referenceAngleSet = 1;
+   // referenceAngleSet = 1;
     GPIOIntClear(GPIO_PORTC_BASE, GPIO_INT_PIN_4 );
 
 

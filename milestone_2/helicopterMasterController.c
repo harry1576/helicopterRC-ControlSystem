@@ -152,8 +152,9 @@ int main(void)
 
     int16_t groundReference = 0; // Initialise the ground reference at the maximum height. Guaranteeing the first ground reading will be below this point.
     int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
-    int8_t displayheight;
+    int32_t displayheight;
     int32_t displayAngle;
+    int8_t helicopterTakenOff = 0;
 
     int32_t tempAngle = 0;
 
@@ -189,18 +190,16 @@ int main(void)
         }
 
         displayAngle = findDisplayAngle(currentAngle);
-        updateDesiredAltAndYawValue();
+        displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
+        //updateDesiredAltAndYawValue();
 
-        if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
+        if (g_ulSampCnt % 200 == 0) // update display every 20ms, allows program to run without delay function.
         {
-            //displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
-            usprintf (statusStr, "Desired %3d \n",desiredHeightPercentage); // * usprintf
-            UARTSend (statusStr);
-            usprintf (statusStr, "Current %3d \n",heightAsPercentage(maxHeight,currentHeight,groundReference)); // * usprintf
-            UARTSend (statusStr);
+            char string[128];
+            usprintf(string, "Yaw: %5d [%5d]\n\rHeight: %5d [%5d]\n\r", displayAngle, desiredAngle, displayheight, desiredHeightPercentage);
+            UARTSend(string);
         }
-
-
+        /*
         if (PIDFlag == 1 && flightMode == 0)// landing
         {
             while(currentHeight < groundReference || ((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)))
@@ -213,22 +212,27 @@ int main(void)
                 }
             }
         }
-
+        */
        if (PIDFlag == 1 && flightMode == 1)//take off /flying
        {
-           while(referenceAngleSet == 0)
+           if(referenceAngleSet == 0)
            {
                desiredHeightPercentage = 10;
                mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
                tailRotorControlLoop(0,tempAngle);
                tempAngle ++;
            }
+           if(currentAngle < 5 && currentAngle > -5 && referenceAngleSet == 1)
+           {
+              helicopterTakenOff = 1;
+           }
 
-
-
-
-           mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-           tailRotorControlLoop(referenceAngle,desiredAngle);
+           if(helicopterTakenOff == 1)
+           {
+               updateDesiredAltAndYawValue();
+               mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
+               tailRotorControlLoop(referenceAngle,desiredAngle);
+           }
            PIDFlag = 0;
        }
     }

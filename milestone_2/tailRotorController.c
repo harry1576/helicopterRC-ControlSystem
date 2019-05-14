@@ -46,8 +46,8 @@
 #define PWM_TAIL_GPIO_CONFIG GPIO_PF1_M1PWM5
 #define PWM_TAIL_GPIO_PIN    GPIO_PIN_1
 
-#define TAIL_OUTPUT_MAX 95
-#define TAIL_OUTPUT_MIN 5
+#define TAIL_OUTPUT_MAX 70
+#define TAIL_OUTPUT_MIN 20
 
 
 int16_t tailErrorSignal;
@@ -95,8 +95,8 @@ void initialiseTailRotorPWM (void){
 
 void tailRotorControlLoop(uint16_t refAngle,uint16_t desiredAngle)
 {
-    float tailRotorKp = 0.3;
-    float tailRotorKi = 0.3;
+    float tailRotorKp = 0.2;
+    float tailRotorKi = 0.01;
 
 
     tailErrorSignal = desiredAngle - refAngle;
