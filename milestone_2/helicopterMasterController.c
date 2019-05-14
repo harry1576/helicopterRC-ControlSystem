@@ -189,6 +189,7 @@ int main(void)
            maxHeight = groundReference - 1240; //(4095*(1)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
+        //displayAngle = findDisplayAngle(currentAngle);
         displayAngle = findDisplayAngle(currentAngle);
         displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
         //updateDesiredAltAndYawValue();
@@ -232,7 +233,7 @@ int main(void)
            {
                updateDesiredAltAndYawValue();
                mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-               tailRotorControlLoop(referenceAngle,desiredAngle);
+               tailRotorControlLoop(currentAngle,findDisplayAngle(desiredAngle));
            }
            PIDFlag = 0;
 
