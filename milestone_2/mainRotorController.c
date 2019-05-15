@@ -35,10 +35,10 @@
 
 
 // PWM configuration
-#define PWM_START_RATE_HZ  200
+#define PWM_START_RATE_HZ  250
 #define PWM_RATE_STEP_HZ   50
-#define PWM_RATE_MIN_HZ    50
-#define PWM_RATE_MAX_HZ    400
+#define PWM_RATE_MIN_HZ    150
+#define PWM_RATE_MAX_HZ    300
 #define PWM_FIXED_DUTY     0
 #define PWM_DIVIDER_CODE   SYSCTL_PWMDIV_4
 #define PWM_DIVIDER        4
@@ -56,8 +56,8 @@
 #define PWM_MAIN_GPIO_PIN    GPIO_PIN_5
 
 
-#define OUTPUT_MAX 85
-#define OUTPUT_MIN 30
+#define OUTPUT_MAX 80
+#define OUTPUT_MIN 20
 
 float errorSignal;
 int16_t errorSignalPrevious = 0;
@@ -108,27 +108,27 @@ void initialiseMainRotorPWM (void)
 void mainRotorControlLoop(int16_t currentHeliHeight,int16_t desiredHeliHeight,int16_t groundReference)
 {
     float mainRotorKp = 0.44;
-    float mainRotorKi = 0.15; // 1
-    float mainRotorKd = 0.60;
+    float mainRotorKi = .5; // 1 //0.44/0.8/0.3
+    float mainRotorKd = 0.3;
 
 
-    errorSignal = currentHeliHeight - (groundReference - (12.4 * desiredHeliHeight));
+    errorSignal = (currentHeliHeight - (groundReference - (12.4 * desiredHeliHeight)));
     float errorDerivative = (errorSignal - errorSignalPrevious)/(0.00625);
 
     dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi) + (errorDerivative * mainRotorKd));
 
     // output error signal within the parameters
-    if (dutyCycle > OUTPUT_MAX){
+    if (dutyCycle >= OUTPUT_MAX){
         dutyCycle = OUTPUT_MAX;
+    }
+
+    else if (dutyCycle <= OUTPUT_MIN){
+        dutyCycle = OUTPUT_MIN;
     }
     else
     {
         errorIntegral += errorSignal * 0.00625
 ;
-    }
-
-     if (dutyCycle < OUTPUT_MIN){
-        dutyCycle = OUTPUT_MIN;
     }
     errorSignalPrevious = errorSignal;
     setMainPWM(PWM_START_RATE_HZ,dutyCycle);

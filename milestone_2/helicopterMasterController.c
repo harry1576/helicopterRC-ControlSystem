@@ -126,18 +126,7 @@ int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
 }
 
 
-void updateCurrentHeight()
-{
-    // Background task: calculate the (approximate) mean of the values in the
-    // circular buffer and display it, together with the sample number.
-    uint8_t i; // Variable used in for loop to cycle through buffer
 
-    int32_t sum; // The summation of the data read from the buffer
-    sum = 0;
-    for (i = 0; i < BUF_SIZE; i++)
-        sum = sum + readCircBuf (&g_inBuffer); // Calculate and display the rounded mean of the buffer contents
-    currentHeight = (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
-}
 //*****************************************************************************
 //
 // @Description The main function used to  initialise the required componentry
@@ -185,7 +174,16 @@ int main(void)
 
     while (1)
     {
-        updateCurrentHeight();
+        // Background task: calculate the (approximate) mean of the values in the
+        // circular buffer and display it, together with the sample number.
+        uint8_t i; // Variable used in for loop to cycle through buffer
+
+        int32_t sum; // The summation of the data read from the buffer
+        sum = 0;
+        for (i = 0; i < BUF_SIZE; i++)
+            sum = sum + readCircBuf (&g_inBuffer); // Calculate and display the rounded mean of the buffer contents
+        currentHeight = (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
+
 
         if (groundReference == 0) // set ground reference on first loop or when button is pushed
         {
@@ -199,7 +197,7 @@ int main(void)
         //updateDesiredAltAndYawValue();
 
 
-        if (g_ulSampCnt % 200 == 0) // update display every 20ms, allows program to run without delay function.
+        if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
             char string[128];
             usprintf(string, "Yaw: %5d [%5d]\n\rHeight: %5d [%5d]\n\r", displayAngle, desiredAngle, displayheight, desiredHeightPercentage);
@@ -219,32 +217,15 @@ int main(void)
             }
         }
         */
+       //updateCurrentHeight();
+
        if (PIDFlag == 1)
        {
-           if(flightMode == 1;)// take off/ taking off
-           {
 
-               if(referenceAngleSet == 0)// find reference angle
-               {
-                   desiredHeightPercentage = 10;
-                   mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-                   tailRotorControlLoop(0,tempAngle);
-                   tempAngle ++;
-               }
-               if(currentAngle < 5 && currentAngle > -5 && referenceAngleSet > 4)// an interrupt will trigger when at reference angle. when it is close it will enable other buttons for cotnrol.
-               {
-                  helicopterTakenOff = 1;
-               }
-
-               if(helicopterTakenOff == 1)
-               {
                    updateDesiredAltAndYawValue(); // get data from buttons once taken
                    mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-                   tailRotorControlLoop(referenceAngle,desiredAngle);
-               }
-
-           }
-           PIDFlag = 0;
+                   tailRotorControlLoop(currentAngle,desiredAngle);
+                   PIDFlag = 0;
 
        }
     }
