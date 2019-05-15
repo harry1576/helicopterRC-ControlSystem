@@ -142,10 +142,16 @@ int main(void)
     int16_t groundReference = 0; // Initialise the ground reference at the maximum height. Guaranteeing the first ground reading will be below this point.
     int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
     int32_t displayheight;
-    int32_t displayAngle;
+    int32_t dersiredDisplayAngle;
+    int32_t currentDisplayAngle;
+
     int8_t helicopterTakenOff = 0;
 
-    int32_t tempAngle = 0;
+    int32_t tailDutyCycle;
+    int32_t mainDutyCycle;
+
+    int32_t tempDuty = 0;
+    int32_t currentDutyCycle;
 
     // Initialise required systems
     initClock ();
@@ -165,7 +171,6 @@ int main(void)
     initialiseMainRotorPWM();
     initialiseTailRotorPWM();
 
-
     // set output states of rotors to true
     PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true);
     PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, true);
@@ -184,48 +189,68 @@ int main(void)
             sum = sum + readCircBuf (&g_inBuffer); // Calculate and display the rounded mean of the buffer contents
         currentHeight = (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
 
-
         if (groundReference == 0) // set ground reference on first loop or when button is pushed
         {
            groundReference = currentHeight ;
            maxHeight = groundReference - 1240; //(4095*(1)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
-        //displayAngle = findDisplayAngle(currentAngle);
-        displayAngle = findDisplayAngle(currentAngle);
-        displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
-        //updateDesiredAltAndYawValue();
 
+        //updateDesiredAltAndYawValue();
 
         if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
+            dersiredDisplayAngle = findDisplayAngle(desiredAngle);
+            currentDisplayAngle = findDisplayAngle(currentAngle);
+            displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
             char string[128];
-            usprintf(string, "Yaw: %5d [%5d]\n\rHeight: %5d [%5d]\n\r", currentAngle, desiredAngle, displayheight, desiredHeightPercentage);
+            usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\r",currentDisplayAngle,dersiredDisplayAngle,tailDutyCycle,displayheight,desiredHeightPercentage,mainDutyCycle);
             UARTSend(string);
         }
-        /*
-        if (PIDFlag == 1 && flightMode == 0)// landing
-        {
-            while(currentHeight < groundReference || ((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)))
-            {
-                updateCurrentHeight();
-                tailRotorControlLoop(currentAngle,referenceAngle);
-                if((currentAngle > referenceAngle + 5) && (currentAngle < referenceAngle -5)) // ensures main rotor still has power when getting to reference angle
-                {
-                   mainRotorControlLoop(currentHeight,groundReference,maxHeight);
-                }
-            }
-        }
-        */
-       //updateCurrentHeight();
 
        if (PIDFlag == 1)
        {
+           if(flightMode == FLYING)
+           {
+               if(referenceAngleSet == 1)
+               {
+                       updateDesiredAltAndYawValue(); // get data from buttons once taken
+                       mainDutyCycle = mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
+                       tailDutyCycle = tailRotorControlLoop(currentAngle,desiredAngle);
+                       PIDFlag = 0;
+               }
+               else
+               {
+                       desiredHeightPercentage = 10;
+                       mainDutyCycle =  mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
+                       tailDutyCycle =tailRotorControlLoop(currentAngle,360);// increment rotation till at reference point
+                       //tempAngle += 1;
+                       PIDFlag = 0;
+               }
+           }
+           if(flightMode == LANDING)
+           {
+               desiredHeightPercentage = 1;
+               if(heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage)
+               {
+                   mainDutyCycle = mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
+                   tailDutyCycle = tailRotorControlLoop(currentAngle,0);// centre position
 
-                   updateDesiredAltAndYawValue(); // get data from buttons once taken
-                   mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-                   tailRotorControlLoop(currentAngle,desiredAngle);
-                   PIDFlag = 0;
+               }
+               if(heightAsPercentage(maxHeight, currentHeight, groundReference) <= desiredHeightPercentage && mainDutyCycle > 0)
+               {
+                   setMainPWM(250,mainDutyCycle);
+                   tailDutyCycle = tailRotorControlLoop(currentAngle,0);// centre position
+                   mainDutyCycle --;
+               }
+               if(mainDutyCycle <= 0)
+               {
+                   referenceAngleSet = 0;
+                   //PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, false);
+                   //PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, false);
+               }
+
+           }
 
        }
     }

@@ -44,7 +44,7 @@ enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
 #define RIGHT_BUT_NORMAL  true
 
 #define FLYING 1
-#define LANDED 0
+#define LANDING 0
 
 #define NUM_BUT_POLLS 3
 // Debounce algorithm: A state machine is associated with each button.

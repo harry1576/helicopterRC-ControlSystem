@@ -125,17 +125,18 @@ void yawFSM(void)
     }
 
     uint32_t referenceSensor = GPIOPinRead(GPIO_PORTC_BASE,GPIO_PIN_4);
+    if(referenceSensor == 0 && referenceAngleSet == 0)
+    {
+        currentAngle = 0;
+        slotCount = 0;
+        referenceAngleSet = 1;
+
+    }
+
 
     currentAngle = ((slotCount * 360) /448);
     previousState = currentState;
 
-    if(referenceSensor == 0)
-    {
-        currentAngle = 0;
-        slotCount = 0;
-        referenceAngleSet ++;
-
-    }
 
     GPIOIntClear(GPIO_PORTB_BASE, (GPIO_PIN_0 | GPIO_PIN_1));
 }

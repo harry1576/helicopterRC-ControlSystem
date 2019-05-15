@@ -41,7 +41,7 @@ uint32_t switchChannel;     //Variable to hold the current value of switch posit
 int16_t desiredHeightPercentage = 0;
 int16_t desiredAngle = 0;
 uint32_t variableTest = 1;
-int8_t flightMode = LANDED;
+int8_t flightMode = 2;
 //int8_t referenceAngleSet = 0;
 volatile int16_t referenceAngle = 0;
 int8_t testVariable = 0;
@@ -167,8 +167,8 @@ void updateDesiredAltAndYawValue(void)
 
         butState = checkButton (UP);
         if (butState == PUSHED)
-        {
-            desiredHeightPercentage += 10;
+        {   if(desiredHeightPercentage < 100)
+            {desiredHeightPercentage += 10;}
         }
 
         butState = checkButton (DOWN);
@@ -180,6 +180,7 @@ void updateDesiredAltAndYawValue(void)
         butState = checkButton (RIGHT);
         if (butState == PUSHED)
         {
+
             desiredAngle += 15;
 
         }
@@ -187,6 +188,7 @@ void updateDesiredAltAndYawValue(void)
         butState = checkButton (LEFT);
         if (butState == PUSHED)
         {
+
             desiredAngle -= 15;
 
         }
@@ -202,11 +204,12 @@ void switchMode (void)      // to check the position ofthe switch and chang vari
 
     if (switchChannel == 0) // switch is in land position
     {
-        flightMode = LANDED;
+        flightMode = LANDING;
 
     } else if (switchChannel != 0) // switch is in take off position
     {
         flightMode = FLYING;
+       // referenceAngleSet = 0;
     }
 
     GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_7);

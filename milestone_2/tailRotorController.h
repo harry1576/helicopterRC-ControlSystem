@@ -17,7 +17,7 @@ void setTailPWM (uint32_t ui32Freq, uint32_t ui32Duty);
 
 void initialiseTailRotorPWM (void);
 
-void tailRotorControlLoop(uint16_t desiredAngle,uint16_t refAngle);
+uint32_t tailRotorControlLoop(uint16_t desiredAngle,uint16_t refAngle);
 
 #define PWM_TAIL_BASE        PWM1_BASE
 #define PWM_TAIL_OUTBIT      PWM_OUT_5_BIT

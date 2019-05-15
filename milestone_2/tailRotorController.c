@@ -56,7 +56,6 @@ int16_t tailStartTime;
 double errorIntegral;
 
 
-
 /********************************************************
  * Function to set the freq, duty cycle of M0PWM7
  ********************************************************/
@@ -92,11 +91,11 @@ void initialiseTailRotorPWM (void){
 
 
 
-void tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
+uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
 {
-    float tailRotorKp = 33.45;// no kp rotates anti
-    float tailRotorKi = 0.0120;
-    float tailRotorKd = 0.0425;
+    float tailRotorKp = 38.45;// no kp rotates anti
+    float tailRotorKi = 0.0100;
+    float tailRotorKd = 0.050;
 
     tailErrorSignal = (desiredAngle) - currentHelicopterAngle;
     float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious)/(0.00625);
@@ -120,6 +119,7 @@ void tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
     tailErrorSignalPrevious = tailErrorSignal;
 
     setTailPWM(PWM_START_RATE_HZ,dutyCycle);
+    return dutyCycle;
 }
 
 
