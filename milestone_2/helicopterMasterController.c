@@ -200,7 +200,7 @@ int main(void)
         if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
             char string[128];
-            usprintf(string, "Yaw: %5d [%5d]\n\rHeight: %5d [%5d]\n\r", displayAngle, desiredAngle, displayheight, desiredHeightPercentage);
+            usprintf(string, "Yaw: %5d [%5d]\n\rHeight: %5d [%5d]\n\r", currentAngle, desiredAngle, displayheight, desiredHeightPercentage);
             UARTSend(string);
         }
         /*

@@ -37,8 +37,8 @@
 // PWM configuration
 #define PWM_START_RATE_HZ  250
 #define PWM_RATE_STEP_HZ   50
-#define PWM_RATE_MIN_HZ    150
-#define PWM_RATE_MAX_HZ    300
+#define PWM_RATE_MIN_HZ    250
+#define PWM_RATE_MAX_HZ    250
 #define PWM_FIXED_DUTY     0
 #define PWM_DIVIDER_CODE   SYSCTL_PWMDIV_4
 #define PWM_DIVIDER        4
@@ -56,7 +56,7 @@
 #define PWM_MAIN_GPIO_PIN    GPIO_PIN_5
 
 
-#define OUTPUT_MAX 80
+#define OUTPUT_MAX 75
 #define OUTPUT_MIN 20
 
 float errorSignal;
