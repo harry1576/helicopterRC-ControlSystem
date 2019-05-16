@@ -38,17 +38,17 @@
 #include "driverlib/uart.h"
 
 
-
 //*****************************************************************************
 // Constants
 //*****************************************************************************
 #define BUF_SIZE 16
-#define SAMPLE_RATE_HZ 160
+# define SAMPLE_RATE_HZ 160
 
-
+//*****************************************************************************
+// Variables
+//*****************************************************************************
 int8_t PIDFlag = 0;
 volatile int16_t currentHeight; // variable to store the current helicopter height.
-
 
 //*****************************************************************************
 //
@@ -57,13 +57,11 @@ volatile int16_t currentHeight; // variable to store the current helicopter heig
 // @Return nothing
 //
 //*****************************************************************************
-void SysTickIntHandler(void)
-{
-    ADCProcessorTrigger(ADC0_BASE, 3);   // Triggers the ADC to do a conversion
+void SysTickIntHandler(void) {
+    ADCProcessorTrigger(ADC0_BASE, 3); // Triggers the ADC to do a conversion
     g_ulSampCnt++;
     PIDFlag = 1;
 }
-
 
 //*****************************************************************************
 //
@@ -73,9 +71,9 @@ void SysTickIntHandler(void)
 // @Return nothing
 //
 //*****************************************************************************
-void initClock (void)
+void initClock(void)
 {
-    SysCtlClockSet (SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ); // Set the clock rate to 20 MHz
+    SysCtlClockSet(SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ); // Set the clock rate to 20 MHz
 }
 
 //*****************************************************************************
@@ -86,15 +84,11 @@ void initClock (void)
 // @Return nothing
 //
 //*****************************************************************************
-void initTimer (void)
+void initTimer(void)
 {
-
     SysTickPeriodSet(SysCtlClockGet() / SAMPLE_RATE_HZ);
-
     SysTickIntRegister(SysTickIntHandler); // Register the interrupt handler
-
-    // Enable interrupt and device
-    SysTickIntEnable();
+    SysTickIntEnable(); // Enable interrupt and device
     SysTickEnable();
 }
 
@@ -113,19 +107,14 @@ void initTimer (void)
 int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
 {
     int16_t percentage;
-    percentage = ((current - min) *100 + ((max-min)/2))/(max-min);
-    if(percentage < 0)
-    {
+    percentage = ((current - min) * 100 + ((max - min) / 2)) / (max - min); // prevents rounding error
+    if (percentage < 0) {
         percentage = 0;
-    }
-    else if (percentage > 100)
-    {
+    } else if (percentage > 100) {
         percentage = 100;
     }
     return percentage;
 }
-
-
 
 //*****************************************************************************
 //
@@ -148,14 +137,13 @@ int main(void)
     int32_t tailDutyCycle;
     int32_t mainDutyCycle;
 
-
     // Initialise required systems
-    initClock ();
-    initTimer ();
-    initCircBuf (&g_inBuffer, BUF_SIZE);
+    initClock();
+    initTimer();
+    initCircBuf( & g_inBuffer, BUF_SIZE);
     initSwitch();
-    initADC ();
-    initDisplay ();
+    initADC();
+    initDisplay();
     initButtons();
     yawFSMInit();
     initialiseUSB_UART();
@@ -163,28 +151,27 @@ int main(void)
     initialiseMainRotorPWM(); // initalise the PWM for the motors
     initialiseTailRotorPWM();
 
-    PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true);// set output states of rotors to true
+    PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true); // set output states of rotors to true
     PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, true);
 
-    IntMasterEnable();     // Enable interrupts to the processor.
+    IntMasterEnable(); // Enable interrupts to the processor.
 
-
-    while (1)
-    {
+    while (1) {
         // Background task: calculate the (approximate) mean of the values in the
         // circular buffer and display it, together with the sample number.
-        uint8_t i; // Variable used in for loop to cycle through buffer
 
+        uint8_t i; // Variable used in for loop to cycle through buffer
         int32_t sum; // The summation of the data read from the buffer
+
         sum = 0;
         for (i = 0; i < BUF_SIZE; i++)
-            sum = sum + readCircBuf (&g_inBuffer); // Calculate and display the rounded mean of the buffer contents
+            sum = sum + readCircBuf( & g_inBuffer); // Calculate and display the rounded mean of the buffer contents
         currentHeight = (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
 
         if (groundReference == 0) // set ground reference on first loop or when button is pushed
         {
-           groundReference = currentHeight ;
-           maxHeight = groundReference - 1240; //(4095*(1)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
+            groundReference = currentHeight;
+            maxHeight = groundReference - 1240; //(4095*(1)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
         //updateDesiredAltAndYawValue();
@@ -194,65 +181,56 @@ int main(void)
             currentDisplayAngle = findDisplayAngle(currentAngle);
             displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
             char string[128];
-            usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\r",currentDisplayAngle,dersiredDisplayAngle,tailDutyCycle,displayheight,desiredHeightPercentage,mainDutyCycle);
+            usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle);
             UARTSend(string);
         }
 
-       if (PIDFlag == 1)
-       {
-           if(flightMode == FLYING)
-           {
-               if(referenceAngleSet == 1)
-               {
-                       updateDesiredAltAndYawValue(); // get data from buttons once taken
-                       mainDutyCycle = mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-                       tailDutyCycle = tailRotorControlLoop(currentAngle,desiredAngle);
-                       PIDFlag = 0;
-               }
-               else
-               {
-                       desiredHeightPercentage = 10;
-                       mainDutyCycle =  mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-                       tailDutyCycle =tailRotorControlLoop(currentAngle,currentAngle + 1);// increment rotation till at reference point
-                       //tempAngle += 1;
-                       PIDFlag = 0;
-               }
-           }
-           if(flightMode == LANDING)
-           {
-               desiredHeightPercentage = 0;
-               desiredAngle = 0;
-               if(heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage)
-               {
-                   mainDutyCycle = mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-                   tailDutyCycle = tailRotorControlLoop(currentAngle,desiredAngle);// centre position
-
-               }
-               if((heightAsPercentage(maxHeight, currentHeight, groundReference) == desiredHeightPercentage && mainDutyCycle > 0) || countUp < 400)
-               {
-                   setMainPWM(250,mainDutyCycle);
-                   countUp ++;
-                   tailDutyCycle = tailRotorControlLoop(currentAngle,desiredAngle);// centre position
-                   if(countUp % 25 == 0) // decrease duty cycle by 1% every 0.15625 seconds
-                   {
-                       mainDutyCycle --;
-                   }
-               }
-               else
-               {
-                   setTailPWM(250,0);
-                   flightMode = LANDED;
-
-               }
-           }
-           if(flightMode == LANDED)
-           {
-               referenceAngleSet = 0;
-               setMainPWM(250,0);
-               setTailPWM(250,0);
-
-           }
-
-       }
+        if (PIDFlag == 1) // called every 0.00625ms
+        {
+            if (flightMode == FLYING) {
+                if (referenceAngleSet == 1) {
+                    updateDesiredAltAndYawValue(); // get data from buttons once taken
+                    mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
+                    tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle);
+                    PIDFlag = 0;
+                } else {
+                    desiredHeightPercentage = 10;
+                    mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
+                    tailDutyCycle = tailRotorControlLoop(currentAngle, currentAngle + 1); // increment rotation till at reference point
+                    //tempAngle += 1;
+                    PIDFlag = 0;
+                }
+            }
+            if (flightMode == LANDING) {
+                desiredHeightPercentage = 0;
+                desiredAngle = 0;
+                if (heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage) {
+                    mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
+                    tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
+                    PIDFlag = 0;
+                }
+                else if ((heightAsPercentage(maxHeight, currentHeight, groundReference) == desiredHeightPercentage && mainDutyCycle > 0) || countUp < 400) {
+                    setMainPWM(250, mainDutyCycle);
+                    countUp++;
+                    tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
+                    if (countUp % 25 == 0) // decrease duty cycle by 1% every 0.15625 seconds
+                    {
+                        mainDutyCycle--;
+                    }
+                    PIDFlag = 0;
+                } else {
+                    setTailPWM(250, 0);
+                    flightMode = LANDED;
+                    PIDFlag = 0;
+                }
+            }
+            if (flightMode == LANDED)
+            {
+                referenceAngleSet = 0;
+                setMainPWM(250, 0);
+                setTailPWM(250, 0);
+                PIDFlag = 0;
+            }
+        }
     }
 }

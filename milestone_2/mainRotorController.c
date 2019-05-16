@@ -24,10 +24,8 @@
 #include "driverlib/systick.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/interrupt.h"
-
 #include "uartCommunication.h"
 #include "driverlib/uart.h"
-
 #include "stdlib.h"
 #include "inc/hw_memmap.h"
 #include "utils/ustdlib.h"
