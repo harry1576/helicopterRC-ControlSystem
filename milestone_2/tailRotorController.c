@@ -47,7 +47,7 @@
 #define PWM_TAIL_GPIO_PIN    GPIO_PIN_1
 
 #define TAIL_OUTPUT_MAX 97
-#define TAIL_OUTPUT_MIN 15
+#define TAIL_OUTPUT_MIN 5
 
 
 int16_t tailErrorSignal;

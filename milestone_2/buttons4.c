@@ -202,11 +202,11 @@ void switchMode (void)      // to check the position ofthe switch and chang vari
 {
     switchChannel = GPIOPinRead(GPIO_PORTA_BASE,GPIO_PIN_7);
 
-    if (switchChannel == 0) // switch is in land position
+    if (switchChannel == 0 && flightMode == FLYING) // switch is in land position
     {
         flightMode = LANDING;
 
-    } else if (switchChannel != 0) // switch is in take off position
+    } else if (switchChannel != 0 && flightMode == LANDED) // switch is in take off position
     {
         flightMode = FLYING;
        // referenceAngleSet = 0;

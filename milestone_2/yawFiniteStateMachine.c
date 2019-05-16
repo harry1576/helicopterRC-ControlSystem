@@ -42,6 +42,7 @@ uint8_t angleReferenced = 0;
 volatile int32_t currentAngle = 0;
 int32_t slotCount; // variable that holds the amount of steps the tranducer has
 int8_t referenceAngleSet = 0;
+uint32_t referenceSensor;
 //read
 
 //*****************************************************************************
@@ -124,7 +125,7 @@ void yawFSM(void)
 
     }
 
-    uint32_t referenceSensor = GPIOPinRead(GPIO_PORTC_BASE,GPIO_PIN_4);
+    referenceSensor = GPIOPinRead(GPIO_PORTC_BASE,GPIO_PIN_4);
     if(referenceSensor == 0 && referenceAngleSet == 0)
     {
         currentAngle = 0;

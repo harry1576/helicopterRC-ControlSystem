@@ -144,38 +144,30 @@ int main(void)
     int32_t displayheight;
     int32_t dersiredDisplayAngle;
     int32_t currentDisplayAngle;
-
-    int8_t helicopterTakenOff = 0;
-
+    int8_t countUp = 0;
     int32_t tailDutyCycle;
     int32_t mainDutyCycle;
 
-    int32_t tempDuty = 0;
-    int32_t currentDutyCycle;
 
     // Initialise required systems
     initClock ();
     initTimer ();
     initCircBuf (&g_inBuffer, BUF_SIZE);
-
     initSwitch();
     initADC ();
     initDisplay ();
-
     initButtons();
-
     yawFSMInit();
     initialiseUSB_UART();
 
-    // initalise the PWM for the motors
-    initialiseMainRotorPWM();
+    initialiseMainRotorPWM(); // initalise the PWM for the motors
     initialiseTailRotorPWM();
 
-    // set output states of rotors to true
-    PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true);
+    PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true);// set output states of rotors to true
     PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, true);
 
     IntMasterEnable();     // Enable interrupts to the processor.
+
 
     while (1)
     {
@@ -196,7 +188,7 @@ int main(void)
         }
 
         //updateDesiredAltAndYawValue();
-        if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
+        if (g_ulSampCnt % 32 == 0) // update display every 200ms.
         {
             dersiredDisplayAngle = findDisplayAngle(desiredAngle);
             currentDisplayAngle = findDisplayAngle(currentAngle);
@@ -221,33 +213,43 @@ int main(void)
                {
                        desiredHeightPercentage = 10;
                        mainDutyCycle =  mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-                       tailDutyCycle =tailRotorControlLoop(currentAngle,360);// increment rotation till at reference point
+                       tailDutyCycle =tailRotorControlLoop(currentAngle,currentAngle + 1);// increment rotation till at reference point
                        //tempAngle += 1;
                        PIDFlag = 0;
                }
            }
            if(flightMode == LANDING)
            {
-               desiredHeightPercentage = 1;
+               desiredHeightPercentage = 0;
+               desiredAngle = 0;
                if(heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage)
                {
                    mainDutyCycle = mainRotorControlLoop(currentHeight,desiredHeightPercentage,groundReference);
-                   tailDutyCycle = tailRotorControlLoop(currentAngle,0);// centre position
+                   tailDutyCycle = tailRotorControlLoop(currentAngle,desiredAngle);// centre position
 
                }
-               if(heightAsPercentage(maxHeight, currentHeight, groundReference) <= desiredHeightPercentage && mainDutyCycle > 0)
+               if((heightAsPercentage(maxHeight, currentHeight, groundReference) == desiredHeightPercentage && mainDutyCycle > 0) || countUp < 400)
                {
                    setMainPWM(250,mainDutyCycle);
-                   tailDutyCycle = tailRotorControlLoop(currentAngle,0);// centre position
-                   mainDutyCycle --;
+                   countUp ++;
+                   tailDutyCycle = tailRotorControlLoop(currentAngle,desiredAngle);// centre position
+                   if(countUp % 25 == 0) // decrease duty cycle by 1% every 0.15625 seconds
+                   {
+                       mainDutyCycle --;
+                   }
                }
-               if(mainDutyCycle <= 0)
+               else
                {
-                   referenceAngleSet = 0;
-                   tailDutyCycle = tailRotorControlLoop(currentAngle,0);// centre position
-                   //PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, false);
-                   //PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, false);
+                   setTailPWM(250,0);
+                   flightMode = LANDED;
+
                }
+           }
+           if(flightMode == LANDED)
+           {
+               referenceAngleSet = 0;
+               setMainPWM(250,0);
+               setTailPWM(250,0);
 
            }
 
