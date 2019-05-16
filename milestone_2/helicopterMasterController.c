@@ -195,9 +195,7 @@ int main(void)
            maxHeight = groundReference - 1240; //(4095*(1)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
-
         //updateDesiredAltAndYawValue();
-
         if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
         {
             dersiredDisplayAngle = findDisplayAngle(desiredAngle);
@@ -246,6 +244,7 @@ int main(void)
                if(mainDutyCycle <= 0)
                {
                    referenceAngleSet = 0;
+                   tailDutyCycle = tailRotorControlLoop(currentAngle,0);// centre position
                    //PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, false);
                    //PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, false);
                }
