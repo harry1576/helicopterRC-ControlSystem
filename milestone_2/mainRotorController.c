@@ -52,8 +52,8 @@
 #define PWM_MAIN_GPIO_BASE GPIO_PORTC_BASE
 #define PWM_MAIN_GPIO_CONFIG GPIO_PC5_M0PWM7
 #define PWM_MAIN_GPIO_PIN GPIO_PIN_5
-#define OUTPUT_MAX 75
-#define OUTPUT_MIN 20
+#define OUTPUT_MAX 85
+#define OUTPUT_MIN 10
 
 float errorSignal;
 int16_t errorSignalPrevious = 0;
@@ -97,9 +97,9 @@ void initialiseMainRotorPWM(void)
 
 int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeight, int16_t groundReference) {
 
-    float mainRotorKp = 0.5;
-    float mainRotorKi = 0.04; // 1 //0.44/0.8/0.3
-    float mainRotorKd = 0.7;
+    float mainRotorKp = 0.35;
+    float mainRotorKi = 0.025; // 1 //0.44/0.8/0.3
+    float mainRotorKd = 0.01;
 
     errorSignal = (currentHeliHeight - (groundReference - (12.4 * desiredHeliHeight)));
     float errorDerivative = (errorSignal - errorSignalPrevious) / (0.00625);

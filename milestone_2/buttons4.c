@@ -218,7 +218,7 @@ void initReset(void)
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
-    GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_BOTH_EDGES);
+    GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_FALLING_EDGE);
     GPIOIntEnable(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
 }
 

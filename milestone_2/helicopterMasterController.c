@@ -145,9 +145,10 @@ int main(void)
     initADC();
     initDisplay();
     initButtons();
+    //initReset();
     yawFSMInit();
     initialiseUSB_UART();
-    //initReset();
+
 
     initialiseMainRotorPWM(); // initalise the PWM for the motors
     initialiseTailRotorPWM();
