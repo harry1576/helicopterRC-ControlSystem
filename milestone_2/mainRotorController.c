@@ -97,9 +97,9 @@ void initialiseMainRotorPWM(void)
 
 int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeight, int16_t groundReference) {
 
-    float mainRotorKp = 0.35;
-    float mainRotorKi = 0.025; // 1 //0.44/0.8/0.3
-    float mainRotorKd = 0.01;
+    float mainRotorKp = 0.420;
+    float mainRotorKi = 0.085; // 1 //0.44/0.8/0.3
+    float mainRotorKd = 0.144;
 
     errorSignal = (currentHeliHeight - (groundReference - (12.4 * desiredHeliHeight)));
     float errorDerivative = (errorSignal - errorSignalPrevious) / (0.00625);
@@ -116,6 +116,7 @@ int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeigh
     {
     errorIntegral += errorSignal * 0.00625;
     }
+
 
     errorSignalPrevious = errorSignal;
     setMainPWM(PWM_START_RATE_HZ, dutyCycle);
