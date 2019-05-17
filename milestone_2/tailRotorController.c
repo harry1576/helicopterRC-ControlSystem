@@ -46,8 +46,8 @@
 #define PWM_TAIL_GPIO_CONFIG GPIO_PF1_M1PWM5
 #define PWM_TAIL_GPIO_PIN    GPIO_PIN_1
 
-#define TAIL_OUTPUT_MAX 50
-#define TAIL_OUTPUT_MIN 15
+#define TAIL_OUTPUT_MAX 98
+#define TAIL_OUTPUT_MIN 2
 
 
 int16_t tailErrorSignal;
@@ -93,9 +93,9 @@ void initialiseTailRotorPWM (void){
 
 uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
 {
-    float tailRotorKp = 2.5;// no kp rotates anti
-    float tailRotorKi = 0.0820;
-    float tailRotorKd = 10.0;
+    float tailRotorKp = 1.2;// no kp rotates anti  //working on heli2  3.4
+    float tailRotorKi = 0.1;                      //0.04
+    float tailRotorKd = 0.256;                      //0.03
 
     tailErrorSignal = (desiredAngle) - currentHelicopterAngle;
     float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious)/(0.00625);
