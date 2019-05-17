@@ -38,6 +38,19 @@
 #include "driverlib/uart.h"
 
 
+
+// Add variable that holds the helicopter state i.e. landed,flying,takeoff,etc
+// Print this variable in serial output as per demo..
+
+// Email bainbridge about reset button ask about the gains...
+//
+
+// OLED Display.
+//
+
+//
+//
+
 //*****************************************************************************
 // Constants
 //*****************************************************************************
@@ -183,7 +196,7 @@ int main(void)
             currentDisplayAngle = findDisplayAngle(currentAngle);
             displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
             char string[128];
-            usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle);
+            usprintf(string, "------------\n\rYaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle);
             UARTSend(string);
         }
 
