@@ -134,8 +134,8 @@ int main(void)
     int32_t dersiredDisplayAngle;
     int32_t currentDisplayAngle;
     int8_t countUp = 0;
-    int32_t tailDutyCycle;
-    int32_t mainDutyCycle;
+    int32_t tailDutyCycle = 0;
+    int32_t mainDutyCycle = 0;
 
     // Initialise required systems
     initClock();
@@ -196,24 +196,24 @@ int main(void)
                 } else {
                     desiredHeightPercentage = 10;
                     mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
-                    tailDutyCycle = tailRotorControlLoop(currentAngle, currentAngle + 1); // increment rotation till at reference point
+                    tailDutyCycle = tailRotorControlLoop(currentAngle, 360); // increment rotation till at reference point
                     //tempAngle += 1;
                     PIDFlag = 0;
                 }
             }
             if (flightMode == LANDING) {
-                desiredHeightPercentage = 0;
+                desiredHeightPercentage = 10;
                 desiredAngle = 0;
-                if (heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage) {
+                if (heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage || (currentAngle > 5 || currentAngle < -5)) {
                     mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
                     PIDFlag = 0;
                 }
-                else if ((heightAsPercentage(maxHeight, currentHeight, groundReference) == desiredHeightPercentage && mainDutyCycle > 0) || countUp < 400) {
+                else if (heightAsPercentage(maxHeight, currentHeight, groundReference) == desiredHeightPercentage && mainDutyCycle > 0) {
                     setMainPWM(250, mainDutyCycle);
                     countUp++;
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
-                    if (countUp % 25 == 0) // decrease duty cycle by 1% every 0.15625 seconds
+                    if (countUp % 50 == 0) // decrease duty cycle by 1% every 0.15625 * 2 seconds
                     {
                         mainDutyCycle--;
                     }
@@ -226,6 +226,8 @@ int main(void)
             }
             if (flightMode == LANDED)
             {
+                desiredHeightPercentage = 0;
+                countUp = 0;
                 referenceAngleSet = 0;
                 setMainPWM(250, 0);
                 setTailPWM(250, 0);
