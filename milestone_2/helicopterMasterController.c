@@ -147,6 +147,7 @@ int main(void)
     initButtons();
     yawFSMInit();
     initialiseUSB_UART();
+    //initReset();
 
     initialiseMainRotorPWM(); // initalise the PWM for the motors
     initialiseTailRotorPWM();
@@ -204,7 +205,7 @@ int main(void)
             if (flightMode == LANDING) {
                 desiredHeightPercentage = 10;
                 desiredAngle = 0;
-                if (heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage || (currentAngle > 5 || currentAngle < -5)) {
+                if (heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage || (currentAngle > 3 || currentAngle < -3)) {
                     mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
                     PIDFlag = 0;
@@ -231,6 +232,8 @@ int main(void)
                 referenceAngleSet = 0;
                 setMainPWM(250, 0);
                 setTailPWM(250, 0);
+                mainDutyCycle = 0;
+                tailDutyCycle = 0;
                 PIDFlag = 0;
             }
         }

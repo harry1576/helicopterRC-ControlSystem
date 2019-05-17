@@ -161,7 +161,10 @@ void updateDesiredAltAndYawValue(void) {
     butState = checkButton(DOWN);
     if (butState == PUSHED)
     {
+        if (desiredHeightPercentage > 0)
+        {
         desiredHeightPercentage -= 10;
+        }
     }
 
     butState = checkButton(RIGHT);
@@ -206,8 +209,8 @@ void initSwitch(void)
 
 void resetCheck(void)
 {
-    SysCtlReset();
     GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
+    SysCtlReset();
 }
 
 void initReset(void)
