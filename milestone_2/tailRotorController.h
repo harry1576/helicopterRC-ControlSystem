@@ -13,11 +13,15 @@
 //
 // *******************************************************
 
+extern int32_t TAIL_PWM;
+
 void setTailPWM (uint32_t ui32Freq, uint32_t ui32Duty);
 
 void initialiseTailRotorPWM (void);
 
 uint32_t tailRotorControlLoop(uint16_t desiredAngle,uint16_t refAngle);
+
+int32_t mainDutyCycle(void);
 
 #define PWM_TAIL_BASE        PWM1_BASE
 #define PWM_TAIL_OUTBIT      PWM_OUT_5_BIT

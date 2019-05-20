@@ -45,7 +45,7 @@
 // Email bainbridge about reset button ask about the gains...
 //
 
-// OLED Display.
+// OLED Display.   DONE, NEED TO CHECK WITH DOBBS AS NOT SURE FOR ACTUAL HELI
 //
 
 //
@@ -112,7 +112,7 @@ void initTimer(void)
 // @Param max is the maximum altitude the helicopter can reach as 12bit number.
 //        current is the height the helicopter is current at as a 12bit number.
 //        minimum is the ground height and the lowest altitude the helicopter
-//        can reach as a 12 bit number.
+//        can reach as a 12 bit number.bookings/index/pid/20
 // @Return percentage is the percentage of the maximum height the helicopter
 //  is current at. It is a value within the range 0-100 inclusive
 //
@@ -158,7 +158,7 @@ int main(void)
     initADC();
     initDisplay();
     initButtons();
-    //initReset();
+    initReset();
     yawFSMInit();
     initialiseUSB_UART();
 
@@ -216,6 +216,16 @@ int main(void)
                     PIDFlag = 0;
                 }
             }
+            if (flightMode == TAKINGOFF)
+            {
+                desiredHeightPercentage = 10;
+                desiredAngle = 0;
+                mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
+                tailDutyCycle = tailRotorControlLoop(currentAngle, 360); // increment rotation till at reference point
+                //tempAngle += 1;
+                PIDFlag = 0;
+
+            }
             if (flightMode == LANDING) {
                 desiredHeightPercentage = 10;
                 desiredAngle = 0;
@@ -251,5 +261,6 @@ int main(void)
                 PIDFlag = 0;
             }
         }
+        displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);
     }
 }

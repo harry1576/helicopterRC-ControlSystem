@@ -43,6 +43,7 @@ uint32_t variableTest = 1;
 int8_t flightMode = 2;
 volatile int16_t referenceAngle = 0;
 int8_t testVariable = 0;
+volatile int8_t taken_off = 0;
 
 // *******************************************************
 // initButtons: Initialise the variables associated with the set of buttons
@@ -188,7 +189,12 @@ void switchMode(void) // to check the position ofthe switch and chang variabels 
     {
         flightMode = LANDING;
 
-    } else if (switchChannel != 0 && flightMode == LANDED) // switch is in take off position
+    } else if(desiredHeightPercentage == 0 && flightMode == LANDED)
+    {
+        taken_off = 0;
+        flightMode = TAKINGOFF;
+
+    } else if (switchChannel != 0 && taken_off == 1 && flightMode == TAKINGOFF) // switch is in take off position
     {
         flightMode = FLYING;
         // referenceAngleSet = 0;
@@ -215,7 +221,7 @@ void resetCheck(void)
 
 void initReset(void)
 {
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+    // SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
     GPIOPadConfigSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
@@ -223,6 +229,11 @@ void initReset(void)
     GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_FALLING_EDGE);
     GPIOIntEnable(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
 
+
+    // SysCtlPeripheralEnable(LEFT_BUT_PERIPH);
+    // GPIOPinTypeGPIOInput(LEFT_BUT_PORT_BASE, LEFT_BUT_PIN);
+    // GPIOPadConfigSet(LEFT_BUT_PORT_BASE, LEFT_BUT_PIN, GPIO_STRENGTH_2MA,
+    //     GPIO_PIN_TYPE_STD_WPU);
 }
 
 /*void referenceTriggerHandler(void)
@@ -243,3 +254,4 @@ void initReferenceTrigger(void)
    GPIOIntTypeSet (GPIO_PORTC_BASE, GPIO_PIN_4, GPIO_LOW_LEVEL);
    GPIOIntEnable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
 }*/
+

@@ -30,6 +30,7 @@
 #include "inc/hw_memmap.h"
 #include "utils/ustdlib.h"
 #include "OrbitOLED/OrbitOLEDInterface.h"
+#include "buttons4.h"
 
 
 // PWM configuration
@@ -54,6 +55,8 @@
 #define PWM_MAIN_GPIO_PIN GPIO_PIN_5
 #define OUTPUT_MAX 98
 #define OUTPUT_MIN 2
+
+int32_t MAIN_PWM;
 
 float errorSignal;
 int16_t errorSignalPrevious = 0;
@@ -118,8 +121,16 @@ int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeigh
     }
 
 
+    if (taken_off == 0 && errorSignal == 0)
+    {
+        taken_off = 1;
+    }
+
     errorSignalPrevious = errorSignal;
     setMainPWM(PWM_START_RATE_HZ, dutyCycle);
 
+    MAIN_PWM = dutyCycle;
     return dutyCycle;
 }
+
+

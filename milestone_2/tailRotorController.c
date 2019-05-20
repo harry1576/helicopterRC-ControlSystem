@@ -50,6 +50,9 @@
 #define TAIL_OUTPUT_MIN 2
 
 
+int32_t TAIL_PWM;
+
+int32_t dutyCycle;
 int16_t tailErrorSignal;
 int16_t tailErrorSignalPrevious = 0;
 int16_t tailStartTime;
@@ -100,7 +103,7 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
     tailErrorSignal = (desiredAngle) - currentHelicopterAngle;
     float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious)/(0.00625);
 
-    int32_t dutyCycle = (tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi) + (errorDerivative * tailRotorKd);
+    dutyCycle = (tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi) + (errorDerivative * tailRotorKd);
 
     // output error signal within the parameters
     if (dutyCycle >= TAIL_OUTPUT_MAX){
@@ -119,5 +122,8 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
     tailErrorSignalPrevious = tailErrorSignal;
 
     setTailPWM(PWM_START_RATE_HZ,dutyCycle);
+    TAIL_PWM = dutyCycle;
     return dutyCycle;
 }
+
+

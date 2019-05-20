@@ -46,6 +46,7 @@ enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
 #define FLYING 1
 #define LANDING 0
 #define LANDED 2
+#define TAKINGOFF 3
 
 #define NUM_BUT_POLLS 3
 // Debounce algorithm: A state machine is associated with each button.
@@ -60,6 +61,8 @@ extern int8_t flightMode;
 //extern int8_t referenceAngleSet;
 extern volatile int16_t referenceAngle;
 extern int8_t testVariable;
+extern volatile int16_t reset;
+extern volatile int8_t taken_off;
 
 
 
