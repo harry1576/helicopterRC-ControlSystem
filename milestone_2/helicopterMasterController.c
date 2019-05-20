@@ -158,7 +158,7 @@ int main(void)
     initADC();
     initDisplay();
     initButtons();
-    initReset();
+    //initReset();
     yawFSMInit();
     initialiseUSB_UART();
 
@@ -196,7 +196,7 @@ int main(void)
             currentDisplayAngle = findDisplayAngle(currentAngle);
             displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
             char string[128];
-            usprintf(string, "------------\n\rYaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle);
+            usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %5d\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle, flightMode);
             UARTSend(string);
         }
 
