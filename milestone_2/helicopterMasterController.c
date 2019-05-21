@@ -149,6 +149,8 @@ int main(void)
     int8_t countUp = 0;
     int32_t tailDutyCycle = 0;
     int32_t mainDutyCycle = 0;
+    int32_t tempAngle = 0;
+    int32_t countUp2 = 0;
 
     // Initialise required systems
     initClock();
@@ -220,11 +222,14 @@ int main(void)
             }
             if (flightMode == TAKINGOFF)
             {
+                countUp2 ++;
                 desiredHeightPercentage = 10;
                 desiredAngle = 0;
                 mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
-                tailDutyCycle = tailRotorControlLoop(currentAngle, 360); // increment rotation till at reference point
-                //tempAngle += 1;
+                tailDutyCycle = tailRotorControlLoop(currentAngle, tempAngle); // increment rotation till at reference point
+                if(countUp2 % 3 == 0){
+                tempAngle += 1;}
+
                 PIDFlag = 0;
                 if (taken_off != 0 && referenceAngleSet) {
                     flightMode = FLYING;
@@ -238,11 +243,11 @@ int main(void)
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
                     PIDFlag = 0;
                 }
-                else if (heightAsPercentage(maxHeight, currentHeight, groundReference) <= desiredHeightPercentage && mainDutyCycle > 0) {
+                else if (heightAsPercentage(maxHeight, currentHeight, groundReference) == desiredHeightPercentage && mainDutyCycle > 0) {
                     setMainPWM(250, mainDutyCycle);
                     countUp++;
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
-                    if (countUp % 10 == 0) // decrease duty cycle by 1% every 0.15625 * 2 seconds
+                    if (countUp % 50 == 0) // decrease duty cycle by 1% every 0.15625 * 2 seconds
                     {
                         mainDutyCycle--;
                     }
@@ -262,6 +267,7 @@ int main(void)
                 setTailPWM(250, 0);
                 mainDutyCycle = 0;
                 tailDutyCycle = 0;
+                countUp2 = 0;
                 PIDFlag = 0;
             }
         }

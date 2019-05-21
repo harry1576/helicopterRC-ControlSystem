@@ -96,9 +96,9 @@ void initialiseTailRotorPWM (void){
 
 uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
 {
-    float tailRotorKp = 1.2;// no kp rotates anti  //working on heli2  3.4
+    float tailRotorKp = 0.8;//1.2//0.1/0.258 no kp rotates anti  //working on heli2  3.4
     float tailRotorKi = 0.1;                      //0.04
-    float tailRotorKd = 0.256;                      //0.03
+    float tailRotorKd = 0.8;                      //0.03
 
     tailErrorSignal = (desiredAngle) - currentHelicopterAngle;
     float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious)/(0.00625);
