@@ -44,4 +44,7 @@ void clearOLED(void);
 //*****************************************************************************
 void displayAltitudePercentAndYaw(uint16_t meanVal,int32_t Angle);
 
+const char * findMode (int16_t num);
+
+
 #endif /*USERDISPLAY_H_*/

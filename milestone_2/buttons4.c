@@ -194,7 +194,7 @@ void switchMode(void) // to check the position ofthe switch and chang variabels 
         taken_off = 0;
         flightMode = TAKINGOFF;
 
-    } else if (switchChannel != 0 && taken_off == 1 && flightMode == TAKINGOFF) // switch is in take off position
+    } else if (switchChannel != 0 && taken_off != 0 && flightMode == TAKINGOFF) // switch is in take off position
     {
         flightMode = FLYING;
         // referenceAngleSet = 0;
@@ -222,18 +222,17 @@ void resetCheck(void)
 void initReset(void)
 {
     // SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-    GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);
+    //GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);
+    //GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
+    //GPIOPadConfigSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
+    //GPIODirModeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_DIR_MODE_IN);
+    //GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_FALLING_EDGE);
+    //GPIOIntEnable(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
+
+
+    //SysCtlPeripheralEnable(LEFT_BUT_PERIPH);
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
     GPIOPadConfigSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
-    GPIODirModeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_DIR_MODE_IN);
-    GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_FALLING_EDGE);
-    GPIOIntEnable(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
-
-
-    // SysCtlPeripheralEnable(LEFT_BUT_PERIPH);
-    // GPIOPinTypeGPIOInput(LEFT_BUT_PORT_BASE, LEFT_BUT_PIN);
-    // GPIOPadConfigSet(LEFT_BUT_PORT_BASE, LEFT_BUT_PIN, GPIO_STRENGTH_2MA,
-    //     GPIO_PIN_TYPE_STD_WPU);
 }
 
 /*void referenceTriggerHandler(void)
