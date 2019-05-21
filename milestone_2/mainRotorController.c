@@ -100,7 +100,7 @@ void initialiseMainRotorPWM(void)
 
 int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeight, int16_t groundReference) {
 
-    float mainRotorKp = 1;
+    float mainRotorKp = 0.14;
     float mainRotorKi = 0.12; // 1 //0.44/0.8/0.3
     float mainRotorKd = 0.10;
 

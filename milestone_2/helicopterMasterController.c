@@ -198,6 +198,8 @@ int main(void)
             char string[128];
             usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %s\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle, findMode(flightMode));
             UARTSend(string);
+            //displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);
+
         }
 
         if (PIDFlag == 1) // called every 0.00625ms
@@ -224,23 +226,23 @@ int main(void)
                 tailDutyCycle = tailRotorControlLoop(currentAngle, 360); // increment rotation till at reference point
                 //tempAngle += 1;
                 PIDFlag = 0;
-                if (taken_off != 0) {
+                if (taken_off != 0 && referenceAngleSet) {
                     flightMode = FLYING;
                 }
             }
             if (flightMode == LANDING) {
                 desiredHeightPercentage = 10;
                 desiredAngle = 0;
-                if (heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage || (currentAngle > 3 || currentAngle < -3)) {
+                if (heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage || (currentAngle > 4 || currentAngle < -4)) {
                     mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
                     PIDFlag = 0;
                 }
-                else if (heightAsPercentage(maxHeight, currentHeight, groundReference) == desiredHeightPercentage && mainDutyCycle > 0) {
+                else if (heightAsPercentage(maxHeight, currentHeight, groundReference) <= desiredHeightPercentage && mainDutyCycle > 0) {
                     setMainPWM(250, mainDutyCycle);
                     countUp++;
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
-                    if (countUp % 50 == 0) // decrease duty cycle by 1% every 0.15625 * 2 seconds
+                    if (countUp % 10 == 0) // decrease duty cycle by 1% every 0.15625 * 2 seconds
                     {
                         mainDutyCycle--;
                     }
@@ -263,7 +265,6 @@ int main(void)
                 PIDFlag = 0;
             }
         }
-        displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);
 
         int16_t pin = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
         if (pin == 0) {
