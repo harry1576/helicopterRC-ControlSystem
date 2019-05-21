@@ -55,7 +55,7 @@
 // Constants
 //*****************************************************************************
 #define BUF_SIZE 16
-# define SAMPLE_RATE_HZ 160
+#define SAMPLE_RATE_HZ 160
 
 //*****************************************************************************
 // Variables
@@ -158,7 +158,7 @@ int main(void)
     initADC();
     initDisplay();
     initButtons();
-    //initReset();
+    initReset();
     yawFSMInit();
     initialiseUSB_UART();
 
@@ -208,13 +208,13 @@ int main(void)
                     mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle);
                     PIDFlag = 0;
-                } else {
+                } /*else {
                     desiredHeightPercentage = 10;
                     mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
                     tailDutyCycle = tailRotorControlLoop(currentAngle, 360); // increment rotation till at reference point
                     //tempAngle += 1;
                     PIDFlag = 0;
-                }
+                }*/
             }
             if (flightMode == TAKINGOFF)
             {
@@ -224,7 +224,9 @@ int main(void)
                 tailDutyCycle = tailRotorControlLoop(currentAngle, 360); // increment rotation till at reference point
                 //tempAngle += 1;
                 PIDFlag = 0;
-
+                if (taken_off != 0) {
+                    flightMode = FLYING;
+                }
             }
             if (flightMode == LANDING) {
                 desiredHeightPercentage = 10;
@@ -262,5 +264,10 @@ int main(void)
             }
         }
         displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);
+
+        int16_t pin = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
+        if (pin == 0) {
+            SysCtlReset();
+        }
     }
 }

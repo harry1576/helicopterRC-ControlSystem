@@ -233,6 +233,7 @@ void initReset(void)
     //SysCtlPeripheralEnable(LEFT_BUT_PERIPH);
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
     GPIOPadConfigSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
+
 }
 
 /*void referenceTriggerHandler(void)
