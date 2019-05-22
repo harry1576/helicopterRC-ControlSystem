@@ -247,7 +247,7 @@ int main(void)
                     setMainPWM(250, mainDutyCycle);
                     countUp++;
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
-                    if (countUp % 100 == 0) // decrease duty cycle by 1% every 0.15625 * 2 seconds
+                    if (countUp % 150 == 0) // decrease duty cycle by 1% every 0.15625 * 2 seconds
                     {
                         mainDutyCycle--;
                     }
