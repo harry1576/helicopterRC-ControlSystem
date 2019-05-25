@@ -27,6 +27,7 @@ helicopterMain.obj: ../mainRotorController.h
 helicopterMain.obj: ../tailRotorController.h
 helicopterMain.obj: ../uartCommunication.h
 helicopterMain.obj: /home/harry/ti/TivaWare/driverlib/uart.h
+helicopterMain.obj: ../helperFunctions.h
 
 ../helicopterMain.c: 
 /home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h: 
@@ -55,3 +56,4 @@ helicopterMain.obj: /home/harry/ti/TivaWare/driverlib/uart.h
 ../tailRotorController.h: 
 ../uartCommunication.h: 
 /home/harry/ti/TivaWare/driverlib/uart.h: 
+../helperFunctions.h: 

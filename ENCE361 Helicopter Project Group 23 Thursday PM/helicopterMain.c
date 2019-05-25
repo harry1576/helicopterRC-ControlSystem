@@ -35,6 +35,7 @@
 #include "tailRotorController.h"
 #include "uartCommunication.h"
 #include "driverlib/uart.h"
+#include "helperFunctions.h"
 
 
 //*****************************************************************************
@@ -96,29 +97,6 @@ void initTimer(void)
     SysTickEnable();
 }
 
-//*****************************************************************************
-//
-// @Description Function used to calculate the height as a percentage based
-// on the maximum, minimum and current height values.
-// @Param max is the maximum altitude the helicopter can reach as 12bit number.
-//        current is the height the helicopter is current at as a 12bit number.
-//        minimum is the ground height and the lowest altitude the helicopter
-//        can reach as a 12 bit number.bookings/index/pid/20
-// @Return percentage is the percentage of the maximum height the helicopter
-//  is current at. It is a value within the range 0-100 inclusive
-//
-//*****************************************************************************
-int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
-{
-    int16_t percentage;
-    percentage = ((current - min) * 100 + ((max - min) / 2)) / (max - min); // prevents rounding error
-    if (percentage < 0) {
-        percentage = 0;
-    } else if (percentage > 100) {
-        percentage = 100;
-    }
-    return percentage;
-}
 
 //*****************************************************************************
 //
@@ -144,6 +122,7 @@ int main(void)
     int32_t countUp2 = 0;
 
     displayFlag = 0;
+    PIDFlag = 0;
 
     // Initialise required systems
     initClock();
@@ -191,8 +170,10 @@ int main(void)
             currentDisplayAngle = findDisplayAngle(currentAngle);
             displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
             char string[128];
-            usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %s\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle, findMode(flightMode));
+            usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %s\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle,
+(flightMode));
             UARTSend(string);
+            displayFlag = 0;
             //displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);
 
         }

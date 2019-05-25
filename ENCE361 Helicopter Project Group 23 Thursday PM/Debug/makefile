@@ -12,6 +12,7 @@ ORDERED_OBJS += \
 "./circBufT.obj" \
 "./helicopterAltitude.obj" \
 "./helicopterMain.obj" \
+"./helperFunctions.obj" \
 "./mainRotorController.obj" \
 "./tailRotorController.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
@@ -173,8 +174,8 @@ ENCE361\ Helicopter\ Project\ Group\ 23\ Thursday\ PM.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "buttons4.obj" "circBufT.obj" "helicopterAltitude.obj" "helicopterMain.obj" "mainRotorController.obj" "tailRotorController.obj" "tm4c123gh6pm_startup_ccs.obj" "uartCommunication.obj" "userDisplay.obj" "ustdlib.obj" "yawFiniteStateMachine.obj" "OrbitOLED/OrbitOLEDInterface.obj" "OrbitOLED/lib_OrbitOled/ChrFont0.obj" "OrbitOLED/lib_OrbitOled/FillPat.obj" "OrbitOLED/lib_OrbitOled/OrbitOled.obj" "OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "OrbitOLED/lib_OrbitOled/delay.obj" 
-	-$(RM) "buttons4.d" "circBufT.d" "helicopterAltitude.d" "helicopterMain.d" "mainRotorController.d" "tailRotorController.d" "tm4c123gh6pm_startup_ccs.d" "uartCommunication.d" "userDisplay.d" "ustdlib.d" "yawFiniteStateMachine.d" "OrbitOLED/OrbitOLEDInterface.d" "OrbitOLED/lib_OrbitOled/ChrFont0.d" "OrbitOLED/lib_OrbitOled/FillPat.d" "OrbitOLED/lib_OrbitOled/OrbitOled.d" "OrbitOLED/lib_OrbitOled/OrbitOledChar.d" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.d" "OrbitOLED/lib_OrbitOled/delay.d" 
+	-$(RM) "buttons4.obj" "circBufT.obj" "helicopterAltitude.obj" "helicopterMain.obj" "helperFunctions.obj" "mainRotorController.obj" "tailRotorController.obj" "tm4c123gh6pm_startup_ccs.obj" "uartCommunication.obj" "userDisplay.obj" "ustdlib.obj" "yawFiniteStateMachine.obj" "OrbitOLED/OrbitOLEDInterface.obj" "OrbitOLED/lib_OrbitOled/ChrFont0.obj" "OrbitOLED/lib_OrbitOled/FillPat.obj" "OrbitOLED/lib_OrbitOled/OrbitOled.obj" "OrbitOLED/lib_OrbitOled/OrbitOledChar.obj" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.obj" "OrbitOLED/lib_OrbitOled/delay.obj" 
+	-$(RM) "buttons4.d" "circBufT.d" "helicopterAltitude.d" "helicopterMain.d" "helperFunctions.d" "mainRotorController.d" "tailRotorController.d" "tm4c123gh6pm_startup_ccs.d" "uartCommunication.d" "userDisplay.d" "ustdlib.d" "yawFiniteStateMachine.d" "OrbitOLED/OrbitOLEDInterface.d" "OrbitOLED/lib_OrbitOled/ChrFont0.d" "OrbitOLED/lib_OrbitOled/FillPat.d" "OrbitOLED/lib_OrbitOled/OrbitOled.d" "OrbitOLED/lib_OrbitOled/OrbitOledChar.d" "OrbitOLED/lib_OrbitOled/OrbitOledGrph.d" "OrbitOLED/lib_OrbitOled/delay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

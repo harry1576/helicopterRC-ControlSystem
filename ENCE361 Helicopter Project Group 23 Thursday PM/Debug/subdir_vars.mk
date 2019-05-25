@@ -11,6 +11,7 @@ C_SRCS += \
 ../circBufT.c \
 ../helicopterAltitude.c \
 ../helicopterMain.c \
+../helperFunctions.c \
 ../mainRotorController.c \
 ../tailRotorController.c \
 ../tm4c123gh6pm_startup_ccs.c \
@@ -24,6 +25,7 @@ C_DEPS += \
 ./circBufT.d \
 ./helicopterAltitude.d \
 ./helicopterMain.d \
+./helperFunctions.d \
 ./mainRotorController.d \
 ./tailRotorController.d \
 ./tm4c123gh6pm_startup_ccs.d \
@@ -37,6 +39,7 @@ OBJS += \
 ./circBufT.obj \
 ./helicopterAltitude.obj \
 ./helicopterMain.obj \
+./helperFunctions.obj \
 ./mainRotorController.obj \
 ./tailRotorController.obj \
 ./tm4c123gh6pm_startup_ccs.obj \
@@ -50,6 +53,7 @@ OBJS__QUOTED += \
 "circBufT.obj" \
 "helicopterAltitude.obj" \
 "helicopterMain.obj" \
+"helperFunctions.obj" \
 "mainRotorController.obj" \
 "tailRotorController.obj" \
 "tm4c123gh6pm_startup_ccs.obj" \
@@ -63,6 +67,7 @@ C_DEPS__QUOTED += \
 "circBufT.d" \
 "helicopterAltitude.d" \
 "helicopterMain.d" \
+"helperFunctions.d" \
 "mainRotorController.d" \
 "tailRotorController.d" \
 "tm4c123gh6pm_startup_ccs.d" \
@@ -76,6 +81,7 @@ C_SRCS__QUOTED += \
 "../circBufT.c" \
 "../helicopterAltitude.c" \
 "../helicopterMain.c" \
+"../helperFunctions.c" \
 "../mainRotorController.c" \
 "../tailRotorController.c" \
 "../tm4c123gh6pm_startup_ccs.c" \
