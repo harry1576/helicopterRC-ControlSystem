@@ -213,13 +213,13 @@ void initSwitch(void)
 
 }
 
-void resetCheck(void)
+void resetISR(void)
 {
     GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
     SysCtlReset();
 }
 
-void initReset(void)
+void initResetISR(void)
 {
     // SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     //GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);

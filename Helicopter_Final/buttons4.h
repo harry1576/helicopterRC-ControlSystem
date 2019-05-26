@@ -111,10 +111,10 @@ resetCheck (void);
 
 
 void
-initReset(void);
+resetISR(void);
 
 void
-initReferencePoint(void);
+initResetISR(void);
 
 
 #endif /*BUTTONS_H_*/

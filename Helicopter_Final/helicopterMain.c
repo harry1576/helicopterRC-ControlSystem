@@ -132,10 +132,10 @@ int main(void)
     initADC();
     initDisplay();
     initButtons();
-    initReset();
     yawFSMInit();
     initialiseUSB_UART();
     initReferenceTrigger();
+    initResetISR();
 
 
     initialiseMainRotorPWM(); // initalise the PWM for the motors
@@ -246,10 +246,10 @@ int main(void)
                 PIDFlag = 0;
             }
         }
-
+        /*
         int16_t pin = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
         if (pin == 0) {
             SysCtlReset();
-        }
+        }*/
     }
 }
