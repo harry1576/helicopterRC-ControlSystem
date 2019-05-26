@@ -236,22 +236,4 @@ void initReset(void)
 
 }
 
-/*void referenceTriggerHandler(void)
-{
-    referenceAngle = currentAngle;
-   // referenceAngleSet = 1;
-    GPIOIntClear(GPIO_PORTC_BASE, GPIO_INT_PIN_4 );
-
-
-}
-
-void initReferenceTrigger(void)
-{
-
-   SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOC);
-   GPIOIntRegister(GPIO_PORTC_BASE, referenceTriggerHandler);
-   GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_4);
-   GPIOIntTypeSet (GPIO_PORTC_BASE, GPIO_PIN_4, GPIO_LOW_LEVEL);
-   GPIOIntEnable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
-}*/
 

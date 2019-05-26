@@ -37,3 +37,33 @@ int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
     return percentage;
 }
 
+//*****************************************************************************
+//
+// Takes the currently angle value which is a continuously summing
+// value and converts it to a value between -179 to 180.
+//
+//*****************************************************************************
+int32_t findDisplayAngle(int32_t Angle)
+{
+    int32_t displayAngle;
+
+    // Finding the angle in a the display format
+    if (Angle >= 0 && Angle % 360 <= 180)
+    {
+        displayAngle = Angle % 180;
+    }
+    else if (Angle >= 0 && Angle % 360 > 180)
+    {
+        displayAngle = -180 + (Angle % 180);
+    }
+    else if (Angle < 0 && (-Angle) % 360 <= 180)
+    {
+        displayAngle = -((-Angle)%360);
+    }
+    else if (Angle < 0 && Angle % 360 > 180)
+    {
+        displayAngle = 360 -((-Angle)%360);
+    }
+    return displayAngle;
+}
+

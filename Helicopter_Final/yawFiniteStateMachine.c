@@ -172,35 +172,7 @@ void yawFSMInit(void) {
     }
 }
 
-//*****************************************************************************
-//
-// Takes the currently angle value which is a continuously summing
-// value and converts it to a value between -179 to 180.
-//
-//*****************************************************************************
-int32_t findDisplayAngle(int32_t Angle)
-{
-    int32_t displayAngle;
 
-    // Finding the angle in a the display format
-    if (Angle >= 0 && Angle % 360 <= 180)
-    {
-        displayAngle = Angle % 180;
-    }
-    else if (Angle >= 0 && Angle % 360 > 180)
-    {
-        displayAngle = -180 + (Angle % 180);
-    }
-    else if (Angle < 0 && (-Angle) % 360 <= 180)
-    {
-        displayAngle = -((-Angle)%360);
-    }
-    else if (Angle < 0 && Angle % 360 > 180)
-    {
-        displayAngle = 360 -((-Angle)%360);
-    }
-    return displayAngle;
-}
 
 
 void referenceTriggerHandler(void)
@@ -210,8 +182,6 @@ void referenceTriggerHandler(void)
     slotCount = 0;
     referenceAngleSet = 1;
     GPIOIntDisable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
-
-
 
 }
 
