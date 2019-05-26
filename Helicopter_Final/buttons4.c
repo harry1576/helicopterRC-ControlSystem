@@ -220,15 +220,11 @@ void checkSwitchPos(void)
     {
         flightMode = LANDING;
 
-    } else if(desiredHeightPercentage == 0 && flightMode == LANDED)
+    } else if(switchChannel != 0 && desiredHeightPercentage == 0 && flightMode == LANDED)
     {
         taken_off = 0;
         flightMode = TAKINGOFF;
 
-    } else if (switchChannel != 0 && taken_off != 0 && flightMode == TAKINGOFF) // switch is in take off position
-    {
-        flightMode = FLYING;
-        // referenceAngleSet = 0;
     }
 }
 
