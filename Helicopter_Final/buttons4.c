@@ -35,7 +35,9 @@ static uint8_t but_count[NUM_BUTS];
 static bool but_flag[NUM_BUTS];
 static bool but_normal[NUM_BUTS]; // Corresponds to the electrical state
 
-uint32_t switchChannel; //Variable to hold the current value of switch position
+uint8_t switchChannel; //Variable to hold the current value of switch position
+uint8_t resetPos; //Variable to hold the current value of switch position
+
 
 int16_t desiredHeightPercentage = 0;
 int16_t desiredAngle = 0;
@@ -181,8 +183,37 @@ void updateDesiredAltAndYawValue(void) {
     }
 }
 
-void switchMode(void) // to check the position ofthe switch and chang variabels as so
+
+
+void resetISR(void)
 {
+   GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
+   SysCtlReset();
+
+}
+
+void initResetISR(void)
+{
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+    GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
+    GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_LOW_LEVEL);
+    GPIOIntRegister(GPIO_PORTA_BASE, resetISR);
+    GPIOIntEnable(GPIO_PORTA_BASE, GPIO_PIN_6);
+
+
+}
+
+void initSwitch(void)
+{
+    SysCtlPeripheralEnable(MODE_SWITCH_PERIPH);
+    GPIOPinTypeGPIOInput(MODE_SWITCH_PORT_BASE, MODE_SWITCH_PIN);
+    GPIOPadConfigSet(MODE_SWITCH_PORT_BASE, MODE_SWITCH_PIN, GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPD);
+
+}
+
+void checkSwitchPos(void)
+{
+
     switchChannel = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_7);
 
     if (switchChannel == 0 && flightMode == FLYING) // switch is in land position
@@ -199,41 +230,8 @@ void switchMode(void) // to check the position ofthe switch and chang variabels 
         flightMode = FLYING;
         // referenceAngleSet = 0;
     }
-
-    GPIOIntClear(GPIO_PORTA_BASE, GPIO_PIN_7);
 }
 
-void initSwitch(void)
-{
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-    GPIOIntRegister(GPIO_PORTA_BASE, switchMode);
-    GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_7);
-    GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_7, GPIO_BOTH_EDGES);
-    GPIOIntEnable(GPIO_PORTA_BASE, GPIO_INT_PIN_7);
 
-}
-
-void resetISR(void)
-{
-    GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
-    SysCtlReset();
-}
-
-void initResetISR(void)
-{
-    // SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-    //GPIOIntRegister(GPIO_PORTA_BASE, resetCheck);
-    //GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
-    //GPIOPadConfigSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
-    //GPIODirModeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_DIR_MODE_IN);
-    //GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_FALLING_EDGE);
-    //GPIOIntEnable(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
-
-
-    //SysCtlPeripheralEnable(LEFT_BUT_PERIPH);
-    GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
-    GPIOPadConfigSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
-
-}
 
 

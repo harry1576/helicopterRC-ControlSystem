@@ -43,6 +43,13 @@ enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
 #define RIGHT_BUT_PIN  GPIO_PIN_0
 #define RIGHT_BUT_NORMAL  true
 
+// MODE Switch
+#define MODE_SWITCH_PERIPH  SYSCTL_PERIPH_GPIOA
+#define MODE_SWITCH_PORT_BASE  GPIO_PORTA_BASE
+#define MODE_SWITCH_PIN  GPIO_PIN_7
+#define MODE_SWITCH_NORMAL  true
+
+
 #define FLYING 1
 #define LANDING 0
 #define LANDED 2
@@ -103,7 +110,7 @@ switchMode (void);
 
 
 void
-initSwitch(void);
+initSwitchandResetISR(void);
 
 
 void
@@ -115,6 +122,14 @@ resetISR(void);
 
 void
 initResetISR(void);
+
+
+void initSwitch(void);
+
+
+void checkSwitchPos(void);
+
+
 
 
 #endif /*BUTTONS_H_*/

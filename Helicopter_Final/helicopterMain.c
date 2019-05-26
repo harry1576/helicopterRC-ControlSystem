@@ -128,7 +128,6 @@ int main(void)
     initClock();
     initTimer();
     initCircBuf( & g_inBuffer, BUF_SIZE);
-    initSwitch();
     initADC();
     initDisplay();
     initButtons();
@@ -136,6 +135,7 @@ int main(void)
     initialiseUSB_UART();
     initReferenceTrigger();
     initResetISR();
+    initSwitch();
 
 
     initialiseMainRotorPWM(); // initalise the PWM for the motors
@@ -183,6 +183,7 @@ int main(void)
         {
             if (flightMode == FLYING) {
                 if (referenceAngleSet == 1) {
+                    checkSwitchPos();
                     updateDesiredAltAndYawValue(); // get data from buttons once taken
                     mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle);
@@ -244,6 +245,8 @@ int main(void)
                 tailDutyCycle = 0;
                 countUp2 = 0;
                 PIDFlag = 0;
+                checkSwitchPos();
+
             }
         }
         /*
