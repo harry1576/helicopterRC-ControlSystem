@@ -22,6 +22,8 @@
 //*****************************************************************************
 enum butNames {UP = 0, DOWN, LEFT, RIGHT, NUM_BUTS};
 enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
+enum helicopterModes {LANDING = 0, LANDED = 1, TAKINGOFF = 2, FLYING = 3};
+
 // UP button
 #define UP_BUT_PERIPH  SYSCTL_PERIPH_GPIOE
 #define UP_BUT_PORT_BASE  GPIO_PORTE_BASE
@@ -49,11 +51,6 @@ enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
 #define MODE_SWITCH_PIN  GPIO_PIN_7
 #define MODE_SWITCH_NORMAL  true
 
-
-#define FLYING 1
-#define LANDING 0
-#define LANDED 2
-#define TAKINGOFF 3
 
 #define NUM_BUT_POLLS 3
 // Debounce algorithm: A state machine is associated with each button.

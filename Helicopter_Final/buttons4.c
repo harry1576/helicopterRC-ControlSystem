@@ -16,14 +16,23 @@
 // ********************************************************
 
 #include <stdint.h>
+
 #include <stdbool.h>
+
 #include "inc/hw_memmap.h"
+
 #include "inc/hw_types.h"
+
 #include "driverlib/gpio.h"
+
 #include "driverlib/sysctl.h"
+
 #include "driverlib/debug.h"
+
 #include "inc/tm4c123gh6pm.h"  // Board specific defines (for PF0)
+
 #include "buttons4.h"
+
 #include "yawFiniteStateMachine.h"
 
 
@@ -38,11 +47,10 @@ static bool but_normal[NUM_BUTS]; // Corresponds to the electrical state
 uint8_t switchChannel; //Variable to hold the current value of switch position
 uint8_t resetPos; //Variable to hold the current value of switch position
 
-
 int16_t desiredHeightPercentage = 0;
 volatile int16_t desiredAngle = 0;
 uint32_t variableTest = 1;
-int8_t flightMode = 2;
+int8_t flightMode = 0;
 volatile int16_t referenceAngle = 0;
 int8_t testVariable = 0;
 volatile int8_t taken_off = 0;
@@ -53,8 +61,7 @@ int8_t previousPosition;
 // defined by the constants in the buttons2.h header file.
 
 void
-initButtons(void)
-{
+initButtons(void) {
     int i;
 
     // UP button (active HIGH)
@@ -105,8 +112,7 @@ initButtons(void)
 // A state change occurs only after NUM_BUT_POLLS consecutive polls have
 // read the pin in the opposite condition, before the state changes and
 // a flag is set.  Set NUM_BUT_POLLS according to the polling rate.
-void updateButtons(void)
-{
+void updateButtons(void) {
     bool but_value[NUM_BUTS];
     int i;
 
@@ -133,8 +139,7 @@ void updateButtons(void)
 // checkButton: Function returns the new button logical state if the button
 // logical state (PUSHED or RELEASED) has changed since the last call,
 // otherwise returns NO_CHANGE.
-enum butStates checkButton(uint8_t butName)
-{
+enum butStates checkButton(uint8_t butName) {
     if (but_flag[butName]) {
         but_flag[butName] = false;
         if (but_state[butName] == but_normal[butName])
@@ -156,65 +161,51 @@ void updateDesiredAltAndYawValue(void) {
 
     butState = checkButton(UP);
     if (butState == PUSHED) {
-        if (desiredHeightPercentage < 100)
-        {
+        if (desiredHeightPercentage < 100) {
             desiredHeightPercentage += 10;
         }
     }
 
     butState = checkButton(DOWN);
-    if (butState == PUSHED)
-    {
-        if (desiredHeightPercentage > 0)
-        {
-        desiredHeightPercentage -= 10;
+    if (butState == PUSHED) {
+        if (desiredHeightPercentage > 0) {
+            desiredHeightPercentage -= 10;
         }
     }
 
     butState = checkButton(RIGHT);
-    if (butState == PUSHED)
-    {
+    if (butState == PUSHED) {
         desiredAngle += 15;
     }
 
     butState = checkButton(LEFT);
-    if (butState == PUSHED)
-    {
+    if (butState == PUSHED) {
         desiredAngle -= 15;
     }
 }
 
+void resetAndSwitchISR(void) {
 
+    uint8_t resetButton = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
+    if (resetButton == 0) {
+        GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
+        SysCtlReset();
+    } else {
+        GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_7);
 
-void resetAndSwitchISR(void)
-{
+        switchChannel = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_7);
 
-   uint8_t resetButton = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
-   if(resetButton == 0)
-   {
-       GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
-       SysCtlReset();
-   }
-   else
-   {
-       GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_7);
+        if (switchChannel == 0 && flightMode == FLYING) // switch is in land position
+        {
+            flightMode = LANDING;
 
-       switchChannel = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_7);
-
-       if (switchChannel == 0 && flightMode == FLYING) // switch is in land position
-       {
-           flightMode = LANDING;
-
-       } else if(switchChannel != 0 && desiredHeightPercentage == 0)
-       {
-           taken_off = 0;
-           flightMode = TAKINGOFF;
-       }
-   }
+        } else if (switchChannel != 0 && flightMode == LANDED) {
+            flightMode = TAKINGOFF;
+        }
+    }
 }
 
-void initResetandSwitchISR(void)
-{
+void initResetandSwitchISR(void) {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
@@ -227,12 +218,4 @@ void initResetandSwitchISR(void)
 
     GPIOIntRegister(GPIO_PORTA_BASE, resetAndSwitchISR);
 
-
 }
-
-
-
-
-
-
-

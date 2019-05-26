@@ -100,7 +100,7 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
 {
     int16_t tailRotorKp = 1200;//1.2//0.1/0.258 no kp rotates anti  //working on heli2  3.4
     int16_t tailRotorKi = 100;                      //0.04
-    int16_t tailRotorKd = 256;                      //0.03
+    int16_t tailRotorKd = 400;                      //0.03
     int16_t divisor = 1000;
 
     tailErrorSignal = (desiredAngle) - currentHelicopterAngle;

@@ -22,25 +22,24 @@
 #include "driverlib/debug.h"
 #include "utils/ustdlib.h"
 #include "circBufT.h"
+#include "buttons4.h"
 #include "OrbitOLED/OrbitOLEDInterface.h"
 
-// Variables used to hold the current and previous states. This is required for
-// the FSM to function correctly.
-
-uint8_t currentState;
-uint8_t previousState;
-
-// Variables to hold the values of the two digital sensors, focused on the
-// rotor disc
-uint32_t ChannelA;
-uint32_t ChannelB;
-
-uint8_t angleReferenced = 0;
 
 // Variable that is used to hold the current angle of the helicopter.
 volatile int32_t currentAngle = 0;
-int32_t slotCount; // variable that holds the amount of steps the tranducer has
 int8_t referenceAngleSet = 0;
+
+// Variables used to hold the current and previous states. This is required for
+// the FSM to function correctly.
+uint8_t currentState;
+uint8_t previousState;
+
+uint32_t ChannelA;// Variables to hold the values of the two digital sensors, focused on the
+uint32_t ChannelB;// rotor disc
+
+uint8_t angleReferenced = 0;
+int32_t slotCount; // variable that holds the amount of steps the tranducer has
 uint32_t referenceSensor;
 //read
 
@@ -180,9 +179,12 @@ void referenceTriggerHandler(void)
     GPIOIntClear(GPIO_PORTC_BASE, GPIO_INT_PIN_4 );
     currentAngle = 0;
     slotCount = 0;
-    referenceAngleSet = 1;
-    GPIOIntDisable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
+    if(flightMode == TAKINGOFF)
+    {
+        flightMode = FLYING;
+        GPIOIntDisable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
 
+    }
 }
 
 void initReferenceTrigger(void)
