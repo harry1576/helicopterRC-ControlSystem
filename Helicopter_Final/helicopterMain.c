@@ -49,7 +49,7 @@ int32_t tempAngle = 0;
 // Constants
 //*****************************************************************************
 #define SAMPLE_RATE_HZ 160
-#define TIME_CONSTANT 1/SAMPLE_RATE_HZ
+#define TIME_CONSTANT 1/bSAMPLE_RATE_HZ
 
 //*****************************************************************************
 // Global Variables
