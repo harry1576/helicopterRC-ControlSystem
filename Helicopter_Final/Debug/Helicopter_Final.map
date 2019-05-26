@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker Unix v16.9.6                   
 ******************************************************************************
->> Linked Sun May 26 18:39:15 2019
+>> Linked Sun May 26 18:47:40 2019
 
 OUTPUT FILE NAME:   <Helicopter_Final.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 00003fa1
@@ -11,7 +11,7 @@ MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  00004e1e  0003b1e2  R  X
+  FLASH                 00000000   00040000  00004e16  0003b1ea  R  X
   SRAM                  20000000   00008000  00002644  000059bc  RW X
 
 
@@ -19,11 +19,11 @@ SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00004e20   00004e20    r-x
+00000000    00000000    00004e18   00004e18    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
   0000026c    0000026c    000044a6   000044a6    r-x .text
   00004714    00004714    000006a4   000006a4    r-- .const
-  00004db8    00004db8    00000068   00000068    r-- .cinit
+  00004db8    00004db8    00000060   00000060    r-- .cinit
 20000000    20000000    0000264a   00000000    rw-
   20000000    20000000    0000026c   00000000    rw- .vtable
   2000026c    2000026c    00001000   00000000    rw- .stack
@@ -158,14 +158,13 @@ section   page    origin      length       input sections
                   00004db2    00000002     --HOLE-- [fill = 0]
                   00004db4    00000004     ustdlib.obj (.const)
 
-.cinit     0    00004db8    00000068     
-                  00004db8    0000002f     (.cinit..data.load) [load image, compression = lzss]
-                  00004de7    00000001     --HOLE-- [fill = 0]
-                  00004de8    0000000c     (__TI_handler_table)
-                  00004df4    00000004     --HOLE-- [fill = 0]
-                  00004df8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00004e00    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
-                  00004e08    00000018     (__TI_cinit_table)
+.cinit     0    00004db8    00000060     
+                  00004db8    0000002a     (.cinit..data.load) [load image, compression = lzss]
+                  00004de2    00000002     --HOLE-- [fill = 0]
+                  00004de4    0000000c     (__TI_handler_table)
+                  00004df0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00004df8    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  00004e00    00000018     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
@@ -315,22 +314,22 @@ MODULE SUMMARY
                                                                
        Heap:                          0       0         4096   
        Stack:                         0       0         4096   
-       Linker Generated:              0       99        0      
+       Linker Generated:              0       94        0      
     +--+------------------------------+-------+---------+---------+
-       Grand Total:                   17568   2417      9794   
+       Grand Total:                   17568   2412      9794   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00004e08 records: 3, size/record: 8, table size: 24
-	.data: load addr=00004db8, load size=0000002f bytes, run addr=20002604, run size=00000046 bytes, compression=lzss
-	.bss: load addr=00004df8, load size=00000008 bytes, run addr=20002270, run size=00000392 bytes, compression=zero_init
-	.vtable: load addr=00004e00, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
+__TI_cinit_table @ 00004e00 records: 3, size/record: 8, table size: 24
+	.data: load addr=00004db8, load size=0000002a bytes, run addr=20002604, run size=00000046 bytes, compression=lzss
+	.bss: load addr=00004df0, load size=00000008 bytes, run addr=20002270, run size=00000392 bytes, compression=zero_init
+	.vtable: load addr=00004df8, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00004de8 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00004de4 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_lzss
 	index: 2, handler: __TI_decompress_none
@@ -460,10 +459,10 @@ UNDEFED   SHT$$INIT_ARRAY$$Limit
 00001000  __STACK_SIZE                   
 2000046c  __STACK_TOP                    
 00001000  __SYSMEM_SIZE                  
-00004e08  __TI_CINIT_Base                
-00004e20  __TI_CINIT_Limit               
-00004de8  __TI_Handler_Table_Base        
-00004df4  __TI_Handler_Table_Limit       
+00004e00  __TI_CINIT_Base                
+00004e18  __TI_CINIT_Limit               
+00004de4  __TI_Handler_Table_Base        
+00004df0  __TI_Handler_Table_Limit       
 00003c71  __TI_auto_init                 
 20002614  __TI_cleanup_ptr               
 00003e25  __TI_decompress_lzss           
@@ -832,10 +831,10 @@ address   name
 0000470f  _system_pre_init               
 00004714  rgbOledFont0                   
 00004d18  rgbFillPat                     
-00004de8  __TI_Handler_Table_Base        
-00004df4  __TI_Handler_Table_Limit       
-00004e08  __TI_CINIT_Base                
-00004e20  __TI_CINIT_Limit               
+00004de4  __TI_Handler_Table_Base        
+00004df0  __TI_Handler_Table_Limit       
+00004e00  __TI_CINIT_Base                
+00004e18  __TI_CINIT_Limit               
 20000000  g_pfnRAMVectors                
 2000026c  __stack                        
 2000046c  __STACK_TOP                    
