@@ -1,17 +1,17 @@
 ******************************************************************************
                   TI ARM Linker Unix v16.9.6                   
 ******************************************************************************
->> Linked Sun May 26 17:46:12 2019
+>> Linked Sun May 26 17:53:44 2019
 
 OUTPUT FILE NAME:   <Helicopter_Final.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00003f99
+ENTRY POINT SYMBOL: "_c_int00"  address: 00003f79
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  00004e0e  0003b1f2  R  X
+  FLASH                 00000000   00040000  00004dee  0003b212  R  X
   SRAM                  20000000   00008000  00002642  000059be  RW X
 
 
@@ -19,11 +19,11 @@ SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00004e10   00004e10    r-x
+00000000    00000000    00004df0   00004df0    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
-  0000026c    0000026c    0000449e   0000449e    r-x .text
-  0000470c    0000470c    000006a4   000006a4    r-- .const
-  00004db0    00004db0    00000060   00000060    r-- .cinit
+  0000026c    0000026c    0000447e   0000447e    r-x .text
+  000046ec    000046ec    000006a4   000006a4    r-- .const
+  00004d90    00004d90    00000060   00000060    r-- .cinit
 20000000    20000000    00002648   00000000    rw-
   20000000    20000000    0000026c   00000000    rw- .vtable
   2000026c    2000026c    00001000   00000000    rw- .stack
@@ -40,131 +40,131 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    0000026c     
                   00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
 
-.text      0    0000026c    0000449e     
+.text      0    0000026c    0000447e     
                   0000026c    00000c84     ustdlib.obj (.text)
                   00000ef0    00000950     OrbitOledGrph.obj (.text)
                   00001840    0000041c     helicopterMain.obj (.text)
                   00001c5c    000003d0     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.text)
-                  0000202c    000003a0     buttons4.obj (.text)
-                  000023cc    0000037c     OrbitOled.obj (.text)
-                  00002748    00000258     mainRotorController.obj (.text)
-                  000029a0    00000220     yawFiniteStateMachine.obj (.text)
-                  00002bc0    00000204     OrbitOledChar.obj (.text)
-                  00002dc4    000001f8     tailRotorController.obj (.text)
-                  00002fbc    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.obj (.text)
-                  00003172    00000002                                   : i_div0.obj (.text)
-                  00003174    000001b0     userDisplay.obj (.text)
-                  00003324    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.obj (.text)
-                  0000345a    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
-                  0000358c    00000120     helperFunctions.obj (.text)
-                  000036ac    00000110     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
-                  000037bc    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.obj (.text)
-                  000038b8    000000f4     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
-                  000039ac    000000b8     circBufT.obj (.text)
-                  00003a64    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
-                  00003b00    0000007a     driverlib.lib : adc.obj (.text:ADCSequenceStepConfigure)
-                  00003b7a    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
-                  00003bf4    00000074     uartCommunication.obj (.text)
-                  00003c68    00000070     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.obj (.text)
-                  00003cd8    0000006e                                   : fd_tos_t2.obj (.text)
-                  00003d46    00000002                                   : mpu_init.obj (.text)
-                  00003d48    0000006c     helicopterAltitude.obj (.text)
-                  00003db4    00000068     driverlib.lib : interrupt.obj (.text:IntEnable)
-                  00003e1c    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.obj (.text:decompress:lzss)
-                  00003e84    00000060     driverlib.lib : timer.obj (.text:TimerConfigure)
-                  00003ee4    0000005c     delay.obj (.text)
-                  00003f40    00000056     driverlib.lib : gpio.obj (.text:GPIOIntTypeSet)
-                  00003f96    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : startup.obj (.text)
-                  00003f98    00000054                                   : boot.obj (.text)
-                  00003fec    00000054                                   : exit.obj (.text)
-                  00004040    00000050     driverlib.lib : adc.obj (.text:ADCSequenceConfigure)
-                  00004090    00000050                   : adc.obj (.text:_ADCIntNumberGet)
-                  000040e0    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
-                  0000412c    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
-                  00004174    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.obj (.text)
-                  000041bc    00000046     driverlib.lib : uart.obj (.text:UARTConfigSetExpClk)
-                  00004202    00000002     --HOLE-- [fill = 0]
-                  00004204    00000044     OrbitOLEDInterface.obj (.text)
-                  00004248    00000044     driverlib.lib : gpio.obj (.text:_GPIOIntNumberGet)
-                  0000428c    00000040     rtsv7M4_T_le_v4SPD16_eabi.lib : u_divt2.obj (.text)
-                  000042cc    0000003c     driverlib.lib : ssi.obj (.text:SSIConfigSetExpClk)
-                  00004308    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : fs_tod_t2.obj (.text)
-                  00004340    00000034     driverlib.lib : interrupt.obj (.text:IntRegister)
-                  00004374    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
-                  000043a8    0000002e     rtsv7M4_T_le_v4SPD16_eabi.lib : i_tofd_t2.obj (.text)
-                  000043d6    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
-                  00004400    00000022                   : pwm.obj (.text:PWMGenConfigure)
-                  00004422    00000002     --HOLE-- [fill = 0]
-                  00004424    00000020                   : uart.obj (.text:UARTDisable)
-                  00004444    0000001e                   : adc.obj (.text:ADCSequenceDataGet)
-                  00004462    0000001e                   : pwm.obj (.text:PWMPulseWidthSet)
-                  00004480    0000001c                   : systick.obj (.text:SysTickIntRegister)
-                  0000449c    00000018                   : adc.obj (.text:ADCIntRegister)
-                  000044b4    00000018                   : adc.obj (.text:ADCProcessorTrigger)
-                  000044cc    00000018                   : gpio.obj (.text:GPIOIntRegister)
-                  000044e4    00000018                   : gpio.obj (.text:GPIOPinTypeGPIOOutput)
-                  000044fc    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
-                  00004514    00000014     driverlib.lib : sysctl.obj (.text:SysCtlPWMClockSet)
-                  00004528    00000014                   : systick.obj (.text:SysTickEnable)
-                  0000453c    00000014                   : systick.obj (.text:SysTickIntEnable)
-                  00004550    00000014                   : uart.obj (.text:UARTEnable)
-                  00004564    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
-                  00004578    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOInput)
-                  0000458a    00000012                   : gpio.obj (.text:GPIOPinTypePWM)
-                  0000459c    00000012                   : gpio.obj (.text:GPIOPinTypeSSI)
-                  000045ae    00000012                   : gpio.obj (.text:GPIOPinTypeUART)
-                  000045c0    00000012                   : pwm.obj (.text:PWMOutputState)
-                  000045d2    00000010                   : adc.obj (.text:ADCIntEnable)
-                  000045e2    00000010                   : interrupt.obj (.text:IntMasterEnable)
-                  000045f2    00000010                   : pwm.obj (.text:PWMGenPeriodSet)
-                  00004602    00000002     --HOLE-- [fill = 0]
-                  00004604    00000010                   : sysctl.obj (.text:SysCtlReset)
-                  00004614    00000010                   : systick.obj (.text:SysTickPeriodSet)
-                  00004624    0000000e                   : adc.obj (.text:ADCSequenceEnable)
-                  00004632    0000000e                   : gpio.obj (.text:GPIOIntDisable)
-                  00004640    0000000e                   : timer.obj (.text:TimerEnable)
-                  0000464e    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
-                  0000465c    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsie)
-                  00004668    0000000c                   : gpio.obj (.text:GPIOIntEnable)
-                  00004674    0000000c                   : pwm.obj (.text:PWMGenEnable)
-                  00004680    0000000c                   : ssi.obj (.text:SSIDataGet)
-                  0000468c    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
-                  00004698    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
-                  000046a4    0000000a     driverlib.lib : adc.obj (.text:ADCIntClear)
-                  000046ae    0000000a                   : ssi.obj (.text:SSIDataPut)
-                  000046b8    0000000a                   : ssi.obj (.text:SSIEnable)
-                  000046c2    0000000a                   : timer.obj (.text:TimerValueGet)
-                  000046cc    0000000a                   : uart.obj (.text:UARTCharPut)
-                  000046d6    0000000a                   : uart.obj (.text:UARTFIFOEnable)
-                  000046e0    00000008                   : ssi.obj (.text:SSIBusy)
-                  000046e8    00000006                   : gpio.obj (.text:GPIOIntClear)
-                  000046ee    00000006                   : gpio.obj (.text:GPIOPinRead)
-                  000046f4    00000006                   : gpio.obj (.text:GPIOPinWrite)
-                  000046fa    00000006                   : ssi.obj (.text:SSIClockSourceSet)
-                  00004700    00000006                   : sysctl.obj (.text:SysCtlDelay)
-                  00004706    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.obj (.text)
+                  0000202c    00000380     buttons4.obj (.text)
+                  000023ac    0000037c     OrbitOled.obj (.text)
+                  00002728    00000258     mainRotorController.obj (.text)
+                  00002980    00000220     yawFiniteStateMachine.obj (.text)
+                  00002ba0    00000204     OrbitOledChar.obj (.text)
+                  00002da4    000001f8     tailRotorController.obj (.text)
+                  00002f9c    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.obj (.text)
+                  00003152    00000002                                   : i_div0.obj (.text)
+                  00003154    000001b0     userDisplay.obj (.text)
+                  00003304    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.obj (.text)
+                  0000343a    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  0000356c    00000120     helperFunctions.obj (.text)
+                  0000368c    00000110     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
+                  0000379c    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.obj (.text)
+                  00003898    000000f4     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
+                  0000398c    000000b8     circBufT.obj (.text)
+                  00003a44    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00003ae0    0000007a     driverlib.lib : adc.obj (.text:ADCSequenceStepConfigure)
+                  00003b5a    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  00003bd4    00000074     uartCommunication.obj (.text)
+                  00003c48    00000070     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.obj (.text)
+                  00003cb8    0000006e                                   : fd_tos_t2.obj (.text)
+                  00003d26    00000002                                   : mpu_init.obj (.text)
+                  00003d28    0000006c     helicopterAltitude.obj (.text)
+                  00003d94    00000068     driverlib.lib : interrupt.obj (.text:IntEnable)
+                  00003dfc    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  00003e64    00000060     driverlib.lib : timer.obj (.text:TimerConfigure)
+                  00003ec4    0000005c     delay.obj (.text)
+                  00003f20    00000056     driverlib.lib : gpio.obj (.text:GPIOIntTypeSet)
+                  00003f76    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : startup.obj (.text)
+                  00003f78    00000054                                   : boot.obj (.text)
+                  00003fcc    00000054                                   : exit.obj (.text)
+                  00004020    00000050     driverlib.lib : adc.obj (.text:ADCSequenceConfigure)
+                  00004070    00000050                   : adc.obj (.text:_ADCIntNumberGet)
+                  000040c0    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  0000410c    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  00004154    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.obj (.text)
+                  0000419c    00000046     driverlib.lib : uart.obj (.text:UARTConfigSetExpClk)
+                  000041e2    00000002     --HOLE-- [fill = 0]
+                  000041e4    00000044     OrbitOLEDInterface.obj (.text)
+                  00004228    00000044     driverlib.lib : gpio.obj (.text:_GPIOIntNumberGet)
+                  0000426c    00000040     rtsv7M4_T_le_v4SPD16_eabi.lib : u_divt2.obj (.text)
+                  000042ac    0000003c     driverlib.lib : ssi.obj (.text:SSIConfigSetExpClk)
+                  000042e8    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : fs_tod_t2.obj (.text)
+                  00004320    00000034     driverlib.lib : interrupt.obj (.text:IntRegister)
+                  00004354    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00004388    0000002e     rtsv7M4_T_le_v4SPD16_eabi.lib : i_tofd_t2.obj (.text)
+                  000043b6    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  000043e0    00000022                   : pwm.obj (.text:PWMGenConfigure)
+                  00004402    00000002     --HOLE-- [fill = 0]
+                  00004404    00000020                   : uart.obj (.text:UARTDisable)
+                  00004424    0000001e                   : adc.obj (.text:ADCSequenceDataGet)
+                  00004442    0000001e                   : pwm.obj (.text:PWMPulseWidthSet)
+                  00004460    0000001c                   : systick.obj (.text:SysTickIntRegister)
+                  0000447c    00000018                   : adc.obj (.text:ADCIntRegister)
+                  00004494    00000018                   : adc.obj (.text:ADCProcessorTrigger)
+                  000044ac    00000018                   : gpio.obj (.text:GPIOIntRegister)
+                  000044c4    00000018                   : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  000044dc    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  000044f4    00000014     driverlib.lib : sysctl.obj (.text:SysCtlPWMClockSet)
+                  00004508    00000014                   : systick.obj (.text:SysTickEnable)
+                  0000451c    00000014                   : systick.obj (.text:SysTickIntEnable)
+                  00004530    00000014                   : uart.obj (.text:UARTEnable)
+                  00004544    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00004558    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOInput)
+                  0000456a    00000012                   : gpio.obj (.text:GPIOPinTypePWM)
+                  0000457c    00000012                   : gpio.obj (.text:GPIOPinTypeSSI)
+                  0000458e    00000012                   : gpio.obj (.text:GPIOPinTypeUART)
+                  000045a0    00000012                   : pwm.obj (.text:PWMOutputState)
+                  000045b2    00000010                   : adc.obj (.text:ADCIntEnable)
+                  000045c2    00000010                   : interrupt.obj (.text:IntMasterEnable)
+                  000045d2    00000010                   : pwm.obj (.text:PWMGenPeriodSet)
+                  000045e2    00000002     --HOLE-- [fill = 0]
+                  000045e4    00000010                   : sysctl.obj (.text:SysCtlReset)
+                  000045f4    00000010                   : systick.obj (.text:SysTickPeriodSet)
+                  00004604    0000000e                   : adc.obj (.text:ADCSequenceEnable)
+                  00004612    0000000e                   : gpio.obj (.text:GPIOIntDisable)
+                  00004620    0000000e                   : timer.obj (.text:TimerEnable)
+                  0000462e    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  0000463c    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsie)
+                  00004648    0000000c                   : gpio.obj (.text:GPIOIntEnable)
+                  00004654    0000000c                   : pwm.obj (.text:PWMGenEnable)
+                  00004660    0000000c                   : ssi.obj (.text:SSIDataGet)
+                  0000466c    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00004678    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00004684    0000000a     driverlib.lib : adc.obj (.text:ADCIntClear)
+                  0000468e    0000000a                   : ssi.obj (.text:SSIDataPut)
+                  00004698    0000000a                   : ssi.obj (.text:SSIEnable)
+                  000046a2    0000000a                   : timer.obj (.text:TimerValueGet)
+                  000046ac    0000000a                   : uart.obj (.text:UARTCharPut)
+                  000046b6    0000000a                   : uart.obj (.text:UARTFIFOEnable)
+                  000046c0    00000008                   : ssi.obj (.text:SSIBusy)
+                  000046c8    00000006                   : gpio.obj (.text:GPIOIntClear)
+                  000046ce    00000006                   : gpio.obj (.text:GPIOPinRead)
+                  000046d4    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  000046da    00000006                   : ssi.obj (.text:SSIClockSourceSet)
+                  000046e0    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  000046e6    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.obj (.text)
 
-.const     0    0000470c    000006a4     
-                  0000470c    00000300     ChrFont0.obj (.const:.string:rgbOledFont0)
-                  00004a0c    000000d8     driverlib.lib : gpio.obj (.const:g_ppui32GPIOIntMapSnowflake)
-                  00004ae4    000000c0                   : gpio.obj (.const:g_ppui32GPIOIntMapBlizzard)
-                  00004ba4    00000090                   : gpio.obj (.const:g_pui32GPIOBaseAddrs)
-                  00004c34    00000070                   : interrupt.obj (.const)
-                  00004ca4    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
-                  00004d10    00000040     FillPat.obj (.const:.string:rgbFillPat)
-                  00004d50    00000030     ustdlib.obj (.const:g_psDaysToMonth)
-                  00004d80    00000018     ustdlib.obj (.const:g_pfExponents)
-                  00004d98    00000012     ustdlib.obj (.const:.string)
-                  00004daa    00000002     --HOLE-- [fill = 0]
-                  00004dac    00000004     ustdlib.obj (.const)
+.const     0    000046ec    000006a4     
+                  000046ec    00000300     ChrFont0.obj (.const:.string:rgbOledFont0)
+                  000049ec    000000d8     driverlib.lib : gpio.obj (.const:g_ppui32GPIOIntMapSnowflake)
+                  00004ac4    000000c0                   : gpio.obj (.const:g_ppui32GPIOIntMapBlizzard)
+                  00004b84    00000090                   : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00004c14    00000070                   : interrupt.obj (.const)
+                  00004c84    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  00004cf0    00000040     FillPat.obj (.const:.string:rgbFillPat)
+                  00004d30    00000030     ustdlib.obj (.const:g_psDaysToMonth)
+                  00004d60    00000018     ustdlib.obj (.const:g_pfExponents)
+                  00004d78    00000012     ustdlib.obj (.const:.string)
+                  00004d8a    00000002     --HOLE-- [fill = 0]
+                  00004d8c    00000004     ustdlib.obj (.const)
 
-.cinit     0    00004db0    00000060     
-                  00004db0    00000029     (.cinit..data.load) [load image, compression = lzss]
-                  00004dd9    00000003     --HOLE-- [fill = 0]
-                  00004ddc    0000000c     (__TI_handler_table)
-                  00004de8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00004df0    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
-                  00004df8    00000018     (__TI_cinit_table)
+.cinit     0    00004d90    00000060     
+                  00004d90    00000029     (.cinit..data.load) [load image, compression = lzss]
+                  00004db9    00000003     --HOLE-- [fill = 0]
+                  00004dbc    0000000c     (__TI_handler_table)
+                  00004dc8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00004dd0    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  00004dd8    00000018     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
@@ -240,7 +240,7 @@ MODULE SUMMARY
     ./
        ustdlib.obj                    3204    94        4      
        helicopterMain.obj             1052    0         4      
-       buttons4.obj                   928     0         31     
+       buttons4.obj                   896     0         31     
        tm4c123gh6pm_startup_ccs.obj   12      620       0      
        mainRotorController.obj        600     0         22     
        yawFiniteStateMachine.obj      544     0         23     
@@ -251,7 +251,7 @@ MODULE SUMMARY
        helicopterAltitude.obj         108     0         20     
        uartCommunication.obj          116     0         0      
     +--+------------------------------+-------+---------+---------+
-       Total:                         7972    714       112    
+       Total:                         7940    714       112    
                                                                
     ./OrbitOLED/
        OrbitOLEDInterface.obj         68      0         0      
@@ -315,20 +315,20 @@ MODULE SUMMARY
        Stack:                         0       0         4096   
        Linker Generated:              0       93        0      
     +--+------------------------------+-------+---------+---------+
-       Grand Total:                   17560   2411      9793   
+       Grand Total:                   17528   2411      9793   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00004df8 records: 3, size/record: 8, table size: 24
-	.data: load addr=00004db0, load size=00000029 bytes, run addr=20002604, run size=00000044 bytes, compression=lzss
-	.bss: load addr=00004de8, load size=00000008 bytes, run addr=20002270, run size=00000392 bytes, compression=zero_init
-	.vtable: load addr=00004df0, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
+__TI_cinit_table @ 00004dd8 records: 3, size/record: 8, table size: 24
+	.data: load addr=00004d90, load size=00000029 bytes, run addr=20002604, run size=00000044 bytes, compression=lzss
+	.bss: load addr=00004dc8, load size=00000008 bytes, run addr=20002270, run size=00000392 bytes, compression=zero_init
+	.vtable: load addr=00004dd0, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00004ddc records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00004dbc records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_lzss
 	index: 2, handler: __TI_decompress_none
@@ -338,65 +338,65 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address   name                           
 -------   ----                           
-000046a5  ADCIntClear                    
-000045d3  ADCIntEnable                   
-00003d49  ADCIntHandler                  
-0000449d  ADCIntRegister                 
-000044b5  ADCProcessorTrigger            
-00004041  ADCSequenceConfigure           
-00004445  ADCSequenceDataGet             
-00004625  ADCSequenceEnable              
-00003b01  ADCSequenceStepConfigure       
-00003fed  C$$EXIT                        
-0000465d  CPUcpsie                       
+00004685  ADCIntClear                    
+000045b3  ADCIntEnable                   
+00003d29  ADCIntHandler                  
+0000447d  ADCIntRegister                 
+00004495  ADCProcessorTrigger            
+00004021  ADCSequenceConfigure           
+00004425  ADCSequenceDataGet             
+00004605  ADCSequenceEnable              
+00003ae1  ADCSequenceStepConfigure       
+00003fcd  C$$EXIT                        
+0000463d  CPUcpsie                       
 20002598  ChannelA                       
 2000259c  ChannelB                       
-00003ee5  DelayInit                      
-00003eff  DelayMs                        
-000043d7  GPIODirModeSet                 
-000046e9  GPIOIntClear                   
-00004633  GPIOIntDisable                 
-00004669  GPIOIntEnable                  
-000044cd  GPIOIntRegister                
-00003f41  GPIOIntTypeSet                 
-0000345b  GPIOPadConfigSet               
-0000412d  GPIOPinConfigure               
-000046ef  GPIOPinRead                    
-00004579  GPIOPinTypeGPIOInput           
-000044e5  GPIOPinTypeGPIOOutput          
-0000458b  GPIOPinTypePWM                 
-0000459d  GPIOPinTypeSSI                 
-000045af  GPIOPinTypeUART                
-000046f5  GPIOPinWrite                   
-00003db5  IntEnable                      
-000045e3  IntMasterEnable                
-00004341  IntRegister                    
+00003ec5  DelayInit                      
+00003edf  DelayMs                        
+000043b7  GPIODirModeSet                 
+000046c9  GPIOIntClear                   
+00004613  GPIOIntDisable                 
+00004649  GPIOIntEnable                  
+000044ad  GPIOIntRegister                
+00003f21  GPIOIntTypeSet                 
+0000343b  GPIOPadConfigSet               
+0000410d  GPIOPinConfigure               
+000046cf  GPIOPinRead                    
+00004559  GPIOPinTypeGPIOInput           
+000044c5  GPIOPinTypeGPIOOutput          
+0000456b  GPIOPinTypePWM                 
+0000457d  GPIOPinTypeSSI                 
+0000458f  GPIOPinTypeUART                
+000046d5  GPIOPinWrite                   
+00003d95  IntEnable                      
+000045c3  IntMasterEnable                
+00004321  IntRegister                    
 200025a0  MAIN_PWM                       
-0000422b  OLEDInitialise                 
-00004205  OLEDStringDraw                 
-00002d59  OrbitOledAdvanceCursor         
+0000420b  OLEDInitialise                 
+000041e5  OLEDStringDraw                 
+00002d39  OrbitOledAdvanceCursor         
 000017e1  OrbitOledClampXco              
 00001801  OrbitOledClampYco              
-000025a9  OrbitOledClear                 
-000025b5  OrbitOledClearBuffer           
-00002c29  OrbitOledDefUserChar           
-00002525  OrbitOledDevInit               
+00002589  OrbitOledClear                 
+00002595  OrbitOledClearBuffer           
+00002c09  OrbitOledDefUserChar           
+00002505  OrbitOledDevInit               
 00001623  OrbitOledDrawChar              
-00002ce1  OrbitOledDrawGlyph             
+00002cc1  OrbitOledDrawGlyph             
 00000fe7  OrbitOledDrawPixel             
 0000112d  OrbitOledDrawRect              
 00001683  OrbitOledDrawString            
-000024ab  OrbitOledDvrInit               
+0000248b  OrbitOledDvrInit               
 000011b1  OrbitOledFillRect              
 000012f5  OrbitOledGetBmp                
-00002c91  OrbitOledGetCharUpdate         
-00002c0d  OrbitOledGetCursor             
+00002c71  OrbitOledGetCharUpdate         
+00002bed  OrbitOledGetCursor             
 00000fe1  OrbitOledGetDrawMode           
 00001013  OrbitOledGetPixel              
 00000f37  OrbitOledGetPos                
 00000f6b  OrbitOledGetStdPattern         
-000023e1  OrbitOledHostInit              
-000023cd  OrbitOledInit                  
+000023c1  OrbitOledHostInit              
+000023ad  OrbitOledInit                  
 0000102d  OrbitOledLineTo                
 00001779  OrbitOledMoveDown              
 000017af  OrbitOledMoveLeft              
@@ -404,125 +404,125 @@ address   name
 00000ef1  OrbitOledMoveTo                
 00001741  OrbitOledMoveUp                
 00001455  OrbitOledPutBmp                
-0000263f  OrbitOledPutBuffer             
-00002c97  OrbitOledPutChar               
-00002cb5  OrbitOledPutString             
+0000261f  OrbitOledPutBuffer             
+00002c77  OrbitOledPutChar               
+00002c95  OrbitOledPutString             
 000016ef  OrbitOledRopAnd                
 000016cb  OrbitOledRopOr                 
 000016a1  OrbitOledRopSet                
 00001713  OrbitOledRopXor                
-00002c79  OrbitOledSetCharUpdate         
-00002bc1  OrbitOledSetCursor             
+00002c59  OrbitOledSetCharUpdate         
+00002ba1  OrbitOledSetCursor             
 00000f53  OrbitOledSetDrawColor          
 00000f8d  OrbitOledSetDrawMode           
 00000f7d  OrbitOledSetFillPattern        
-000025e5  OrbitOledUpdate                
+000025c5  OrbitOledUpdate                
 200025fc  PIDFlag                        
-00004401  PWMGenConfigure                
-00004675  PWMGenEnable                   
-000045f3  PWMGenPeriodSet                
-000045c1  PWMOutputState                 
-00004463  PWMPulseWidthSet               
-00004699  ResetISR                       
+000043e1  PWMGenConfigure                
+00004655  PWMGenEnable                   
+000045d3  PWMGenPeriodSet                
+000045a1  PWMOutputState                 
+00004443  PWMPulseWidthSet               
+00004679  ResetISR                       
 UNDEFED   SHT$$INIT_ARRAY$$Base          
 UNDEFED   SHT$$INIT_ARRAY$$Limit         
-000046e1  SSIBusy                        
-000046fb  SSIClockSourceSet              
-000042cd  SSIConfigSetExpClk             
-00004681  SSIDataGet                     
-000046af  SSIDataPut                     
-000046b9  SSIEnable                      
-000026a5  Ssi3PutByte                    
-000036ad  SysCtlClockGet                 
-000038b9  SysCtlClockSet                 
-00004701  SysCtlDelay                    
-00004515  SysCtlPWMClockSet              
-00004375  SysCtlPeripheralEnable         
-00004605  SysCtlReset                    
-00004529  SysTickEnable                  
-0000453d  SysTickIntEnable               
+000046c1  SSIBusy                        
+000046db  SSIClockSourceSet              
+000042ad  SSIConfigSetExpClk             
+00004661  SSIDataGet                     
+0000468f  SSIDataPut                     
+00004699  SSIEnable                      
+00002685  Ssi3PutByte                    
+0000368d  SysCtlClockGet                 
+00003899  SysCtlClockSet                 
+000046e1  SysCtlDelay                    
+000044f5  SysCtlPWMClockSet              
+00004355  SysCtlPeripheralEnable         
+000045e5  SysCtlReset                    
+00004509  SysTickEnable                  
+0000451d  SysTickIntEnable               
 00001841  SysTickIntHandler              
-00004481  SysTickIntRegister             
-00004615  SysTickPeriodSet               
+00004461  SysTickIntRegister             
+000045f5  SysTickPeriodSet               
 200025a4  TAIL_PWM                       
-00003e85  TimerConfigure                 
-00004641  TimerEnable                    
-000046c3  TimerValueGet                  
-000046cd  UARTCharPut                    
-000041bd  UARTConfigSetExpClk            
-00004425  UARTDisable                    
-00004551  UARTEnable                     
-000046d7  UARTFIFOEnable                 
-00003c3b  UARTSend                       
+00003e65  TimerConfigure                 
+00004621  TimerEnable                    
+000046a3  TimerValueGet                  
+000046ad  UARTCharPut                    
+0000419d  UARTConfigSetExpClk            
+00004405  UARTDisable                    
+00004531  UARTEnable                     
+000046b7  UARTFIFOEnable                 
+00003c1b  UARTSend                       
 2000126c  __STACK_END                    
 00001000  __STACK_SIZE                   
 2000046c  __STACK_TOP                    
 00001000  __SYSMEM_SIZE                  
-00004df8  __TI_CINIT_Base                
-00004e10  __TI_CINIT_Limit               
-00004ddc  __TI_Handler_Table_Base        
-00004de8  __TI_Handler_Table_Limit       
-00003c69  __TI_auto_init                 
+00004dd8  __TI_CINIT_Base                
+00004df0  __TI_CINIT_Limit               
+00004dbc  __TI_Handler_Table_Base        
+00004dc8  __TI_Handler_Table_Limit       
+00003c49  __TI_auto_init                 
 20002614  __TI_cleanup_ptr               
-00003e1d  __TI_decompress_lzss           
-0000464f  __TI_decompress_none           
+00003dfd  __TI_decompress_lzss           
+0000462f  __TI_decompress_none           
 20002618  __TI_dtors_ptr                 
 2000261c  __TI_enable_exit_profile_output
 ffffffff  __TI_pprof_out_hndl            
 ffffffff  __TI_prof_data_size            
 ffffffff  __TI_prof_data_start           
 00000000  __TI_static_base__             
-0000468d  __TI_zero_init                 
-00003cd9  __aeabi_d2f                    
-00004175  __aeabi_d2iz                   
-00002fc7  __aeabi_dadd                   
-00003325  __aeabi_ddiv                   
-000037bd  __aeabi_dmul                   
-00002fbd  __aeabi_dsub                   
-00004309  __aeabi_f2d                    
-000043a9  __aeabi_i2d                    
-00003173  __aeabi_idiv0                  
-00003b7b  __aeabi_memclr                 
-00003b7b  __aeabi_memclr4                
-00003b7b  __aeabi_memclr8                
-00003a65  __aeabi_memcpy                 
-00003a65  __aeabi_memcpy4                
-00003a65  __aeabi_memcpy8                
-00003b7d  __aeabi_memset                 
-00003b7d  __aeabi_memset4                
-00003b7d  __aeabi_memset8                
-0000428d  __aeabi_uidiv                  
-0000428d  __aeabi_uidivmod               
+0000466d  __TI_zero_init                 
+00003cb9  __aeabi_d2f                    
+00004155  __aeabi_d2iz                   
+00002fa7  __aeabi_dadd                   
+00003305  __aeabi_ddiv                   
+0000379d  __aeabi_dmul                   
+00002f9d  __aeabi_dsub                   
+000042e9  __aeabi_f2d                    
+00004389  __aeabi_i2d                    
+00003153  __aeabi_idiv0                  
+00003b5b  __aeabi_memclr                 
+00003b5b  __aeabi_memclr4                
+00003b5b  __aeabi_memclr8                
+00003a45  __aeabi_memcpy                 
+00003a45  __aeabi_memcpy4                
+00003a45  __aeabi_memcpy8                
+00003b5d  __aeabi_memset                 
+00003b5d  __aeabi_memset4                
+00003b5d  __aeabi_memset8                
+0000426d  __aeabi_uidiv                  
+0000426d  __aeabi_uidivmod               
 ffffffff  __binit__                      
 ffffffff  __c_args__                     
-00003d47  __mpu_init                     
+00003d27  __mpu_init                     
 2000026c  __stack                        
-000044fd  _args_main                     
-00003f99  _c_int00                       
+000044dd  _args_main                     
+00003f79  _c_int00                       
 20002638  _lock                          
-00004573  _nop                           
-0000456b  _register_lock                 
-00004565  _register_unlock               
+00004553  _nop                           
+0000454b  _register_lock                 
+00004545  _register_unlock               
 20001270  _sys_memory                    
-00003f97  _system_post_cinit             
-00004707  _system_pre_init               
+00003f77  _system_post_cinit             
+000046e7  _system_pre_init               
 2000263c  _unlock                        
-00003ff1  abort                          
+00003fd1  abort                          
 2000262c  angleReferenced                
 ffffffff  binit                          
 200025a8  bnOledCur                      
 00001ffd  calloc                         
 000021cf  checkButton                    
-00002335  checkSwitchPos                 
-0000317d  clearOLED                      
+00002321  checkSwitchPos                 
+0000315d  clearOLED                      
 200025fd  clrOledCur                     
-000040e1  copy_in                        
+000040c1  copy_in                        
 20002630  currentAngle                   
 200025f8  currentHeight                  
 200025fe  currentState                   
 20002606  desiredAngle                   
 20002604  desiredHeightPercentage        
-000031a9  displayAltitudePercentAndYaw   
+00003189  displayAltitudePercentAndYaw   
 200025ff  displayFlag                    
 200025ac  dutyCycle                      
 200025b0  dxcoOledFontCur                
@@ -530,37 +530,37 @@ ffffffff  binit
 20002580  errorIntegral                  
 200025b8  errorSignal                    
 20002612  errorSignalPrevious            
-00003ff9  exit                           
+00003fd9  exit                           
 200025bc  fOledCharUpdate                
-000035f1  findDisplayAngle               
-00003263  findMode                       
+000035d1  findDisplayAngle               
+00003243  findMode                       
 2000260c  flightMode                     
 00001d47  free                           
-00003a3f  freeCircBuf                    
+00003a1f  freeCircBuf                    
 20002570  g_inBuffer                     
 20000000  g_pfnRAMVectors                
 00000000  g_pfnVectors                   
 200025c0  g_ulSampCnt                    
-0000358d  heightAsPercentage             
-00003d67  initADC                        
+0000356d  heightAsPercentage             
+00003d47  initADC                        
 0000202d  initButtons                    
-000039ad  initCircBuf                    
+0000398d  initCircBuf                    
 0000186b  initClock                      
-00003175  initDisplay                    
-00002b5f  initReferenceTrigger           
+00003155  initDisplay                    
+00002b3f  initReferenceTrigger           
 000022ab  initResetISR                   
 000022df  initSwitch                     
 00001875  initTimer                      
-00002781  initialiseMainRotorPWM         
-00002df9  initialiseTailRotorPWM         
-00003bf5  initialiseUSB_UART             
+00002761  initialiseMainRotorPWM         
+00002dd9  initialiseTailRotorPWM         
+00003bd5  initialiseUSB_UART             
 000018a5  main                           
-000027c7  mainRotorControlLoop           
+000027a7  mainRotorControlLoop           
 20002640  main_func_sp                   
 00001cdd  malloc                         
 00001f11  memalign                       
-00003a65  memcpy                         
-00003b83  memset                         
+00003a45  memcpy                         
+00003b63  memset                         
 00001c5d  minit                          
 200025c4  modOledCur                     
 200025c8  pbOledCur                      
@@ -569,23 +569,23 @@ ffffffff  binit
 200025d4  pbOledPatCur                   
 200025d8  pfnDoRop                       
 20002600  previousState                  
-00003a0b  readCircBuf                    
+000039eb  readCircBuf                    
 00001e07  realloc                        
 2000260e  referenceAngle                 
 20002634  referenceAngleSet              
-00002b39  referenceTriggerHandler        
+00002b19  referenceTriggerHandler        
 00002299  resetISR                       
-00004d10  rgbFillPat                     
+00004cf0  rgbFillPat                     
 20002270  rgbOledBmp                     
-0000470c  rgbOledFont0                   
+000046ec  rgbOledFont0                   
 20002470  rgbOledFontUser                
-00002749  setMainPWM                     
-00002dc5  setTailPWM                     
+00002729  setMainPWM                     
+00002da5  setTailPWM                     
 200025dc  slotCount                      
 20002601  switchChannel                  
 200025fa  tailErrorSignal                
 20002636  tailErrorSignalPrevious        
-00002e43  tailRotorControlLoop           
+00002e23  tailRotorControlLoop           
 20002611  taken_off                      
 20002610  testVariable                   
 00000751  ulocaltime                     
@@ -607,12 +607,12 @@ ffffffff  binit
 000009c5  ustrtoul                       
 000002c5  uvsnprintf                     
 20002608  variableTest                   
-000039d7  writeCircBuf                   
+000039b7  writeCircBuf                   
 200025e0  xchOledCur                     
 200025e4  xchOledMax                     
 200025e8  xcoOledCur                     
-000029a1  yawFSM                         
-00002abb  yawFSMInit                     
+00002981  yawFSM                         
+00002a9b  yawFSMInit                     
 200025ec  ychOledCur                     
 200025f0  ychOledMax                     
 200025f4  ycoOledCur                     
@@ -685,154 +685,154 @@ address   name
 00002299  resetISR                       
 000022ab  initResetISR                   
 000022df  initSwitch                     
-00002335  checkSwitchPos                 
-000023cd  OrbitOledInit                  
-000023e1  OrbitOledHostInit              
-000024ab  OrbitOledDvrInit               
-00002525  OrbitOledDevInit               
-000025a9  OrbitOledClear                 
-000025b5  OrbitOledClearBuffer           
-000025e5  OrbitOledUpdate                
-0000263f  OrbitOledPutBuffer             
-000026a5  Ssi3PutByte                    
-00002749  setMainPWM                     
-00002781  initialiseMainRotorPWM         
-000027c7  mainRotorControlLoop           
-000029a1  yawFSM                         
-00002abb  yawFSMInit                     
-00002b39  referenceTriggerHandler        
-00002b5f  initReferenceTrigger           
-00002bc1  OrbitOledSetCursor             
-00002c0d  OrbitOledGetCursor             
-00002c29  OrbitOledDefUserChar           
-00002c79  OrbitOledSetCharUpdate         
-00002c91  OrbitOledGetCharUpdate         
-00002c97  OrbitOledPutChar               
-00002cb5  OrbitOledPutString             
-00002ce1  OrbitOledDrawGlyph             
-00002d59  OrbitOledAdvanceCursor         
-00002dc5  setTailPWM                     
-00002df9  initialiseTailRotorPWM         
-00002e43  tailRotorControlLoop           
-00002fbd  __aeabi_dsub                   
-00002fc7  __aeabi_dadd                   
-00003173  __aeabi_idiv0                  
-00003175  initDisplay                    
-0000317d  clearOLED                      
-000031a9  displayAltitudePercentAndYaw   
-00003263  findMode                       
-00003325  __aeabi_ddiv                   
-0000345b  GPIOPadConfigSet               
-0000358d  heightAsPercentage             
-000035f1  findDisplayAngle               
-000036ad  SysCtlClockGet                 
-000037bd  __aeabi_dmul                   
-000038b9  SysCtlClockSet                 
-000039ad  initCircBuf                    
-000039d7  writeCircBuf                   
-00003a0b  readCircBuf                    
-00003a3f  freeCircBuf                    
-00003a65  __aeabi_memcpy                 
-00003a65  __aeabi_memcpy4                
-00003a65  __aeabi_memcpy8                
-00003a65  memcpy                         
-00003b01  ADCSequenceStepConfigure       
-00003b7b  __aeabi_memclr                 
-00003b7b  __aeabi_memclr4                
-00003b7b  __aeabi_memclr8                
-00003b7d  __aeabi_memset                 
-00003b7d  __aeabi_memset4                
-00003b7d  __aeabi_memset8                
-00003b83  memset                         
-00003bf5  initialiseUSB_UART             
-00003c3b  UARTSend                       
-00003c69  __TI_auto_init                 
-00003cd9  __aeabi_d2f                    
-00003d47  __mpu_init                     
-00003d49  ADCIntHandler                  
-00003d67  initADC                        
-00003db5  IntEnable                      
-00003e1d  __TI_decompress_lzss           
-00003e85  TimerConfigure                 
-00003ee5  DelayInit                      
-00003eff  DelayMs                        
-00003f41  GPIOIntTypeSet                 
-00003f97  _system_post_cinit             
-00003f99  _c_int00                       
-00003fed  C$$EXIT                        
-00003ff1  abort                          
-00003ff9  exit                           
-00004041  ADCSequenceConfigure           
-000040e1  copy_in                        
-0000412d  GPIOPinConfigure               
-00004175  __aeabi_d2iz                   
-000041bd  UARTConfigSetExpClk            
-00004205  OLEDStringDraw                 
-0000422b  OLEDInitialise                 
-0000428d  __aeabi_uidiv                  
-0000428d  __aeabi_uidivmod               
-000042cd  SSIConfigSetExpClk             
-00004309  __aeabi_f2d                    
-00004341  IntRegister                    
-00004375  SysCtlPeripheralEnable         
-000043a9  __aeabi_i2d                    
-000043d7  GPIODirModeSet                 
-00004401  PWMGenConfigure                
-00004425  UARTDisable                    
-00004445  ADCSequenceDataGet             
-00004463  PWMPulseWidthSet               
-00004481  SysTickIntRegister             
-0000449d  ADCIntRegister                 
-000044b5  ADCProcessorTrigger            
-000044cd  GPIOIntRegister                
-000044e5  GPIOPinTypeGPIOOutput          
-000044fd  _args_main                     
-00004515  SysCtlPWMClockSet              
-00004529  SysTickEnable                  
-0000453d  SysTickIntEnable               
-00004551  UARTEnable                     
-00004565  _register_unlock               
-0000456b  _register_lock                 
-00004573  _nop                           
-00004579  GPIOPinTypeGPIOInput           
-0000458b  GPIOPinTypePWM                 
-0000459d  GPIOPinTypeSSI                 
-000045af  GPIOPinTypeUART                
-000045c1  PWMOutputState                 
-000045d3  ADCIntEnable                   
-000045e3  IntMasterEnable                
-000045f3  PWMGenPeriodSet                
-00004605  SysCtlReset                    
-00004615  SysTickPeriodSet               
-00004625  ADCSequenceEnable              
-00004633  GPIOIntDisable                 
-00004641  TimerEnable                    
-0000464f  __TI_decompress_none           
-0000465d  CPUcpsie                       
-00004669  GPIOIntEnable                  
-00004675  PWMGenEnable                   
-00004681  SSIDataGet                     
-0000468d  __TI_zero_init                 
-00004699  ResetISR                       
-000046a5  ADCIntClear                    
-000046af  SSIDataPut                     
-000046b9  SSIEnable                      
-000046c3  TimerValueGet                  
-000046cd  UARTCharPut                    
-000046d7  UARTFIFOEnable                 
-000046e1  SSIBusy                        
-000046e9  GPIOIntClear                   
-000046ef  GPIOPinRead                    
-000046f5  GPIOPinWrite                   
-000046fb  SSIClockSourceSet              
-00004701  SysCtlDelay                    
-00004707  _system_pre_init               
-0000470c  rgbOledFont0                   
-00004d10  rgbFillPat                     
-00004ddc  __TI_Handler_Table_Base        
-00004de8  __TI_Handler_Table_Limit       
-00004df8  __TI_CINIT_Base                
-00004e10  __TI_CINIT_Limit               
+00002321  checkSwitchPos                 
+000023ad  OrbitOledInit                  
+000023c1  OrbitOledHostInit              
+0000248b  OrbitOledDvrInit               
+00002505  OrbitOledDevInit               
+00002589  OrbitOledClear                 
+00002595  OrbitOledClearBuffer           
+000025c5  OrbitOledUpdate                
+0000261f  OrbitOledPutBuffer             
+00002685  Ssi3PutByte                    
+00002729  setMainPWM                     
+00002761  initialiseMainRotorPWM         
+000027a7  mainRotorControlLoop           
+00002981  yawFSM                         
+00002a9b  yawFSMInit                     
+00002b19  referenceTriggerHandler        
+00002b3f  initReferenceTrigger           
+00002ba1  OrbitOledSetCursor             
+00002bed  OrbitOledGetCursor             
+00002c09  OrbitOledDefUserChar           
+00002c59  OrbitOledSetCharUpdate         
+00002c71  OrbitOledGetCharUpdate         
+00002c77  OrbitOledPutChar               
+00002c95  OrbitOledPutString             
+00002cc1  OrbitOledDrawGlyph             
+00002d39  OrbitOledAdvanceCursor         
+00002da5  setTailPWM                     
+00002dd9  initialiseTailRotorPWM         
+00002e23  tailRotorControlLoop           
+00002f9d  __aeabi_dsub                   
+00002fa7  __aeabi_dadd                   
+00003153  __aeabi_idiv0                  
+00003155  initDisplay                    
+0000315d  clearOLED                      
+00003189  displayAltitudePercentAndYaw   
+00003243  findMode                       
+00003305  __aeabi_ddiv                   
+0000343b  GPIOPadConfigSet               
+0000356d  heightAsPercentage             
+000035d1  findDisplayAngle               
+0000368d  SysCtlClockGet                 
+0000379d  __aeabi_dmul                   
+00003899  SysCtlClockSet                 
+0000398d  initCircBuf                    
+000039b7  writeCircBuf                   
+000039eb  readCircBuf                    
+00003a1f  freeCircBuf                    
+00003a45  __aeabi_memcpy                 
+00003a45  __aeabi_memcpy4                
+00003a45  __aeabi_memcpy8                
+00003a45  memcpy                         
+00003ae1  ADCSequenceStepConfigure       
+00003b5b  __aeabi_memclr                 
+00003b5b  __aeabi_memclr4                
+00003b5b  __aeabi_memclr8                
+00003b5d  __aeabi_memset                 
+00003b5d  __aeabi_memset4                
+00003b5d  __aeabi_memset8                
+00003b63  memset                         
+00003bd5  initialiseUSB_UART             
+00003c1b  UARTSend                       
+00003c49  __TI_auto_init                 
+00003cb9  __aeabi_d2f                    
+00003d27  __mpu_init                     
+00003d29  ADCIntHandler                  
+00003d47  initADC                        
+00003d95  IntEnable                      
+00003dfd  __TI_decompress_lzss           
+00003e65  TimerConfigure                 
+00003ec5  DelayInit                      
+00003edf  DelayMs                        
+00003f21  GPIOIntTypeSet                 
+00003f77  _system_post_cinit             
+00003f79  _c_int00                       
+00003fcd  C$$EXIT                        
+00003fd1  abort                          
+00003fd9  exit                           
+00004021  ADCSequenceConfigure           
+000040c1  copy_in                        
+0000410d  GPIOPinConfigure               
+00004155  __aeabi_d2iz                   
+0000419d  UARTConfigSetExpClk            
+000041e5  OLEDStringDraw                 
+0000420b  OLEDInitialise                 
+0000426d  __aeabi_uidiv                  
+0000426d  __aeabi_uidivmod               
+000042ad  SSIConfigSetExpClk             
+000042e9  __aeabi_f2d                    
+00004321  IntRegister                    
+00004355  SysCtlPeripheralEnable         
+00004389  __aeabi_i2d                    
+000043b7  GPIODirModeSet                 
+000043e1  PWMGenConfigure                
+00004405  UARTDisable                    
+00004425  ADCSequenceDataGet             
+00004443  PWMPulseWidthSet               
+00004461  SysTickIntRegister             
+0000447d  ADCIntRegister                 
+00004495  ADCProcessorTrigger            
+000044ad  GPIOIntRegister                
+000044c5  GPIOPinTypeGPIOOutput          
+000044dd  _args_main                     
+000044f5  SysCtlPWMClockSet              
+00004509  SysTickEnable                  
+0000451d  SysTickIntEnable               
+00004531  UARTEnable                     
+00004545  _register_unlock               
+0000454b  _register_lock                 
+00004553  _nop                           
+00004559  GPIOPinTypeGPIOInput           
+0000456b  GPIOPinTypePWM                 
+0000457d  GPIOPinTypeSSI                 
+0000458f  GPIOPinTypeUART                
+000045a1  PWMOutputState                 
+000045b3  ADCIntEnable                   
+000045c3  IntMasterEnable                
+000045d3  PWMGenPeriodSet                
+000045e5  SysCtlReset                    
+000045f5  SysTickPeriodSet               
+00004605  ADCSequenceEnable              
+00004613  GPIOIntDisable                 
+00004621  TimerEnable                    
+0000462f  __TI_decompress_none           
+0000463d  CPUcpsie                       
+00004649  GPIOIntEnable                  
+00004655  PWMGenEnable                   
+00004661  SSIDataGet                     
+0000466d  __TI_zero_init                 
+00004679  ResetISR                       
+00004685  ADCIntClear                    
+0000468f  SSIDataPut                     
+00004699  SSIEnable                      
+000046a3  TimerValueGet                  
+000046ad  UARTCharPut                    
+000046b7  UARTFIFOEnable                 
+000046c1  SSIBusy                        
+000046c9  GPIOIntClear                   
+000046cf  GPIOPinRead                    
+000046d5  GPIOPinWrite                   
+000046db  SSIClockSourceSet              
+000046e1  SysCtlDelay                    
+000046e7  _system_pre_init               
+000046ec  rgbOledFont0                   
+00004cf0  rgbFillPat                     
+00004dbc  __TI_Handler_Table_Base        
+00004dc8  __TI_Handler_Table_Limit       
+00004dd8  __TI_CINIT_Base                
+00004df0  __TI_CINIT_Limit               
 20000000  g_pfnRAMVectors                
 2000026c  __stack                        
 2000046c  __STACK_TOP                    
