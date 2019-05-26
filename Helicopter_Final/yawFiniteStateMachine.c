@@ -205,10 +205,12 @@ int32_t findDisplayAngle(int32_t Angle)
 
 void referenceTriggerHandler(void)
 {
+    GPIOIntClear(GPIO_PORTC_BASE, GPIO_INT_PIN_4 );
     currentAngle = 0;
     slotCount = 0;
     referenceAngleSet = 1;
-    GPIOIntClear(GPIO_PORTC_BASE, GPIO_INT_PIN_4 );
+    GPIOIntDisable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
+
 
 
 }

@@ -56,6 +56,10 @@ void yawFSMInit(void);
 //*****************************************************************************
 int32_t findDisplayAngle (int32_t Angle);
 
+void initReferenceTrigger(void);
+void referenceTriggerHandler(void);
+
+
 
 #endif /*YAW_FINITE_H_*/
 

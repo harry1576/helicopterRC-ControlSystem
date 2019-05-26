@@ -135,6 +135,7 @@ int main(void)
     initReset();
     yawFSMInit();
     initialiseUSB_UART();
+    initReferenceTrigger();
 
 
     initialiseMainRotorPWM(); // initalise the PWM for the motors
