@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-CG_TOOL_ROOT := /home/harrydobbs/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS
+CG_TOOL_ROOT := /home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -29,7 +29,7 @@ ORDERED_OBJS += \
 "./OrbitOLED/lib_OrbitOled/delay.obj" \
 "../tm4c123gh6pm.cmd" \
 $(GEN_CMDS__FLAG) \
--l"/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib" \
+-l"/home/harry/ti/TivaWare/driverlib/ccs/Debug/driverlib.lib" \
 
 -include ../makefile.init
 
@@ -140,34 +140,34 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-ENCE361\ Helicopter\ Project\ Group\ 23\ Thursday\ PM.out \
+Helicopter_Final.out \
 
 EXE_OUTPUTS__QUOTED += \
-"ENCE361 Helicopter Project Group 23 Thursday PM.out" \
+"Helicopter_Final.out" \
 
 BIN_OUTPUTS += \
-ENCE361\ Helicopter\ Project\ Group\ 23\ Thursday\ PM.hex \
+Helicopter_Final.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"ENCE361 Helicopter Project Group 23 Thursday PM.hex" \
+"Helicopter_Final.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "ENCE361 Helicopter Project Group 23 Thursday PM.out"
+	@$(MAKE) --no-print-directory -Onone "Helicopter_Final.out"
 
 # Tool invocations
-ENCE361\ Helicopter\ Project\ Group\ 23\ Thursday\ PM.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+Helicopter_Final.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"/home/harrydobbs/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ENCE361 Helicopter Project Group 23 Thursday PM.map" --heap_size=4096 --stack_size=4096 -i"/home/harrydobbs/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harrydobbs/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ENCE361 Helicopter Project Group 23 Thursday PM_linkInfo.xml" --rom_model -o "ENCE361 Helicopter Project Group 23 Thursday PM.out" $(ORDERED_OBJS)
+	"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Helicopter_Final.map" --heap_size=4096 --stack_size=4096 -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Helicopter_Final_linkInfo.xml" --rom_model -o "Helicopter_Final.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-ENCE361\ Helicopter\ Project\ Group\ 23\ Thursday\ PM.hex: $(EXE_OUTPUTS)
+Helicopter_Final.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: ARM Hex Utility'
-	"/home/harrydobbs/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armhex"  -o "ENCE361 Helicopter Project Group 23 Thursday PM.hex" $(EXE_OUTPUTS__QUOTED)
+	"/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armhex"  -o "Helicopter_Final.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 

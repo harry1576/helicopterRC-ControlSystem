@@ -118,13 +118,13 @@ void yawFSM(void)
 
     }
 
-    referenceSensor = GPIOPinRead(GPIO_PORTC_BASE, GPIO_PIN_4);
+    /*referenceSensor = GPIOPinRead(GPIO_PORTC_BASE, GPIO_PIN_4);
     if (referenceSensor == 0 && referenceAngleSet == 0)
     {
         currentAngle = 0;
         slotCount = 0;
         referenceAngleSet = 1;
-    }
+    }*/
 
     currentAngle = ((slotCount * 360) / 448);
     previousState = currentState;
@@ -139,12 +139,6 @@ void yawFSM(void)
 //
 //*****************************************************************************
 void yawFSMInit(void) {
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
-    GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_4);
-
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
-
-    GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_4);
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
 
@@ -207,3 +201,27 @@ int32_t findDisplayAngle(int32_t Angle)
     }
     return displayAngle;
 }
+
+
+void referenceTriggerHandler(void)
+{
+    currentAngle = 0;
+    slotCount = 0;
+    referenceAngleSet = 1;
+    GPIOIntClear(GPIO_PORTC_BASE, GPIO_INT_PIN_4 );
+
+
+}
+
+void initReferenceTrigger(void)
+{
+
+   SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOC);
+   GPIOIntRegister(GPIO_PORTC_BASE, referenceTriggerHandler);
+   GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_4);
+   GPIOIntTypeSet (GPIO_PORTC_BASE, GPIO_PIN_4, GPIO_LOW_LEVEL);
+   GPIOIntEnable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
+}
+
+
+

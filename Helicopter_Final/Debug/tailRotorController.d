@@ -1,27 +1,27 @@
 # FIXED
 
 tailRotorController.obj: ../tailRotorController.c
-tailRotorController.obj: /home/harrydobbs/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h
-tailRotorController.obj: /home/harrydobbs/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h
-tailRotorController.obj: /home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/inc/hw_memmap.h
-tailRotorController.obj: /home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/inc/hw_types.h
-tailRotorController.obj: /home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/pin_map.h
-tailRotorController.obj: /home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/debug.h
-tailRotorController.obj: /home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.h
-tailRotorController.obj: /home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/pwm.h
-tailRotorController.obj: /home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/systick.h
-tailRotorController.obj: /home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h
-tailRotorController.obj: /home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/interrupt.h
+tailRotorController.obj: /home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h
+tailRotorController.obj: /home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h
+tailRotorController.obj: /home/harry/ti/TivaWare/inc/hw_memmap.h
+tailRotorController.obj: /home/harry/ti/TivaWare/inc/hw_types.h
+tailRotorController.obj: /home/harry/ti/TivaWare/driverlib/pin_map.h
+tailRotorController.obj: /home/harry/ti/TivaWare/driverlib/debug.h
+tailRotorController.obj: /home/harry/ti/TivaWare/driverlib/gpio.h
+tailRotorController.obj: /home/harry/ti/TivaWare/driverlib/pwm.h
+tailRotorController.obj: /home/harry/ti/TivaWare/driverlib/systick.h
+tailRotorController.obj: /home/harry/ti/TivaWare/driverlib/sysctl.h
+tailRotorController.obj: /home/harry/ti/TivaWare/driverlib/interrupt.h
 
 ../tailRotorController.c: 
-/home/harrydobbs/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h: 
-/home/harrydobbs/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h: 
-/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/inc/hw_memmap.h: 
-/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/inc/hw_types.h: 
-/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/pin_map.h: 
-/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/debug.h: 
-/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.h: 
-/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/pwm.h: 
-/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/systick.h: 
-/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h: 
-/home/harrydobbs/ti/TivaWare_C_Series-2.1.4.178/driverlib/interrupt.h: 
+/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h: 
+/home/harry/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h: 
+/home/harry/ti/TivaWare/inc/hw_memmap.h: 
+/home/harry/ti/TivaWare/inc/hw_types.h: 
+/home/harry/ti/TivaWare/driverlib/pin_map.h: 
+/home/harry/ti/TivaWare/driverlib/debug.h: 
+/home/harry/ti/TivaWare/driverlib/gpio.h: 
+/home/harry/ti/TivaWare/driverlib/pwm.h: 
+/home/harry/ti/TivaWare/driverlib/systick.h: 
+/home/harry/ti/TivaWare/driverlib/sysctl.h: 
+/home/harry/ti/TivaWare/driverlib/interrupt.h: 
