@@ -41,7 +41,6 @@
 //*****************************************************************************
 // Constants
 //*****************************************************************************
-#define BUF_SIZE 16
 #define SAMPLE_RATE_HZ 160
 
 //*****************************************************************************
@@ -134,35 +133,21 @@ int main(void)
     yawFSMInit();
     initialiseUSB_UART();
     initReferenceTrigger();
-    initResetISR();
-    initSwitch();
-
-
+    initResetandSwitchISR();
     initialiseMainRotorPWM(); // initalise the PWM for the motors
     initialiseTailRotorPWM();
 
-    PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true); // set output states of rotors to true
-    PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, true);
+    groundReference = updateAltitude();
+    maxHeight = groundReference - 1240; //(4095*(1)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
+
 
     IntMasterEnable(); // Enable interrupts to the processor.
 
     while (1) {
-        // Background task: calculate the (approximate) mean of the values in the
-        // circular buffer and display it, together with the sample number.
 
-        uint8_t i; // Variable used in for loop to cycle through buffer
-        int32_t sum; // The summation of the data read from the buffer
+        currentHeight = updateAltitude();
 
-        sum = 0;
-        for (i = 0; i < BUF_SIZE; i++)
-            sum = sum + readCircBuf( & g_inBuffer); // Calculate and display the rounded mean of the buffer contents
-        currentHeight = (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
 
-        if (groundReference == 0) // set ground reference on first loop or when button is pushed
-        {
-            groundReference = currentHeight;
-            maxHeight = groundReference - 1240; //(4095*(1)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
-        }
 
         //updateDesiredAltAndYawValue();
         if (displayFlag == 1) // update display every 200ms.
@@ -183,7 +168,7 @@ int main(void)
         {
             if (flightMode == FLYING) {
                 if (referenceAngleSet == 1) {
-                    checkSwitchPos();
+                    //checkSwitchPos();
                     updateDesiredAltAndYawValue(); // get data from buttons once taken
                     mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle);
@@ -247,14 +232,10 @@ int main(void)
                 PIDFlag = 0;
                 GPIOIntEnable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
 
-                checkSwitchPos();
+                //checkSwitchPos();
 
             }
         }
-        /*
-        int16_t pin = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
-        if (pin == 0) {
-            SysCtlReset();
-        }*/
+
     }
 }

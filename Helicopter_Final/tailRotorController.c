@@ -84,12 +84,14 @@ void initialiseTailRotorPWM (void){
 
     PWMGenConfigure(PWM_TAIL_BASE, PWM_TAIL_GEN, PWM_GEN_MODE_UP_DOWN | PWM_GEN_MODE_NO_SYNC);
     // Set the initial PWM parameters
-    setTailPWM(PWM_START_RATE_HZ, PWM_FIXED_DUTY);
+    //setTailPWM(PWM_START_RATE_HZ, PWM_FIXED_DUTY);
 
     PWMGenEnable(PWM_TAIL_BASE, PWM_TAIL_GEN);
 
     // Disable the output.  Repeat this call with 'true' to turn O/P on.
     PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, false);
+    PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, true);
+
 }
 
 

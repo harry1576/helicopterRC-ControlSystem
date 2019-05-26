@@ -121,10 +121,10 @@ void
 resetISR(void);
 
 void
-initResetISR(void);
+resetAndSwitchISR(void);
 
 
-void initSwitch(void);
+void initResetandSwitchISR(void);
 
 
 void checkSwitchPos(void);

@@ -27,6 +27,7 @@
 #include "utils/ustdlib.h"
 #include "circBufT.h"
 #include "OrbitOLED/OrbitOLEDInterface.h"
+#include "helicopterAltitude.h"
 
 
 //*****************************************************************************
@@ -34,6 +35,7 @@
 //*****************************************************************************
 circBuf_t g_inBuffer; // Buffer of size BUF_SIZE integers (sample values)
 uint32_t g_ulSampCnt; // Counter for the interrupts
+
 
 //*****************************************************************************
 //
@@ -80,4 +82,21 @@ void initADC (void)
     ADCIntRegister (ADC0_BASE, 3, ADCIntHandler); // Register the interrupt handler
 
     ADCIntEnable(ADC0_BASE, 3); // Enable interrupts for ADC0 sequence 3 (clears any outstanding interrupts)
+}
+
+int32_t updateAltitude(void)
+{
+    // Background task: calculate the (approximate) mean of the values in the
+    // circular buffer and display it, together with the sample number.
+
+    uint8_t i; // Variable used in for loop to cycle through buffer
+    int32_t sum; // The summation of the data read from the buffer
+
+    sum = 0;
+    for (i = 0; i < BUF_SIZE; i++)
+        sum = sum + readCircBuf( & g_inBuffer); // Calculate and display the rounded mean of the buffer contents
+    return (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
+
+
+
 }

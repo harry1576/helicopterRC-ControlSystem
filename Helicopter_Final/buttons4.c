@@ -46,7 +46,7 @@ int8_t flightMode = 2;
 volatile int16_t referenceAngle = 0;
 int8_t testVariable = 0;
 volatile int8_t taken_off = 0;
-int8_t previousPosition = 0;
+int8_t previousPosition;
 
 // *******************************************************
 // initButtons: Initialise the variables associated with the set of buttons
@@ -186,50 +186,52 @@ void updateDesiredAltAndYawValue(void) {
 
 
 
-void resetISR(void)
+void resetAndSwitchISR(void)
 {
-   GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
-   SysCtlReset();
 
+   uint8_t resetButton = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
+   if(resetButton == 0)
+   {
+       GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
+       SysCtlReset();
+   }
+   else
+   {
+       GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_7);
+
+       switchChannel = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_7);
+
+       if (switchChannel == 0 && flightMode == FLYING) // switch is in land position
+       {
+           flightMode = LANDING;
+
+       } else if(switchChannel != 0 && desiredHeightPercentage == 0)
+       {
+           taken_off = 0;
+           flightMode = TAKINGOFF;
+       }
+   }
 }
 
-void initResetISR(void)
+void initResetandSwitchISR(void)
 {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
     GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_LOW_LEVEL);
-    GPIOIntRegister(GPIO_PORTA_BASE, resetISR);
     GPIOIntEnable(GPIO_PORTA_BASE, GPIO_PIN_6);
 
+    GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_7);
+    GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_7, GPIO_BOTH_EDGES);
+    GPIOIntEnable(GPIO_PORTA_BASE, GPIO_PIN_7);
 
-}
-
-void initSwitch(void)
-{
-    SysCtlPeripheralEnable(MODE_SWITCH_PERIPH);
-    GPIOPinTypeGPIOInput(MODE_SWITCH_PORT_BASE, MODE_SWITCH_PIN);
-    GPIOPadConfigSet(MODE_SWITCH_PORT_BASE, MODE_SWITCH_PIN, GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPD);
-
-}
-
-void checkSwitchPos(void)
-{
-
-    switchChannel = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_7);
-
-    if (switchChannel == 0 && flightMode == FLYING && previousPosition != switchChannel ) // switch is in land position
-    {
-        flightMode = LANDING;
-
-    } else if(switchChannel != 0 && desiredHeightPercentage == 0 && flightMode == LANDED && previousPosition != switchChannel)
-    {
-        taken_off = 0;
-        flightMode = TAKINGOFF;
-    }
-    previousPosition = switchChannel;
+    GPIOIntRegister(GPIO_PORTA_BASE, resetAndSwitchISR);
 
 
 }
+
+
+
 
 
 

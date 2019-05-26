@@ -1,6 +1,9 @@
 #ifndef HELICOPTER_ALTITUDE_H_
 #define HELICOPTER_ALTITUDE_H_
 
+
+#define BUF_SIZE 16
+
 // *******************************************************
 // Thurs PM Group 23
 //
@@ -45,5 +48,7 @@ void ADCIntHandler(void);
 //
 //*****************************************************************************
 void initADC (void);
+
+int32_t updateAltitude(void);
 
 #endif /* HELICOPTER_ALTITUDE_H_ */

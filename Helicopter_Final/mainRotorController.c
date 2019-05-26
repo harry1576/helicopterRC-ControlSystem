@@ -89,12 +89,14 @@ void initialiseMainRotorPWM(void)
 
     PWMGenConfigure(PWM_MAIN_BASE, PWM_MAIN_GEN, PWM_GEN_MODE_UP_DOWN | PWM_GEN_MODE_NO_SYNC);
     // Set the initial PWM parameters
-    setMainPWM(PWM_START_RATE_HZ, PWM_FIXED_DUTY);
+    //setMainPWM(PWM_START_RATE_HZ, PWM_FIXED_DUTY);
 
     PWMGenEnable(PWM_MAIN_BASE, PWM_MAIN_GEN);
 
     // Disable the output.  Repeat this call with 'true' to turn O/P on.
     PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, false);
+    PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true); // set output states of rotors to true
+
 
 }
 
