@@ -46,6 +46,7 @@ int8_t flightMode = 2;
 volatile int16_t referenceAngle = 0;
 int8_t testVariable = 0;
 volatile int8_t taken_off = 0;
+int8_t previousPosition = 2;
 
 // *******************************************************
 // initButtons: Initialise the variables associated with the set of buttons
@@ -216,16 +217,18 @@ void checkSwitchPos(void)
 
     switchChannel = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_7);
 
-    if (switchChannel == 0 && flightMode == FLYING) // switch is in land position
+    if (switchChannel == 0 && flightMode == FLYING && previousPosition != switchChannel ) // switch is in land position
     {
         flightMode = LANDING;
 
-    } else if(switchChannel != 0 && desiredHeightPercentage == 0 && flightMode == LANDED)
+    } else if(switchChannel != 0 && desiredHeightPercentage == 0 && flightMode == LANDED && previousPosition != switchChannel)
     {
         taken_off = 0;
         flightMode = TAKINGOFF;
-
     }
+    previousPosition = switchChannel;
+
+
 }
 
 

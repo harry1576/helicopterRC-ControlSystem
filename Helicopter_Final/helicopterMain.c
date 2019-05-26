@@ -245,6 +245,8 @@ int main(void)
                 tailDutyCycle = 0;
                 countUp2 = 0;
                 PIDFlag = 0;
+                GPIOIntEnable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
+
                 checkSwitchPos();
 
             }
