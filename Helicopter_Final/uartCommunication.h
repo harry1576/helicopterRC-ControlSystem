@@ -15,4 +15,7 @@ extern char statusStr[MAX_STR_LEN + 1];
 //**********************************************************************
 void UARTSend (char *pucBuffer);
 
+void updateUARTOutput(int32_t desiredAngle,int32_t currentAngle,int8_t mainDutyCycle,int8_t tailDutyCycle,
+                      int16_t maxHeight,int16_t currentHeight,int16_t groundReference);
+
 #endif /*UART_COMMS_H_*/

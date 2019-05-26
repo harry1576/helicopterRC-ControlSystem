@@ -23,7 +23,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "OrbitOLED/OrbitOLEDInterface.h"
-
+#include "buttons4.h"
+#include "helperFunctions.h"
 
 //********************************************************
 // Constants
@@ -100,5 +101,17 @@ UARTSend (char *pucBuffer)
         UARTCharPut(UART_USB_BASE, *pucBuffer);
         pucBuffer++;
     }
+}
+
+void updateUARTOutput(int32_t desiredAngle,int32_t currentAngle,int8_t mainDutyCycle,int8_t tailDutyCycle, int16_t maxHeight,int16_t currentHeight,int16_t groundReference )
+{
+    uint32_t dersiredDisplayAngle = findDisplayAngle(desiredAngle);
+    uint32_t currentDisplayAngle = findDisplayAngle(currentAngle);
+    uint32_t displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
+    char string[128];
+    usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %d\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle,
+             (flightMode));
+    UARTSend(string);
+    //displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);
 }
 

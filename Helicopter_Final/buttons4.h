@@ -62,7 +62,7 @@ enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
 // a flag is set.  Set NUM_BUT_POLLS according to the polling rate.
 
 extern int16_t desiredHeightPercentage;
-extern int16_t desiredAngle;
+extern volatile int16_t desiredAngle;
 extern uint32_t variableTest;
 extern int8_t flightMode;
 //extern int8_t referenceAngleSet;

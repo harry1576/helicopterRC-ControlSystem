@@ -40,7 +40,7 @@ uint8_t resetPos; //Variable to hold the current value of switch position
 
 
 int16_t desiredHeightPercentage = 0;
-int16_t desiredAngle = 0;
+volatile int16_t desiredAngle = 0;
 uint32_t variableTest = 1;
 int8_t flightMode = 2;
 volatile int16_t referenceAngle = 0;

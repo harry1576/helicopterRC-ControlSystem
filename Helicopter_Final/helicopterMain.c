@@ -147,20 +147,10 @@ int main(void)
 
         currentHeight = updateAltitude();
 
-
-
-        //updateDesiredAltAndYawValue();
         if (displayFlag == 1) // update display every 200ms.
         {
-            dersiredDisplayAngle = findDisplayAngle(desiredAngle);
-            currentDisplayAngle = findDisplayAngle(currentAngle);
-            displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
-            char string[128];
-            usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %d\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle,
-(flightMode));
-            UARTSend(string);
+            updateUARTOutput(desiredAngle,currentAngle,mainDutyCycle,tailDutyCycle,maxHeight,currentHeight,groundReference);
             displayFlag = 0;
-            //displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);
 
         }
 
@@ -173,13 +163,7 @@ int main(void)
                     mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
                     tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle);
                     PIDFlag = 0;
-                } /*else {
-                    desiredHeightPercentage = 10;
-                    mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
-                    tailDutyCycle = tailRotorControlLoop(currentAngle, 360); // increment rotation till at reference point
-                    //tempAngle += 1;
-                    PIDFlag = 0;
-                }*/
+                }
             }
             if (flightMode == TAKINGOFF)
             {
@@ -236,6 +220,5 @@ int main(void)
 
             }
         }
-
     }
 }
