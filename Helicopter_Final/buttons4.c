@@ -46,7 +46,7 @@ int8_t flightMode = 2;
 volatile int16_t referenceAngle = 0;
 int8_t testVariable = 0;
 volatile int8_t taken_off = 0;
-int8_t previousPosition = 2;
+int8_t previousPosition = 0;
 
 // *******************************************************
 // initButtons: Initialise the variables associated with the set of buttons
