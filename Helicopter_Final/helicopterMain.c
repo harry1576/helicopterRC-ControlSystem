@@ -109,13 +109,13 @@ void flightController(void) {
           tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle);
 
     }
-    if (flightMode == TAKINGOFF) {
+    else if (flightMode == TAKINGOFF) {
         desiredHeightPercentage = 10;
         desiredAngle = 0;
         mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
         tailDutyCycle = tailRotorControlLoop(currentAngle, 360); // increment rotation till at reference point
     }
-    if (flightMode == LANDING) {
+    else if (flightMode == LANDING) {
         desiredHeightPercentage = 10;
         desiredAngle = 0;
 
@@ -183,7 +183,7 @@ int main(void) {
 
         if (displayFlag == 1) // update display every 200ms.
         {
-            updateUARTOutput(desiredAngle, currentAngle, mainRotorDutyCycle, tailDutyCycle, maxHeight, currentHeight, groundReference);
+            updateUARTOutput(desiredAngle, currentAngle, mainRotorDutyCycle, tailDutyCycle, maxHeight, currentHeight, groundReference,flightMode);
             displayFlag = 0;
 
         }

@@ -103,31 +103,14 @@ UARTSend (char *pucBuffer)
     }
 }
 
-const char * findMode (int16_t num)
-{
-    if (num == 0) {
-        return "LANDING";
-    }
-    if (num == 1) {
-        return "FLYING";
-    }
-    if (num == 2) {
-        return "LANDED";
-    }
-    if (num == 3) {
-        return "TAKINGOFF";
-    }
-    return 0;
-}
 
-
-void updateUARTOutput(int32_t desiredAngle,int32_t currentAngle,int8_t mainDutyCycle,int8_t tailDutyCycle, int16_t maxHeight,int16_t currentHeight,int16_t groundReference )
+void updateUARTOutput(int32_t desiredAngle,int32_t currentAngle,int8_t mainDutyCycle,int8_t tailDutyCycle, int16_t maxHeight,int16_t currentHeight,int16_t groundReference,int8_t flightMode )
 {
     uint32_t dersiredDisplayAngle = findDisplayAngle(desiredAngle);
     uint32_t currentDisplayAngle = findDisplayAngle(currentAngle);
     uint32_t displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
     char string[128];
-    usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %d\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle,
+    usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %s\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle,
              findMode(flightMode));
     UARTSend(string);
     //displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);

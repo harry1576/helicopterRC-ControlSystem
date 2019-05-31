@@ -96,19 +96,4 @@ void displayAltitudePercentAndYaw(int32_t height, int32_t Angle)
     OLEDStringDraw ("%", 13, 3);
 }
 
-const char * findMode (int16_t num)
-{
-    if (num == 0) {
-        return "LANDING";
-    }
-    if (num == 1) {
-        return "FLYING";
-    }
-    if (num == 2) {
-        return "LANDED";
-    }
-    if (num == 3) {
-        return "TAKINGOFF";
-    }
-    return 0;
-}
+

@@ -67,3 +67,20 @@ int32_t findDisplayAngle(int32_t Angle)
     return displayAngle;
 }
 
+const char * findMode (int16_t num)
+{
+    if (num == 0) {
+        return "LANDING";
+    }
+    else if (num == 1) {
+        return "LANDED";
+    }
+    else if (num == 2) {
+        return "TAKINGOFF";
+    }
+    else if (num == 3) {
+        return "FLYING";
+    }
+    return 0;
+}
+
