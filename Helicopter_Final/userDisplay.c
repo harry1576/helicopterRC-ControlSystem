@@ -26,6 +26,7 @@
 #include "OrbitOLED/OrbitOLEDInterface.h"
 #include "mainRotorController.h"
 #include "tailRotorController.h"
+#include "helperFunctions.h"
 
 
 
@@ -77,7 +78,7 @@ void updateOLEDDisplay(int32_t height, int32_t Angle,int32_t mainDuty,int32_t Ta
 
 
     OLEDStringDraw ("Angle", 0, 1);
-    usnprintf (string, sizeof(string), "%4d", Angle);   // Update line on display.
+    usnprintf (string, sizeof(string), "%4d", findDisplayAngle(Angle));   // Update line on display.
     OLEDStringDraw (string, 8, 1);
     OLEDStringDraw (" deg", 12, 1);
 

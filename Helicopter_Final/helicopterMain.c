@@ -41,35 +41,33 @@
 
 int16_t groundReference; // Initialise the ground reference at the maximum height. Guaranteeing the first ground reading will be below this point.
 int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
+volatile int16_t currentHeight; // variable to store the current helicopter height.
+
 
 int32_t tempAngle = 0;
-int16_t currentHelicopterAngle;
+volatile int16_t currentHelicopterAngle;
 
-int8_t tailDutyCycle;
-int8_t mainRotorDutyCycle;
+volatile int8_t tailDutyCycle;
+volatile int8_t mainRotorDutyCycle;
 
 int8_t referenceAngleSetState;
 
 int8_t flightMode = 1;
 
-int8_t desiredHelicopterHeightPercentage;
-int16_t desiredHelicopterAngle;
+volatile int8_t desiredHelicopterHeightPercentage;
+volatile int16_t desiredHelicopterAngle;
 
 
-//*****************************************************************************
-// Constants
-//*****************************************************************************
-#define SAMPLE_RATE_HZ 160
-#define TIME_CONSTANT 1/SAMPLE_RATE_HZ
 
 
 //*****************************************************************************
 // Global Variables
 //*****************************************************************************
 int8_t PIDFlag;
-int8_t displayFlag;
+int8_t displayUARTFlag;
+int8_t displayOLEDFlag;
 int8_t buttonUpdateFlag;
-volatile int16_t currentHeight; // variable to store the current helicopter height.
+
 
 //*****************************************************************************
 //
@@ -83,8 +81,11 @@ void SysTickIntHandler(void) {
     g_ulSampCnt++;
     PIDFlag = 1;
     buttonUpdateFlag = 1;
-    if (g_ulSampCnt % 32 == 0) {
-        displayFlag = 1;
+    if (g_ulSampCnt % 40 == 0) {
+       displayUARTFlag = 1;
+    }
+    if(g_ulSampCnt % 320 == 0) {
+        displayOLEDFlag = 1;
     }
 }
 
@@ -133,9 +134,18 @@ void flightController(void) {
         desiredHelicopterHeightPercentage = 10;
         desiredHelicopterAngle = 0;
         mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);
-        tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 360); // increment rotation till at reference point
         referenceAngleSetState = getReferenceAngleSetState();
-        if(referenceAngleSetState == 1 && heightAsPercentage(maxHeight, currentHeight, groundReference) == 10)
+
+        if(referenceAngleSetState == 1)
+        {
+           tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 0); // increment rotation till at reference point
+        }
+        else
+        {
+           tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 360); // increment rotation till at reference point
+
+        }
+        if(referenceAngleSetState == 1 && heightAsPercentage(maxHeight, currentHeight, groundReference) == 10)// prevents looping when heli hasnt reach 10 altitude
         {
             flightMode = FLYING;
         }
@@ -193,7 +203,8 @@ void flightController(void) {
 //*****************************************************************************
 int main(void) {
 
-    displayFlag = 0;
+    displayUARTFlag = 0;
+    displayOLEDFlag = 0;
     PIDFlag = 0;
 
     // Initialise required systems
@@ -217,10 +228,25 @@ int main(void) {
 
     while (1) {
 
-        if (displayFlag == 1) // update display every 200ms.
+        if (displayUARTFlag == 1) // update display every 200ms.
         {
             updateUARTOutput(desiredHelicopterAngle, currentHelicopterAngle, mainRotorDutyCycle, tailDutyCycle, maxHeight, currentHeight, groundReference,flightMode);
-            displayFlag = 0;
+            displayUARTFlag = 0;
+        }
+
+        if(displayOLEDFlag == 1)
+        {
+            updateOLEDDisplay(currentHeight,currentHelicopterAngle,mainRotorDutyCycle,tailDutyCycle);
+            displayOLEDFlag = 0;
+        }
+
+
+        if(flightMode == FLYING && buttonUpdateFlag == 1) // called every 0.00625
+        {
+            updateDesiredAltAndYawValue(); // get data from buttons once taken
+            desiredHelicopterHeightPercentage = getDesiredHeightPercentage();
+            desiredHelicopterAngle = getdesiredAngle();
+            buttonUpdateFlag = 0;
         }
 
         if (PIDFlag == 1) // called every 0.00625ms
@@ -230,12 +256,6 @@ int main(void) {
             flightController();
             PIDFlag = 0;
         }
-        if(flightMode == FLYING && buttonUpdateFlag == 1)
-        {
-            updateDesiredAltAndYawValue(); // get data from buttons once taken
-            desiredHelicopterHeightPercentage = getDesiredHeightPercentage();
-            desiredHelicopterAngle = getdesiredAngle();
-            buttonUpdateFlag = 0;
-        }
+
     }
 }

@@ -104,7 +104,7 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
     int16_t divisor = 1000;
 
     tailErrorSignal = (desiredAngle) - currentHelicopterAngle;
-    float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious)/(0.00625);
+    float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious) * 160;
 
     dutyCycle = ((tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi) + (errorDerivative * tailRotorKd))/divisor;
 
@@ -118,7 +118,7 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
     }
     else
     {
-        errorIntegral += tailErrorSignal * 0.00625;
+        errorIntegral += tailErrorSignal / 160;
     }
 
 

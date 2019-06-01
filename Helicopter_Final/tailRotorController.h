@@ -23,8 +23,6 @@ uint32_t tailRotorControlLoop(uint16_t desiredAngle,uint16_t refAngle);
 
 int32_t mainDutyCycle(void);
 
-#define PWM_TAIL_BASE        PWM1_BASE
-#define PWM_TAIL_OUTBIT      PWM_OUT_5_BIT
 
 
 #endif /* MAIN_ROTOR_CONTROLLER_H_ */

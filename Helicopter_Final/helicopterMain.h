@@ -2,6 +2,11 @@
 #define HELI_MAIN_H_
 
 
+
+//*****************************************************************************
+// Constants
+//*****************************************************************************
+#define SAMPLE_RATE_HZ 160
 enum helicopterModes {LANDING = 0, LANDED = 1, TAKINGOFF = 2, FLYING = 3};
 
 

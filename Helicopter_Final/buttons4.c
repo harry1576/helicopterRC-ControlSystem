@@ -41,13 +41,8 @@ static uint8_t but_count[NUM_BUTS];
 static bool but_flag[NUM_BUTS];
 static bool but_normal[NUM_BUTS]; // Corresponds to the electrical state
 
-int16_t desiredHeightPercentage = 0;
+volatile int16_t desiredHeightPercentage = 0;
 volatile int16_t desiredAngle = 0;
-uint32_t variableTest = 1;
-volatile int16_t referenceAngle = 0;
-int8_t testVariable = 0;
-volatile int8_t taken_off = 0;
-int8_t previousPosition;
 
 // *******************************************************
 // initButtons: Initialise the variables associated with the set of buttons

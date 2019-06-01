@@ -108,7 +108,7 @@ int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeigh
     int8_t divisor = 100;
 
     errorSignal = (currentHeliHeight - (groundReference - ((124 * desiredHeliHeight)/10)));
-    float errorDerivative = (errorSignal - errorSignalPrevious) / (0.00625);
+    float errorDerivative = (errorSignal - errorSignalPrevious) * 160; // multiplying by 160 is more efficient then dividing by 0.00625, but mathematically equivalent.
 
     dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi) + (errorDerivative * mainRotorKd))/ divisor;
 
@@ -120,13 +120,7 @@ int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeigh
     }
     else
     {
-    errorIntegral += errorSignal * 0.00625;
-    }
-
-
-    if (taken_off == 0 && errorSignal < 20)
-    {
-        taken_off = 1;
+    errorIntegral += errorSignal/160; // dividing by 160 is more efficient then multiplying by 0.00625, but mathematically equivalent.
     }
 
     errorSignalPrevious = errorSignal;
