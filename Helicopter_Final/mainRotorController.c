@@ -102,10 +102,10 @@ void initialiseMainRotorPWM(void)
 
 int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeight, int16_t groundReference) {
 
-    int8_t mainRotorKp = 14;
-    int8_t mainRotorKi = 12; // 1 //0.44/0.8/0.3
-    int8_t mainRotorKd = 10;
-    int8_t divisor = 100;
+    const int8_t mainRotorKp = 14;
+    const int8_t mainRotorKi = 12; // 1 //0.44/0.8/0.3
+    const int8_t mainRotorKd = 10;
+    const int8_t divisor = 100;
 
     errorSignal = (currentHeliHeight - (groundReference - ((124 * desiredHeliHeight)/10)));
     float errorDerivative = (errorSignal - errorSignalPrevious) * 160; // multiplying by 160 is more efficient then dividing by 0.00625, but mathematically equivalent.

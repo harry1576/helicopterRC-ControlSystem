@@ -175,15 +175,6 @@ void referenceTriggerHandler(void)
     slotCount = 0;
     referenceAngleSet = 1;
 
-
-
-    /*
-    if(flightMode == TAKINGOFF)
-    {
-        flightMode = FLYING;
-        GPIOIntDisable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
-
-    }*/
 }
 
 void initReferenceTrigger(void)

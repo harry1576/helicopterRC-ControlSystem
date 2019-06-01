@@ -145,7 +145,7 @@ void flightController(void) {
            tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 360); // increment rotation till at reference point
 
         }
-        if(referenceAngleSetState == 1 && heightAsPercentage(maxHeight, currentHeight, groundReference) == 10)// prevents looping when heli hasnt reach 10 altitude
+        if(referenceAngleSetState == 1)// prevents looping when heli hasnt reach 10 altitude
         {
             flightMode = FLYING;
         }
@@ -175,7 +175,7 @@ void flightController(void) {
         tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 0); // increment rotation till at reference point
         mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);
 
-        if(heightAsPercentage(maxHeight, currentHeight, groundReference) == 0)
+        if(heightAsPercentage(maxHeight, currentHeight, groundReference) == 0 && currentHelicopterAngle < 5 && currentHelicopterAngle > -5)
         {
             flightMode = LANDED;
         }
