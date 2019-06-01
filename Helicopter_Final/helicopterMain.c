@@ -145,7 +145,7 @@ void flightController(void) {
            tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 360); // increment rotation till at reference point
 
         }
-        if(referenceAngleSetState == 1)// prevents looping when heli hasnt reach 10 altitude
+        if(referenceAngleSetState == 1 && heightAsPercentage(maxHeight, currentHeight, groundReference) > 10 && currentHelicopterAngle < 5 && currentHelicopterAngle > -5)// prevents looping when heli hasnt reach 10 altitude
         {
             flightMode = FLYING;
         }
@@ -243,8 +243,7 @@ int main(void) {
 
         if(flightMode == FLYING && buttonUpdateFlag == 1) // called every 0.00625
         {
-            updateDesiredAltAndYawValue(); // get data from buttons once taken
-            desiredHelicopterHeightPercentage = getDesiredHeightPercentage();
+            desiredHelicopterHeightPercentage = getDesiredHeightPercentage();// get data from buttons once taken
             desiredHelicopterAngle = getdesiredAngle();
             buttonUpdateFlag = 0;
         }
@@ -256,6 +255,8 @@ int main(void) {
             flightController();
             PIDFlag = 0;
         }
+
+        updateDesiredAltAndYawValue(); // keep updating the values  i.e. polling the buttons , but don't update the values.
 
     }
 }
