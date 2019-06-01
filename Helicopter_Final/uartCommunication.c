@@ -25,6 +25,7 @@
 #include "OrbitOLED/OrbitOLEDInterface.h"
 #include "buttons4.h"
 #include "helperFunctions.h"
+#include "buttons4.h"
 
 //********************************************************
 // Constants
@@ -108,9 +109,10 @@ void updateUARTOutput(int32_t desiredAngle,int32_t currentAngle,int8_t mainDutyC
 {
     uint32_t dersiredDisplayAngle = findDisplayAngle(desiredAngle);
     uint32_t currentDisplayAngle = findDisplayAngle(currentAngle);
+    uint8_t desiredHeightPercentagedisplay = getDesiredHeightPercentage();
     uint32_t displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
     char string[128];
-    usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %s\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle,
+    usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %s\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentagedisplay, mainDutyCycle,
              findMode(flightMode));
     UARTSend(string);
     //displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);

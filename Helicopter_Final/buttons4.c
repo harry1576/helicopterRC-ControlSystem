@@ -12,6 +12,9 @@
 //
 // P.J. Bones UCECE
 // Last modified:  7.2.2018
+//
+// Function Authored by P.J. Bones unless stated otherwise
+//
 // 
 // ********************************************************
 
@@ -20,20 +23,14 @@
 #include <stdbool.h>
 
 #include "inc/hw_memmap.h"
-
 #include "inc/hw_types.h"
-
 #include "driverlib/gpio.h"
-
 #include "driverlib/sysctl.h"
-
 #include "driverlib/debug.h"
-
 #include "inc/tm4c123gh6pm.h"  // Board specific defines (for PF0)
-
 #include "buttons4.h"
-
 #include "yawFiniteStateMachine.h"
+#include "helicopterMain.h"
 
 
 // *******************************************************
@@ -44,13 +41,9 @@ static uint8_t but_count[NUM_BUTS];
 static bool but_flag[NUM_BUTS];
 static bool but_normal[NUM_BUTS]; // Corresponds to the electrical state
 
-uint8_t switchChannel; //Variable to hold the current value of switch position
-uint8_t resetPos; //Variable to hold the current value of switch position
-
 int16_t desiredHeightPercentage = 0;
 volatile int16_t desiredAngle = 0;
 uint32_t variableTest = 1;
-int8_t flightMode = 1;
 volatile int16_t referenceAngle = 0;
 int8_t testVariable = 0;
 volatile int8_t taken_off = 0;
@@ -184,8 +177,20 @@ void updateDesiredAltAndYawValue(void) {
     }
 }
 
+int16_t getDesiredHeightPercentage()
+{
+    return desiredHeightPercentage;
+}
+
+int16_t getdesiredAngle()
+{
+    return desiredAngle;
+}
+
+
 void resetAndSwitchISR(void) {
 
+    uint8_t switchChannel; //Variable to hold the current value of switch position
     uint8_t resetButton = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
     if (resetButton == 0) {
         GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
@@ -195,12 +200,12 @@ void resetAndSwitchISR(void) {
 
         switchChannel = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_7);
 
-        if (switchChannel == 0 && flightMode == FLYING) // switch is in land position
+        if (switchChannel == 0 && getFlightMode() == FLYING) // switch is in land position
         {
-            flightMode = LANDING;
+            setFlightMode(LANDING);
 
-        } else if (switchChannel != 0 && flightMode == LANDED) {
-            flightMode = TAKINGOFF;
+        } else if (switchChannel != 0 && getFlightMode() == LANDED) {
+            setFlightMode(TAKINGOFF);
         }
     }
 }

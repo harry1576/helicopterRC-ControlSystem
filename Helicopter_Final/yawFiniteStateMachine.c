@@ -24,6 +24,8 @@
 #include "circBufT.h"
 #include "buttons4.h"
 #include "OrbitOLED/OrbitOLEDInterface.h"
+#include "helicopterMain.h"
+
 
 
 // Variable that is used to hold the current angle of the helicopter.
@@ -117,14 +119,6 @@ void yawFSM(void)
 
     }
 
-    /*referenceSensor = GPIOPinRead(GPIO_PORTC_BASE, GPIO_PIN_4);
-    if (referenceSensor == 0 && referenceAngleSet == 0)
-    {
-        currentAngle = 0;
-        slotCount = 0;
-        referenceAngleSet = 1;
-    }*/
-
     currentAngle = ((slotCount * 360) / 448);
     previousState = currentState;
 
@@ -179,12 +173,17 @@ void referenceTriggerHandler(void)
     GPIOIntClear(GPIO_PORTC_BASE, GPIO_INT_PIN_4 );
     currentAngle = 0;
     slotCount = 0;
+    referenceAngleSet = 1;
+
+
+
+    /*
     if(flightMode == TAKINGOFF)
     {
         flightMode = FLYING;
         GPIOIntDisable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
 
-    }
+    }*/
 }
 
 void initReferenceTrigger(void)
@@ -195,6 +194,22 @@ void initReferenceTrigger(void)
    GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_4);
    GPIOIntTypeSet (GPIO_PORTC_BASE, GPIO_PIN_4, GPIO_LOW_LEVEL);
    GPIOIntEnable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
+}
+
+
+int16_t getCurrentAngle(void)
+{
+    return currentAngle;
+}
+
+int8_t getReferenceAngleSetState(void)
+{
+    return referenceAngleSet;
+}
+
+void setReferenceAngleSetState(int8_t state)
+{
+    referenceAngleSet = state;
 }
 
 

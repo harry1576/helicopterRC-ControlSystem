@@ -97,6 +97,4 @@ int32_t updateAltitude(void)
         sum = sum + readCircBuf( & g_inBuffer); // Calculate and display the rounded mean of the buffer contents
     return (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
 
-
-
 }

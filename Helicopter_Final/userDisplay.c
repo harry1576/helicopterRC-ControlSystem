@@ -63,7 +63,7 @@ void clearOLED(void)
 // degrees.
 //
 //****************************************************************************
-void displayAltitudePercentAndYaw(int32_t height, int32_t Angle)
+void updateOLEDDisplay(int32_t height, int32_t Angle,int32_t mainDuty,int32_t TailDuty)
 {
     char string[17];  // 16 characters across the display
 
@@ -84,14 +84,14 @@ void displayAltitudePercentAndYaw(int32_t height, int32_t Angle)
 
     OLEDStringDraw ("Main PWM", 0, 2);
 
-    usnprintf (string, sizeof(string), "%3d", MAIN_PWM);   // Update line on display.
+    usnprintf (string, sizeof(string), "%3d", mainDuty);   // Update line on display.
     OLEDStringDraw (string, 9, 2);
     OLEDStringDraw ("%", 13, 2);
 
 
     OLEDStringDraw ("Tail PWM", 0, 3);
 
-    usnprintf (string, sizeof(string), "%3d", TAIL_PWM);   // Update line on display.
+    usnprintf (string, sizeof(string), "%3d", TailDuty);   // Update line on display.
     OLEDStringDraw (string, 9, 3);
     OLEDStringDraw ("%", 13, 3);
 }

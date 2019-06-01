@@ -17,9 +17,9 @@
 // *******************************************************
 // Variables that can be accessed by other files.
 // *******************************************************
-extern volatile int32_t currentAngle; // Angle of the helicopter
+//extern volatile int32_t currentAngle; // Angle of the helicopter
 
-extern int8_t referenceAngleSet;
+//extern int8_t referenceAngleSet;
 
 
 //*****************************************************************************
@@ -58,6 +58,12 @@ int32_t findDisplayAngle (int32_t Angle);
 
 void initReferenceTrigger(void);
 void referenceTriggerHandler(void);
+
+int16_t getCurrentAngle(void);
+
+int8_t getReferenceAngleSetState(void);
+void setReferenceAngleSetState(int8_t state);
+
 
 
 

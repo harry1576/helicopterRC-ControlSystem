@@ -22,7 +22,6 @@
 //*****************************************************************************
 enum butNames {UP = 0, DOWN, LEFT, RIGHT, NUM_BUTS};
 enum butStates {RELEASED = 0, PUSHED, NO_CHANGE};
-enum helicopterModes {LANDING = 0, LANDED = 1, TAKINGOFF = 2, FLYING = 3};
 
 // UP button
 #define UP_BUT_PERIPH  SYSCTL_PERIPH_GPIOE
@@ -58,10 +57,8 @@ enum helicopterModes {LANDING = 0, LANDED = 1, TAKINGOFF = 2, FLYING = 3};
 // read the pin in the opposite condition, before the state changes and
 // a flag is set.  Set NUM_BUT_POLLS according to the polling rate.
 
-extern int16_t desiredHeightPercentage;
-extern volatile int16_t desiredAngle;
 extern uint32_t variableTest;
-extern int8_t flightMode;
+//extern int8_t flightMode;
 //extern int8_t referenceAngleSet;
 extern volatile int16_t referenceAngle;
 extern int8_t testVariable;
@@ -126,6 +123,10 @@ void initResetandSwitchISR(void);
 
 void checkSwitchPos(void);
 
+int16_t getDesiredHeightPercentage();
+
+
+int16_t getdesiredAngle();
 
 
 

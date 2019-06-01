@@ -42,7 +42,7 @@ void clearOLED(void);
 // @Return nothing
 //
 //*****************************************************************************
-void displayAltitudePercentAndYaw(uint16_t meanVal,int32_t Angle);
+void updateOLEDDisplay(int32_t height, int32_t Angle,int32_t mainDuty,int32_t TailDuty);
 
 const char * findMode (int16_t num);
 
