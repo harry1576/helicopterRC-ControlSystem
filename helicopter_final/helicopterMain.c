@@ -153,16 +153,16 @@ void flightController(void) {
 
         desiredHelicopterHeightPercentage = 10; // Take helicopter to 10% altitude
         desiredHelicopterAngle = 0; // Try and get helicopter to reference point
-        mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);// control of main rotor
+        mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference,SAMPLE_RATE_HZ);// control of main rotor
         referenceAngleSetState = getReferenceAngleSetState(); // Check if the reference angle is set
 
         if(referenceAngleSetState == 1)
         {
-           tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 0); // increment rotation till at reference point
+           tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 0,SAMPLE_RATE_HZ); // increment rotation till at reference point
         }
         else
         {
-           tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 360); // Do a 360 to find the reference signal
+           tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 360,SAMPLE_RATE_HZ); // Do a 360 to find the reference signal
 
         }
         if(referenceAngleSetState == 1 && heightAsPercentage(maxHeight, currentHeight, groundReference) > 10 && currentHelicopterAngle < 5 && currentHelicopterAngle > -5)// prevents looping when heli hasnt reach 10 altitude
@@ -173,8 +173,8 @@ void flightController(void) {
 
     else if (flightMode == FLYING) {
           // set rotors to appropriate duty cycles to get the desired angle and altitude.
-          mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);
-          tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, desiredHelicopterAngle);
+          mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference,SAMPLE_RATE_HZ);
+          tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, desiredHelicopterAngle,SAMPLE_RATE_HZ);
           //When the mode switch is flicked an interrupt is triggered in buttons4.c
           //this will change the mode from FLYING to LANDING
     }
@@ -194,8 +194,8 @@ void flightController(void) {
             desiredHelicopterHeightPercentage = 0;
         }
 
-        tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 0); // Get to reference point
-        mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);// Change height depending on other statements.
+        tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 0, SAMPLE_RATE_HZ); // Get to reference point
+        mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference, SAMPLE_RATE_HZ);// Change height depending on other statements.
 
         if(heightAsPercentage(maxHeight, currentHeight, groundReference) == 0)
         {

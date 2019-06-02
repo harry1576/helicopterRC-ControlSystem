@@ -42,7 +42,7 @@ void initialiseTailRotorPWM (void);
 // @Return the duty cycle of the tail rotor
 //
 //*****************************************************************************
-uint32_t tailRotorControlLoop(uint16_t desiredAngle,uint16_t refAngle);
+uint32_t tailRotorControlLoop(uint16_t desiredAngle,uint16_t refAngle, int16_t samplingRate);
 
 
 #endif /* TAIL_ROTOR_CONTROLLER_H_ */

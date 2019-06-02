@@ -35,10 +35,13 @@ void initialiseMainRotorPWM (void);
 //*****************************************************************************
 //
 // @Description This function is used to control the main rotor
-// @Param void
+// @Param currentHeliHeight current Heli height as 12bit number
+// @Param desiredHeli Height as a percentage
+// @Param groundReference as a 12bit number
+// @Param samplingrate is the rate in which the PID control loop is called
 // @Return the duty cycle of the main rotor
 //
 //*****************************************************************************
-int32_t mainRotorControlLoop(int16_t currentHeliHeight,int16_t desiredHeliHeight,int16_t groundReference);
+int32_t mainRotorControlLoop(int16_t currentHeliHeight,int16_t desiredHeliHeight,int16_t groundReference,int16_t samplingRate);
 
 #endif /* MAIN_ROTOR_CONTROLLER_H_ */

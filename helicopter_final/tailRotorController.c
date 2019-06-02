@@ -102,11 +102,13 @@ void initialiseTailRotorPWM (void){
 //*****************************************************************************
 //
 // @Description This function is used to control the tail rotor
-// @Param void
+// @Param currentHelicopterAngle angle the heli is currently at
+// @Param desiredAngle angle we want the helicopter to reach
+// @Param samplingrate is the rate in which the PID control loop is called
 // @Return the duty cycle of the tail rotor
 //
 //*****************************************************************************
-uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
+uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle, int16_t samplingRate)
 {
     const int16_t tailRotorKp = 1200;
     const int16_t tailRotorKi = 100;
@@ -114,7 +116,7 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
     const int16_t divisor = 1000;
 
     tailErrorSignal = (desiredAngle) - currentHelicopterAngle;
-    float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious) * 160;// multiplying by 160 is more efficient then dividing by 0.00625, but mathematically equivalent.
+    float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious) * samplingRate;// multiplying by sampling frequency is more efficient then dividing by 1/samplingRate, but mathematically equivalent.
 
     dutyCycle = ((tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi) + (errorDerivative * tailRotorKd))/divisor;
 
@@ -129,7 +131,7 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
     }
     else
     {
-        errorIntegral += tailErrorSignal / 160; // dividing by 160 is more efficient then multiplying by 0.00625, but mathematically equivalent.// Integral Control
+        errorIntegral += tailErrorSignal / samplingRate; // dividing by samplingRate is more efficient then multiplying by 0.00625, but mathematically equivalent.// Integral Control
     }
 
     tailErrorSignalPrevious = tailErrorSignal;

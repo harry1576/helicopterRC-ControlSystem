@@ -29,6 +29,7 @@
 #include "buttons4.h"
 
 
+
 // PWM configuration
 #define PWM_START_RATE_HZ 250
 #define PWM_RATE_STEP_HZ 50
@@ -106,19 +107,22 @@ void initialiseMainRotorPWM(void)
 //*****************************************************************************
 //
 // @Description This function is used to control the main rotor
-// @Param void
+// @Param currentHeliHeight current Heli height as 12bit number
+// @Param desiredHeli Height as a percentage
+// @Param groundReference as a 12bit number
+// @Param samplingrate is the rate in which the PID control loop is called
 // @Return the duty cycle of the main rotor
 //
 //*****************************************************************************
-int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeight, int16_t groundReference) {
+int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeight, int16_t groundReference, int16_t samplingRate) {
 
     const int8_t mainRotorKp = 14; // set the gains for the control system
     const int8_t mainRotorKi = 12;
     const int8_t mainRotorKd = 10;
     const int8_t divisor = 100;
 
-    errorSignal = (currentHeliHeight - (groundReference - ((124 * desiredHeliHeight)/10))); // calculate error signal
-    float errorDerivative = (errorSignal - errorSignalPrevious) * 160; // multiplying by 160 is more efficient then dividing by 0.00625, but mathematically equivalent.
+    errorSignal = (currentHeliHeight - (groundReference - ((124 * desiredHeliHeight)/10))); // calculate error signal , has to turn desired heli height into a 12 bit number first
+    float errorDerivative = (errorSignal - errorSignalPrevious) * samplingRate; // multiplying by sampling frequency is more efficient then dividing by 1/samplingRate, but mathematically equivalent.
 
     dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi) + (errorDerivative * mainRotorKd)) / divisor;
 
@@ -133,7 +137,7 @@ int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeigh
     }
     else
     {
-        errorIntegral += errorSignal/160; // dividing by 160 is more efficient then multiplying by 0.00625, but mathematically equivalent.
+        errorIntegral += errorSignal/samplingRate; // dividing by samplingRate is more efficient then multiplying by 0.00625, but mathematically equivalent.// Integral Control
     }
 
     errorSignalPrevious = errorSignal;
