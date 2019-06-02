@@ -188,9 +188,9 @@ void flightController(void) {
             // Get Helicopter to within 10 degrees of reference and to 10% altitude then set desired altitude to 5
             desiredHelicopterHeightPercentage = 5;
         }
-        if(currentHelicopterAngle <= 5 && currentHelicopterAngle >= -5  && heightAsPercentage(maxHeight, currentHeight, groundReference) == 5)
+        if(currentHelicopterAngle <= 4 && currentHelicopterAngle >= -4 )
         {
-            // Get Helicopter to within 5 degrees of reference and to 5% altitude then set desired altitude to 0
+            // Get Helicopter to within 4 degrees of reference and to 5% altitude then set desired altitude to 0
             desiredHelicopterHeightPercentage = 0;
         }
 
@@ -207,9 +207,12 @@ void flightController(void) {
         // Turn off all the motors and enable the reference signal interrupt.
         setMainPWM(250, 0);
         setTailPWM(250, 0);
-        mainRotorDutyCycle = 0;
-        GPIOIntEnable(GPIO_PORTC_BASE, GPIO_INT_PIN_4);
+        mainRotorDutyCycle = 0; // set equal to zero for display
+        tailDutyCycle = 0;
+        GPIOIntEnable(GPIO_PORTC_BASE, GPIO_INT_PIN_4);// enable reference angle interrupt
         setReferenceAngleSetState(0);
+        resetDesiredHeightAndAngle(); // set the desired height and angle back to 0
+
         //When the mode switch is flicked an interrupt is triggered in buttons4.c
         //this will change the mode from LANDED to TAKEOFF
     }

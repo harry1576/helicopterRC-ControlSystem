@@ -137,5 +137,14 @@ int16_t getDesiredHeightPercentage();
 int16_t getdesiredAngle();
 
 
+//*****************************************************************************
+//
+// @Description Resets the desired angle to altitude to 0
+// @Param void
+// @Return none
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
+void resetDesiredHeightAndAngle();
+
 #endif /*BUTTONS_H_*/
 
