@@ -84,7 +84,7 @@ void SysTickIntHandler(void) {
     if (g_ulSampCnt % 40 == 0) {
        displayUARTFlag = 1;
     }
-    if(g_ulSampCnt % 320 == 0) {
+    if(g_ulSampCnt % 160 == 0) {
         displayOLEDFlag = 1;
     }
 }
@@ -236,7 +236,7 @@ int main(void) {
 
         if(displayOLEDFlag == 1)
         {
-            updateOLEDDisplay(currentHeight,currentHelicopterAngle,mainRotorDutyCycle,tailDutyCycle);
+            updateOLEDDisplay(heightAsPercentage(maxHeight, currentHeight, groundReference),currentHelicopterAngle,mainRotorDutyCycle,tailDutyCycle);
             displayOLEDFlag = 0;
         }
 
