@@ -90,7 +90,7 @@ checkButton (uint8_t butName);
 // altAndYawValue: Function that checks the buttons and alters
 // the desired height and yaw accordingly
 
-void updateDesiredAltAndYawValue(void);
+void pollButtons(void);
 
 
 
@@ -98,25 +98,19 @@ void
 switchMode (void);
 
 
-void
-initSwitchandResetISR(void);
 
 
 void
 resetCheck (void);
 
 
-void
-resetISR(void);
 
-void
-resetAndSwitchISR(void);
+void resetAndSwitchISR(void);
 
 
 void initResetandSwitchISR(void);
 
 
-void checkSwitchPos(void);
 
 int16_t getDesiredHeightPercentage();
 

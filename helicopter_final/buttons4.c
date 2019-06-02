@@ -13,15 +13,13 @@
 // P.J. Bones UCECE
 // Last modified:  7.2.2018
 //
-// Function Authored by P.J. Bones unless stated otherwise
+// Functions Authored by P.J. Bones unless stated otherwise
 //
 // 
 // ********************************************************
 
 #include <stdint.h>
-
 #include <stdbool.h>
-
 #include "inc/hw_memmap.h"
 #include "inc/hw_types.h"
 #include "driverlib/gpio.h"
@@ -138,10 +136,15 @@ enum butStates checkButton(uint8_t butName) {
     return NO_CHANGE;
 }
 
-// *******************************************************
-// altAndYawValue: Function that checks the buttons and alters
-// the desired height and yaw accordingly
-void updateDesiredAltAndYawValue(void) {
+//*****************************************************************************
+//
+// @Description Polls all the buttons to check if they are being pressed
+// and updates the desired height or desired angle if button pressed.
+// @Param void
+// @Return nothing
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
+void pollButtons(void) {
     //change these values to the correct place and format, and init them
     uint8_t butState;
 
@@ -149,14 +152,14 @@ void updateDesiredAltAndYawValue(void) {
 
     butState = checkButton(UP);
     if (butState == PUSHED) {
-        if (desiredHeightPercentage < 100) {
+        if (desiredHeightPercentage < 100) { // limits height from exceeding above 100
             desiredHeightPercentage += 10;
         }
     }
 
     butState = checkButton(DOWN);
     if (butState == PUSHED) {
-        if (desiredHeightPercentage > 0) {
+        if (desiredHeightPercentage > 0) {  // limits height from exceeding below 100
             desiredHeightPercentage -= 10;
         }
     }
@@ -172,15 +175,6 @@ void updateDesiredAltAndYawValue(void) {
     }
 }
 
-int16_t getDesiredHeightPercentage()
-{
-    return desiredHeightPercentage;
-}
-
-int16_t getdesiredAngle()
-{
-    return desiredAngle;
-}
 
 
 void resetAndSwitchISR(void) {
@@ -206,7 +200,8 @@ void resetAndSwitchISR(void) {
 }
 
 void initResetandSwitchISR(void) {
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA); // Enable the Peripheral
 
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_6);
     GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_6, GPIO_LOW_LEVEL);
@@ -219,3 +214,28 @@ void initResetandSwitchISR(void) {
     GPIOIntRegister(GPIO_PORTA_BASE, resetAndSwitchISR);
 
 }
+
+//*****************************************************************************
+//
+// @Description Getter function to return the desired height as a percentage
+// @Param void
+// @Return the desired height as a percentage
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
+int16_t getDesiredHeightPercentage()
+{
+    return desiredHeightPercentage;
+}
+
+//*****************************************************************************
+//
+// @Description Getter function to return the desired angle
+// @Param void
+// @Return the desired angle
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
+int16_t getdesiredAngle()
+{
+    return desiredAngle;
+}
+

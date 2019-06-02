@@ -1,7 +1,7 @@
 //*****************************************************************************
 // Thurs PM Group 23
 //
-// helicopterMain.c - This routine pieces together various other files and
+// helicopterMain.c - This routine pieces together various files and
 // functions to implement the control logic of the helicopter .
 // Some of the files used in this program have been authored by P.J. Bones
 // UCECE. Theses files include acknowledgement that he is the creator or that
@@ -9,7 +9,7 @@
 //
 // Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
 //
-// Last modified: 25.5.2019
+// Last modified: 2.6.2019
 //
 //*****************************************************************************
 
@@ -39,31 +39,27 @@
 #include "helicopterMain.h"
 
 
-int16_t groundReference; // Initialise the ground reference at the maximum height. Guaranteeing the first ground reading will be below this point.
-int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
-volatile int16_t currentHeight; // variable to store the current helicopter height.
+//*****************************************************************************
+// Global Variables
+//*****************************************************************************
 
+int16_t groundReference;
+volatile int16_t currentHeight; // Volatile as subject to change unexpectedly
+int16_t maxHeight;
 
-int32_t tempAngle = 0;
-volatile int16_t currentHelicopterAngle;
+volatile int32_t currentHelicopterAngle;// Volatile as subject to change unexpectedly
 
 volatile int8_t tailDutyCycle;
 volatile int8_t mainRotorDutyCycle;
 
-int8_t referenceAngleSetState;
+int8_t referenceAngleSetState; // Variable to tell if reference point has been set
 
-int8_t flightMode = 1;
+int8_t flightMode = 1; // Initialize mode as Landed.
 
 volatile int8_t desiredHelicopterHeightPercentage;
-volatile int16_t desiredHelicopterAngle;
+volatile int32_t desiredHelicopterAngle;
 
-
-
-
-//*****************************************************************************
-// Global Variables
-//*****************************************************************************
-int8_t PIDFlag;
+int8_t PIDFlag; // Variables to hold flag values to allow intertask communication
 int8_t displayUARTFlag;
 int8_t displayOLEDFlag;
 int8_t buttonUpdateFlag;
@@ -116,25 +112,49 @@ void initTimer(void) {
     SysTickEnable();
 }
 
+//*****************************************************************************
+//
+// @Description Getter function to allow other files to know the helicopter
+// flight mode without using an Extern variable.
+// @Param void
+// @Return the current flightmode
+//
+//*****************************************************************************
 int8_t getFlightMode()
 {
     return flightMode;
 }
 
+//*****************************************************************************
+//
+// @Description Setter function to allow other files to set the helicopter
+// flight mode. This is used by the mode switch interrupt (buttons4.c) to change
+// the state of the helicopter after the mode switch is used i.e. landed to takeoff.
+// @Param void
+// @Return the current flightmode
+//
+//*****************************************************************************
 void setFlightMode(int8_t state)
 {
     flightMode = state;
 }
 
-
+//*****************************************************************************
+//
+// @Description This is a FSM that has 4 different states the helicopter can be
+// in. Depending on user input the helicopter will move to another state.
+// @Param void
+// @Return none
+//
+//*****************************************************************************
 void flightController(void) {
 
     if (flightMode == TAKINGOFF) {
 
-        desiredHelicopterHeightPercentage = 10;
-        desiredHelicopterAngle = 0;
-        mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);
-        referenceAngleSetState = getReferenceAngleSetState();
+        desiredHelicopterHeightPercentage = 10; // Take helicopter to 10% altitude
+        desiredHelicopterAngle = 0; // Try and get helicopter to reference point
+        mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);// control of main rotor
+        referenceAngleSetState = getReferenceAngleSetState(); // Check if the reference angle is set
 
         if(referenceAngleSetState == 1)
         {
@@ -142,21 +162,21 @@ void flightController(void) {
         }
         else
         {
-           tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 360); // increment rotation till at reference point
+           tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 360); // Do a 360 to find the reference signal
 
         }
         if(referenceAngleSetState == 1 && heightAsPercentage(maxHeight, currentHeight, groundReference) > 10 && currentHelicopterAngle < 5 && currentHelicopterAngle > -5)// prevents looping when heli hasnt reach 10 altitude
         {
-            flightMode = FLYING;
+            flightMode = FLYING; // If helicopter is at 10 Height and facing reference point change mode to flying.
         }
     }
 
     else if (flightMode == FLYING) {
-
+          // set rotors to appropriate duty cycles to get the desired angle and altitude.
           mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);
           tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, desiredHelicopterAngle);
           //When the mode switch is flicked an interrupt is triggered in buttons4.c
-          //this will change the mode from FLYING to LANDED
+          //this will change the mode from FLYING to LANDING
     }
 
     else if (flightMode == LANDING) {
@@ -165,22 +185,26 @@ void flightController(void) {
 
         if((currentHelicopterAngle < 10 && currentHelicopterAngle > 5) || (currentHelicopterAngle > -10 && currentHelicopterAngle < -5) && heightAsPercentage(maxHeight, currentHeight, groundReference) == 10)
         {
+            // Get Helicopter to within 10 degrees of reference and to 10% altitude then set desired altitude to 5
             desiredHelicopterHeightPercentage = 5;
         }
-        if(currentHelicopterAngle <= 5 && currentHelicopterAngle >= -5)
+        if(currentHelicopterAngle <= 5 && currentHelicopterAngle >= -5  && heightAsPercentage(maxHeight, currentHeight, groundReference) == 5)
         {
+            // Get Helicopter to within 5 degrees of reference and to 5% altitude then set desired altitude to 0
             desiredHelicopterHeightPercentage = 0;
         }
 
-        tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 0); // increment rotation till at reference point
-        mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);
+        tailDutyCycle = tailRotorControlLoop(currentHelicopterAngle, 0); // Get to reference point
+        mainRotorDutyCycle = mainRotorControlLoop(currentHeight, desiredHelicopterHeightPercentage, groundReference);// Change height depending on other statements.
 
-        if(heightAsPercentage(maxHeight, currentHeight, groundReference) == 0 && currentHelicopterAngle < 5 && currentHelicopterAngle > -5)
+        if(heightAsPercentage(maxHeight, currentHeight, groundReference) == 0)
         {
+            //If helicopter is on the ground set the state to landed.
             flightMode = LANDED;
         }
     }
     if (flightMode == LANDED) {
+        // Turn off all the motors and enable the reference signal interrupt.
         setMainPWM(250, 0);
         setTailPWM(250, 0);
         mainRotorDutyCycle = 0;
@@ -228,23 +252,22 @@ int main(void) {
 
     while (1) {
 
-        if (displayUARTFlag == 1) // update display every 200ms.
+        if (displayUARTFlag == 1) // update display every 250ms.
         {
             updateUARTOutput(desiredHelicopterAngle, currentHelicopterAngle, mainRotorDutyCycle, tailDutyCycle, maxHeight, currentHeight, groundReference,flightMode);
             displayUARTFlag = 0;
         }
 
-        if(displayOLEDFlag == 1)
+        if(displayOLEDFlag == 1) // update OLED every 1000ms - this is a relatively slow update rate as the OLED is surplus when using UART but this feature is still required as per specification
         {
             updateOLEDDisplay(heightAsPercentage(maxHeight, currentHeight, groundReference),currentHelicopterAngle,mainRotorDutyCycle,tailDutyCycle);
             displayOLEDFlag = 0;
         }
 
-
-        if(flightMode == FLYING && buttonUpdateFlag == 1) // called every 0.00625
+        if(flightMode == FLYING && buttonUpdateFlag == 1) // called every 0.00625 - Only fetch the desired values when in flying mode as they don't effect other modes.
         {
-            desiredHelicopterHeightPercentage = getDesiredHeightPercentage();// get data from buttons once taken
-            desiredHelicopterAngle = getdesiredAngle();
+            desiredHelicopterHeightPercentage = getDesiredHeightPercentage(); // This function fetches the desired height value from the buttons file
+            desiredHelicopterAngle = getdesiredAngle(); //This function fetches the desired angle value from the buttons file
             buttonUpdateFlag = 0;
         }
 
@@ -256,7 +279,7 @@ int main(void) {
             PIDFlag = 0;
         }
 
-        updateDesiredAltAndYawValue(); // keep updating the values  i.e. polling the buttons , but don't update the values.
+        pollButtons(); // this function polls the buttons to update the desired values of angle and height.
 
     }
 }
