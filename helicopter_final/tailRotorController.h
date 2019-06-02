@@ -38,7 +38,9 @@ void initialiseTailRotorPWM (void);
 //*****************************************************************************
 //
 // @Description This function is used to control the tail rotor
-// @Param void
+// @Param currentHelicopterAngle angle the heli is currently at
+// @Param desiredAngle angle we want the helicopter to reach
+// @Param samplingrate is the rate in which the PID control loop is called
 // @Return the duty cycle of the tail rotor
 //
 //*****************************************************************************
