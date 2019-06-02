@@ -1,12 +1,8 @@
 //*****************************************************************************
 // Thurs PM Group 23
 //
-// helicopterAltitude.c - File that includes the functions to set up an
-// interrupt that receives analogue values based on helicopter altitude.
-// The interrupt stores the values inside a circular buffer. This code is
-// based on code supplied in the UC ENCE361 Lab4. The code inside Lab4
-// was written by P.J. Bones. This code has minor changes from P.J. Bones
-// code such as receiving the data from GPIO rather than the TIVA potentiometer.
+// mainRotorController.c - This file contains a PID controller that controls
+// the main rotor. It additionally has the files required to setup the main rotor.
 //
 // Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
 // Last modified: 25.4.2019
@@ -56,17 +52,21 @@
 #define OUTPUT_MAX 98
 #define OUTPUT_MIN 2
 
-int32_t MAIN_PWM;
 
 float errorSignal;
+float errorIntegral;
 int16_t errorSignalPrevious = 0;
-int16_t startTime;
-double errorIntegral;
 int32_t dutyCycle;
 
-/********************************************************
- * Function to set the freq, duty cycle of M0PWM7
- ********************************************************/
+//*****************************************************************************
+//
+// @Description This function is used to set the duty cycle and frequency of
+// the main rotor PWM.
+// @Param ui32Freq is the desired PWM frequency
+// @param ui32Duty is the desired duty cycle for the main rotor
+// @Return none
+//
+//*****************************************************************************
 void setMainPWM(uint32_t ui32Freq, uint32_t ui32Duty)
 {
     // Calculate the PWM period corresponding to the freq.
@@ -75,15 +75,18 @@ void setMainPWM(uint32_t ui32Freq, uint32_t ui32Duty)
     PWMPulseWidthSet(PWM_MAIN_BASE, PWM_MAIN_OUTNUM, ui32Period * ui32Duty / 100);
 }
 
-/*********************************************************
- * initialisePWM
- * M0PWM7 (J4-05, PC5) is used for the main rotor motor
- *********************************************************/
+//*****************************************************************************
+//
+// @Description This function is used initialize the main rotor PWM
+// @Param void
+// @Return void
+//
+//*****************************************************************************
 void initialiseMainRotorPWM(void)
 {
 
-    SysCtlPeripheralEnable(PWM_MAIN_PERIPH_PWM);
-    SysCtlPeripheralEnable(PWM_MAIN_PERIPH_GPIO);
+    SysCtlPeripheralEnable(PWM_MAIN_PERIPH_PWM); // Enable the PWM peripheral
+    SysCtlPeripheralEnable(PWM_MAIN_PERIPH_GPIO); // Enable the GPIO peripheral
     GPIOPinConfigure(PWM_MAIN_GPIO_CONFIG);
     GPIOPinTypePWM(PWM_MAIN_GPIO_BASE, PWM_MAIN_GPIO_PIN);
 
@@ -100,33 +103,42 @@ void initialiseMainRotorPWM(void)
 
 }
 
+//*****************************************************************************
+//
+// @Description This function is used to control the main rotor
+// @Param void
+// @Return the duty cycle of the main rotor
+//
+//*****************************************************************************
 int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeight, int16_t groundReference) {
 
-    const int8_t mainRotorKp = 14;
-    const int8_t mainRotorKi = 12; // 1 //0.44/0.8/0.3
+    const int8_t mainRotorKp = 14; // set the gains for the control system
+    const int8_t mainRotorKi = 12;
     const int8_t mainRotorKd = 10;
     const int8_t divisor = 100;
 
-    errorSignal = (currentHeliHeight - (groundReference - ((124 * desiredHeliHeight)/10)));
+    errorSignal = (currentHeliHeight - (groundReference - ((124 * desiredHeliHeight)/10))); // calculate error signal
     float errorDerivative = (errorSignal - errorSignalPrevious) * 160; // multiplying by 160 is more efficient then dividing by 0.00625, but mathematically equivalent.
 
-    dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi) + (errorDerivative * mainRotorKd))/ divisor;
+    dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi) + (errorDerivative * mainRotorKd)) / divisor;
 
     // output error signal within the parameters
-    if (dutyCycle >= OUTPUT_MAX) {
+    if (dutyCycle >= OUTPUT_MAX)
+    {
         dutyCycle = OUTPUT_MAX;
-    } else if (dutyCycle <= OUTPUT_MIN) {
+    }
+    else if (dutyCycle <= OUTPUT_MIN)
+    {
         dutyCycle = OUTPUT_MIN;
     }
     else
     {
-    errorIntegral += errorSignal/160; // dividing by 160 is more efficient then multiplying by 0.00625, but mathematically equivalent.
+        errorIntegral += errorSignal/160; // dividing by 160 is more efficient then multiplying by 0.00625, but mathematically equivalent.
     }
 
     errorSignalPrevious = errorSignal;
     setMainPWM(PWM_START_RATE_HZ, dutyCycle);
 
-    MAIN_PWM = dutyCycle;
     return dutyCycle;
 }
 

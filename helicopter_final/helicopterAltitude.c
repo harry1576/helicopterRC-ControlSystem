@@ -8,7 +8,7 @@
 // was written by P.J. Bones. This code has minor changes from P.J. Bones
 // code such as receiving the data from GPIO rather than the TIVA potentiometer.
 //
-// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+// Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850), P.J. Bones UCECE
 // Last modified: 25.4.2019
 //
 //*****************************************************************************
@@ -41,7 +41,7 @@ uint32_t g_ulSampCnt; // Counter for the interrupts
 //
 // The handler for the ADC conversion interrupt.
 // Writes to the circular buffer.
-//
+// @Author P.J. Bones UCECE
 //*****************************************************************************
 void ADCIntHandler(void)
 {
@@ -55,7 +55,7 @@ void ADCIntHandler(void)
 //*****************************************************************************
 //
 // Initialisation of the ADC interrupt
-//
+// @Author P.J. Bones UCECE
 //*****************************************************************************
 void initADC (void)
 {
@@ -84,6 +84,13 @@ void initADC (void)
     ADCIntEnable(ADC0_BASE, 3); // Enable interrupts for ADC0 sequence 3 (clears any outstanding interrupts)
 }
 
+//*****************************************************************************
+//
+// @Description Reads data from circular buffer that is used for altitude reading
+// @Param void
+// @Return the average readings from the buffer
+//
+//*****************************************************************************
 int32_t updateAltitude(void)
 {
     // Background task: calculate the (approximate) mean of the values in the

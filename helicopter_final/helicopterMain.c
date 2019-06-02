@@ -4,7 +4,7 @@
 // helicopterMain.c - This routine pieces together various files and
 // functions to implement the control logic of the helicopter .
 // Some of the files used in this program have been authored by P.J. Bones
-// UCECE. Theses files include acknowledgement that he is the creator or that
+// UCECE. Theses files include acknowledgment that he is the creator or that
 // the code contains elements of his.
 //
 // Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
@@ -75,19 +75,19 @@ int8_t buttonUpdateFlag;
 void SysTickIntHandler(void) {
     ADCProcessorTrigger(ADC0_BASE, 3); // Triggers the ADC to do a conversion
     g_ulSampCnt++;
-    PIDFlag = 1;
-    buttonUpdateFlag = 1;
+    PIDFlag = 1; // sets flag true every 6.25ms
+    buttonUpdateFlag = 1; // sets flag true every 6.25ms
     if (g_ulSampCnt % 40 == 0) {
-       displayUARTFlag = 1;
+       displayUARTFlag = 1; //sets flag true every 250ms
     }
     if(g_ulSampCnt % 160 == 0) {
-        displayOLEDFlag = 1;
+        displayOLEDFlag = 1; // sets flag true every 1000ms
     }
 }
 
 //*****************************************************************************
 //
-// @Description Initialisation function for the clock.
+// @Description Initialization function for the clock.
 // ADC, display.
 // @Param void
 // @Return nothing
@@ -99,7 +99,7 @@ void initClock(void) {
 
 //*****************************************************************************
 //
-// @Description Initialisation function for the timer (SysTick). Which is used
+// @Description Initialization function for the timer (SysTick). Which is used
 // by display and ADC.
 // @Param void
 // @Return nothing

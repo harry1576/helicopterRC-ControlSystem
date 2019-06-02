@@ -35,7 +35,6 @@
 #define PWM_DIVIDER_CODE   SYSCTL_PWMDIV_4
 #define PWM_DIVIDER        4
 
-
 #define PWM_TAIL_BASE        PWM1_BASE
 #define PWM_TAIL_GEN         PWM_GEN_2
 #define PWM_TAIL_OUTNUM      PWM_OUT_5
@@ -49,19 +48,21 @@
 #define TAIL_OUTPUT_MAX 98
 #define TAIL_OUTPUT_MIN 2
 
-
-int32_t TAIL_PWM;
-
 int32_t dutyCycle;
 int16_t tailErrorSignal;
 int16_t tailErrorSignalPrevious = 0;
-int16_t tailStartTime;
-double errorIntegral;
+float errorIntegral;
 
 
-/********************************************************
- * Function to set the freq, duty cycle of M0PWM7
- ********************************************************/
+//*****************************************************************************
+//
+// @Description This function is used to set the duty cycle and frequency of
+// the tail rotor PWM.
+// @Param ui32Freq is the desired PWM frequency
+// @param ui32Duty is the desired duty cycle for the tail rotor
+// @Return none
+//
+//*****************************************************************************
 void setTailPWM (uint32_t ui32Freq, uint32_t ui32Duty)
 {
     // Calculate the PWM period corresponding to the freq.
@@ -98,9 +99,9 @@ void initialiseTailRotorPWM (void){
 
 uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
 {
-    const int16_t tailRotorKp = 1200;//1.2//0.1/0.258 no kp rotates anti  //working on heli2  3.4
-    const int16_t tailRotorKi = 100;                      //0.04
-    const int16_t tailRotorKd = 400;                      //0.03
+    const int16_t tailRotorKp = 1200;
+    const int16_t tailRotorKi = 100;
+    const int16_t tailRotorKd = 400;
     const int16_t divisor = 1000;
 
     tailErrorSignal = (desiredAngle) - currentHelicopterAngle;
@@ -109,11 +110,12 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
     dutyCycle = ((tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi) + (errorDerivative * tailRotorKd))/divisor;
 
     // output error signal within the parameters
-    if (dutyCycle >= TAIL_OUTPUT_MAX){
+    if (dutyCycle >= TAIL_OUTPUT_MAX)
+    {
         dutyCycle = TAIL_OUTPUT_MAX;
     }
-
-    else if (dutyCycle <= TAIL_OUTPUT_MIN){
+    else if (dutyCycle <= TAIL_OUTPUT_MIN)
+    {
         dutyCycle = TAIL_OUTPUT_MIN;
     }
     else
@@ -121,12 +123,9 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
         errorIntegral += tailErrorSignal / 160;
     }
 
-
     tailErrorSignalPrevious = tailErrorSignal;
 
     setTailPWM(PWM_START_RATE_HZ,dutyCycle);
-    TAIL_PWM = dutyCycle;
     return dutyCycle;
 }
-
 

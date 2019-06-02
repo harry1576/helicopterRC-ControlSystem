@@ -75,48 +75,66 @@ initButtons (void);
 // buttons once and updates variables associated with the buttons if
 // necessary.  It is efficient enough to be part of an ISR, e.g. from
 // a SysTick interrupt.
-void
-updateButtons (void);
+void updateButtons (void);
 
 // *******************************************************
 // checkButton: Function returns the new button state if the button state
 // (PUSHED or RELEASED) has changed since the last call, otherwise returns
 // NO_CHANGE.  The argument butName should be one of constants in the
 // enumeration butStates, excluding 'NUM_BUTS'. Safe under interrupt.
-enum butStates
-checkButton (uint8_t butName);
+enum butStates checkButton (uint8_t butName);
 
-// *******************************************************
-// altAndYawValue: Function that checks the buttons and alters
-// the desired height and yaw accordingly
 
+//*****************************************************************************
+//
+// @Description Polls all the buttons to check if they are being pressed
+// and updates the desired height or desired angle if button pressed.
+// @Param void
+// @Return nothing
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
 void pollButtons(void);
 
-
-
-void
-switchMode (void);
-
-
-
-
-void
-resetCheck (void);
-
-
-
+//*****************************************************************************
+//
+// @Description The routine for the reset or mode switch.
+// @Param void
+// @Return none
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
 void resetAndSwitchISR(void);
 
 
+//*****************************************************************************
+//
+// @Description Initializes an interrupt that will when the reset switch or
+// the mode switch is used. Both of these inputs use the same Base so will call
+// the same interrupt. However as they are both irregular and high priority
+// events having them as interrupts is important.
+// @Param void
+// @Return none
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
 void initResetandSwitchISR(void);
 
 
-
+//*****************************************************************************
+//
+// @Description Getter function to return the desired height as a percentage
+// @Param void
+// @Return the desired height as a percentage
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
 int16_t getDesiredHeightPercentage();
 
-
+//*****************************************************************************
+//
+// @Description Getter function to return the desired angle
+// @Param void
+// @Return the desired angle
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
 int16_t getdesiredAngle();
-
 
 
 #endif /*BUTTONS_H_*/

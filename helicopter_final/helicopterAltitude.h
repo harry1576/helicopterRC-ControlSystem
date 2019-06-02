@@ -17,7 +17,7 @@
 // the UC ENCE361 Lab4. The code inside Lab4 was written
 // by P.J. Bones.
 //
-//  Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//  Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850),  P.J. Bones UCECE
 //  Last modified: 25.4.2019
 // 
 // *******************************************************
@@ -49,6 +49,13 @@ void ADCIntHandler(void);
 //*****************************************************************************
 void initADC (void);
 
+//*****************************************************************************
+//
+// @Description Reads data from circular buffer that is used for altitude reading
+// @Param void
+// @Return the average reading from the buffer
+//
+//*****************************************************************************
 int32_t updateAltitude(void);
 
 #endif /* HELICOPTER_ALTITUDE_H_ */

@@ -176,29 +176,48 @@ void pollButtons(void) {
 }
 
 
-
+//*****************************************************************************
+//
+// @Description The routine for the reset or mode switch.
+// @Param void
+// @Return none
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
 void resetAndSwitchISR(void) {
 
     uint8_t switchChannel; //Variable to hold the current value of switch position
     uint8_t resetButton = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
-    if (resetButton == 0) {
-        GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6);
-        SysCtlReset();
-    } else {
-        GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_7);
 
+    if (resetButton == 0) {
+        GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_6); // interrupts cleared early on as recommended on Tiva Datasheet
+        SysCtlReset();
+    }
+    else
+    {
+        GPIOIntClear(GPIO_PORTA_BASE, GPIO_INT_PIN_7);
         switchChannel = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_7);
 
-        if (switchChannel == 0 && getFlightMode() == FLYING) // switch is in land position
+        if (switchChannel == 0 && getFlightMode() == FLYING) // switch is in land position change mode to landing
         {
             setFlightMode(LANDING);
 
-        } else if (switchChannel != 0 && getFlightMode() == LANDED) {
+        } else if (switchChannel != 0 && getFlightMode() == LANDED) {// switch is in flying position change mode to take off
             setFlightMode(TAKINGOFF);
         }
     }
 }
 
+
+//*****************************************************************************
+//
+// @Description Initializes an interrupt that will when the reset switch or
+// the mode switch is used. Both of these inputs use the same Base so will call
+// the same interrupt. However as they are both irregular and high priority
+// events having them as interrupts is important.
+// @Param void
+// @Return none
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
 void initResetandSwitchISR(void) {
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA); // Enable the Peripheral
