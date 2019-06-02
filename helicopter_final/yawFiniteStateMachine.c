@@ -5,7 +5,7 @@
 // angle of the helicopter. It uses quadrature decoding.
 //
 // Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
-// Last modified: 25.4.2019
+// Last modified: 2.6.2019
 //
 //*****************************************************************************
 
@@ -45,10 +45,13 @@ int32_t slotCount; // variable that holds the amount of steps the tranducer has
 uint32_t referenceSensor;
 //read
 
+
 //*****************************************************************************
 //
-// The yaw FSM is able to work out which direction the helicopter is rotating
+// @Description The yaw FSM is able to work out which direction the helicopter is rotating
 // in. By using this info it can update the current angle of the helicopter.
+// @Param void
+// @Return none
 //
 //*****************************************************************************
 void yawFSM(void)
@@ -128,8 +131,10 @@ void yawFSM(void)
 
 //*****************************************************************************
 //
-// Initialises the yaw FSM. An interrupt is setup to be triggered when either
-// GPIO input has a rising or falling edge.
+// @Description Initialises the yaw FSM. An interrupt is setup to be triggered
+// when either GPIO input has a rising or falling edge.
+// @Param void
+// @Return none
 //
 //*****************************************************************************
 void yawFSMInit(void) {
@@ -167,17 +172,33 @@ void yawFSMInit(void) {
 }
 
 
-
-
+//*****************************************************************************
+//
+// @Description the interrupt routine for the reference point , it sets the
+// current angle back to an origin and sets a variable true to show the angle
+// has been set and disables this interrupt to prevent it from happening
+// unnecessarily
+// @Param void
+// @Return none
+//
+//*****************************************************************************
 void referenceTriggerHandler(void)
 {
     GPIOIntClear(GPIO_PORTC_BASE, GPIO_INT_PIN_4 );
     currentAngle = 0;
     slotCount = 0;
     referenceAngleSet = 1;
-
+    GPIOIntDisable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
 }
 
+//*****************************************************************************
+//
+// @Description Initializes the reference point interrupt which is triggered
+// when GPIO_PIN_4 is low
+// @Param void
+// @Return none
+//
+//*****************************************************************************
 void initReferenceTrigger(void)
 {
 
@@ -188,17 +209,40 @@ void initReferenceTrigger(void)
    GPIOIntEnable (GPIO_PORTC_BASE, GPIO_INT_PIN_4);
 }
 
-
+//*****************************************************************************
+//
+// @Description Getter method used to retrieve the current angle of the heli
+// @Param void
+// @Return the current angle of the helicopter
+//
+//*****************************************************************************
 int16_t getCurrentAngle(void)
 {
     return currentAngle;
 }
 
+//*****************************************************************************
+//
+// @Description Getter method used to retrieve the variable of whether the
+// reference angle of the heli has been set
+// @Param void
+// @Return the state of wether the reference angle has been set
+//
+//*****************************************************************************
 int8_t getReferenceAngleSetState(void)
 {
     return referenceAngleSet;
 }
 
+//*****************************************************************************
+//
+// @Description Setter method used to set the variable of whether the
+// reference angle of the heli has been set. Used when the helicopter goes from
+// landing - landed mode. To ensure it finds reference on next take off.
+// @Param the state you wish to set the helicopter to
+// @Return none
+//
+//*****************************************************************************
 void setReferenceAngleSetState(int8_t state)
 {
     referenceAngleSet = state;

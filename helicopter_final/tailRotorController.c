@@ -1,15 +1,11 @@
 //*****************************************************************************
 // Thurs PM Group 23
 //
-// helicopterAltitude.c - File that includes the functions to set up an
-// interrupt that receives analogue values based on helicopter altitude.
-// The interrupt stores the values inside a circular buffer. This code is
-// based on code supplied in the UC ENCE361 Lab4. The code inside Lab4
-// was written by P.J. Bones. This code has minor changes from P.J. Bones
-// code such as receiving the data from GPIO rather than the TIVA potentiometer.
+// tailRotorController.c - This file contains a PID controller that controls
+// the tail rotor. It additionally has the files required to setup the tail rotor.
 //
 // Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
-// Last modified: 25.4.2019
+// Last modified: 2.6.2019
 //
 //*****************************************************************************
 
@@ -48,6 +44,7 @@
 #define TAIL_OUTPUT_MAX 98
 #define TAIL_OUTPUT_MIN 2
 
+// Global Variables
 int32_t dutyCycle;
 int16_t tailErrorSignal;
 int16_t tailErrorSignalPrevious = 0;
@@ -71,7 +68,13 @@ void setTailPWM (uint32_t ui32Freq, uint32_t ui32Duty)
     PWMPulseWidthSet(PWM_TAIL_BASE, PWM_TAIL_OUTNUM,ui32Period * ui32Duty / 100);
 }
 
-
+//*****************************************************************************
+//
+// @Description This function is used initialize the tail rotor PWM
+// @Param void
+// @Return void
+//
+//*****************************************************************************
 void initialiseTailRotorPWM (void){
 
 
@@ -96,7 +99,13 @@ void initialiseTailRotorPWM (void){
 }
 
 
-
+//*****************************************************************************
+//
+// @Description This function is used to control the tail rotor
+// @Param void
+// @Return the duty cycle of the tail rotor
+//
+//*****************************************************************************
 uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
 {
     const int16_t tailRotorKp = 1200;
@@ -105,7 +114,7 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
     const int16_t divisor = 1000;
 
     tailErrorSignal = (desiredAngle) - currentHelicopterAngle;
-    float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious) * 160;
+    float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious) * 160;// multiplying by 160 is more efficient then dividing by 0.00625, but mathematically equivalent.
 
     dutyCycle = ((tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi) + (errorDerivative * tailRotorKd))/divisor;
 
@@ -120,7 +129,7 @@ uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAn
     }
     else
     {
-        errorIntegral += tailErrorSignal / 160;
+        errorIntegral += tailErrorSignal / 160; // dividing by 160 is more efficient then multiplying by 0.00625, but mathematically equivalent.// Integral Control
     }
 
     tailErrorSignalPrevious = tailErrorSignal;

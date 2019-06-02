@@ -7,7 +7,7 @@
 // Author:  P.J. Bones  UCECE
 // Last modified:   16.4.2018
 //
-
+// CODE WRITTEN BY P.J BONES UCECE UNLESS STATE OTHERWISE
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/hw_memmap.h"
@@ -105,14 +105,34 @@ UARTSend (char *pucBuffer)
 }
 
 
-void updateUARTOutput(int32_t desiredAngle,int32_t currentAngle,int8_t mainDutyCycle,int8_t tailDutyCycle, int16_t maxHeight,int16_t currentHeight,int16_t groundReference,int8_t flightMode )
+//********FOLLOWING FUNCTION IS NOT WRITTEN BY P.J.BONES**********//
+
+
+//*****************************************************************************
+//
+// @Description This function takes the parameters that need to be displayed
+// via UART and then logically strucutres them for printing
+// @Param desiredAngle the angle the user wishes the helicopter to be at
+// @Param currentAngle the current angle of the helicopter
+// @Param mainDutyCycle the duty cycle of the main rotor
+// @Param tailDutyCylce the duty cycle of the tail rotor
+// @Param maxHeight the maximum height of the helicopeter as a 12bit number
+// @Param currentHeight the current height of the helicopeter as a 12bit number
+// @Param groundReference the ground height of the helicopeter as a 12bit number
+// @Param flightMode the flight mode of the helicopter specified as an integer
+// @Return none
+// @Authors (student ID): Harry Dobbs (89030703), Sam Purdy (48538646), Sam Dunshea (26500850)
+//*****************************************************************************
+void updateUARTOutput(int32_t desiredAngle, int32_t currentAngle,int8_t mainDutyCycle,int8_t tailDutyCycle, int16_t maxHeight,int16_t currentHeight,int16_t groundReference,int8_t flightMode )
 {
     uint32_t dersiredDisplayAngle = findDisplayAngle(desiredAngle);
     uint32_t currentDisplayAngle = findDisplayAngle(currentAngle);
     uint8_t desiredHeightPercentagedisplay = getDesiredHeightPercentage();
     uint32_t displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
     char string[128];
-    usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %s\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentagedisplay, mainDutyCycle,
+    usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d"
+            " [%5d]\n\rMain: %5d\n\rMode: %s\n\r", currentDisplayAngle,
+             dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentagedisplay, mainDutyCycle,
              findMode(flightMode));
     UARTSend(string);
     //displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);

@@ -16,35 +16,33 @@
 
 //*****************************************************************************
 //
-// @Description Initalses the display so it can be used
+// @Description This function is used to initalise the OLED display
 // @Param void
-// @Return nothing
+// @Return none
 //
 //*****************************************************************************
 void initDisplay (void);
 
 //*****************************************************************************
 //
-// @Description Clears the display so it is empty.
+// @Description  Clears the Orbit OLED display by clearing all the characters.
 // @Param void
-// @Return nothing
+// @Return none
 //
 //*****************************************************************************
 void clearOLED(void);
 
-
 //*****************************************************************************
 //
-// @Description Function used to display the altitude as a percentage and the
-// helicopter yaw as an angle in degrees.
-// @Param meanVal is the average height value as a percentage
-// @Param Angle is the angle of the helicopter from -360 to 360 degrees
-// @Return nothing
+// @Description  Function to display the height as percentage and angle of helicopter in
+// degrees.
+// @Param height the current height of the helicopter
+// @Param Angle the current angle of the helicopter
+// @Param mainDuty the duty cycle of the main rotor
+// @Param TailDuty the duty cycle of the tail rotor
+// @Return none
 //
 //*****************************************************************************
 void updateOLEDDisplay(int32_t height, int32_t Angle,int32_t mainDuty,int32_t TailDuty);
-
-const char * findMode (int16_t num);
-
 
 #endif /*USERDISPLAY_H_*/
