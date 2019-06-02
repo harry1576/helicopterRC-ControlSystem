@@ -54,6 +54,8 @@ uint32_t referenceSensor;
 void yawFSM(void)
 {
 
+    GPIOIntClear(GPIO_PORTB_BASE, (GPIO_PIN_0 | GPIO_PIN_1)); // Interrupt cleared at start as recommended by Tiva Guide
+
     ChannelA = GPIOPinRead(GPIO_PORTB_BASE, GPIO_PIN_0);
     ChannelB = GPIOPinRead(GPIO_PORTB_BASE, GPIO_PIN_1);
 
@@ -122,7 +124,6 @@ void yawFSM(void)
     currentAngle = ((slotCount * 360) / 448);
     previousState = currentState;
 
-    GPIOIntClear(GPIO_PORTB_BASE, (GPIO_PIN_0 | GPIO_PIN_1));
 }
 
 //*****************************************************************************
