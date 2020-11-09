@@ -24,42 +24,41 @@
 #include "driverlib/systick.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/interrupt.h"
-#include "buttons4.h"
 #include "uartCommunication.h"
 #include "driverlib/uart.h"
-
 #include "stdlib.h"
 #include "inc/hw_memmap.h"
 #include "utils/ustdlib.h"
 #include "OrbitOLED/OrbitOLEDInterface.h"
+#include "buttons4.h"
 
 
 // PWM configuration
-#define PWM_START_RATE_HZ  200
-#define PWM_RATE_STEP_HZ   50
-#define PWM_RATE_MIN_HZ    50
-#define PWM_RATE_MAX_HZ    400
-#define PWM_FIXED_DUTY     0
-#define PWM_DIVIDER_CODE   SYSCTL_PWMDIV_4
-#define PWM_DIVIDER        4
+#define PWM_START_RATE_HZ 250
+#define PWM_RATE_STEP_HZ 50
+#define PWM_RATE_MIN_HZ 250
+#define PWM_RATE_MAX_HZ 250
+#define PWM_FIXED_DUTY 0
+#define PWM_DIVIDER_CODE SYSCTL_PWMDIV_4
+#define PWM_DIVIDER 4
 
 //  PWM Hardware Details M0PWM7 (gen 3)
 //  ---Main Rotor PWM: PC5, J4-05
-#define PWM_MAIN_BASE        PWM0_BASE
-#define PWM_MAIN_GEN         PWM_GEN_3
-#define PWM_MAIN_OUTNUM      PWM_OUT_7
-#define PWM_MAIN_OUTBIT      PWM_OUT_7_BIT
-#define PWM_MAIN_PERIPH_PWM  SYSCTL_PERIPH_PWM0
+#define PWM_MAIN_BASE PWM0_BASE
+#define PWM_MAIN_GEN PWM_GEN_3
+#define PWM_MAIN_OUTNUM PWM_OUT_7
+#define PWM_MAIN_OUTBIT PWM_OUT_7_BIT
+#define PWM_MAIN_PERIPH_PWM SYSCTL_PERIPH_PWM0
 #define PWM_MAIN_PERIPH_GPIO SYSCTL_PERIPH_GPIOC
-#define PWM_MAIN_GPIO_BASE   GPIO_PORTC_BASE
+#define PWM_MAIN_GPIO_BASE GPIO_PORTC_BASE
 #define PWM_MAIN_GPIO_CONFIG GPIO_PC5_M0PWM7
-#define PWM_MAIN_GPIO_PIN    GPIO_PIN_5
+#define PWM_MAIN_GPIO_PIN GPIO_PIN_5
+#define OUTPUT_MAX 98
+#define OUTPUT_MIN 2
 
+int32_t MAIN_PWM;
 
-#define OUTPUT_MAX 58
-#define OUTPUT_MIN 30
-
-int16_t errorSignal;
+float errorSignal;
 int16_t errorSignalPrevious = 0;
 int16_t startTime;
 double errorIntegral;
@@ -68,33 +67,29 @@ int32_t dutyCycle;
 /********************************************************
  * Function to set the freq, duty cycle of M0PWM7
  ********************************************************/
-void setMainPWM (uint32_t ui32Freq, uint32_t ui32Duty)
+void setMainPWM(uint32_t ui32Freq, uint32_t ui32Duty)
 {
     // Calculate the PWM period corresponding to the freq.
     uint32_t ui32Period = SysCtlClockGet() / PWM_DIVIDER / ui32Freq;
     PWMGenPeriodSet(PWM_MAIN_BASE, PWM_MAIN_GEN, ui32Period);
-    PWMPulseWidthSet(PWM_MAIN_BASE, PWM_MAIN_OUTNUM,ui32Period * ui32Duty / 100);
+    PWMPulseWidthSet(PWM_MAIN_BASE, PWM_MAIN_OUTNUM, ui32Period * ui32Duty / 100);
 }
-
-
 
 /*********************************************************
  * initialisePWM
  * M0PWM7 (J4-05, PC5) is used for the main rotor motor
  *********************************************************/
-void initialiseMainRotorPWM (void)
+void initialiseMainRotorPWM(void)
 {
 
     SysCtlPeripheralEnable(PWM_MAIN_PERIPH_PWM);
     SysCtlPeripheralEnable(PWM_MAIN_PERIPH_GPIO);
-
     GPIOPinConfigure(PWM_MAIN_GPIO_CONFIG);
     GPIOPinTypePWM(PWM_MAIN_GPIO_BASE, PWM_MAIN_GPIO_PIN);
 
-    PWMGenConfigure(PWM_MAIN_BASE, PWM_MAIN_GEN,
-                    PWM_GEN_MODE_UP_DOWN | PWM_GEN_MODE_NO_SYNC);
+    PWMGenConfigure(PWM_MAIN_BASE, PWM_MAIN_GEN, PWM_GEN_MODE_UP_DOWN | PWM_GEN_MODE_NO_SYNC);
     // Set the initial PWM parameters
-    setMainPWM (PWM_START_RATE_HZ, PWM_FIXED_DUTY);
+    setMainPWM(PWM_START_RATE_HZ, PWM_FIXED_DUTY);
 
     PWMGenEnable(PWM_MAIN_BASE, PWM_MAIN_GEN);
 
@@ -103,32 +98,39 @@ void initialiseMainRotorPWM (void)
 
 }
 
-void mainRotorControlLoop(int16_t currentHeightHeli)
-{
-    float mainRotorKp = .46;
-    float mainRotorKi = 0.000000028; // 1
-    float mainRotorKd = 0;
+int32_t mainRotorControlLoop(int16_t currentHeliHeight, int16_t desiredHeliHeight, int16_t groundReference) {
 
-    int16_t desiredHeightPercentage = 1900;
+    float mainRotorKp = 0.14;
+    float mainRotorKi = 0.12; // 1 //0.44/0.8/0.3
+    float mainRotorKd = 0.10;
 
-    errorSignal = currentHeightHeli - desiredHeightPercentage;
-    int32_t errorDerivative = errorSignal - errorSignalPrevious;
-
+    errorSignal = (currentHeliHeight - (groundReference - (12.4 * desiredHeliHeight)));
+    float errorDerivative = (errorSignal - errorSignalPrevious) / (0.00625);
 
     dutyCycle = ((errorSignal * mainRotorKp) + (errorIntegral * mainRotorKi) + (errorDerivative * mainRotorKd));
 
     // output error signal within the parameters
-    if (dutyCycle > OUTPUT_MAX){
+    if (dutyCycle >= OUTPUT_MAX) {
         dutyCycle = OUTPUT_MAX;
+    } else if (dutyCycle <= OUTPUT_MIN) {
+        dutyCycle = OUTPUT_MIN;
     }
     else
     {
-        errorIntegral += errorSignal * 0.00000000625;
+    errorIntegral += errorSignal * 0.00625;
     }
 
-     if (dutyCycle < OUTPUT_MIN){
-        dutyCycle = OUTPUT_MIN;
+
+    if (taken_off == 0 && errorSignal < 20)
+    {
+        taken_off = 1;
     }
+
     errorSignalPrevious = errorSignal;
-    setMainPWM(PWM_START_RATE_HZ,dutyCycle);
+    setMainPWM(PWM_START_RATE_HZ, dutyCycle);
+
+    MAIN_PWM = dutyCycle;
+    return dutyCycle;
 }
+
+

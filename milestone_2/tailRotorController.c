@@ -24,13 +24,13 @@
 #include "driverlib/systick.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/interrupt.h"
-#include "buttons4.h"
+
 
 // PWM configuration
 #define PWM_START_RATE_HZ  250
 #define PWM_RATE_STEP_HZ   50
-#define PWM_RATE_MIN_HZ    50
-#define PWM_RATE_MAX_HZ    400
+#define PWM_RATE_MIN_HZ    150
+#define PWM_RATE_MAX_HZ    300
 #define PWM_FIXED_DUTY     0
 #define PWM_DIVIDER_CODE   SYSCTL_PWMDIV_4
 #define PWM_DIVIDER        4
@@ -46,10 +46,13 @@
 #define PWM_TAIL_GPIO_CONFIG GPIO_PF1_M1PWM5
 #define PWM_TAIL_GPIO_PIN    GPIO_PIN_1
 
-#define TAIL_OUTPUT_MAX 95
-#define TAIL_OUTPUT_MIN 5
+#define TAIL_OUTPUT_MAX 98
+#define TAIL_OUTPUT_MIN 2
 
 
+int32_t TAIL_PWM;
+
+int32_t dutyCycle;
 int16_t tailErrorSignal;
 int16_t tailErrorSignalPrevious = 0;
 int16_t tailStartTime;
@@ -70,8 +73,6 @@ void setTailPWM (uint32_t ui32Freq, uint32_t ui32Duty)
 
 void initialiseTailRotorPWM (void){
 
-    SysCtlPeripheralReset (PWM_TAIL_PERIPH_GPIO);
-    SysCtlPeripheralReset (PWM_TAIL_PERIPH_PWM);
 
     SysCtlPeripheralEnable(PWM_TAIL_PERIPH_GPIO);
     SysCtlPeripheralEnable(PWM_TAIL_PERIPH_PWM);
@@ -93,29 +94,36 @@ void initialiseTailRotorPWM (void){
 
 
 
-void tailRotorControlLoop(uint16_t currentAngle)
+uint32_t tailRotorControlLoop(uint16_t currentHelicopterAngle,uint16_t desiredAngle)
 {
-    float tailRotorKp = 0.03;
-    float tailRotorKi = 0.00;
+    float tailRotorKp = 1.2;//1.2//0.1/0.258 no kp rotates anti  //working on heli2  3.4
+    float tailRotorKi = 0.1;                      //0.04
+    float tailRotorKd = 0.256;                      //0.03
 
-    int16_t desiredAngle = 0;
+    tailErrorSignal = (desiredAngle) - currentHelicopterAngle;
+    float errorDerivative = (tailErrorSignal - tailErrorSignalPrevious)/(0.00625);
 
-    tailErrorSignal = desiredAngle - currentAngle;
-
-    errorIntegral += tailErrorSignal;
-
-    double dutyCycle = (tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi);
+    dutyCycle = (tailErrorSignal * tailRotorKp) + (errorIntegral * tailRotorKi) + (errorDerivative * tailRotorKd);
 
     // output error signal within the parameters
-    if (dutyCycle > TAIL_OUTPUT_MAX){
+    if (dutyCycle >= TAIL_OUTPUT_MAX){
         dutyCycle = TAIL_OUTPUT_MAX;
     }
 
-    if (dutyCycle < TAIL_OUTPUT_MIN){
+    else if (dutyCycle <= TAIL_OUTPUT_MIN){
         dutyCycle = TAIL_OUTPUT_MIN;
     }
-    setTailPWM(PWM_START_RATE_HZ,dutyCycle);
-}
+    else
+    {
+        errorIntegral += tailErrorSignal * 0.00625;
+    }
 
+
+    tailErrorSignalPrevious = tailErrorSignal;
+
+    setTailPWM(PWM_START_RATE_HZ,dutyCycle);
+    TAIL_PWM = dutyCycle;
+    return dutyCycle;
+}
 
 

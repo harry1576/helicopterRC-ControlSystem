@@ -39,15 +39,29 @@
 
 
 
+// Add variable that holds the helicopter state i.e. landed,flying,takeoff,etc
+// Print this variable in serial output as per demo..
+
+// Email bainbridge about reset button ask about the gains...
+//
+
+// OLED Display.   DONE, NEED TO CHECK WITH DOBBS AS NOT SURE FOR ACTUAL HELI
+//
+
+//
+//
+
 //*****************************************************************************
 // Constants
 //*****************************************************************************
 #define BUF_SIZE 16
 #define SAMPLE_RATE_HZ 160
 
-
+//*****************************************************************************
+// Variables
+//*****************************************************************************
 int8_t PIDFlag = 0;
-
+volatile int16_t currentHeight; // variable to store the current helicopter height.
 
 //*****************************************************************************
 //
@@ -56,13 +70,11 @@ int8_t PIDFlag = 0;
 // @Return nothing
 //
 //*****************************************************************************
-void SysTickIntHandler(void)
-{
-    ADCProcessorTrigger(ADC0_BASE, 3);   // Triggers the ADC to do a conversion
+void SysTickIntHandler(void) {
+    ADCProcessorTrigger(ADC0_BASE, 3); // Triggers the ADC to do a conversion
     g_ulSampCnt++;
     PIDFlag = 1;
 }
-
 
 //*****************************************************************************
 //
@@ -72,9 +84,9 @@ void SysTickIntHandler(void)
 // @Return nothing
 //
 //*****************************************************************************
-void initClock (void)
+void initClock(void)
 {
-    SysCtlClockSet (SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ); // Set the clock rate to 20 MHz
+    SysCtlClockSet(SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ); // Set the clock rate to 20 MHz
 }
 
 //*****************************************************************************
@@ -85,15 +97,11 @@ void initClock (void)
 // @Return nothing
 //
 //*****************************************************************************
-void initTimer (void)
+void initTimer(void)
 {
-
     SysTickPeriodSet(SysCtlClockGet() / SAMPLE_RATE_HZ);
-
     SysTickIntRegister(SysTickIntHandler); // Register the interrupt handler
-
-    // Enable interrupt and device
-    SysTickIntEnable();
+    SysTickIntEnable(); // Enable interrupt and device
     SysTickEnable();
 }
 
@@ -104,7 +112,7 @@ void initTimer (void)
 // @Param max is the maximum altitude the helicopter can reach as 12bit number.
 //        current is the height the helicopter is current at as a 12bit number.
 //        minimum is the ground height and the lowest altitude the helicopter
-//        can reach as a 12 bit number.
+//        can reach as a 12 bit number.bookings/index/pid/20
 // @Return percentage is the percentage of the maximum height the helicopter
 //  is current at. It is a value within the range 0-100 inclusive
 //
@@ -112,18 +120,14 @@ void initTimer (void)
 int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
 {
     int16_t percentage;
-    percentage = ((current - min) *100 + ((max-min)/2))/(max-min);
-    if(percentage < 0)
-    {
+    percentage = ((current - min) * 100 + ((max - min) / 2)) / (max - min); // prevents rounding error
+    if (percentage < 0) {
         percentage = 0;
-    }
-    else if (percentage > 100)
-    {
+    } else if (percentage > 100) {
         percentage = 100;
     }
     return percentage;
 }
-
 
 //*****************************************************************************
 //
@@ -136,76 +140,141 @@ int16_t heightAsPercentage(int16_t max, int16_t current, int16_t min)
 //*****************************************************************************
 int main(void)
 {
-    uint8_t i; // Variable used in for loop to cycle through buffer
 
     int16_t groundReference = 0; // Initialise the ground reference at the maximum height. Guaranteeing the first ground reading will be below this point.
-    int16_t currentHeight; // variable to store the current helicopter height.
     int16_t maxHeight; // variable to store the maximum height the helicopter can reach.
-    int8_t displayheight;
-
-    int32_t sum; // The summation of the data read from the buffer
-
-    uint8_t butState; // variable used to hold the current button state.
+    int32_t displayheight;
+    int32_t dersiredDisplayAngle;
+    int32_t currentDisplayAngle;
+    int8_t countUp = 0;
+    int32_t tailDutyCycle = 0;
+    int32_t mainDutyCycle = 0;
+    int32_t tempAngle = 0;
+    int32_t countUp2 = 0;
 
     // Initialise required systems
-    initClock ();
-    initTimer ();
-    initCircBuf (&g_inBuffer, BUF_SIZE);
-    initADC ();
-    initDisplay ();
+    initClock();
+    initTimer();
+    initCircBuf( & g_inBuffer, BUF_SIZE);
+    initSwitch();
+    initADC();
+    initDisplay();
     initButtons();
+    initReset();
     yawFSMInit();
     initialiseUSB_UART();
 
-    // initalise the PWM for the motors
-    initialiseMainRotorPWM();
+
+    initialiseMainRotorPWM(); // initalise the PWM for the motors
     initialiseTailRotorPWM();
 
-    // set output states of rotors to true
-    PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true);
+    PWMOutputState(PWM_MAIN_BASE, PWM_MAIN_OUTBIT, true); // set output states of rotors to true
     PWMOutputState(PWM_TAIL_BASE, PWM_TAIL_OUTBIT, true);
 
+    IntMasterEnable(); // Enable interrupts to the processor.
 
-    IntMasterEnable();     // Enable interrupts to the processor.
-
-    while (1)
-    {
-
+    while (1) {
         // Background task: calculate the (approximate) mean of the values in the
         // circular buffer and display it, together with the sample number.
+
+        uint8_t i; // Variable used in for loop to cycle through buffer
+        int32_t sum; // The summation of the data read from the buffer
+
         sum = 0;
         for (i = 0; i < BUF_SIZE; i++)
-            sum = sum + readCircBuf (&g_inBuffer);
-        // Calculate and display the rounded mean of the buffer contents
+            sum = sum + readCircBuf( & g_inBuffer); // Calculate and display the rounded mean of the buffer contents
         currentHeight = (2 * sum + BUF_SIZE) / 2 / BUF_SIZE;
 
-        updateButtons ();
-        butState = checkButton (LEFT);
-        if (groundReference == 0 || butState == PUSHED) // set ground reference on first loop or when button is pushed
+        if (groundReference == 0) // set ground reference on first loop or when button is pushed
         {
-           groundReference = currentHeight ;
-           maxHeight = groundReference - 992; //(4095*(0.8)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
+            groundReference = currentHeight;
+            maxHeight = groundReference - 1240; //(4095*(1)/3.3) = Calculate maximum height as we know maximum height is 0.8V less than ground.
         }
 
-        if (g_ulSampCnt % 100 == 0) // update display every 20ms, allows program to run without delay function.
+        //updateDesiredAltAndYawValue();
+        if (g_ulSampCnt % 32 == 0) // update display every 200ms.
         {
+            dersiredDisplayAngle = findDisplayAngle(desiredAngle);
+            currentDisplayAngle = findDisplayAngle(currentAngle);
+            displayheight = heightAsPercentage(maxHeight, currentHeight, groundReference);
+            char string[128];
+            usprintf(string, "Yaw: %5d [%5d]\n\rTail: %5d\n\rHeight: %5d [%5d]\n\rMain: %5d\n\rMode: %s\n\r", currentDisplayAngle, dersiredDisplayAngle, tailDutyCycle, displayheight, desiredHeightPercentage, mainDutyCycle, findMode(flightMode));
+            UARTSend(string);
+            //displayAltitudePercentAndYaw(displayheight, currentDisplayAngle);
 
-
-            //displayAltitudePercentAndYaw(heightAsPercentage(maxHeight,currentHeight,groundReference),currentAngle); // displays altitude as percent
-            usprintf (statusStr, "Current Angle %2d \n",currentAngle); // * usprintf
-            UARTSend (statusStr);
-            usprintf (statusStr, "Current Height %2d \n", currentHeight); // * usprintf
-            UARTSend (statusStr);
-            usprintf (statusStr, "Duty Cycle %2d \n", dutyCycle); // * usprintf
-            UARTSend (statusStr);
         }
 
+        if (PIDFlag == 1) // called every 0.00625ms
+        {
+            if (flightMode == FLYING) {
+                if (referenceAngleSet == 1) {
+                    updateDesiredAltAndYawValue(); // get data from buttons once taken
+                    mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
+                    tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle);
+                    PIDFlag = 0;
+                } /*else {
+                    desiredHeightPercentage = 10;
+                    mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
+                    tailDutyCycle = tailRotorControlLoop(currentAngle, 360); // increment rotation till at reference point
+                    //tempAngle += 1;
+                    PIDFlag = 0;
+                }*/
+            }
+            if (flightMode == TAKINGOFF)
+            {
+                countUp2 ++;
+                desiredHeightPercentage = 10;
+                desiredAngle = 0;
+                mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
+                tailDutyCycle = tailRotorControlLoop(currentAngle, tempAngle); // increment rotation till at reference point
+                if(countUp2 % 3 == 0){
+                tempAngle += 1;}
 
-       tailRotorControlLoop(currentAngle);
-       if (PIDFlag)
-       {
-       mainRotorControlLoop(currentHeight);
-       PIDFlag = 0;
-       }
+                PIDFlag = 0;
+                if (taken_off != 0 && referenceAngleSet) {
+                    flightMode = FLYING;
+                }
+            }
+            if (flightMode == LANDING) {
+                desiredHeightPercentage = 10;
+                desiredAngle = 0;
+                if (heightAsPercentage(maxHeight, currentHeight, groundReference) > desiredHeightPercentage || (currentAngle > 4 || currentAngle < -4)) {
+                    mainDutyCycle = mainRotorControlLoop(currentHeight, desiredHeightPercentage, groundReference);
+                    tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
+                    PIDFlag = 0;
+                }
+                else if (heightAsPercentage(maxHeight, currentHeight, groundReference) == desiredHeightPercentage && mainDutyCycle > 0) {
+                    setMainPWM(250, mainDutyCycle);
+                    countUp++;
+                    tailDutyCycle = tailRotorControlLoop(currentAngle, desiredAngle); // centre position
+                    if (countUp % 150 == 0) // decrease duty cycle by 1% every 0.15625 * 2 seconds
+                    {
+                        mainDutyCycle--;
+                    }
+                    PIDFlag = 0;
+                } else {
+                    setTailPWM(250, 0);
+                    flightMode = LANDED;
+                    PIDFlag = 0;
+                }
+            }
+            if (flightMode == LANDED)
+            {
+                desiredHeightPercentage = 0;
+                countUp = 0;
+                referenceAngleSet = 0;
+                setMainPWM(250, 0);
+                setTailPWM(250, 0);
+                mainDutyCycle = 0;
+                tailDutyCycle = 0;
+                countUp2 = 0;
+                PIDFlag = 0;
+            }
+        }
+
+        int16_t pin = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
+        if (pin == 0) {
+            SysCtlReset();
+        }
     }
 }
